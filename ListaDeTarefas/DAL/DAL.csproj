@@ -41,6 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EtapaDALcs.cs" />
+    <Compile Include="GrupoDAL.cs" />
+    <Compile Include="ListaDALcs.cs" />
+    <Compile Include="PermissaoDAL.cs" />
+    <Compile Include="TarefaDAL.cs" />
     <Compile Include="UsuarioDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
