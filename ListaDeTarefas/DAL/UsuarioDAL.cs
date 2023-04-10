@@ -12,6 +12,10 @@ namespace DAL
         {
 
         }
+        public void BuscarPorTodos()
+        {
+
+        }
         public void BuscarPorNome()
         {
 
