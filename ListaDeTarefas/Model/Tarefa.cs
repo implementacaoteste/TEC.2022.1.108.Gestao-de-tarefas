@@ -8,5 +8,8 @@ namespace Model
 {
     internal class Tarefa
     {
+        public int Id { get; set; }
+        public string NomeTarefa { get; set; }
+        public List<ListaDeTarefas> Lista { get; set; }
     }
 }
