@@ -8,6 +8,15 @@ namespace DAL
 {
     public class PermissaoDAL
     {
+        public void Inserir()
+        {
+
+        }
+        public void Buscar()
+        {
+
+        }
+
         public void BuscarPorIdPermissao()
         {
 
