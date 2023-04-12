@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using Model;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -15,7 +17,8 @@ namespace WindowsFormsPrincipal
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormTelaPrincipal());
+            //Application.Run(new FormTelaPrincipal());
+
         }
     }
 }
