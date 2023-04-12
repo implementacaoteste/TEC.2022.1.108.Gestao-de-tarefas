@@ -1,4 +1,5 @@
 ﻿using DAL;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,9 +23,9 @@ namespace BLL
         {
 
         }
-        public void BuscarPorId()
+        public Usuario BuscarPorId(int _id)
         {
-
+            return new UsuarioDAL().BuscarPorID(_id);
         }
         public void BuscarPorEmail()
         {
