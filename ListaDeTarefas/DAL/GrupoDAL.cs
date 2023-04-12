@@ -24,6 +24,10 @@ namespace DAL
         {
 
         }
+        public void Buscar()
+        {
+
+        }
         public void AdicionarGrupo()
         {
 
