@@ -10,10 +10,9 @@ namespace BLL
 {
     public class UsuarioBLL
     {
-        public void Inserir()
+        public void Inserir(Usuario _usuario)
         {
-            UsuarioDAL usuarioDAL = new UsuarioDAL();
-            usuarioDAL.AdicionarUsuario();
+            new UsuarioDAL().AdicionarUsuario(_usuario);
         }
         public void BuscarPorNome()
         {
