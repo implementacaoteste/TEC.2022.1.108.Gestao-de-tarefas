@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,25 +9,40 @@ namespace BLL
 {
     public class EtapaBLL
     {
-        public void Inserir()
+        public void BuscarPorIdEtapa()
         {
 
         }
-        public void Buscar()
+        public void BuscarPorIdUsuario()
         {
 
         }
-        public void BuscarPorTodos()
+        public void BuscarPorIdTarefa()
         {
 
         }
-        public void BuscarPorId()
+        public void BuscarPorTodasEtapas()
         {
 
         }
-        public void Excluir()
+        public void BuscarPorNomeEtapa()
         {
 
+        }
+        public void AdicionarEtapa()
+        {
+            EtapaDALcs etapaDALcs = new EtapaDALcs();
+            etapaDALcs.AdicionarEtapa();
+        }
+        public void AlterarEtapa()
+        {
+            EtapaDALcs etapaDALcs = new EtapaDALcs();
+            etapaDALcs.AlterarEtapa();
+        }
+        public void ExcluirEtapa()
+        {
+            EtapaDALcs etapaDALcs = new EtapaDALcs();
+            etapaDALcs.ExcluirEtapa();
         }
     }
 }
