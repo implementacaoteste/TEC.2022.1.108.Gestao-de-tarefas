@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormCadastroEtapa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastroEtapa.Designer.cs">
+      <DependentUpon>FormCadastroEtapa.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMenuDeTarefas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormCadastroEtapa.resx">
+      <DependentUpon>FormCadastroEtapa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMenuDeTarefas.resx">
       <DependentUpon>FormMenuDeTarefas.cs</DependentUpon>
     </EmbeddedResource>

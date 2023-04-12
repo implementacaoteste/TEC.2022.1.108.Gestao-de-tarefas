@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Conexao.cs" />
     <Compile Include="EtapaDALcs.cs" />
     <Compile Include="GrupoDAL.cs" />
     <Compile Include="ListaDALcs.cs" />
