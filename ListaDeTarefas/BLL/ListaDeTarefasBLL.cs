@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,25 +9,36 @@ namespace BLL
 {
    public class ListaDeTarefasBLL
     {
-        public void Inserir()
+        public void BuscarPorIdLista()
+        {
+           
+        }
+        public void BuscarPorIdGrupo()
+        {
+            
+        }
+        public void BuscarPorTodasEtapas()
         {
 
         }
-        public void Buscar()
+        public void BuscarPorNomeLista()
         {
 
         }
-        public void BuscarPorTodos()
+        public void AdicionarLista()
         {
-
+            ListaDALcs listaDALcs = new ListaDALcs();
+            listaDALcs.AdicionarLista();
         }
-        public void BuscarPorId()
+        public void AlterarLista()
         {
-
+            ListaDALcs listaDALcs = new ListaDALcs();
+            listaDALcs.AlterarLista();
         }
-        public void Excluir()
+        public void ExcluirLista()
         {
-
+            ListaDALcs listaDALcs = new ListaDALcs();
+            listaDALcs.ExcluirLista();
         }
     }
 }

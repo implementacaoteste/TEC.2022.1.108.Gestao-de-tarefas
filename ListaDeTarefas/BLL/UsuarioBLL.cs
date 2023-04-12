@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,11 +11,12 @@ namespace BLL
     {
         public void Inserir()
         {
-
+            UsuarioDAL usuarioDAL = new UsuarioDAL();
+            usuarioDAL.AdicionarUsuario();
         }
-        public void Buscar()
+        public void BuscarPorNome()
         {
-
+            
         }
         public void BuscarPorTodos()
         {
@@ -24,10 +26,22 @@ namespace BLL
         {
 
         }
-        public void Excluir()
+        public void BuscarPorEmail()
         {
 
+        }
+        public void BuscarPorSenha()
+        {
 
+        }
+        public void ExcluirUsuario()
+        {
+            new UsuarioDAL().ExcluirUsuario();
+        }
+        public void AlterarUsuario()
+        {
+            UsuarioDAL usuarioDAL=new UsuarioDAL();
+            usuarioDAL.AlterarUsuario();
         }
     }
 }
