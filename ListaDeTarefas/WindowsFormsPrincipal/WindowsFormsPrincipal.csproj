@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormMenuDeTarefas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMenuDeTarefas.Designer.cs">
+      <DependentUpon>FormMenuDeTarefas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTelaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +60,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormMenuDeTarefas.resx">
+      <DependentUpon>FormMenuDeTarefas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormTelaPrincipal.resx">
       <DependentUpon>FormTelaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
