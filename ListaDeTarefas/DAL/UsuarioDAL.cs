@@ -13,7 +13,6 @@ namespace DAL
     {
         public Usuario BuscarPorID(int _id)
         {
-            List<Usuario> usuarios = new List<Usuario>();
             Usuario usuario = new Usuario();
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
@@ -52,21 +51,154 @@ namespace DAL
                 cn.Close();
             }
         }
-        public void BuscarPorTodos()
+        public Usuario BuscarPorTodos()
         {
-
+            Usuario usuario = new Usuario();
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "SELECT Id, Nome,Email, Senha FROM Usuario";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        usuario = new Usuario();
+                        usuario.Id = Convert.ToInt32(rd["Id"]);
+                        usuario.Nome = rd["Nome"].ToString();
+                        usuario.Email = rd["Email"].ToString();
+                        usuario.Senha = rd["Senha"].ToString();
+                    }
+                }
+                return usuario;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar todos os usuarios no banco de dados. ", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
         }
-        public void BuscarPorNome()
+        public Usuario BuscarPorNome(string _nome)
         {
+            Usuario usuario = new Usuario();
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = @"SELECT Id, Nome, Email,Senha
+                                  FROM Usuario WHERE Nome LIKE @Nome";
 
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@Nome", "%" + _nome + "%");
+
+                cn.Open();
+
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        usuario = new Usuario();
+                        usuario.Id = Convert.ToInt32(rd["Id"]);
+                        usuario.Nome = rd["Nome"].ToString();
+                        usuario.Email = rd["Email"].ToString();
+                        usuario.Senha = rd["Senha"].ToString();
+                    }
+
+                }
+                return usuario;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar alterar o usuario no banco de dados. ", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
         }
-        public void BuscarPorEmail()
+        public Usuario BuscarPorEmail(string _email)
         {
+            Usuario usuario = new Usuario();
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = @"SELECT Id, Nome, NomeUsuario, Email, CPF, Ativo, Senha
+                                  FROM Usuario WHERE Email LIKE @Email";
 
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@Email", "%" + _email + "%");
+
+                cn.Open();
+
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        usuario = new Usuario();
+                        usuario.Id = Convert.ToInt32(rd["Id"]);
+                        usuario.Nome = rd["Nome"].ToString();
+                        usuario.Email = rd["Email"].ToString();
+                        usuario.Senha = rd["Senha"].ToString();
+                    }
+                }
+                return usuario;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar alterar o usuario no banco de dados. ", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
         }
-        public void BuscarPorSenha()
+        public Usuario BuscarPorSenha(string _senha)
         {
+            Usuario usuario = new Usuario();
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = @"SELECT Id, Nome, Email, Senha
+                                  FROM Usuario WHERE Senha LIKE @Senha";
 
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@Senha", "%" + _senha + "%");
+
+                cn.Open();
+
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        usuario = new Usuario();
+                        usuario.Id = Convert.ToInt32(rd["Id"]);
+                        usuario.Nome = rd["Nome"].ToString();
+                        usuario.Email = rd["Email"].ToString();
+                        usuario.Senha = rd["Senha"].ToString();
+                    }
+                }
+                return usuario;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar alterar o usuario no banco de dados. ", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
         }
         public void AdicionarUsuario(Usuario _usuario)
         {

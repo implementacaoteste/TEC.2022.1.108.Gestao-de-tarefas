@@ -2,6 +2,7 @@
 using Model;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,25 +15,25 @@ namespace BLL
         {
             new UsuarioDAL().AdicionarUsuario(_usuario);
         }
-        public void BuscarPorNome()
+        public void BuscarPorNome(string _nome)
         {
-            
+            new UsuarioDAL().BuscarPorNome(_nome);  
         }
-        public void BuscarPorTodos()
+        public Usuario BuscarPorTodos()
         {
-
+            return new UsuarioDAL().BuscarPorTodos();
         }
         public Usuario BuscarPorId(int _id)
         {
             return new UsuarioDAL().BuscarPorID(_id);
         }
-        public void BuscarPorEmail()
+        public Usuario BuscarPorEmail(string _email)
         {
-
+            return new UsuarioDAL().BuscarPorEmail(_email); 
         }
-        public void BuscarPorSenha()
+        public Usuario BuscarPorSenha(string _senha)
         {
-
+            return new UsuarioDAL().BuscarPorSenha(_senha);
         }
         public void ExcluirUsuario()
         {
