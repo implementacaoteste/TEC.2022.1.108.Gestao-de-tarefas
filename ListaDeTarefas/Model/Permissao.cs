@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Model
+namespace Models
 {
-    internal class Permissao
+    public class Permissao
     {
         public int Id { get; set; }
         public string Descricao { get; set; }
