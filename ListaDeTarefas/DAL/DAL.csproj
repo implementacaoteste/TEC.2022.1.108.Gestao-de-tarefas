@@ -45,6 +45,7 @@
     <Compile Include="EtapaDALcs.cs" />
     <Compile Include="GrupoDAL.cs" />
     <Compile Include="ListaDALcs.cs" />
+    <Compile Include="ListadeTarefas_UsuarioDAL.cs" />
     <Compile Include="PermissaoDAL.cs" />
     <Compile Include="TarefaDAL.cs" />
     <Compile Include="UsuarioDAL.cs" />
