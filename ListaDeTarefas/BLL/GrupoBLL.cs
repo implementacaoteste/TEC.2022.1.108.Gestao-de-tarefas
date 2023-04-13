@@ -1,4 +1,5 @@
 ﻿using DAL;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace BLL
 {
     public class GrupoBLL
     {
-        public void Inserir()
+        public  void Inserir()
         {
             new GrupoDAL().AdicionarGrupo();
         }
@@ -27,7 +28,7 @@ namespace BLL
         }
         public void BuscarPorId()
         {
-            new GrupoDAL().BuscarPorIdGrupo();
+            new GrupoDAL().BuscarPorId();
         }
         public void Excluir()
         {
