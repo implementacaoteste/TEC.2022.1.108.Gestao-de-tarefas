@@ -12,9 +12,35 @@ namespace DAL
 {
     public class TarefaDAL
     {
-        public void BuscarPorIdTarefa()
+        public void BuscarPorIdTarefa(int _id)
         {
-
+            Tarefa tarefa = new Tarefa();
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "SELECT IdTarefa,NomeTarefa FROM Tarefa WHERE IdTarefa = @IdTarefa";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@IdTarefa", _id);
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                    if (rd.Read())
+                    {
+                        tarefa.Id = Convert.ToInt32(rd["Id"]);
+                        tarefa.NomeTarefa = rd["Descricao"].ToString();
+                    }
+                return;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar Id de tarefa no banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
         }
         public void Buscar()
         {
@@ -24,9 +50,39 @@ namespace DAL
         {
 
         }
-        public void BuscarPorTodasTarefas()
+        public List<Tarefa> BuscarPorTodasTarefas()
         {
-
+            List<Tarefa> tarefas = new List<Tarefa>();
+            Tarefa tarefa;
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "SELECT IdTarefa,NomeTarefa FROM Tarefa";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cn.Open();
+                cn.Close();
+                cmd.ExecuteNonQuery();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        tarefa = new Tarefa();
+                        tarefa.Id = Convert.ToInt32(rd["IdTarefa"]);
+                        tarefa.NomeTarefa = rd["NomeTarefa"].ToString();
+                    }
+                }
+                return tarefas;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar todos as Tarefas no banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
         }
         public List<Tarefa> BuscarPorNomeTarefa(string _nomeTarefa)
         {
