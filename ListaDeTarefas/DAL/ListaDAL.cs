@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class ListaDALcs
+    public class ListaDAL
     {
         public void BuscarPorIdLista()
         {

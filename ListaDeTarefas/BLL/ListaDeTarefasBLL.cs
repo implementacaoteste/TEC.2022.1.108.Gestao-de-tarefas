@@ -27,17 +27,17 @@ namespace BLL
         }
         public void AdicionarLista()
         {
-            ListaDALcs listaDALcs = new ListaDALcs();
+            ListaDAL listaDALcs = new ListaDAL();
             listaDALcs.AdicionarLista();
         }
         public void AlterarLista()
         {
-            ListaDALcs listaDALcs = new ListaDALcs();
+            ListaDAL listaDALcs = new ListaDAL();
             listaDALcs.AlterarLista();
         }
         public void ExcluirLista()
         {
-            ListaDALcs listaDALcs = new ListaDALcs();
+            ListaDAL listaDALcs = new ListaDAL();
             listaDALcs.ExcluirLista();
         }
     }

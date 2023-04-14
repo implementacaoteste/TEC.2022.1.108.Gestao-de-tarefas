@@ -42,9 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexao.cs" />
-    <Compile Include="EtapaDALcs.cs" />
+    <Compile Include="EtapaDAL.cs" />
     <Compile Include="GrupoDAL.cs" />
-    <Compile Include="ListaDALcs.cs" />
+    <Compile Include="ListaDAL.cs" />
     <Compile Include="ListadeTarefas_UsuarioDAL.cs" />
     <Compile Include="PermissaoDAL.cs" />
     <Compile Include="TarefaDAL.cs" />

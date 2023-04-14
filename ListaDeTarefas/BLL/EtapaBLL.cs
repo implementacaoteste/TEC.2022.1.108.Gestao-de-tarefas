@@ -31,17 +31,17 @@ namespace BLL
         }
         public void AdicionarEtapa()
         {
-            EtapaDALcs etapaDALcs = new EtapaDALcs();
+            EtapaDAL etapaDALcs = new EtapaDAL();
             etapaDALcs.AdicionarEtapa();
         }
         public void AlterarEtapa()
         {
-            EtapaDALcs etapaDALcs = new EtapaDALcs();
+            EtapaDAL etapaDALcs = new EtapaDAL();
             etapaDALcs.AlterarEtapa();
         }
         public void ExcluirEtapa()
         {
-            EtapaDALcs etapaDALcs = new EtapaDALcs();
+            EtapaDAL etapaDALcs = new EtapaDAL();
             etapaDALcs.ExcluirEtapa();
         }
     }
