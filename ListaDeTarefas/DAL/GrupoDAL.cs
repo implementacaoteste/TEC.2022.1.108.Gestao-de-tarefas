@@ -222,15 +222,27 @@ namespace DAL
                 }
             }
         }
-
-        public void BuscarPorId()
+        public void Adicionar(Grupo _grupo)
         {
-            throw new NotImplementedException();
-        }
-
-        public void AdicionarGrupo()
-        {
-            throw new NotImplementedException();
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = cn.CreateCommand();
+                cmd.CommandText = @"INSERT INTO Grupo(Titulo) Values(@Titulo)";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@NomeGrupo", _grupo.Titulo);
+                cmd.Connection = cn;
+                cn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Ocorreu um erro ao inserir um Grupo no banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
         }
     }
 }

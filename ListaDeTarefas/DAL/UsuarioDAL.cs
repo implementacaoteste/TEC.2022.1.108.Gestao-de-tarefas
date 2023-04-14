@@ -227,13 +227,54 @@ namespace DAL
                 cn.Close();
             }
         }
-        public void AlterarUsuario()
+        public void AlterarUsuario(Usuario _usuario)
         {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = cn.CreateCommand();
+                cmd.CommandText = "UPDATE Usuario SET Nome=@Nome,Email=@Email,senha=@Senha WHERE IdUsuario = @IdUsuario";
 
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@Nome", _usuario.Nome);
+                cmd.Parameters.AddWithValue("@Email", _usuario.Email);
+                cmd.Parameters.AddWithValue("@Senha", _usuario.Senha);
+                cmd.Parameters.AddWithValue("@Id", _usuario.Id);
+                cmd.Connection = cn;
+                cn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Ocorreu um erro ao Alterar um usuário no banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
         }
-        public void ExcluirUsuario()
+        public void ExcluirUsuario(int _idUsuario)
         {
-
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            {
+                using (SqlCommand cmd = new SqlCommand("DELETE FROM Usuario WHERE IdUsuario = @IdUsuario", cn))
+                {
+                    try
+                    {
+                        cmd.CommandType = System.Data.CommandType.Text;
+                        cmd.Parameters.AddWithValue("@IdUsuario", _idUsuario);
+                        cmd.CommandType = System.Data.CommandType.Text;
+                        cmd.Connection = cn;
+                        cn.Close();
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception("Não foi possível excluir um usuário no banco de dados");
+                    }
+                    finally { cn.Close(); }
+                }
+            }
         }
 
     }
