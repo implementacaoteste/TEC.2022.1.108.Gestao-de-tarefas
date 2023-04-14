@@ -12,6 +12,7 @@ namespace DAL
     {
         public void BuscarPorIdEtapa()
         {
+
         }
 
         public void BuscarPorIdUsuario()

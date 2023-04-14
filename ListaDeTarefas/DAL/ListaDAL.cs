@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Model;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,9 +9,9 @@ namespace DAL
 {
     public class ListaDAL
     {
-        public void BuscarPorIdLista()
+        public List<ListaDeTarefas> BuscarPorIdLista(int id)
         {
-
+            throw new NotImplementedException();
         }
         public void BuscarPorIdGrupo()
         {
