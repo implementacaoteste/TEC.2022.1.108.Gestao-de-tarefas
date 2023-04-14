@@ -74,7 +74,7 @@ namespace DAL
 
             catch (Exception ex)
             {
-                throw new Exception($"ocorreu um erro ao buscar por id de usuário", ex);
+                throw new Exception($"ocorreu um erro ao buscar por id de usuário no Grupo", ex);
             }
             finally
             {
