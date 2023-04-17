@@ -31,12 +31,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.buttonArea1 = new System.Windows.Forms.Button();
+            this.buttonArea2 = new System.Windows.Forms.Button();
+            this.buttonArea3 = new System.Windows.Forms.Button();
+            this.buttonGrupo1 = new System.Windows.Forms.Button();
+            this.buttonGrupo2 = new System.Windows.Forms.Button();
+            this.buttonGrupo3 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,9 +51,9 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkGray;
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.buttonGrupo3);
+            this.panel2.Controls.Add(this.buttonGrupo2);
+            this.panel2.Controls.Add(this.buttonGrupo1);
             this.panel2.Location = new System.Drawing.Point(-2, 95);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(136, 452);
@@ -70,62 +70,75 @@
             this.label1.Text = "Áreas de Trabalho";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // button3
+            // buttonArea1
             // 
-            this.button3.Location = new System.Drawing.Point(14, 404);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(98, 35);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "Grupo 3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonArea1.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.buttonArea1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonArea1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.buttonArea1.ForeColor = System.Drawing.SystemColors.Window;
+            this.buttonArea1.Location = new System.Drawing.Point(337, 268);
+            this.buttonArea1.Name = "buttonArea1";
+            this.buttonArea1.Size = new System.Drawing.Size(381, 47);
+            this.buttonArea1.TabIndex = 3;
+            this.buttonArea1.Text = "Area 1";
+            this.buttonArea1.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // buttonArea2
             // 
-            this.button1.Location = new System.Drawing.Point(14, 363);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 35);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Grupo 2";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonArea2.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.buttonArea2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonArea2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.buttonArea2.ForeColor = System.Drawing.SystemColors.Window;
+            this.buttonArea2.Location = new System.Drawing.Point(337, 321);
+            this.buttonArea2.Name = "buttonArea2";
+            this.buttonArea2.Size = new System.Drawing.Size(381, 47);
+            this.buttonArea2.TabIndex = 3;
+            this.buttonArea2.Text = "Area 2";
+            this.buttonArea2.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // buttonArea3
             // 
-            this.button2.Location = new System.Drawing.Point(14, 322);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(98, 35);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Grupo 1";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonArea3.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.buttonArea3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonArea3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.buttonArea3.ForeColor = System.Drawing.SystemColors.Window;
+            this.buttonArea3.Location = new System.Drawing.Point(337, 374);
+            this.buttonArea3.Name = "buttonArea3";
+            this.buttonArea3.Size = new System.Drawing.Size(381, 47);
+            this.buttonArea3.TabIndex = 3;
+            this.buttonArea3.Text = "Area 3";
+            this.buttonArea3.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // buttonGrupo1
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button4.Location = new System.Drawing.Point(363, 245);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(339, 47);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Area 1";
-            this.button4.UseVisualStyleBackColor = true;
+            this.buttonGrupo1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonGrupo1.Location = new System.Drawing.Point(0, 312);
+            this.buttonGrupo1.Name = "buttonGrupo1";
+            this.buttonGrupo1.Size = new System.Drawing.Size(136, 35);
+            this.buttonGrupo1.TabIndex = 0;
+            this.buttonGrupo1.Text = "Grupo 1";
+            this.buttonGrupo1.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // buttonGrupo2
             // 
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button5.Location = new System.Drawing.Point(363, 298);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(339, 47);
-            this.button5.TabIndex = 3;
-            this.button5.Text = "Area 2";
-            this.button5.UseVisualStyleBackColor = true;
+            this.buttonGrupo2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonGrupo2.Location = new System.Drawing.Point(0, 344);
+            this.buttonGrupo2.Name = "buttonGrupo2";
+            this.buttonGrupo2.Size = new System.Drawing.Size(136, 35);
+            this.buttonGrupo2.TabIndex = 0;
+            this.buttonGrupo2.Text = "Grupo 2";
+            this.buttonGrupo2.UseVisualStyleBackColor = true;
+            this.buttonGrupo2.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button6
+            // buttonGrupo3
             // 
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button6.Location = new System.Drawing.Point(363, 351);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(339, 47);
-            this.button6.TabIndex = 3;
-            this.button6.Text = "Area 3";
-            this.button6.UseVisualStyleBackColor = true;
+            this.buttonGrupo3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonGrupo3.Location = new System.Drawing.Point(0, 376);
+            this.buttonGrupo3.Name = "buttonGrupo3";
+            this.buttonGrupo3.Size = new System.Drawing.Size(136, 35);
+            this.buttonGrupo3.TabIndex = 0;
+            this.buttonGrupo3.Text = "Grupo 3";
+            this.buttonGrupo3.UseVisualStyleBackColor = true;
             // 
             // FormTelaPrincipal
             // 
@@ -133,9 +146,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(996, 546);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.buttonArea3);
+            this.Controls.Add(this.buttonArea2);
+            this.Controls.Add(this.buttonArea1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -145,7 +158,7 @@
             this.Name = "FormTelaPrincipal";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.Text = "Principal";
+            this.Text = ".";
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -156,12 +169,12 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button buttonArea1;
+        private System.Windows.Forms.Button buttonArea2;
+        private System.Windows.Forms.Button buttonArea3;
+        private System.Windows.Forms.Button buttonGrupo3;
+        private System.Windows.Forms.Button buttonGrupo2;
+        private System.Windows.Forms.Button buttonGrupo1;
     }
 }
