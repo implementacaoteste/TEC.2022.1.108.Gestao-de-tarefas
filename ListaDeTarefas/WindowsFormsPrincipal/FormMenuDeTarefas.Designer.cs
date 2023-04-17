@@ -28,23 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonGrupo3 = new System.Windows.Forms.Button();
+            this.buttonGrupo2 = new System.Windows.Forms.Button();
+            this.buttonGrupo1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.tarefaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tarefaDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.checkBoxAtribuicao = new System.Windows.Forms.CheckBox();
+            this.checkBoxAtrasado = new System.Windows.Forms.CheckBox();
+            this.textBoxBuscar = new System.Windows.Forms.TextBox();
+            this.buttonInserir = new System.Windows.Forms.Button();
+            this.buttonAlterar = new System.Windows.Forms.Button();
+            this.buttonDeletar = new System.Windows.Forms.Button();
+            this.buttonBuscar = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tarefaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tarefaDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.label1.Location = new System.Drawing.Point(453, 129);
+            this.label1.Location = new System.Drawing.Point(503, 129);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(154, 46);
             this.label1.TabIndex = 6;
@@ -54,40 +65,43 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkGray;
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.buttonGrupo3);
+            this.panel2.Controls.Add(this.buttonGrupo2);
+            this.panel2.Controls.Add(this.buttonGrupo1);
             this.panel2.Location = new System.Drawing.Point(0, 96);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(136, 452);
+            this.panel2.Size = new System.Drawing.Size(162, 478);
             this.panel2.TabIndex = 5;
             // 
-            // button3
+            // buttonGrupo3
             // 
-            this.button3.Location = new System.Drawing.Point(14, 404);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(98, 35);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "Grupo 3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonGrupo3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonGrupo3.Location = new System.Drawing.Point(0, 395);
+            this.buttonGrupo3.Name = "buttonGrupo3";
+            this.buttonGrupo3.Size = new System.Drawing.Size(162, 35);
+            this.buttonGrupo3.TabIndex = 1;
+            this.buttonGrupo3.Text = "Grupo 3";
+            this.buttonGrupo3.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // buttonGrupo2
             // 
-            this.button1.Location = new System.Drawing.Point(14, 363);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 35);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Grupo 2";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonGrupo2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonGrupo2.Location = new System.Drawing.Point(0, 363);
+            this.buttonGrupo2.Name = "buttonGrupo2";
+            this.buttonGrupo2.Size = new System.Drawing.Size(162, 35);
+            this.buttonGrupo2.TabIndex = 2;
+            this.buttonGrupo2.Text = "Grupo 2";
+            this.buttonGrupo2.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // buttonGrupo1
             // 
-            this.button2.Location = new System.Drawing.Point(14, 322);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(98, 35);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Grupo 1";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonGrupo1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonGrupo1.Location = new System.Drawing.Point(0, 331);
+            this.buttonGrupo1.Name = "buttonGrupo1";
+            this.buttonGrupo1.Size = new System.Drawing.Size(162, 35);
+            this.buttonGrupo1.TabIndex = 3;
+            this.buttonGrupo1.Text = "Grupo 1";
+            this.buttonGrupo1.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -97,48 +111,142 @@
             this.panel1.Size = new System.Drawing.Size(1013, 100);
             this.panel1.TabIndex = 4;
             // 
-            // button6
+            // tarefaBindingSource
             // 
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button6.Location = new System.Drawing.Point(365, 352);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(339, 47);
-            this.button6.TabIndex = 7;
-            this.button6.Text = "Area 3";
-            this.button6.UseVisualStyleBackColor = true;
+            this.tarefaBindingSource.DataSource = typeof(Models.Tarefa);
             // 
-            // button5
+            // tarefaDataGridView
             // 
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button5.Location = new System.Drawing.Point(365, 299);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(339, 47);
-            this.button5.TabIndex = 8;
-            this.button5.Text = "Area 2";
-            this.button5.UseVisualStyleBackColor = true;
+            this.tarefaDataGridView.AllowUserToAddRows = false;
+            this.tarefaDataGridView.AllowUserToDeleteRows = false;
+            this.tarefaDataGridView.AutoGenerateColumns = false;
+            this.tarefaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tarefaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2});
+            this.tarefaDataGridView.DataSource = this.tarefaBindingSource;
+            this.tarefaDataGridView.Location = new System.Drawing.Point(278, 246);
+            this.tarefaDataGridView.Name = "tarefaDataGridView";
+            this.tarefaDataGridView.ReadOnly = true;
+            this.tarefaDataGridView.RowHeadersWidth = 51;
+            this.tarefaDataGridView.RowTemplate.Height = 24;
+            this.tarefaDataGridView.Size = new System.Drawing.Size(659, 268);
+            this.tarefaDataGridView.TabIndex = 7;
             // 
-            // button4
+            // dataGridViewTextBoxColumn1
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button4.Location = new System.Drawing.Point(365, 246);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(339, 47);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "Area 1";
-            this.button4.UseVisualStyleBackColor = true;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "NomeTarefa";
+            this.dataGridViewTextBoxColumn2.HeaderText = "NomeTarefa";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // checkBoxAtribuicao
+            // 
+            this.checkBoxAtribuicao.AutoSize = true;
+            this.checkBoxAtribuicao.Location = new System.Drawing.Point(809, 186);
+            this.checkBoxAtribuicao.Name = "checkBoxAtribuicao";
+            this.checkBoxAtribuicao.Size = new System.Drawing.Size(128, 20);
+            this.checkBoxAtribuicao.TabIndex = 8;
+            this.checkBoxAtribuicao.Text = "Atribuidas a mim";
+            this.checkBoxAtribuicao.UseVisualStyleBackColor = true;
+            this.checkBoxAtribuicao.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // checkBoxAtrasado
+            // 
+            this.checkBoxAtrasado.AutoSize = true;
+            this.checkBoxAtrasado.Location = new System.Drawing.Point(712, 186);
+            this.checkBoxAtrasado.Name = "checkBoxAtrasado";
+            this.checkBoxAtrasado.Size = new System.Drawing.Size(91, 20);
+            this.checkBoxAtrasado.TabIndex = 8;
+            this.checkBoxAtrasado.Text = "Em Atraso";
+            this.checkBoxAtrasado.UseVisualStyleBackColor = true;
+            this.checkBoxAtrasado.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // textBoxBuscar
+            // 
+            this.textBoxBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxBuscar.Location = new System.Drawing.Point(278, 212);
+            this.textBoxBuscar.Multiline = true;
+            this.textBoxBuscar.Name = "textBoxBuscar";
+            this.textBoxBuscar.Size = new System.Drawing.Size(333, 28);
+            this.textBoxBuscar.TabIndex = 9;
+            // 
+            // buttonInserir
+            // 
+            this.buttonInserir.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.buttonInserir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonInserir.ForeColor = System.Drawing.SystemColors.Window;
+            this.buttonInserir.Location = new System.Drawing.Point(700, 213);
+            this.buttonInserir.Name = "buttonInserir";
+            this.buttonInserir.Size = new System.Drawing.Size(75, 26);
+            this.buttonInserir.TabIndex = 10;
+            this.buttonInserir.Text = "Inserir";
+            this.buttonInserir.UseVisualStyleBackColor = false;
+            // 
+            // buttonAlterar
+            // 
+            this.buttonAlterar.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.buttonAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonAlterar.ForeColor = System.Drawing.SystemColors.Window;
+            this.buttonAlterar.Location = new System.Drawing.Point(781, 212);
+            this.buttonAlterar.Name = "buttonAlterar";
+            this.buttonAlterar.Size = new System.Drawing.Size(75, 26);
+            this.buttonAlterar.TabIndex = 10;
+            this.buttonAlterar.Text = "Alterar";
+            this.buttonAlterar.UseVisualStyleBackColor = false;
+            // 
+            // buttonDeletar
+            // 
+            this.buttonDeletar.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.buttonDeletar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonDeletar.ForeColor = System.Drawing.SystemColors.Window;
+            this.buttonDeletar.Location = new System.Drawing.Point(862, 212);
+            this.buttonDeletar.Name = "buttonDeletar";
+            this.buttonDeletar.Size = new System.Drawing.Size(75, 26);
+            this.buttonDeletar.TabIndex = 10;
+            this.buttonDeletar.Text = "Deletar";
+            this.buttonDeletar.UseVisualStyleBackColor = false;
+            // 
+            // buttonBuscar
+            // 
+            this.buttonBuscar.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.buttonBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonBuscar.ForeColor = System.Drawing.SystemColors.Window;
+            this.buttonBuscar.Location = new System.Drawing.Point(617, 214);
+            this.buttonBuscar.Name = "buttonBuscar";
+            this.buttonBuscar.Size = new System.Drawing.Size(75, 26);
+            this.buttonBuscar.TabIndex = 10;
+            this.buttonBuscar.Text = "Buscar";
+            this.buttonBuscar.UseVisualStyleBackColor = false;
             // 
             // FormMenuDeTarefas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1013, 550);
+            this.ClientSize = new System.Drawing.Size(1012, 572);
+            this.Controls.Add(this.buttonBuscar);
+            this.Controls.Add(this.buttonDeletar);
+            this.Controls.Add(this.buttonAlterar);
+            this.Controls.Add(this.buttonInserir);
+            this.Controls.Add(this.textBoxBuscar);
+            this.Controls.Add(this.checkBoxAtrasado);
+            this.Controls.Add(this.checkBoxAtribuicao);
+            this.Controls.Add(this.tarefaDataGridView);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimizeBox = false;
             this.Name = "FormMenuDeTarefas";
@@ -146,6 +254,8 @@
             this.ShowInTaskbar = false;
             this.Text = "FormMenuDeTarefas";
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tarefaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tarefaDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -155,12 +265,20 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button buttonGrupo3;
+        private System.Windows.Forms.Button buttonGrupo2;
+        private System.Windows.Forms.Button buttonGrupo1;
+        private System.Windows.Forms.BindingSource tarefaBindingSource;
+        private System.Windows.Forms.DataGridView tarefaDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.CheckBox checkBoxAtribuicao;
+        private System.Windows.Forms.CheckBox checkBoxAtrasado;
+        private System.Windows.Forms.TextBox textBoxBuscar;
+        private System.Windows.Forms.Button buttonInserir;
+        private System.Windows.Forms.Button buttonAlterar;
+        private System.Windows.Forms.Button buttonDeletar;
+        private System.Windows.Forms.Button buttonBuscar;
     }
 }
