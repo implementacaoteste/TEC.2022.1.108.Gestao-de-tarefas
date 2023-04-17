@@ -11,37 +11,34 @@ namespace BLL
 {
     public class UsuarioBLL
     {
-        public void Inserir(Usuario _usuario)
+        public void AdicionarUsuario(Usuario _usuario)
         {
             new UsuarioDAL().AdicionarUsuario(_usuario);
         }
-        public void BuscarPorNome(string _nome)
+        public List<Usuario> BuscarPorNome(string _nome)
         {
-            new UsuarioDAL().BuscarPorNome(_nome);  
+            return new UsuarioDAL().BuscarPorNome(_nome);  
         }
         public Usuario BuscarPorTodos()
         {
-            return new UsuarioDAL().BuscarPorTodos();
+            throw new NotImplementedException();
+            //return new UsuarioDAL().BuscarPorTodos();
         }
         public Usuario BuscarPorId(int _id)
         {
-            return new UsuarioDAL().BuscarPorID(_id);
+            return new UsuarioDAL().BuscarPorId(_id);
         }
         public Usuario BuscarPorEmail(string _email)
         {
             return new UsuarioDAL().BuscarPorEmail(_email); 
         }
-        public Usuario BuscarPorSenha(string _senha)
+        public void ExcluirUsuario(int _id)
         {
-            return new UsuarioDAL().BuscarPorSenha(_senha);
+            new UsuarioDAL().ExcluirUsuario(_id);
         }
-        public void ExcluirUsuario()
+        public void AlterarUsuario(int _id, Usuario _usuario)
         {
-            
-        }
-        public void AlterarUsuario()
-        {
-
+            new UsuarioDAL().AlterarUsuario(_id, _usuario);
         }
     }
 }
