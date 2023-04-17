@@ -37,12 +37,11 @@ namespace BLL
         }
         public void ExcluirUsuario()
         {
-            new UsuarioDAL().ExcluirUsuario();
+            
         }
         public void AlterarUsuario()
         {
-            UsuarioDAL usuarioDAL=new UsuarioDAL();
-            usuarioDAL.AlterarUsuario();
+
         }
     }
 }

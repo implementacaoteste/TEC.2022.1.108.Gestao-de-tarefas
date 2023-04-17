@@ -12,8 +12,7 @@ namespace BLL
     {
         public void Inserir()
         {
-            TarefaDAL _tarefaDAL = new TarefaDAL();
-            new TarefaDAL().AdicionarTarefa();
+
         }
         public void Buscar()
         {
@@ -25,11 +24,11 @@ namespace BLL
         }
         public void BuscarPorId()
         {
-            new TarefaDAL().BuscarPorIdTarefa();
+
         }
         public void Excluir()
         {
-            new TarefaDAL().ExcluirTarefa();
+
         }
 
     }

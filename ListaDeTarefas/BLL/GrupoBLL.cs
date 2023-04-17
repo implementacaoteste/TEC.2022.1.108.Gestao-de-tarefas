@@ -12,11 +12,11 @@ namespace BLL
     {
         public  void Inserir()
         {
-            new GrupoDAL().AdicionarGrupo();
+            
         }
         public void Alterar()
         {
-            new GrupoDAL().AlterarGrupo();
+            
         }
         public void Buscar()
         {
@@ -28,11 +28,11 @@ namespace BLL
         }
         public void BuscarPorId()
         {
-            new GrupoDAL().BuscarPorId();
+            
         }
         public void Excluir()
         {
-            new GrupoDAL().ExcluirGrupo();
+            
         }
     }
 }
