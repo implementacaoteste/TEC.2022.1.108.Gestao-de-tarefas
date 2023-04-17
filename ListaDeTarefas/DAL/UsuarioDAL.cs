@@ -1,4 +1,4 @@
-﻿using Model;
+﻿using Models;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -34,14 +34,10 @@ namespace DAL
                         usuario.Nome = rd["Nome"].ToString();
                         usuario.Email = rd["Email"].ToString();
                         usuario.Senha = rd["Senha"].ToString();
-                        
-
-
                     }
                 }
                 return usuario;
             }
-
             catch (Exception ex)
             {
                 throw new Exception($"ocorreu um erro ao buscar por id", ex);
