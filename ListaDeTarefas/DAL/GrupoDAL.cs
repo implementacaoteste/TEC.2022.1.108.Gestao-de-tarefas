@@ -19,19 +19,20 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT FROM Grupo WHERE @IdGrupo = IdGrupo";
+                cmd.CommandText = @"SELECT Id,Titulo FROM Grupo WHERE @IdGrupo = IdGrupo";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@IdGrupo",id);
-
                 cn.Open();
 
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
                     if (rd.Read())
                     {
+                        _grupo = new Grupo();
                         _grupo.Id = Convert.ToInt32(rd["ID"]);
+                        _grupo.Titulo = rd["Titulo"].ToString();
                     }
                 }
                 return _grupo;
@@ -54,7 +55,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT IdUsuario FROM Usuario WHERE IdUsuario = @Idusuario ";
+                cmd.CommandText = "SELECT IdUsuario, Titulo FROM Usuario WHERE IdUsuario = @Idusuario ";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@IdUsuario", _idUsuario);
 
