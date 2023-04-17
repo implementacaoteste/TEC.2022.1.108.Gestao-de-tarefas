@@ -1,3 +1,4 @@
+
 USE [master]
 GO
 /****** Object:  Database [Gestao_Tarefas]    Script Date: 17/04/2023 13:55:31 ******/

@@ -18,6 +18,11 @@ namespace WindowsFormsPrincipal
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new FormTelaPrincipal());
+           Usuario user = new Usuario();
+            user.Nome = "teste";
+            user.Email = "testes@gmail";
+            user.Senha = "123";
+            new UsuarioBLL().Inserir(user);
 
         }
     }
