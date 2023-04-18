@@ -15,9 +15,9 @@ namespace BLL
         {
 
         }
-        public void Buscar()
+        public Tarefa BuscarPorIdLsita(int _id)
         {
-            new TarefaDAL().Buscar();
+            return new TarefaDAL().BuscarPorIdLista(_id);
         }
         public void BuscarPorTodos()
         {
