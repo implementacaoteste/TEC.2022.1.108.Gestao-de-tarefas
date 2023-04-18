@@ -100,9 +100,9 @@
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
             this.label1.Location = new System.Drawing.Point(354, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(347, 46);
+            this.label1.Size = new System.Drawing.Size(291, 46);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Áreas de Trabalho";
+            this.label1.Text = "Lista de tarefas";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // buttonArea1
@@ -117,6 +117,7 @@
             this.buttonArea1.TabIndex = 3;
             this.buttonArea1.Text = "Area 1";
             this.buttonArea1.UseVisualStyleBackColor = false;
+            this.buttonArea1.Click += new System.EventHandler(this.buttonArea1_Click);
             // 
             // buttonArea2
             // 
