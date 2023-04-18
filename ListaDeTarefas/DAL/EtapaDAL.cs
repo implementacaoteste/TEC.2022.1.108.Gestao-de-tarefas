@@ -93,10 +93,6 @@ namespace DAL
         {
 
         }
-        public void AdicionarEtapa()
-        {
-
-        }
         public void AlterarEtapa(Etapa _etapa)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
@@ -117,9 +113,52 @@ namespace DAL
             }
             finally { cn.Close(); }
         }
-        public void ExcluirEtapa()
+        public void ExcluirEtapa(Etapa _etapa)
         {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = cn.CreateCommand();
+                cmd.CommandText = @"DELETE FROM Etapa  WHERE IdEtapa = @IdEtapa ";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@IdEtapa", _etapa.Id);
+                cmd.Parameters.AddWithValue("@NomeEtapa", _etapa.NomeEtapa);
+                cmd.Connection = cn;
+                cmd.ExecuteNonQuery();
+                cn.Open();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar Excluir uma etapa no banco de dados", ex);
+            }
+            finally 
+            { 
+                cn.Close();
+            }
+        }
 
+        public void AdicionarEtapa(Etapa _etapa)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = cn.CreateCommand();
+                cmd.CommandText = @"INSERT INTO Etapa(IdEtapa,NomeEtapa) Values(@IdEtapa,@NomeTarefa)";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@IdEtapa", _etapa.Id);
+                cmd.Parameters.AddWithValue("@NomeEtapa", _etapa.NomeEtapa);
+                cmd.Connection = cn;
+                cmd.ExecuteNonQuery();
+                cn.Open();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar Adicionar uma etapa no banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
         }
     }
 }
