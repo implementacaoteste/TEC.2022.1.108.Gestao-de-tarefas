@@ -12,7 +12,7 @@ namespace DAL
 {
     public class TarefaDAL
     {
-        public void BuscarPorIdTarefa(int _id)
+        public Tarefa BuscarPorIdTarefa(int _id)
         {
             Tarefa tarefa = new Tarefa();
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
@@ -26,12 +26,15 @@ namespace DAL
                 cmd.Parameters.AddWithValue("@IdTarefa", _id);
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
+                { 
                     if (rd.Read())
                     {
+                        tarefa = new Tarefa();
                         tarefa.Id = Convert.ToInt32(rd["Id"]);
                         tarefa.NomeTarefa = rd["Descricao"].ToString();
                     }
-                return;
+                }
+                return tarefa;
             }
             catch (Exception ex)
             {
