@@ -9,8 +9,8 @@ namespace Models
 {
     public class ListaDeTarefas
     {
-        public int Id { get; set; }
+        public int IdLista { get; set; }
         public string NomeLista { get; set; }
-        public List<Usuario> Usuarios { get; set; }
+        public int IdGrupo { get; set; }
     }
 }

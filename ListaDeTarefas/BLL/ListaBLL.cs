@@ -1,4 +1,5 @@
 ﻿using DAL;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-   public class ListaDeTarefasBLL
+   public class ListaBLL
     {
         public void BuscarPorIdLista()
         {
@@ -25,20 +26,17 @@ namespace BLL
         {
 
         }
-        public void AdicionarLista()
+        public void AdicionarLista(ListaDeTarefas _lista)
         {
-            ListaDAL listaDALcs = new ListaDAL();
-            listaDALcs.AdicionarLista();
+            new ListaDAL().AdicionarLista(_lista);
         }
         public void AlterarLista()
         {
-            ListaDAL listaDALcs = new ListaDAL();
-            listaDALcs.AlterarLista();
+            
         }
         public void ExcluirLista()
         {
-            ListaDAL listaDALcs = new ListaDAL();
-            listaDALcs.ExcluirLista();
+            
         }
     }
 }

@@ -4,38 +4,37 @@ using Models;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace DAL
 {
     public class ListaDAL
     {
-        public List<ListaDeTarefas> BuscarPorIdLista(int id)
+        public void AdicionarLista(ListaDeTarefas _lista)
         {
-            throw new NotImplementedException();
-        }
-        public void BuscarPorIdGrupo()
-        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
 
-        }
-        public void BuscarPorTodasEtapas()
-        {
+            try
+            {
+                SqlCommand cmd = cn.CreateCommand();
+                cmd.CommandText = @"INSERT INTO ListaDeTarefas(NomeLista, IdGrupo) 
+                                VALUES (@NomeLista, @IdGrupo)";
 
-        }
-        public void BuscarPorNomeLista()
-        {
-
-        }
-        public void AdicionarLista()
-        {
-
-        }
-        public void AlterarLista()
-        {
-
-        }
-        public void ExcluirLista()
-        {
-
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@NomeLista", _lista.NomeLista);
+                cmd.Parameters.AddWithValue("@IdGrupo", _lista.IdGrupo);
+                cmd.Connection = cn;
+                cn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar inserir uma lista de tarefas no Banco de Dados: ", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
         }
     }
 }

@@ -33,7 +33,12 @@ namespace WindowsFormsPrincipal
 
             //new GrupoBLL().AlterarGrupo("Tarefas", 1);
             //new GrupoBLL().ExcluirGrupo(1);
-            new GrupoBLL().BuscarPorTodos(3);
+            //new GrupoBLL().BuscarPorTodos(3);
+
+            ListaDeTarefas lista = new ListaDeTarefas();
+            lista.NomeLista = "teste";
+            lista.IdGrupo = 2;
+            new ListaBLL().AdicionarLista(lista);
             
         }
     }

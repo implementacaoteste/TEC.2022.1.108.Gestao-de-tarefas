@@ -83,7 +83,7 @@ namespace DAL
                 cn.Close();
             }
         }
-        public List<Tarefa> BuscarPorNomeTarefa(string _nomeTarefa)
+        /*public List<Tarefa> BuscarPorNomeTarefa(string _nomeTarefa)
         {
             List<Tarefa> tarefas = new List<Tarefa>();
             Tarefa tarefa = new Tarefa();
@@ -118,7 +118,7 @@ namespace DAL
             {
                 cn.Close();
             }
-        }
+        }*/
         public void AdicionarTarefa(Tarefa tarefa)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);

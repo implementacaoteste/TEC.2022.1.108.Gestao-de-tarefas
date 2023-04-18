@@ -43,7 +43,7 @@
   <ItemGroup>
     <Compile Include="EtapaBLL.cs" />
     <Compile Include="GrupoBLL.cs" />
-    <Compile Include="ListaDeTarefasBLL.cs" />
+    <Compile Include="ListaBLL.cs" />
     <Compile Include="PermissoesBLL.cs" />
     <Compile Include="TarefaBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
