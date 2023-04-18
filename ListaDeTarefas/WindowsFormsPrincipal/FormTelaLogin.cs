@@ -10,21 +10,16 @@ using System.Windows.Forms;
 
 namespace WindowsFormsPrincipal
 {
-    public partial class FormTelaPrincipal : Form
+    public partial class FormTelaLogin : Form
     {
-        public FormTelaPrincipal()
+        public FormTelaLogin()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonFechar_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void FormTelaPrincipal_Load(object sender, EventArgs e)
-        {
-
+            Close();
         }
     }
 }
