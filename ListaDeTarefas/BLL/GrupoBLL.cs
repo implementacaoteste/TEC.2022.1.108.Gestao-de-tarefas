@@ -10,29 +10,25 @@ namespace BLL
 {
     public class GrupoBLL
     {
-        public  void Inserir()
+        public  void AdicionarGrupo(Grupo _grupo)
         {
-            
+            new GrupoDAL().AdicionarGrupo(_grupo); 
         }
-        public void Alterar()
+        public void AlterarGrupo(string _titulo, int _idGrupo)
         {
-            
+            new GrupoDAL().AlterarGrupo(_titulo, _idGrupo);
         }
-        public void Buscar()
+        public void ExcluirGrupo(int _idGrupo)
         {
-            new GrupoDAL().Buscar();
+            new GrupoDAL().ExcluirGrupo(_idGrupo);
         }
-        public void BuscarPorTodos()
+        public List<Grupo> BuscarPorTitulo(string _titulo)
         {
-            new GrupoDAL().BuscarPorTodosGrupos();
+            return new GrupoDAL().BuscarPorTitulo(_titulo);
         }
-        public void BuscarPorId()
+        public List<Grupo> BuscarPorTodos(int _idUsuario)
         {
-            
-        }
-        public void Excluir()
-        {
-            
+            return new GrupoDAL().BuscarPorTodosGrupos(_idUsuario);
         }
     }
 }
