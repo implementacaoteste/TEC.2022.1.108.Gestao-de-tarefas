@@ -84,6 +84,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\Models.Etapa.datasource" />
     <None Include="Properties\DataSources\Models.Grupo.datasource" />
     <None Include="Properties\DataSources\Models.ListaDeTarefas.datasource" />
     <None Include="Properties\DataSources\Models.ListaDeTarefas_Usuario.datasource" />

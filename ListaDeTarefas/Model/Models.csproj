@@ -45,7 +45,6 @@
     <Compile Include="Grupo.cs" />
     <Compile Include="ListaDeTarefas.cs" />
     <Compile Include="ListaDeTarefas_Usuario.cs" />
-    <Compile Include="ListadeTarefas_UsuarioBLL.cs" />
     <Compile Include="Permissao.cs" />
     <Compile Include="Tarefa.cs" />
     <Compile Include="Usuario.cs" />
