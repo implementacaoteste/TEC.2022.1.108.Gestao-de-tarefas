@@ -26,5 +26,13 @@ namespace WindowsFormsPrincipal
         {
 
         }
+
+        private void buttonArea1_Click(object sender, EventArgs e)
+        {
+            using (FormListaDeTarefas frm = new FormListaDeTarefas())
+            {
+                frm.ShowDialog();
+            }
+        }
     }
 }

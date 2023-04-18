@@ -1,4 +1,5 @@
 ﻿using DAL;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,17 +15,17 @@ namespace BLL
         {
 
         }
-        public void Buscar()
+        public Tarefa BuscarPorIdLsita(int _id)
         {
-            new TarefaDAL().Buscar();
+            return new TarefaDAL().BuscarPorIdLista(_id);
         }
         public void BuscarPorTodos()
         {
             new TarefaDAL().BuscarPorTodasTarefas();
         }
-        public void BuscarPorId()
+        public Tarefa  BuscarPorIdTarefa(int _id)
         {
-
+            return new TarefaDAL().BuscarPorIdTarefa(_id);
         }
         public void Excluir()
         {
