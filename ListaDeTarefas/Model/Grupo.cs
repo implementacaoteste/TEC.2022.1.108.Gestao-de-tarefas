@@ -8,8 +8,8 @@ namespace Models
 {
      public class Grupo
     {
-        public int Id { get; set; }
+        public int IdGrupo { get; set; }
         public string Titulo { get; set; }
-        public List<Usuario> Usuarios { get; set; }
+        public int IdUsuario { get; set; }
     }
 }
