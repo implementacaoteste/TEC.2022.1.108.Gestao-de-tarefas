@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormCadastroDeGrupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastroDeGrupo.Designer.cs">
+      <DependentUpon>FormCadastroDeGrupo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCadastroEtapa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +64,12 @@
     <Compile Include="FormMenuDeTarefas.Designer.cs">
       <DependentUpon>FormMenuDeTarefas.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTelaLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTelaLogin.Designer.cs">
+      <DependentUpon>FormTelaLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTelaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,11 +78,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormCadastroDeGrupo.resx">
+      <DependentUpon>FormCadastroDeGrupo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCadastroEtapa.resx">
       <DependentUpon>FormCadastroEtapa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenuDeTarefas.resx">
       <DependentUpon>FormMenuDeTarefas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTelaLogin.resx">
+      <DependentUpon>FormTelaLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTelaPrincipal.resx">
       <DependentUpon>FormTelaPrincipal.cs</DependentUpon>
@@ -84,6 +102,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\Models.Etapa.datasource" />
     <None Include="Properties\DataSources\Models.Grupo.datasource" />
     <None Include="Properties\DataSources\Models.ListaDeTarefas.datasource" />
     <None Include="Properties\DataSources\Models.ListaDeTarefas_Usuario.datasource" />

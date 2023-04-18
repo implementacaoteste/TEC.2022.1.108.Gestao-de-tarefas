@@ -104,7 +104,7 @@ namespace DAL
                         tarefa = new Tarefa();
                         tarefa.Id = Convert.ToInt32(rd["IdTarefa"]);
                         tarefa.NomeTarefa = rd["NomeTarefa"].ToString();
-                        tarefa.Lista = new ListaDAL().BuscarPorIdLista(tarefa.Id);
+                        tarefa.ListaTarefas = new ListaDAL().BuscarPorIdLista(tarefa.Id);
                         tarefas.Add(tarefa);
                     }
                 }

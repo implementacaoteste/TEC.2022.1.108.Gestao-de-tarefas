@@ -10,6 +10,7 @@ namespace Models
     {
         public int Id { get; set; }
         public string NomeTarefa { get; set; }
-        public List<ListaDeTarefas> Lista { get; set; }
+        public List<ListaDeTarefas> ListaTarefas { get; set; }
+        public List<Etapa> Etapa { get; set; }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    internal class Etapa
+    public class Etapa
     {
         public int Id { get; set; }
         public string NomeEtapa { get; set; }
