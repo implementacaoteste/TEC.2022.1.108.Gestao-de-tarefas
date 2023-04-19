@@ -10,7 +10,7 @@ namespace BLL
 {
    public class ListaBLL
     {
-        public ListaDeTarefas BuscarPorIdLista(int _id)
+        public List<ListaDeTarefas> BuscarPorIdLista(int _id)
         {
             return new ListaDAL().BuscarPorIdLista(_id);
         }
