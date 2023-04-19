@@ -34,9 +34,9 @@ namespace BLL
         {
             
         }
-        public void ExcluirLista()
+        public void ExcluirLista(int _id)
         {
-            
+            new ListaDAL().Excluir(_id);
         }
     }
 }
