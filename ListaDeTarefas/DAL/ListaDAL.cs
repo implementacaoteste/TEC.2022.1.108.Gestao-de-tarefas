@@ -36,5 +36,39 @@ namespace DAL
                 cn.Close();
             }
         }
+        public ListaDeTarefas BuscarPorIdLista(int _id)
+        {
+            ListaDeTarefas lista = new ListaDeTarefas();
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "SELECT IdLista, NomeLista  FROM ListaDeTarefas WHERE IdLista = @IdLista";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@Id", _id);
+
+                cn.Open();
+
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    if (rd.Read())
+                    {
+                        lista = new ListaDeTarefas();
+                        lista.IdLista = Convert.ToInt32(rd["IdLista"]);
+                        lista.NomeLista = rd["Nome"].ToString();
+                    }
+                }
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao buscar um usuário pelo Id da lista", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
     }
 }
