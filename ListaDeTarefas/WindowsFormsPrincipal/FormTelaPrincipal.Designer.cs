@@ -104,6 +104,7 @@
             this.buttonGrupo1.TabIndex = 0;
             this.buttonGrupo1.Text = "Grupo 1";
             this.buttonGrupo1.UseVisualStyleBackColor = true;
+            this.buttonGrupo1.Click += new System.EventHandler(this.buttonGrupo1_Click);
             // 
             // buttonArea1
             // 
@@ -131,6 +132,7 @@
             this.buttonArea2.TabIndex = 3;
             this.buttonArea2.Text = "Area 2";
             this.buttonArea2.UseVisualStyleBackColor = false;
+            this.buttonArea2.Click += new System.EventHandler(this.buttonArea2_Click);
             // 
             // buttonArea3
             // 
@@ -144,6 +146,7 @@
             this.buttonArea3.TabIndex = 3;
             this.buttonArea3.Text = "Area 3";
             this.buttonArea3.UseVisualStyleBackColor = false;
+            this.buttonArea3.Click += new System.EventHandler(this.buttonArea3_Click);
             // 
             // buttonSair
             // 

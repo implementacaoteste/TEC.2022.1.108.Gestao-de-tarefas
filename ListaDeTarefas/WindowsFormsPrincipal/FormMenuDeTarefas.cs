@@ -12,7 +12,7 @@ namespace WindowsFormsPrincipal
 {
     public partial class FormMenuDeTarefas : Form
     {
-        public FormMenuDeTarefas()
+        public FormMenuDeTarefas(int _id)
         {
             InitializeComponent();
         }
@@ -23,6 +23,11 @@ namespace WindowsFormsPrincipal
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormMenuDeTarefas_Load(object sender, EventArgs e)
         {
 
         }

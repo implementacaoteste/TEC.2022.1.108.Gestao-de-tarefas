@@ -12,7 +12,7 @@ namespace WindowsFormsPrincipal
 {
     public partial class FormCadastroDeListaTarefas : Form
     {
-        public FormCadastroDeListaTarefas()
+        public FormCadastroDeListaTarefas(int _referencia)
         {
             InitializeComponent();
         }
@@ -20,6 +20,16 @@ namespace WindowsFormsPrincipal
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void FormCadastroDeListaTarefas_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonSair_Click(object sender, EventArgs e)
+        {
+            Close();  
         }
     }
 }

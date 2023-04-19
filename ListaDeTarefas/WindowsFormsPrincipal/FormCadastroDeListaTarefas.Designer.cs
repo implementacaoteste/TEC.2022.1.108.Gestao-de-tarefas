@@ -32,10 +32,10 @@
             System.Windows.Forms.Label nomeListaLabel;
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.listaDeTarefasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nomeListaTextBox = new System.Windows.Forms.TextBox();
             this.buttonArea1 = new System.Windows.Forms.Button();
             this.buttonSair = new System.Windows.Forms.Button();
+            this.listaDeTarefasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             nomeListaLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaDeTarefasBindingSource)).BeginInit();
@@ -62,10 +62,6 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Lista de tarefas";
             this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // listaDeTarefasBindingSource
-            // 
-            this.listaDeTarefasBindingSource.DataSource = typeof(Models.ListaDeTarefas);
             // 
             // nomeListaLabel
             // 
@@ -111,6 +107,11 @@
             this.buttonSair.TabIndex = 14;
             this.buttonSair.Text = "Sair";
             this.buttonSair.UseVisualStyleBackColor = false;
+            this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
+            // 
+            // listaDeTarefasBindingSource
+            // 
+            this.listaDeTarefasBindingSource.DataSource = typeof(Models.ListaDeTarefas);
             // 
             // FormCadastroDeListaTarefas
             // 
@@ -130,6 +131,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro Lista Tarefas";
+            this.Load += new System.EventHandler(this.FormCadastroDeListaTarefas_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaDeTarefasBindingSource)).EndInit();
