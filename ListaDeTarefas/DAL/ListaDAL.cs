@@ -36,9 +36,10 @@ namespace DAL
                 cn.Close();
             }
         }
-        public ListaDeTarefas BuscarPorIdLista(int _id)
+        public List<ListaDeTarefas> BuscarPorIdLista(int _id)
         {
-            ListaDeTarefas lista = new ListaDeTarefas();
+            List<ListaDeTarefas> listas = new List<ListaDeTarefas>();
+            ListaDeTarefas lista;
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
@@ -57,9 +58,10 @@ namespace DAL
                         lista = new ListaDeTarefas();
                         lista.IdLista = Convert.ToInt32(rd["IdLista"]);
                         lista.NomeLista = rd["Nome"].ToString();
+                       
                     }
                 }
-                return lista;
+                return listas;
             }
             catch (Exception ex)
             {
