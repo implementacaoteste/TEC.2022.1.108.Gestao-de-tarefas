@@ -24,7 +24,7 @@ namespace BLL
             throw new NotImplementedException();
             //return new UsuarioDAL().BuscarPorTodos();
         }
-        public Usuario BuscarPorId(int _id)
+        public Usuario BuscarPorIdEtapa(int _id)
         {
             return new UsuarioDAL().BuscarPorId(_id);
         }

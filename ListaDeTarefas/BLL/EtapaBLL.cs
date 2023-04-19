@@ -10,26 +10,27 @@ namespace BLL
 {
     public class EtapaBLL
     {
-        public void BuscarPorIdEtapa()
+        public List<Etapa> BuscarPorIdEtapa(int IdEtapa)
         {
-
+            return new EtapaDAL().BuscarPorIdEtapa(IdEtapa);
         }
-        public void BuscarPorIdUsuario()
+        public List<Etapa> BuscarPorIdTarefa(int IdTarefa)
         {
-
+            return new EtapaDAL().BuscarPorIdTarefa(IdTarefa);
         }
-        public void BuscarPorIdTarefa()
+        public List<Etapa> BuscarPorIdUsuario(int IdUsuario)
         {
-
+            return new EtapaDAL().BuscarPorIdUsuario(IdUsuario);
         }
-        public void BuscarPorTodasEtapas()
+        public void BuscarPorTodasEtapas(Etapa etapa)
         {
-
+            EtapaDAL etapaDAL = new EtapaDAL();
+            etapaDAL.BuscarPorTodasEtapas(etapa);
         }
         public void BuscarPorNomeEtapa(Etapa etapa)
         {
             EtapaDAL etapaDAL = new EtapaDAL();
-            etapaDAL.AdicionarEtapa(etapa);
+            etapaDAL.BuscarPorNomeEtapa(etapa);
         }
         public void AdicionarEtapa(Etapa etapa)
         {
