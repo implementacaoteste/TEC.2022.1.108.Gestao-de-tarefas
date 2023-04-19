@@ -64,11 +64,6 @@ namespace WindowsFormsPrincipal
             }
         }
 
-        private void buttonGrupo1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonArea1_Click(object sender, EventArgs e)
         {
             if(Area1 == 0)
