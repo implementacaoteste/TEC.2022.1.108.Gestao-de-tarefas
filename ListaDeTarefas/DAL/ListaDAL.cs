@@ -47,7 +47,7 @@ namespace DAL
                 cmd.Connection = cn;
                 cmd.CommandText = "SELECT IdLista, NomeLista  FROM ListaDeTarefas WHERE IdLista = @IdLista";
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@Id", _id);
+                cmd.Parameters.AddWithValue("@IdLista", _id);
 
                 cn.Open();
 
