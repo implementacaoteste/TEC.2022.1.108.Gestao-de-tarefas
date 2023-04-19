@@ -52,6 +52,12 @@
     <Compile Include="FormCadastroDeGrupo.Designer.cs">
       <DependentUpon>FormCadastroDeGrupo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCadastroDeListaTarefas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastroDeListaTarefas.Designer.cs">
+      <DependentUpon>FormCadastroDeListaTarefas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCadastroEtapa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormCadastroDeGrupo.resx">
       <DependentUpon>FormCadastroDeGrupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadastroDeListaTarefas.resx">
+      <DependentUpon>FormCadastroDeListaTarefas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCadastroEtapa.resx">
       <DependentUpon>FormCadastroEtapa.cs</DependentUpon>

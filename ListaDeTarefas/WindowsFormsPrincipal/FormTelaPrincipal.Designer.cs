@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonGrupo3 = new System.Windows.Forms.Button();
             this.buttonGrupo2 = new System.Windows.Forms.Button();
             this.buttonGrupo1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.buttonArea1 = new System.Windows.Forms.Button();
             this.buttonArea2 = new System.Windows.Forms.Button();
             this.buttonArea3 = new System.Windows.Forms.Button();
@@ -50,6 +50,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(999, 100);
             this.panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.label1.ForeColor = System.Drawing.SystemColors.Window;
+            this.label1.Location = new System.Drawing.Point(354, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(291, 46);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Lista de tarefas";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // panel2
             // 
@@ -92,18 +104,6 @@
             this.buttonGrupo1.TabIndex = 0;
             this.buttonGrupo1.Text = "Grupo 1";
             this.buttonGrupo1.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(354, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(291, 46);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Lista de tarefas";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // buttonArea1
             // 
@@ -157,6 +157,7 @@
             this.buttonSair.TabIndex = 4;
             this.buttonSair.Text = "Sair";
             this.buttonSair.UseVisualStyleBackColor = false;
+            this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
             // 
             // FormTelaPrincipal
             // 
@@ -174,8 +175,7 @@
             this.KeyPreview = true;
             this.MinimizeBox = false;
             this.Name = "FormTelaPrincipal";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = ".";
             this.Load += new System.EventHandler(this.FormTelaPrincipal_Load);
             this.panel1.ResumeLayout(false);

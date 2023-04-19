@@ -29,10 +29,15 @@ namespace WindowsFormsPrincipal
 
         private void buttonArea1_Click(object sender, EventArgs e)
         {
-            using (FormListaDeTarefas frm = new FormListaDeTarefas())
-            {
-                frm.ShowDialog();
-            }
+            //using (FormListaDeTarefas frm = new FormListaDeTarefas())
+            //{
+            //    frm.ShowDialog();
+            //}
+        }
+
+        private void buttonSair_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
