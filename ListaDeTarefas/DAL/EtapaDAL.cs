@@ -89,9 +89,27 @@ namespace DAL
         {
 
         }
-        public void BuscarPorNomeEtapa()
+        public void BuscarPorNomeEtapa(Etapa _etapa)
         {
-
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = cn.CreateCommand();
+                cmd.CommandText = @"SELECT IdEtapa,NomeEtapa FROM Etapa WHERE NomeEtapa LIKE @NomeEtapa";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@NomeEtapa", "%" + _etapa + "%");
+                cmd.Connection = cn;
+                cmd.ExecuteNonQuery();
+                cn.Open();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar Buscar uma etapa por nome no banco de dados", ex);
+            }
+            finally 
+            { 
+                cn.Close(); 
+            }
         }
         public void AlterarEtapa(Etapa _etapa)
         {
@@ -101,7 +119,7 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
                 cmd.CommandText = @"UPDATE INTO Etapa(IdEtapa,NomeEtapa) Values(@IdEtapa,@NomeTarefa)";
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@Id", _etapa.Id);
+                cmd.Parameters.AddWithValue("@IdEtapa", _etapa.Id);
                 cmd.Parameters.AddWithValue("@NomeEtapa",_etapa.NomeEtapa);
                 cmd.Connection = cn;
                 cmd.ExecuteNonQuery();
