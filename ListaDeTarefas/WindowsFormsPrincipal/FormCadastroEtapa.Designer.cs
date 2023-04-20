@@ -107,7 +107,7 @@
             this.buttonSalvarEtapa.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.buttonSalvarEtapa.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonSalvarEtapa.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonSalvarEtapa.Location = new System.Drawing.Point(213, 285);
+            this.buttonSalvarEtapa.Location = new System.Drawing.Point(213, 294);
             this.buttonSalvarEtapa.Name = "buttonSalvarEtapa";
             this.buttonSalvarEtapa.Size = new System.Drawing.Size(111, 33);
             this.buttonSalvarEtapa.TabIndex = 5;
@@ -120,7 +120,7 @@
             this.buttonCancelarEtapa.BackColor = System.Drawing.Color.Red;
             this.buttonCancelarEtapa.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonCancelarEtapa.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonCancelarEtapa.Location = new System.Drawing.Point(385, 285);
+            this.buttonCancelarEtapa.Location = new System.Drawing.Point(385, 294);
             this.buttonCancelarEtapa.Name = "buttonCancelarEtapa";
             this.buttonCancelarEtapa.Size = new System.Drawing.Size(111, 33);
             this.buttonCancelarEtapa.TabIndex = 5;
