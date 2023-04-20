@@ -206,7 +206,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                throw new Exception($"Ocorreu um erro ao alterar um usuário no banco de dados", ex);
+                throw new Exception("Ocorreu um erro ao alterar um usuário no banco de dados", ex);
             }
             finally
             {

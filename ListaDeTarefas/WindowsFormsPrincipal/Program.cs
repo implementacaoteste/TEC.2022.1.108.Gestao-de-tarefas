@@ -17,7 +17,7 @@ namespace WindowsFormsPrincipal
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormTelaPrincipal());
+            //Application.Run(new FormTelaPrincipal());
 
             //Application.Run(new FormTelaPrincipal());
             //Usuario usuario = new Usuario();
@@ -37,11 +37,13 @@ namespace WindowsFormsPrincipal
             //new GrupoBLL().ExcluirGrupo(1);
             //new GrupoBLL().BuscarPorTodos(3);
 
-            //ListaDeTarefas lista = new ListaDeTarefas();
+            //Lista lista = new Lista();
             //lista.NomeLista = "teste";
             //lista.IdGrupo = 2;
             //new ListaBLL().AdicionarLista(lista);
-            
+
+            //new ListaBLL().ExcluirLista(1);
+            //new ListaBLL().AlterarLista(2, "teste2");
         }
     }
 }

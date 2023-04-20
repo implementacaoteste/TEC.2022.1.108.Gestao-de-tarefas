@@ -84,7 +84,7 @@
             // 
             // listaDeTarefasBindingSource
             // 
-            this.listaDeTarefasBindingSource.DataSource = typeof(Models.ListaDeTarefas);
+            this.listaDeTarefasBindingSource.DataSource = typeof(Models.Lista);
             // 
             // buttonArea1
             // 

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public class ListaDeTarefas
+    public class Lista
     {
         public int IdLista { get; set; }
         public string NomeLista { get; set; }

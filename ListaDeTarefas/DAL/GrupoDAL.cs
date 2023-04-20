@@ -153,41 +153,5 @@ namespace DAL
                 cn.Close();
             }
         }
-        public List<Grupo> BuscarPorId(int _id)
-        {
-            List<Grupo> grupos = new List<Grupo> ();
-            Grupo grupo;
-            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = cn;
-                cmd.CommandText = "SELECT IdGrupo, Titulo  FROM Grupo WHERE IdGrupo = @IdGrupo";
-                cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@IdGrupo", _id);
-
-                cn.Open();
-
-                using (SqlDataReader rd = cmd.ExecuteReader())
-                {
-                    if (rd.Read())
-                    {
-                        grupo  = new Grupo();
-                        grupo.IdGrupo = Convert.ToInt32(rd["IdLista"]);
-                        grupo.Titulo = rd["Nome"].ToString();
-
-                    }
-                }
-                return grupos;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Ocorreu um erro ao buscar um usuário pelo Id ", ex);
-            }
-            finally
-            {
-                cn.Close();
-            }
-        }
     }
 }
