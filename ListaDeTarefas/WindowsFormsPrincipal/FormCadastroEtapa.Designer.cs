@@ -58,11 +58,12 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(12, 9);
+            this.label3.Location = new System.Drawing.Point(216, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(277, 54);
+            this.label3.Size = new System.Drawing.Size(150, 54);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Nova Etapa";
+            this.label3.Text = "Etapa";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // panel2
             // 
@@ -103,22 +104,28 @@
             // 
             // buttonSalvarEtapa
             // 
-            this.buttonSalvarEtapa.Location = new System.Drawing.Point(267, 295);
+            this.buttonSalvarEtapa.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.buttonSalvarEtapa.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonSalvarEtapa.ForeColor = System.Drawing.SystemColors.Window;
+            this.buttonSalvarEtapa.Location = new System.Drawing.Point(213, 285);
             this.buttonSalvarEtapa.Name = "buttonSalvarEtapa";
-            this.buttonSalvarEtapa.Size = new System.Drawing.Size(75, 23);
+            this.buttonSalvarEtapa.Size = new System.Drawing.Size(111, 33);
             this.buttonSalvarEtapa.TabIndex = 5;
             this.buttonSalvarEtapa.Text = "Salvar";
-            this.buttonSalvarEtapa.UseVisualStyleBackColor = true;
+            this.buttonSalvarEtapa.UseVisualStyleBackColor = false;
             this.buttonSalvarEtapa.Click += new System.EventHandler(this.buttonSalvarEtapa_Click);
             // 
             // buttonCancelarEtapa
             // 
-            this.buttonCancelarEtapa.Location = new System.Drawing.Point(348, 295);
+            this.buttonCancelarEtapa.BackColor = System.Drawing.Color.Red;
+            this.buttonCancelarEtapa.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonCancelarEtapa.ForeColor = System.Drawing.SystemColors.Window;
+            this.buttonCancelarEtapa.Location = new System.Drawing.Point(385, 285);
             this.buttonCancelarEtapa.Name = "buttonCancelarEtapa";
-            this.buttonCancelarEtapa.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancelarEtapa.Size = new System.Drawing.Size(111, 33);
             this.buttonCancelarEtapa.TabIndex = 5;
             this.buttonCancelarEtapa.Text = "Cancelar";
-            this.buttonCancelarEtapa.UseVisualStyleBackColor = true;
+            this.buttonCancelarEtapa.UseVisualStyleBackColor = false;
             // 
             // etapaBindingSource
             // 
