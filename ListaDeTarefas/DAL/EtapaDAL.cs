@@ -38,7 +38,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                throw new Exception("Ocorreu um erro ao tentar Buscar Por Id de Usuário no banco de dados", ex);
+                throw new Exception("Ocorreu um erro ao tentar Buscar Por Id de Etapa no banco de dados", ex);
             }
             finally
             {
@@ -190,7 +190,7 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"UPDATE INTO Etapa(IdEtapa,NomeEtapa) Values(@IdEtapa,@NomeTarefa)";
+                cmd.CommandText = @"UPDATE INTO Etapa(IdEtapa,NomeEtapa) Values(@IdEtapa,@NomeEtapa)";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@IdEtapa", _etapa.Id);
                 cmd.Parameters.AddWithValue("@NomeEtapa",_etapa.NomeEtapa);
@@ -210,7 +210,7 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"DELETE FROM Etapa  WHERE IdEtapa = @IdEtapa ";
+                cmd.CommandText = @"DELETE IdEtapa,NomeEtapa FROM Etapa  WHERE IdEtapa = @IdEtapa ";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@IdEtapa", _etapa.Id);
                 cmd.Parameters.AddWithValue("@NomeEtapa", _etapa.NomeEtapa);
