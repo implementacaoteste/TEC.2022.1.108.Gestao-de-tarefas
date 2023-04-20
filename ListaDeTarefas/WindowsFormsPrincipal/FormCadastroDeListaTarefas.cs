@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,6 +32,19 @@ namespace WindowsFormsPrincipal
         private void buttonSair_Click(object sender, EventArgs e)
         {
             Close();  
+        }
+
+        private void buttonArea1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ListaBLL listaBLL = new ListaBLL();
+                listaBLL.AdicionarLista((ListaDeTarefas)listaDeTarefasBindingSource.Current);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Errou ao salvar a lista", ex);
+            }
         }
     }
 }

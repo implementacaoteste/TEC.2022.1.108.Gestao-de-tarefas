@@ -109,6 +109,7 @@
             this.buttonSalvarEtapa.TabIndex = 5;
             this.buttonSalvarEtapa.Text = "Salvar";
             this.buttonSalvarEtapa.UseVisualStyleBackColor = true;
+            this.buttonSalvarEtapa.Click += new System.EventHandler(this.buttonSalvarEtapa_Click);
             // 
             // buttonCancelarEtapa
             // 

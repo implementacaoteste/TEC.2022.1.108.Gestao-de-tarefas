@@ -33,13 +33,23 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.nomeListaTextBox = new System.Windows.Forms.TextBox();
+            this.listaDeTarefasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonArea1 = new System.Windows.Forms.Button();
             this.buttonSair = new System.Windows.Forms.Button();
-            this.listaDeTarefasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             nomeListaLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaDeTarefasBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // nomeListaLabel
+            // 
+            nomeListaLabel.AutoSize = true;
+            nomeListaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            nomeListaLabel.Location = new System.Drawing.Point(53, 210);
+            nomeListaLabel.Name = "nomeListaLabel";
+            nomeListaLabel.Size = new System.Drawing.Size(141, 29);
+            nomeListaLabel.TabIndex = 2;
+            nomeListaLabel.Text = "Nome Lista:";
             // 
             // panel1
             // 
@@ -63,16 +73,6 @@
             this.label3.Text = "Lista de tarefas";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // nomeListaLabel
-            // 
-            nomeListaLabel.AutoSize = true;
-            nomeListaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nomeListaLabel.Location = new System.Drawing.Point(53, 210);
-            nomeListaLabel.Name = "nomeListaLabel";
-            nomeListaLabel.Size = new System.Drawing.Size(141, 29);
-            nomeListaLabel.TabIndex = 2;
-            nomeListaLabel.Text = "Nome Lista:";
-            // 
             // nomeListaTextBox
             // 
             this.nomeListaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaDeTarefasBindingSource, "NomeLista", true));
@@ -81,6 +81,10 @@
             this.nomeListaTextBox.Name = "nomeListaTextBox";
             this.nomeListaTextBox.Size = new System.Drawing.Size(349, 30);
             this.nomeListaTextBox.TabIndex = 3;
+            // 
+            // listaDeTarefasBindingSource
+            // 
+            this.listaDeTarefasBindingSource.DataSource = typeof(Models.ListaDeTarefas);
             // 
             // buttonArea1
             // 
@@ -92,8 +96,9 @@
             this.buttonArea1.Name = "buttonArea1";
             this.buttonArea1.Size = new System.Drawing.Size(225, 42);
             this.buttonArea1.TabIndex = 5;
-            this.buttonArea1.Text = "Criar lista";
+            this.buttonArea1.Text = "Salvar lista";
             this.buttonArea1.UseVisualStyleBackColor = false;
+            this.buttonArea1.Click += new System.EventHandler(this.buttonArea1_Click);
             // 
             // buttonSair
             // 
@@ -108,10 +113,6 @@
             this.buttonSair.Text = "Sair";
             this.buttonSair.UseVisualStyleBackColor = false;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
-            // 
-            // listaDeTarefasBindingSource
-            // 
-            this.listaDeTarefasBindingSource.DataSource = typeof(Models.ListaDeTarefas);
             // 
             // FormCadastroDeListaTarefas
             // 
