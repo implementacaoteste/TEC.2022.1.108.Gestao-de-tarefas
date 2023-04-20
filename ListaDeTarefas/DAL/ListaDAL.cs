@@ -11,7 +11,7 @@ namespace DAL
 {
     public class ListaDAL
     {
-        public void AdicionarLista(ListaDeTarefas _lista)
+        public void AdicionarLista(Lista _lista)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
 
@@ -37,10 +37,9 @@ namespace DAL
                 cn.Close();
             }
         }
-        public List<ListaDeTarefas> BuscarPorIdLista(int _id)
+        public Lista BuscarPorIdLista(int _id)
         {
-            List<ListaDeTarefas> listas = new List<ListaDeTarefas>();
-            ListaDeTarefas lista;
+            Lista lista = new Lista();
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
@@ -56,13 +55,13 @@ namespace DAL
                 {
                     if (rd.Read())
                     {
-                        lista = new ListaDeTarefas();
+                        lista = new Lista();
                         lista.IdLista = Convert.ToInt32(rd["IdLista"]);
-                        lista.NomeLista = rd["Nome"].ToString();
+                        lista.NomeLista = rd["NomeLista"].ToString();
                        
                     }
                 }
-                return listas;
+                return lista;
             }
             catch (Exception ex)
             {
@@ -73,14 +72,14 @@ namespace DAL
                 cn.Close();
             }
         }
-        public void Excluir(int _id)
+        public void ExcluirLista(int _id)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
 
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"DELETE FROM ListaDeTarefas WHERE IdUsuario = @Id";
+                cmd.CommandText = @"DELETE FROM ListaDeTarefas WHERE IdLista = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Id", _id);
@@ -98,5 +97,30 @@ namespace DAL
                 cn.Close();
             }
         }
+        public void AlterarLista(int _id,string _nome)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = cn.CreateCommand();
+                cmd.CommandText = "UPDATE ListaDeTarefas SET NomeLista=@NomeLista WHERE IdLista = @Id";
+
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@NomeLista", _nome);
+                cmd.Parameters.AddWithValue("@Id", _id);
+                cmd.Connection = cn;
+                cn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao alterar uma lista no banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+         
     }
 }

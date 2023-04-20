@@ -10,7 +10,7 @@ namespace BLL
 {
    public class ListaBLL
     {
-        public List<ListaDeTarefas> BuscarPorIdLista(int _id)
+        public Lista BuscarPorIdLista(int _id)
         {
             return new ListaDAL().BuscarPorIdLista(_id);
         }
@@ -22,11 +22,11 @@ namespace BLL
         {
 
         }
-        public void BuscarPorNomeLista()
+        public void AlterarLista(int _id, string _nome)
         {
-
+            new ListaDAL().AlterarLista(_id, _nome);
         }
-        public void AdicionarLista(ListaDeTarefas _lista)
+        public void AdicionarLista(Lista _lista)
         {
             new ListaDAL().AdicionarLista(_lista);
         }
@@ -36,7 +36,7 @@ namespace BLL
         }
         public void ExcluirLista(int _id)
         {
-            new ListaDAL().Excluir(_id);
+            new ListaDAL().ExcluirLista(_id);
         }
     }
 }

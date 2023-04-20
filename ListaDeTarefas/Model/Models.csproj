@@ -43,7 +43,7 @@
   <ItemGroup>
     <Compile Include="Etapa.cs" />
     <Compile Include="Grupo.cs" />
-    <Compile Include="ListaDeTarefas.cs" />
+    <Compile Include="Lista.cs" />
     <Compile Include="ListaDeTarefas_Usuario.cs" />
     <Compile Include="Permissao.cs" />
     <Compile Include="Tarefa.cs" />

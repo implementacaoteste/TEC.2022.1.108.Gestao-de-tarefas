@@ -39,7 +39,7 @@ namespace WindowsFormsPrincipal
             try
             {
                 ListaBLL listaBLL = new ListaBLL();
-                listaBLL.AdicionarLista((ListaDeTarefas)listaDeTarefasBindingSource.Current);
+                listaBLL.AdicionarLista((Lista)listaDeTarefasBindingSource.Current);
             }
             catch (Exception ex)
             {
