@@ -116,7 +116,7 @@
             this.buttonFechar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonFechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFechar.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonFechar.Location = new System.Drawing.Point(375, 7);
+            this.buttonFechar.Location = new System.Drawing.Point(371, 12);
             this.buttonFechar.Name = "buttonFechar";
             this.buttonFechar.Size = new System.Drawing.Size(32, 32);
             this.buttonFechar.TabIndex = 0;
