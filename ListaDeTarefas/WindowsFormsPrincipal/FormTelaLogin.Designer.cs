@@ -32,10 +32,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxLogin = new System.Windows.Forms.TextBox();
             this.textBoxSenha = new System.Windows.Forms.TextBox();
-            this.buttonArea1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.buttonFechar = new System.Windows.Forms.Button();
+            this.buttonLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -76,19 +76,6 @@
             this.textBoxSenha.Size = new System.Drawing.Size(281, 30);
             this.textBoxSenha.TabIndex = 1;
             // 
-            // buttonArea1
-            // 
-            this.buttonArea1.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.buttonArea1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonArea1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.buttonArea1.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonArea1.Location = new System.Drawing.Point(71, 364);
-            this.buttonArea1.Name = "buttonArea1";
-            this.buttonArea1.Size = new System.Drawing.Size(281, 42);
-            this.buttonArea1.TabIndex = 4;
-            this.buttonArea1.Text = "Logar";
-            this.buttonArea1.UseVisualStyleBackColor = false;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -124,16 +111,30 @@
             this.buttonFechar.UseVisualStyleBackColor = false;
             this.buttonFechar.Click += new System.EventHandler(this.buttonFechar_Click);
             // 
+            // buttonLogin
+            // 
+            this.buttonLogin.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.buttonLogin.ForeColor = System.Drawing.SystemColors.Window;
+            this.buttonLogin.Location = new System.Drawing.Point(71, 360);
+            this.buttonLogin.Name = "buttonLogin";
+            this.buttonLogin.Size = new System.Drawing.Size(281, 45);
+            this.buttonLogin.TabIndex = 7;
+            this.buttonLogin.Text = "Logar";
+            this.buttonLogin.UseVisualStyleBackColor = false;
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
+            // 
             // FormTelaLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(415, 525);
+            this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.buttonFechar);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.buttonArea1);
             this.Controls.Add(this.textBoxSenha);
             this.Controls.Add(this.textBoxLogin);
             this.Controls.Add(this.label2);
@@ -144,6 +145,7 @@
             this.Name = "FormTelaLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.FormTelaLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -155,9 +157,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxLogin;
         private System.Windows.Forms.TextBox textBoxSenha;
-        private System.Windows.Forms.Button buttonArea1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Button buttonFechar;
+        private System.Windows.Forms.Button buttonLogin;
     }
 }

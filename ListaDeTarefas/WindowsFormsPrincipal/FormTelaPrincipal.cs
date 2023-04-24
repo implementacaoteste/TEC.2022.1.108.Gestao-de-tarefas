@@ -25,7 +25,19 @@ namespace WindowsFormsPrincipal
 
         private void FormTelaPrincipal_Load(object sender, EventArgs e)
         {
-
+            using (FormTelaLogin frm = new FormTelaLogin())
+            {
+                try
+                {
+                    frm.ShowDialog();
+                    //if (!frm.Logou)
+                      //  Application.Exit();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
 
         private void buttonArea2_Click(object sender, EventArgs e)
