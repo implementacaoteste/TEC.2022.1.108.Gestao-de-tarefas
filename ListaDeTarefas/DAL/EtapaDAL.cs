@@ -202,7 +202,10 @@ namespace DAL
             {
                 throw new Exception("Ocorreu um erro ao tentar alterar uma etapa no banco de dados",ex);
             }
-            finally { cn.Close(); }
+            finally 
+            {
+                cn.Close();
+            }
         }
         public void ExcluirEtapa(Etapa _etapa)
         {
@@ -233,7 +236,7 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"INSERT INTO Etapa(IdEtapa,NomeEtapa) Values(@IdEtapa,@NomeTarefa)";
+                cmd.CommandText = @"INSERT INTO Etapa(IdEtapa,NomeEtapa) Values(@IdEtapa,@NomeEtapa)";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@IdEtapa", _etapa.Id);
                 cmd.Parameters.AddWithValue("@NomeEtapa", _etapa.NomeEtapa);
