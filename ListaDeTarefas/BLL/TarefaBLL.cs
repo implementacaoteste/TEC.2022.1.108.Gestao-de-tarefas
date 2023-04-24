@@ -11,25 +11,21 @@ namespace BLL
 {
     public class TarefaBLL 
     {
-        public void Inserir()
+        public void AdicionarTarefa(string _nome, int _id)
         {
-
+            new TarefaDAL().AdicionarTarefa(_nome,_id);
         }
-        public Tarefa BuscarPorIdLsita(int _id)
-        {
-            return new TarefaDAL().BuscarPorIdLista(_id);
-        }
-        public void BuscarPorTodos()
-        {
-            new TarefaDAL().BuscarPorTodasTarefas();
-        }
-        public Tarefa  BuscarPorIdTarefa(int _id)
+        public Tarefa BuscarPorIdTarefa(int _id)
         {
             return new TarefaDAL().BuscarPorIdTarefa(_id);
         }
-        public void Excluir()
+        public void AlterarTarefa(string _nome, int _id)
         {
-
+            new TarefaDAL().AlterarTarefa(_nome, _id);
+        }
+        public void ExcluirTarefa(int _id)
+        {
+            new TarefaDAL().ExcluirTarefa(_id);
         }
 
     }
