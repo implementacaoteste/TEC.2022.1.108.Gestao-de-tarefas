@@ -78,6 +78,10 @@ namespace WindowsFormsPrincipal
 
         private void buttonGrupo1_Click(object sender, EventArgs e)
         {
+            using (FormCadastroDeGrupo frm = new FormCadastroDeGrupo())
+            {
+                frm.ShowDialog();
+            }
 
         }
 
