@@ -47,40 +47,6 @@ namespace DAL
                 cn.Close();
             }
         }
-        /*public Usuario BuscarPorTodos()
-        {
-            Usuario usuario = new Usuario();
-            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
-            
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome,Email, Senha FROM Usuario";
-                cmd.CommandType = System.Data.CommandType.Text;
-                cn.Open();
-                using (SqlDataReader rd = cmd.ExecuteReader())
-                {
-                    while (rd.Read())
-                    {
-                        usuario = new Usuario();
-                        usuario.Id = Convert.ToInt32(rd["Id"]);
-                        usuario.Nome = rd["Nome"].ToString();
-                        usuario.Email = rd["Email"].ToString();
-                        usuario.Senha = rd["Senha"].ToString();
-                    }
-                }
-                return usuario;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Ocorreu um erro ao tentar buscar todos os usuarios no banco de dados. ", ex);
-            }
-            finally
-            {
-                cn.Close();
-            }
-        }*/
         public List<Usuario> BuscarPorNome(string _nome)
         {
             List<Usuario> usuarios = new List<Usuario>();
@@ -140,7 +106,7 @@ namespace DAL
 
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
-                    while (rd.Read())
+                    if (rd.Read())
                     {
                         usuario = new Usuario();
                         usuario.Id = Convert.ToInt32(rd["IdUsuario"]);

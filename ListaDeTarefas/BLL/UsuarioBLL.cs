@@ -13,16 +13,12 @@ namespace BLL
     {
         public void AdicionarUsuario(Usuario _usuario)
         {
+            new UsuarioBLL().ValidarCadastro(_usuario);
             new UsuarioDAL().AdicionarUsuario(_usuario);
         }
         public List<Usuario> BuscarPorNome(string _nome)
         {
             return new UsuarioDAL().BuscarPorNome(_nome);  
-        }
-        public Usuario BuscarPorTodos()
-        {
-            throw new NotImplementedException();
-            //return new UsuarioDAL().BuscarPorTodos();
         }
         public Usuario BuscarPorIdEtapa(int _id)
         {
@@ -38,7 +34,21 @@ namespace BLL
         }
         public void AlterarUsuario(int _id, Usuario _usuario)
         {
+            new UsuarioBLL().ValidarCadastro(_usuario);
             new UsuarioDAL().AlterarUsuario(_id, _usuario);
+        }
+        public void ValidarCadastro(Usuario _usuario)
+        {
+            Usuario usuario = new UsuarioDAL().BuscarPorEmail(_usuario.Email);
+            if (_usuario.Nome.Length < 3)
+                throw new Exception("O nome deve ter 3 ou mais caracteres!");
+            if (_usuario.Email == usuario.Email)
+                throw new Exception("Já existe uma conta vinculada a esse email!");
+            if (_usuario.Senha.Length < 8)
+                throw new Exception("A senha deve ter 8 ou mais caracteres!");
+        }
+        public void ValidarLogin(string _email)
+        {
         }
     }
 }
