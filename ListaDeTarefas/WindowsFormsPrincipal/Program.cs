@@ -45,10 +45,21 @@ namespace WindowsFormsPrincipal
             //new ListaBLL().ExcluirLista(1);
             //new ListaBLL().AlterarLista(2, "teste2");
 
-            new TarefaBLL().AdicionarTarefa("teste", 2);
+            //new TarefaBLL().AdicionarTarefa("teste", 2);
             //new TarefaBLL().AlterarTarefa("abcd",1);
             //new TarefaBLL().ExcluirTarefa(1);
-            new TarefaBLL().BuscarPorIdTarefa(2);
+            //new TarefaBLL().BuscarPorIdTarefa(2);
+
+            //Etapa etapa = new Etapa();
+            //etapa.IdTarefa = 2 ;
+            //etapa.IdUsuario = 3 ;
+            //etapa.NomeEtapa = "Aço";
+            //new EtapaBLL().AdicionarEtapa(etapa);
+            //new EtapaBLL().AlterarEtapa(etapa);
+            //new EtapaBLL().ExcluirEtapa(5);
+            //new EtapaBLL().BuscarPorNomeEtapa("a");
+            //new EtapaBLL().BuscarPorIdTarefa(2);
+            //new EtapaBLL().BuscarPorIdUsuario(3);
 
         }
     }

@@ -10,16 +10,15 @@ namespace DAL
 {
     public class EtapaDAL
     {
-        public List<Etapa> BuscarPorIdEtapa(int IdEtapa)
+        public Etapa BuscarPorIdEtapa(int IdEtapa)
         {
-            List<Etapa> etapas = new List<Etapa>();
             Etapa etapa = new Etapa();
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT IdEtapa,NomeEtapa FROM Etapa WHERE IdEtapa = @IdEtapa";
+                cmd.CommandText = "SELECT IdEtapa, NomeEtapa, IdUsuario, IdTarefa FROM Etapa WHERE IdEtapa = @IdEtapa";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@IdEtapa", IdEtapa);
                 cmd.ExecuteNonQuery();
@@ -31,40 +30,45 @@ namespace DAL
                         etapa = new Etapa();
                         etapa.Id = Convert.ToInt32(rd["IdEtapa"]);
                         etapa.NomeEtapa = rd["NomeEtapa"].ToString();
-                        etapas.Add(etapa);
+                        etapa.IdTarefa = Convert.ToInt32(rd["IdTarefa"]);
+                        etapa.IdUsuario = Convert.ToInt32(rd["IdUsuario"]);
                     }
                 }
-                return etapas;
+                return etapa;
             }
             catch (Exception ex)
             {
-                throw new Exception("Ocorreu um erro ao tentar Buscar Por Id de Etapa no banco de dados", ex);
+                throw new Exception("Ocorreu um erro ao tentar buscar por id da etapa no banco de dados", ex);
             }
             finally
             {
                 cn.Close();
             }
         }
-        public List<Etapa> BuscarPorIdUsuario(int IdUsuario)
+        public List<Etapa> BuscarPorIdUsuario(int _idUsuario)
         {
-            List<Etapa> etapas = new List<Etapa>();
+
             Etapa etapa = new Etapa();
+            List<Etapa> etapas = new List<Etapa>();
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT IdUsuario,NomeEtapa FROM Etapa WHERE IdUsuario = @IdUsuario";
+                cmd.CommandText = "SELECT IdEtapa, NomeEtapa, IdUsuario, IdTarefa FROM Etapa WHERE IdUsuario = @IdUsuario";
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@IdUsuario",IdUsuario);
-                cmd.ExecuteNonQuery();
+                cmd.Parameters.AddWithValue("@IdUsuario", _idUsuario);
                 cn.Open();
+                cmd.ExecuteNonQuery();
+
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
                     while (rd.Read())
                     {
                         etapa = new Etapa();
-                        etapa.Id = Convert.ToInt32(rd["IdUsuario"]);
+                        etapa.Id = Convert.ToInt32(rd["IdEtapa"]);
+                        etapa.IdTarefa = Convert.ToInt32(rd["IdTarefa"]);
+                        etapa.IdUsuario = Convert.ToInt32(rd["IdUsuario"]);
                         etapa.NomeEtapa = rd["NomeEtapa"].ToString();
                         etapas.Add(etapa);
                     }
@@ -73,35 +77,38 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                throw new Exception("Ocorreu um erro ao tentar Buscar Por Id de Usuário no banco de dados",ex);
+                throw new Exception("Ocorreu um erro ao tentar buscar pelo Id do usuário no banco de dados", ex);
             }
             finally
             {
                 cn.Close();
             }
         }
-        public List<Etapa> BuscarPorIdTarefa(int IdTarefa)
+        public List<Etapa> BuscarPorIdTarefa(int _idTarefa)
         {
-            Etapa _etapa = new Etapa();
+            Etapa etapa = new Etapa();
             List<Etapa> etapas = new List<Etapa>();
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT IdTarefa,NomeEtapa FROM Etapa WHERE IdTarefa = @IdTarefa";
+                cmd.CommandText = "SELECT IdEtapa, NomeEtapa, IdUsuario, IdTarefa FROM Etapa WHERE IdTarefa = @IdTarefa";
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@IdTarefa", IdTarefa);
-                cmd.ExecuteNonQuery();
+                cmd.Parameters.AddWithValue("@IdTarefa", _idTarefa);
                 cn.Open();
+                cmd.ExecuteNonQuery();
+                
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
                     while (rd.Read())
                     {
-                        _etapa = new Etapa();
-                        _etapa.Id = Convert.ToInt32(rd["IdTarefa"]);
-                        _etapa.NomeEtapa = rd["NomeEtapa"].ToString();
-                        etapas.Add(_etapa);
+                        etapa = new Etapa();
+                        etapa.Id = Convert.ToInt32(rd["IdEtapa"]);
+                        etapa.IdTarefa = Convert.ToInt32(rd["IdTarefa"]);
+                        etapa.IdUsuario = Convert.ToInt32(rd["IdUsuario"]);
+                        etapa.NomeEtapa = rd["NomeEtapa"].ToString();
+                        etapas.Add(etapa);
                     }
                 }
                 return etapas;
@@ -115,41 +122,7 @@ namespace DAL
                 cn.Close();
             }
         }
-        public List<Etapa> BuscarPorTodasEtapas(Etapa etapa)
-        {
-            List<Etapa> etapas = new List<Etapa>();
-            Etapa _etapa = new Etapa();
-            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = cn;
-                cmd.CommandText = "SELECT IdEtapa,NomeEtapa FROM Etapa";
-                cmd.CommandType = System.Data.CommandType.Text;
-                cn.Open();
-
-                using (SqlDataReader rd = cmd.ExecuteReader())
-                {
-                    while (rd.Read())
-                    {
-                        _etapa = new Etapa();
-                        _etapa.Id = Convert.ToInt32(rd["IdEtapa"]);
-                        _etapa.NomeEtapa = rd["NomeEtapa"].ToString();
-                        etapas.Add(_etapa);
-                    }
-                }
-                return etapas;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Ocorreu um erro ao tentar buscar todas as Tarefas no banco de dados", ex);
-            }
-            finally
-            {
-                cn.Close();
-            }
-        }
-        public List<Etapa> BuscarPorNomeEtapa(Etapa _etapa)
+        public List<Etapa> BuscarPorNomeEtapa(string _nome)
         {
             List<Etapa> etapas = new List<Etapa>();
             Etapa etapa = new Etapa();
@@ -157,18 +130,20 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"SELECT IdEtapa,NomeEtapa FROM Etapa WHERE NomeEtapa LIKE @NomeEtapa";
+                cmd.CommandText = @"SELECT IdEtapa,NomeEtapa,IdUsuario FROM Etapa WHERE NomeEtapa LIKE @NomeEtapa";
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@NomeEtapa", "%" + _etapa + "%");
+                cmd.Parameters.AddWithValue("@NomeEtapa", "%" + _nome + "%");
                 cmd.Connection = cn;
-                cmd.ExecuteNonQuery();
                 cn.Open();
+                cmd.ExecuteNonQuery();
+                
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
-                    if (rd.Read())
+                    while (rd.Read())
                     {
                         etapa = new Etapa();
                         etapa.Id = Convert.ToInt32(rd["IdEtapa"]);
+                        etapa.IdUsuario = Convert.ToInt32(rd["IdUsuario"]);
                         etapa.NomeEtapa = rd["NomeEtapa"].ToString();
                         etapas.Add(etapa);
                     }
@@ -190,13 +165,13 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"UPDATE INTO Etapa(IdEtapa,NomeEtapa) Values(@IdEtapa,@NomeEtapa)";
+                cmd.CommandText = @"UPDATE Etapa SET NomeEtapa = @NomeEtapa, IdUsuario = @IdUsuario";
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@IdEtapa", _etapa.Id);
+                cmd.Parameters.AddWithValue("@IdUsuario", _etapa.IdUsuario);
                 cmd.Parameters.AddWithValue("@NomeEtapa",_etapa.NomeEtapa);
                 cmd.Connection = cn;
-                cmd.ExecuteNonQuery();
                 cn.Open();
+                cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -207,19 +182,18 @@ namespace DAL
                 cn.Close();
             }
         }
-        public void ExcluirEtapa(Etapa _etapa)
+        public void ExcluirEtapa(int _id)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"DELETE IdEtapa,NomeEtapa FROM Etapa  WHERE IdEtapa = @IdEtapa ";
+                cmd.CommandText = @"DELETE FROM Etapa  WHERE IdEtapa = @IdEtapa ";
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@IdEtapa", _etapa.Id);
-                cmd.Parameters.AddWithValue("@NomeEtapa", _etapa.NomeEtapa);
+                cmd.Parameters.AddWithValue("@IdEtapa", _id);
                 cmd.Connection = cn;
-                cmd.ExecuteNonQuery();
                 cn.Open();
+                cmd.ExecuteNonQuery();               
             }
             catch (Exception ex)
             {
@@ -236,17 +210,19 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"INSERT INTO Etapa(IdEtapa,NomeEtapa) Values(@IdEtapa,@NomeEtapa)";
+                cmd.CommandText = @"INSERT INTO Etapa(IdUsuario, IdTarefa, NomeEtapa) Values(@IdUsuario, @IdTarefa, @NomeEtapa)";
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@IdEtapa", _etapa.Id);
+                cmd.Parameters.AddWithValue("@IdUsuario", _etapa.IdUsuario);
+                cmd.Parameters.AddWithValue("@IdTarefa", _etapa.IdTarefa);
                 cmd.Parameters.AddWithValue("@NomeEtapa", _etapa.NomeEtapa);
                 cmd.Connection = cn;
-                cmd.ExecuteNonQuery();
                 cn.Open();
+                cmd.ExecuteNonQuery();
+                
             }
             catch (Exception ex)
             {
-                throw new Exception("Ocorreu um erro ao tentar Adicionar uma etapa no banco de dados", ex);
+                throw new Exception("Ocorreu um erro ao tentar adicionar uma etapa no banco de dados", ex);
             }
             finally
             {

@@ -10,42 +10,33 @@ namespace BLL
 {
     public class EtapaBLL
     {
-        public List<Etapa> BuscarPorIdEtapa(int IdEtapa)
+        public Etapa BuscarPorIdEtapa(int IdEtapa)
         {
             return new EtapaDAL().BuscarPorIdEtapa(IdEtapa);
-        }
-        public List<Etapa> BuscarPorIdTarefa(int IdTarefa)
-        {
-            return new EtapaDAL().BuscarPorIdTarefa(IdTarefa);
         }
         public List<Etapa> BuscarPorIdUsuario(int IdUsuario)
         {
             return new EtapaDAL().BuscarPorIdUsuario(IdUsuario);
         }
-        public void BuscarPorTodasEtapas(Etapa etapa)
+        public List<Etapa> BuscarPorIdTarefa(int _id)
         {
-            EtapaDAL etapaDAL = new EtapaDAL();
-            etapaDAL.BuscarPorTodasEtapas(etapa);
+            return new EtapaDAL().BuscarPorIdTarefa(_id);
         }
-        public void BuscarPorNomeEtapa(Etapa etapa)
+        public List<Etapa> BuscarPorNomeEtapa(string _nome)
         {
-            EtapaDAL etapaDAL = new EtapaDAL();
-            etapaDAL.BuscarPorNomeEtapa(etapa);
+           return new EtapaDAL().BuscarPorNomeEtapa(_nome);
         }
-        public void AdicionarEtapa(Etapa etapa)
+        public void AdicionarEtapa(Etapa _etapa)
         {
-            EtapaDAL etapaDAL = new EtapaDAL();
-            etapaDAL.AdicionarEtapa(etapa);
+            new EtapaDAL().AdicionarEtapa(_etapa);
         }
-        public void AlterarEtapa(Etapa etapa)
+        public void AlterarEtapa(Etapa _etapa)
         {
-            EtapaDAL etapaDAL = new EtapaDAL();
-            etapaDAL.AlterarEtapa(etapa);
+            new EtapaDAL().AlterarEtapa(_etapa);
         }
-        public void ExcluirEtapa(Etapa etapa)
+        public void ExcluirEtapa(int _id)
         {
-            EtapaDAL etapaDAL = new EtapaDAL();
-            etapaDAL.ExcluirEtapa(etapa);
+            new EtapaDAL().ExcluirEtapa(_id);
         }
     }
 }
