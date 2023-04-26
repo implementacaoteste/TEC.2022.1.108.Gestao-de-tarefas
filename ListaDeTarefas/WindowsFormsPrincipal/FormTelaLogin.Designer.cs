@@ -125,7 +125,6 @@
             this.textBoxSenha.Name = "textBoxSenha";
             this.textBoxSenha.Size = new System.Drawing.Size(281, 30);
             this.textBoxSenha.TabIndex = 1;
-            this.textBoxSenha.UseSystemPasswordChar = true;
             // 
             // FormTelaLogin
             // 
