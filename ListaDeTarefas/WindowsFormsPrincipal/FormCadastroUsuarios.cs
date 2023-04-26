@@ -26,5 +26,10 @@ namespace WindowsFormsPrincipal
         {
             Close();
         }
+
+        private void buttonCadastrar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

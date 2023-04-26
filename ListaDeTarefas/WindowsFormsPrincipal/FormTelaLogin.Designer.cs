@@ -88,6 +88,7 @@
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Criar uma";
             this.linkLabel1.VisitedLinkColor = System.Drawing.Color.MediumSlateBlue;
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // buttonFechar
             // 

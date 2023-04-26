@@ -138,6 +138,7 @@
             this.buttonCadastrar.TabIndex = 8;
             this.buttonCadastrar.Text = "Cadastrar";
             this.buttonCadastrar.UseVisualStyleBackColor = false;
+            this.buttonCadastrar.Click += new System.EventHandler(this.buttonCadastrar_Click);
             // 
             // buttonSair
             // 
@@ -174,6 +175,7 @@
             this.Name = "FormCadastroUsuarios";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FormCadastroUsuarios_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
