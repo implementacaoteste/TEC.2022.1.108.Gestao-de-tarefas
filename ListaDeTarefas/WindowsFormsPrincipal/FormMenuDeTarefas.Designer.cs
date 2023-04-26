@@ -49,10 +49,11 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.buttonConvidarUsuario = new System.Windows.Forms.Button();
-            this.etapaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.etapaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tarefaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonConcluir = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tarefaDataGridView)).BeginInit();
@@ -254,7 +255,7 @@
             this.button2.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.ForeColor = System.Drawing.SystemColors.Window;
-            this.button2.Location = new System.Drawing.Point(885, 251);
+            this.button2.Location = new System.Drawing.Point(801, 251);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 26);
             this.button2.TabIndex = 14;
@@ -266,7 +267,7 @@
             this.button3.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.ForeColor = System.Drawing.SystemColors.Window;
-            this.button3.Location = new System.Drawing.Point(798, 251);
+            this.button3.Location = new System.Drawing.Point(714, 251);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 26);
             this.button3.TabIndex = 15;
@@ -278,7 +279,7 @@
             this.button4.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button4.ForeColor = System.Drawing.SystemColors.Window;
-            this.button4.Location = new System.Drawing.Point(712, 251);
+            this.button4.Location = new System.Drawing.Point(628, 251);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 26);
             this.button4.TabIndex = 16;
@@ -297,11 +298,6 @@
             this.buttonConvidarUsuario.Text = "Convidar Usuários";
             this.buttonConvidarUsuario.UseVisualStyleBackColor = false;
             // 
-            // etapaBindingSource
-            // 
-            this.etapaBindingSource.DataMember = "Etapa";
-            this.etapaBindingSource.DataSource = this.tarefaBindingSource;
-            // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -310,6 +306,11 @@
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // etapaBindingSource
+            // 
+            this.etapaBindingSource.DataMember = "Etapa";
+            this.etapaBindingSource.DataSource = this.tarefaBindingSource;
             // 
             // tarefaBindingSource
             // 
@@ -324,12 +325,25 @@
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
+            // buttonConcluir
+            // 
+            this.buttonConcluir.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.buttonConcluir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonConcluir.ForeColor = System.Drawing.SystemColors.Window;
+            this.buttonConcluir.Location = new System.Drawing.Point(886, 251);
+            this.buttonConcluir.Name = "buttonConcluir";
+            this.buttonConcluir.Size = new System.Drawing.Size(75, 26);
+            this.buttonConcluir.TabIndex = 18;
+            this.buttonConcluir.Text = "Concluir";
+            this.buttonConcluir.UseVisualStyleBackColor = false;
+            // 
             // FormMenuDeTarefas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1057, 683);
+            this.Controls.Add(this.buttonConcluir);
             this.Controls.Add(this.buttonConvidarUsuario);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button3);
@@ -391,5 +405,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button buttonConvidarUsuario;
+        private System.Windows.Forms.Button buttonConcluir;
     }
 }

@@ -32,6 +32,7 @@
             System.Windows.Forms.Label nomeLabel;
             System.Windows.Forms.Label senhaLabel;
             System.Windows.Forms.Label emailLabel;
+            System.Windows.Forms.Label label1;
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -40,9 +41,11 @@
             this.emailTextBox = new System.Windows.Forms.TextBox();
             this.buttonCadastrar = new System.Windows.Forms.Button();
             this.buttonSair = new System.Windows.Forms.Button();
+            this.textBoxConfirmarSenha = new System.Windows.Forms.TextBox();
             nomeLabel = new System.Windows.Forms.Label();
             senhaLabel = new System.Windows.Forms.Label();
             emailLabel = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -93,7 +96,7 @@
             // senhaLabel
             // 
             senhaLabel.AutoSize = true;
-            senhaLabel.Location = new System.Drawing.Point(293, 248);
+            senhaLabel.Location = new System.Drawing.Point(293, 286);
             senhaLabel.Name = "senhaLabel";
             senhaLabel.Size = new System.Drawing.Size(49, 16);
             senhaLabel.TabIndex = 4;
@@ -103,15 +106,16 @@
             // 
             this.senhaTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.senhaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Senha", true));
-            this.senhaTextBox.Location = new System.Drawing.Point(296, 267);
+            this.senhaTextBox.Location = new System.Drawing.Point(296, 305);
             this.senhaTextBox.Name = "senhaTextBox";
             this.senhaTextBox.Size = new System.Drawing.Size(303, 22);
             this.senhaTextBox.TabIndex = 5;
+            this.senhaTextBox.UseSystemPasswordChar = true;
             // 
             // emailLabel
             // 
             emailLabel.AutoSize = true;
-            emailLabel.Location = new System.Drawing.Point(298, 326);
+            emailLabel.Location = new System.Drawing.Point(298, 227);
             emailLabel.Name = "emailLabel";
             emailLabel.Size = new System.Drawing.Size(44, 16);
             emailLabel.TabIndex = 6;
@@ -121,7 +125,7 @@
             // 
             this.emailTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.emailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Email", true));
-            this.emailTextBox.Location = new System.Drawing.Point(296, 345);
+            this.emailTextBox.Location = new System.Drawing.Point(296, 247);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(303, 22);
             this.emailTextBox.TabIndex = 7;
@@ -154,12 +158,33 @@
             this.buttonSair.UseVisualStyleBackColor = false;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(293, 345);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(107, 16);
+            label1.TabIndex = 14;
+            label1.Text = "Confirmar senha:";
+            // 
+            // textBoxConfirmarSenha
+            // 
+            this.textBoxConfirmarSenha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxConfirmarSenha.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Senha", true));
+            this.textBoxConfirmarSenha.Location = new System.Drawing.Point(296, 364);
+            this.textBoxConfirmarSenha.Name = "textBoxConfirmarSenha";
+            this.textBoxConfirmarSenha.Size = new System.Drawing.Size(303, 22);
+            this.textBoxConfirmarSenha.TabIndex = 15;
+            this.textBoxConfirmarSenha.UseSystemPasswordChar = true;
+            // 
             // FormCadastroUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(944, 490);
+            this.Controls.Add(label1);
+            this.Controls.Add(this.textBoxConfirmarSenha);
             this.Controls.Add(this.buttonSair);
             this.Controls.Add(this.buttonCadastrar);
             this.Controls.Add(emailLabel);
@@ -195,5 +220,6 @@
         private System.Windows.Forms.TextBox emailTextBox;
         private System.Windows.Forms.Button buttonCadastrar;
         private System.Windows.Forms.Button buttonSair;
+        private System.Windows.Forms.TextBox textBoxConfirmarSenha;
     }
 }
