@@ -11,16 +11,16 @@ namespace BLL
 {
     public class UsuarioBLL
     {
-        public void AdicionarUsuario(Usuario _usuario)
+        public void AdicionarUsuario(Usuario _usuario,string _confirmarSenha)
         {
-            new UsuarioBLL().ValidarCadastro(_usuario);
+            new UsuarioBLL().ValidarCadastro(_usuario, _confirmarSenha);
             new UsuarioDAL().AdicionarUsuario(_usuario);
         }
         public List<Usuario> BuscarPorNome(string _nome)
         {
             return new UsuarioDAL().BuscarPorNome(_nome);  
         }
-        public Usuario BuscarPorIdEtapa(int _id)
+        public Usuario BuscarPorId(int _id)
         {
             return new UsuarioDAL().BuscarPorId(_id);
         }
@@ -32,14 +32,16 @@ namespace BLL
         {
             new UsuarioDAL().ExcluirUsuario(_id);
         }
-        public void AlterarUsuario(int _id, Usuario _usuario)
+        public void AlterarUsuario(int _id, Usuario _usuario, string _confirmarSenha)
         {
-            new UsuarioBLL().ValidarCadastro(_usuario);
+            new UsuarioBLL().ValidarCadastro(_usuario, _confirmarSenha);
             new UsuarioDAL().AlterarUsuario(_id, _usuario);
         }
-        public void ValidarCadastro(Usuario _usuario)
+        public void ValidarCadastro(Usuario _usuario, string _confirmarSenha)
         {
             Usuario usuario = new UsuarioDAL().BuscarPorEmail(_usuario.Email);
+            if (_usuario.Senha != _confirmarSenha)
+                throw new Exception("A senha digitada não é a mesma da confirmação!");
             if (_usuario.Nome.Length < 3)
                 throw new Exception("O nome deve ter 3 ou mais caracteres!");
             if (_usuario.Email == usuario.Email)

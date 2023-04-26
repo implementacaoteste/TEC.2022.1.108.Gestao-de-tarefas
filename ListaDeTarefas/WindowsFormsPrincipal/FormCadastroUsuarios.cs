@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,7 +31,23 @@ namespace WindowsFormsPrincipal
 
         private void buttonCadastrar_Click(object sender, EventArgs e)
         {
-            Close();
+            
+            Usuario usuario = new Usuario();
+            usuario.Nome = nomeTextBox.Text;
+            usuario.Email = emailTextBox.Text;
+            usuario.Senha = senhaTextBox.Text;
+
+            try
+            {
+                new UsuarioBLL().AdicionarUsuario(usuario, textBoxConfirmarSenha.Text);
+                MessageBox.Show("Cadastro efetuado com sucesso!");
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

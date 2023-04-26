@@ -30,8 +30,8 @@ namespace WindowsFormsPrincipal
                 try
                 {
                     frm.ShowDialog();
-                    //if (!frm.Logou)
-                      //  Application.Exit();
+                    if (!frm.Logou)
+                      Application.Exit();
                 }
                 catch (Exception ex)
                 {

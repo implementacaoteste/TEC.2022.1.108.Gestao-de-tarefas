@@ -30,9 +30,10 @@ namespace BLL
         {
             return new GrupoDAL().BuscarPorTodosGrupos(_idUsuario);
         }
-        //public List<Grupo> BuscarPorId(int _id)
-        //{
-            //return new GrupoDAL().BuscarPorId(_id);
-        //}
+        public List<Grupo> BuscarPorIdUsuario(int _id)
+        {
+            return new GrupoDAL().BuscarPorIdUsuario(_id);
+        }
+
     }
 }
