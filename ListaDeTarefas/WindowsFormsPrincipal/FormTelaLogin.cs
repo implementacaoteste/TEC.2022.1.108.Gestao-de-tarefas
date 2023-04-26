@@ -23,7 +23,7 @@ namespace WindowsFormsPrincipal
 
         private void buttonFechar_Click(object sender, EventArgs e)
         {
-            Close();
+            Application.Exit();
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
