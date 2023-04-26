@@ -38,5 +38,14 @@ namespace BLL
         {
             new EtapaDAL().ExcluirEtapa(_id);
         }
+        public void ValidarDadosEtapa(Etapa _etapa)
+        {
+            if (_etapa.NomeEtapa.Length <= 3)
+                throw new System.Exception("O nome Etapa deve ter mais de 3 caracteres");
+            if (_etapa.IdTarefa <= 0)
+                throw new System.Exception("O Id tarefa nao pode ser 0");
+            if (_etapa.IdUsuario <= 0)
+                throw new System.Exception("O Id Usuário nao pode ser 0");
+        }
     }
 }

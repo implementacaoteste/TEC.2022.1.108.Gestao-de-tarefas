@@ -43,7 +43,7 @@ namespace WindowsFormsPrincipal
             }
             catch (Exception ex)
             {
-                throw new Exception("Errou ao salvar a lista", ex);
+                throw new Exception("Erro ao salvar a lista", ex);
             }
         }
     }
