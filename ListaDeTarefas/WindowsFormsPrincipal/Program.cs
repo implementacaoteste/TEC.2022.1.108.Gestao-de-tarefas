@@ -19,12 +19,12 @@ namespace WindowsFormsPrincipal
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new FormTelaPrincipal());
 
-            //Application.Run(new FormTelaPrincipal());
-            Usuario usuario = new Usuario();
-            usuario.Nome = "Aarão";
-            usuario.Email = "teste@gmail.com";
-            usuario.Senha = "12345678";
-            new UsuarioBLL().AdicionarUsuario(usuario);
+            Application.Run(new FormTelaPrincipal());
+            //Usuario usuario = new Usuario();
+            //usuario.Nome = "Aarão";
+            //usuario.Email = "teste@gmail.com";
+            //usuario.Senha = "12345678";
+            //new UsuarioBLL().AdicionarUsuario(usuario);
             //new UsuarioBLL().AlterarUsuario(2,usuario);
             //new UsuarioBLL().ExcluirUsuario(1);
 

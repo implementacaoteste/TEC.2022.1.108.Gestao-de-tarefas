@@ -14,9 +14,11 @@ namespace WindowsFormsPrincipal
 {
     public partial class FormTelaLogin : Form
     {
+        public bool Logou;
         public FormTelaLogin()
         {
             InitializeComponent();
+            Logou = false;
         }
 
         private void buttonFechar_Click(object sender, EventArgs e)
@@ -28,9 +30,9 @@ namespace WindowsFormsPrincipal
         {
             try
             {
-                //new UsuarioBLL().Autenticar(textBoxLogin.Text, textBoxSenha.Text);
-                //Logou = true;
-                //Close();
+                new UsuarioBLL().ValidarLogin(textBoxLogin.Text, textBoxSenha.Text);
+                Logou = true;
+                Close();
             }
             catch (Exception ex)
             {
@@ -39,6 +41,11 @@ namespace WindowsFormsPrincipal
         }
 
         private void FormTelaLogin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxLogin_TextChanged(object sender, EventArgs e)
         {
 
         }

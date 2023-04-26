@@ -47,8 +47,14 @@ namespace BLL
             if (_usuario.Senha.Length < 8)
                 throw new Exception("A senha deve ter 8 ou mais caracteres!");
         }
-        public void ValidarLogin(string _email)
+        public void ValidarLogin(string _email, string _senha)
         {
+            Usuario usuario = new UsuarioDAL().BuscarPorEmail(_email);
+
+            if (_senha == usuario.Senha)
+                Constantes.IdUsuarioLogado = usuario.Id;
+            else 
+                 throw new Exception("Usuário ou senha inválidos!"); 
         }
     }
 }
