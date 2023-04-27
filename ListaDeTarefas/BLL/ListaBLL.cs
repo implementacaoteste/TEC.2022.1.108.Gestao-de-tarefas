@@ -19,9 +19,9 @@ namespace BLL
         {
             new ListaDAL().BuscarPorIdLista(_lista);
         }
-        public void BuscarPorTodasEtapas(int _lista)
+        public void BuscarPorTodasEtapas(int _id)
         {
-            new ListaDAL().BuscarPorIdLista(_lista);
+            new ListaDAL().AlterarLista(_id);
         }
         public void AlterarLista(int _id, string _nome)
         {
