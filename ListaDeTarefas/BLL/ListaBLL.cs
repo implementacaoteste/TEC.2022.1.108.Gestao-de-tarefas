@@ -3,6 +3,7 @@ using Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,9 +19,9 @@ namespace BLL
         {
             
         }
-        public void BuscarPorTodasEtapas()
+        public void BuscarPorTodasEtapas(int _id)
         {
-
+            new ListaDAL().AlterarLista(_id);
         }
         public void AlterarLista(int _id, string _nome)
         {
