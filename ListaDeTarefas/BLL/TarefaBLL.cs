@@ -27,6 +27,9 @@ namespace BLL
         {
             new TarefaDAL().ExcluirTarefa(_id);
         }
+        public void ValidarTarefa()
+        {
 
+        }
     }
 }

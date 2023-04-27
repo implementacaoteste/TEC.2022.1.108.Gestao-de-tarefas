@@ -72,6 +72,40 @@ namespace DAL
                 cn.Close();
             }
         }
+        public List<Lista> BuscarTodasListas()
+        {
+            List<Lista> listas = new List<Lista>();
+            Lista lista;
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "SELECT IdLista,NomeLista FROM Lista";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cn.Open();
+                cn.Close();
+                cmd.ExecuteNonQuery();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        lista = new Lista();
+                        lista.IdLista = Convert.ToInt32(rd["IdLista"]);
+                        lista.NomeLista = rd["NomeLista"].ToString();
+                    }
+                }
+                return listas;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar todos as Listas no banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
         public void ExcluirLista(int _id)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
