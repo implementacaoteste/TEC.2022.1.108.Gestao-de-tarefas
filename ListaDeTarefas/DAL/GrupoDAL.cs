@@ -35,7 +35,7 @@ namespace DAL
                 cn.Close();
             }
         }
-        public void AlterarGrupo(string _titulo, int _idGrupo)
+        public void AlterarGrupo(Grupo _grupo)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
@@ -43,8 +43,7 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
                 cmd.CommandText = @"UPDATE Grupo SET Titulo=@Titulo WHERE IdGrupo = @IdGrupo ";
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@Titulo", _titulo);
-                cmd.Parameters.AddWithValue("@IdGrupo", _idGrupo);
+                cmd.Parameters.AddWithValue("@Titulo", _grupo);
                 cmd.Connection = cn;
                 cn.Open();
                 cmd.ExecuteNonQuery();
