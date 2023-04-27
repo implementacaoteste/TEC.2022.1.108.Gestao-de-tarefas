@@ -21,7 +21,7 @@ namespace BLL
         }
         public void BuscarPorTodasEtapas(int _id)
         {
-            new ListaDAL().AlterarLista(_id);
+            new ListaDAL().BuscarPorIdLista(_id);
         }
         public void AlterarLista(int _id, string _nome)
         {
@@ -39,5 +39,6 @@ namespace BLL
         {
             new ListaDAL().ExcluirLista(_id);
         }
+
     }
 }
