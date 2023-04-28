@@ -16,10 +16,9 @@ namespace BLL
             GrupoDAL grupoDAL = new GrupoDAL();
             grupoDAL.AdicionarGrupo(_grupo);
         }
-        public void AlterarGrupo(Grupo _grupo)
+        public void AlterarGrupo(string _titulo, int _idGrupo)
         {
-            ValidarDados(_grupo);
-            new GrupoDAL().AlterarGrupo(_grupo);
+            new GrupoDAL().AlterarGrupo(_titulo, _idGrupo);
         }
         public void ExcluirGrupo(int _idGrupo)
         {

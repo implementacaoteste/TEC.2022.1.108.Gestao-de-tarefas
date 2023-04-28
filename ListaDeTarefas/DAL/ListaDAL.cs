@@ -72,34 +72,36 @@ namespace DAL
                 cn.Close();
             }
         }
-        public List<Lista> BuscarTodasListas()
+        public List<Lista> BuscarPorIdGrupo(int _id)
         {
             List<Lista> listas = new List<Lista>();
-            Lista lista;
+            Lista lista = new Lista();
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT IdLista,NomeLista FROM Lista";
+                cmd.CommandText = "SELECT IdLista, NomeLista  FROM ListaDeTarefas WHERE IdGrupo = @IdGrupo";
                 cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@IdGrupo", _id);
+
                 cn.Open();
-                cn.Close();
-                cmd.ExecuteNonQuery();
+
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
-                    while (rd.Read())
+                    if (rd.Read())
                     {
                         lista = new Lista();
                         lista.IdLista = Convert.ToInt32(rd["IdLista"]);
                         lista.NomeLista = rd["NomeLista"].ToString();
+                        listas.Add(lista);
                     }
                 }
                 return listas;
             }
             catch (Exception ex)
             {
-                throw new Exception("Ocorreu um erro ao tentar buscar todos as Listas no banco de dados", ex);
+                throw new Exception("Ocorreu um erro ao buscar uma lista pelo id do grupo", ex);
             }
             finally
             {

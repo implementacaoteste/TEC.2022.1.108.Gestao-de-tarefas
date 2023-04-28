@@ -15,13 +15,9 @@ namespace BLL
         {
             return new ListaDAL().BuscarPorIdLista(_id);
         }
-        public void BuscarPorIdGrupo(int _lista)
+        public void BuscarPorIdGrupo(int _id)
         {
-            new ListaDAL().BuscarPorIdLista(_lista);
-        }
-        public void BuscarPorTodasEtapas(int _id)
-        {
-            new ListaDAL().BuscarPorIdLista(_id);
+            new ListaDAL().BuscarPorIdGrupo(_id);
         }
         public void AlterarLista(int _id, string _nome)
         {
@@ -30,10 +26,6 @@ namespace BLL
         public void AdicionarLista(Lista _lista)
         {
             new ListaDAL().AdicionarLista(_lista);
-        }
-        public void AlterarLista()
-        {
-            
         }
         public void ExcluirLista(int _id)
         {
