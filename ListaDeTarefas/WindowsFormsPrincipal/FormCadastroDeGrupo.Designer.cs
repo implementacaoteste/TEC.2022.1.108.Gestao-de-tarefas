@@ -101,10 +101,6 @@
             this.buttonSair.UseVisualStyleBackColor = false;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
             // 
-            // grupoBindingSource
-            // 
-//            this.grupoBindingSource.DataSource = typeof(Models.Grupo);
-            // 
             // tituloTextBox
             // 
             this.tituloTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
