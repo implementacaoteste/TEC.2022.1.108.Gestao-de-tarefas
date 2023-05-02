@@ -314,7 +314,7 @@
             // 
             // tarefaBindingSource
             // 
-            this.tarefaBindingSource.DataSource = typeof(Models.Tarefa);
+//            this.tarefaBindingSource.DataSource = typeof(Models.Tarefa);
             // 
             // dataGridViewTextBoxColumn2
             // 
