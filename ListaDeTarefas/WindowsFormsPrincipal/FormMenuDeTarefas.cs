@@ -31,5 +31,10 @@ namespace WindowsFormsPrincipal
         {
 
         }
+
+        private void tarefaBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
