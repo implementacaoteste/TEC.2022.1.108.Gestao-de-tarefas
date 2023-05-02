@@ -26,6 +26,9 @@ namespace BLL
         public void AdicionarLista(Lista _lista)
         {
             new ListaDAL().AdicionarLista(_lista);
+            ListaDeTarefas_Usuario lista_usuario = new ListaDeTarefas_Usuario();
+            lista_usuario.IdUsuario = Constantes.IdUsuarioLogado;
+            lista_usuario.IdPermissao = 1;
         }
         public void ExcluirLista(int _id)
         {
