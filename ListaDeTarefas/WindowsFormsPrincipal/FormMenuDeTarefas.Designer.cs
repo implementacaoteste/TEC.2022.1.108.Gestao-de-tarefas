@@ -343,7 +343,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1078, 682);
+            this.ClientSize = new System.Drawing.Size(1055, 682);
             this.Controls.Add(this.etapaDataGridView);
             this.Controls.Add(this.tarefaDataGridView);
             this.Controls.Add(this.buttonConcluir);
