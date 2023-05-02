@@ -75,15 +75,13 @@
             // 
             // nomeListaTextBox
             // 
+            this.nomeListaTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.nomeListaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaDeTarefasBindingSource, "NomeLista", true));
             this.nomeListaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nomeListaTextBox.Location = new System.Drawing.Point(58, 242);
             this.nomeListaTextBox.Name = "nomeListaTextBox";
             this.nomeListaTextBox.Size = new System.Drawing.Size(349, 30);
             this.nomeListaTextBox.TabIndex = 3;
-            // 
-            // listaDeTarefasBindingSource
-            // 
             // 
             // buttonArea1
             // 

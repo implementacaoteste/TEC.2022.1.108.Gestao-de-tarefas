@@ -103,7 +103,7 @@
             // 
             // grupoBindingSource
             // 
-            this.grupoBindingSource.DataSource = typeof(Models.Grupo);
+//            this.grupoBindingSource.DataSource = typeof(Models.Grupo);
             // 
             // tituloTextBox
             // 
