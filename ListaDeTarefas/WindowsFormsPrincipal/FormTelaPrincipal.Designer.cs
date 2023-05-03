@@ -83,6 +83,7 @@
             this.buttonGrupo3.TabIndex = 0;
             this.buttonGrupo3.Text = "Grupo 3";
             this.buttonGrupo3.UseVisualStyleBackColor = true;
+            this.buttonGrupo3.Click += new System.EventHandler(this.buttonGrupo3_Click);
             // 
             // buttonGrupo2
             // 

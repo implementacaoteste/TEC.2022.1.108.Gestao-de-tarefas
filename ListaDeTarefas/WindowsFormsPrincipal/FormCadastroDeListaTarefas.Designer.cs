@@ -32,13 +32,15 @@
             System.Windows.Forms.Label nomeListaLabel;
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.nomeListaTextBox = new System.Windows.Forms.TextBox();
             this.listaDeTarefasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonArea1 = new System.Windows.Forms.Button();
             this.buttonSair = new System.Windows.Forms.Button();
+            this.listaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nomeListaTextBox = new System.Windows.Forms.TextBox();
             nomeListaLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaDeTarefasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // nomeListaLabel
@@ -73,16 +75,6 @@
             this.label3.Text = "Lista de tarefas";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // nomeListaTextBox
-            // 
-            this.nomeListaTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nomeListaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaDeTarefasBindingSource, "NomeLista", true));
-            this.nomeListaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nomeListaTextBox.Location = new System.Drawing.Point(58, 242);
-            this.nomeListaTextBox.Name = "nomeListaTextBox";
-            this.nomeListaTextBox.Size = new System.Drawing.Size(349, 30);
-            this.nomeListaTextBox.TabIndex = 3;
-            // 
             // buttonArea1
             // 
             this.buttonArea1.BackColor = System.Drawing.Color.MediumSlateBlue;
@@ -111,15 +103,30 @@
             this.buttonSair.UseVisualStyleBackColor = false;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
             // 
+            // listaBindingSource
+            // 
+            this.listaBindingSource.DataSource = typeof(Models.Lista);
+            // 
+            // nomeListaTextBox
+            // 
+            this.nomeListaTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nomeListaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaBindingSource, "NomeLista", true));
+            this.nomeListaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nomeListaTextBox.Location = new System.Drawing.Point(58, 272);
+            this.nomeListaTextBox.Name = "nomeListaTextBox";
+            this.nomeListaTextBox.Size = new System.Drawing.Size(349, 30);
+            this.nomeListaTextBox.TabIndex = 15;
+            // 
             // FormCadastroDeListaTarefas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(459, 482);
+            this.Controls.Add(this.nomeListaTextBox);
             this.Controls.Add(this.buttonSair);
             this.Controls.Add(this.buttonArea1);
             this.Controls.Add(nomeListaLabel);
-            this.Controls.Add(this.nomeListaTextBox);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -133,6 +140,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaDeTarefasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,8 +151,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.BindingSource listaDeTarefasBindingSource;
-        private System.Windows.Forms.TextBox nomeListaTextBox;
         private System.Windows.Forms.Button buttonArea1;
         private System.Windows.Forms.Button buttonSair;
+        private System.Windows.Forms.BindingSource listaBindingSource;
+        private System.Windows.Forms.TextBox nomeListaTextBox;
     }
 }

@@ -20,7 +20,10 @@ namespace WindowsFormsPrincipal
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            using (FormCadastroDeGrupo frm = new FormCadastroDeGrupo())
+            {
+                frm.ShowDialog();
+            }
         }
 
         private void FormTelaPrincipal_Load(object sender, EventArgs e)
@@ -84,6 +87,14 @@ namespace WindowsFormsPrincipal
                 frm.ShowDialog();
             }
 
+        }
+
+        private void buttonGrupo3_Click(object sender, EventArgs e)
+        {
+            using (FormCadastroDeGrupo frm = new FormCadastroDeGrupo())
+            {
+                frm.ShowDialog();
+            }
         }
 
         private void buttonArea1_Click(object sender, EventArgs e)
