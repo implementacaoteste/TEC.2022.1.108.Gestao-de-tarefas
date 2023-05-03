@@ -57,9 +57,9 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(85, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(331, 46);
+            this.label3.Size = new System.Drawing.Size(342, 46);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Cadastrar Grupo";
+            this.label3.Text = "Renomear Grupo";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // buttonArea1
