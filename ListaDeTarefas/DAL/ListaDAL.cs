@@ -6,27 +6,38 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
+using System.Collections;
 
 namespace DAL
 {
     public class ListaDAL
     {
-        public void AdicionarLista(Lista _lista)
+        
+        public int AdicionarLista(int _idGrupo,string _titulo)
         {
-            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
-
+            int id = 0;
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);            
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
                 cmd.CommandText = @"INSERT INTO ListaDeTarefas(NomeLista, IdGrupo) 
-                                VALUES (@NomeLista, @IdGrupo)";
+                                VALUES (@NomeLista, @IdGrupo) SELECT SCOPE_IDENTITY()";
 
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@NomeLista", _lista.NomeLista);
-                cmd.Parameters.AddWithValue("@IdGrupo", _lista.IdGrupo);
+                cmd.Parameters.AddWithValue("@NomeLista", _titulo);
+                cmd.Parameters.AddWithValue("@IdGrupo", _idGrupo);
                 cmd.Connection = cn;
                 cn.Open();
                 cmd.ExecuteNonQuery();
+
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    if (rd.Read())
+                    {
+                       id = Convert.ToInt32(rd);
+                    }
+                }
+                return id;
             }
             catch (Exception ex)
             {
