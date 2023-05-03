@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Common;
 using System.Security.Cryptography;
+using System.Text.RegularExpressions;
 
 namespace DAL
 {
@@ -182,6 +183,43 @@ namespace DAL
             catch (Exception ex)
             {
                 throw new Exception("Ocorreu um erro ao tentar buscar um grupo pelo id do usuário  no banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+        public  List<Grupo> buscarGruposArea(int _idUsuario)
+        {
+            List<Grupo> Grupos = new List<Grupo>();
+            Grupo grupo = new Grupo();
+            string Titulo;
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = cn.CreateCommand();
+                cmd.CommandText = @"SELECT G.Titulo FROM Grupo G Inner JOIN Usuario U ON U.IdUsuario = G.IdUsuario and U.IdUsuario = @IdUsuario";
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@IdUsuario", _idUsuario);
+
+                cmd.Connection = cn;
+                cn.Open();
+                cmd.ExecuteNonQuery();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        grupo = new Grupo();
+                        grupo.Titulo = rd["Titulo"].ToString();
+                        Grupos.Add(grupo);
+                    }
+                }
+                return Grupos;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar um grupo no Banco de Dados: ", ex);
             }
             finally
             {

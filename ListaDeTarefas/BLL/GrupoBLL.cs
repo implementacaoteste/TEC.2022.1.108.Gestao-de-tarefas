@@ -40,6 +40,9 @@ namespace BLL
         { if(_grupo.Titulo.Length <= 3)
             throw new System.Exception("O nome do grupo deve ter mais de 3 caracteres");
         }
-
+        public List<Grupo> buscarGruposArea(int _idUsuario)
+        {
+            return new GrupoDAL().buscarGruposArea(_idUsuario);
+        }
     }
 }

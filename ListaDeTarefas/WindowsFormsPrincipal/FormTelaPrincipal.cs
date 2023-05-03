@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -41,7 +43,12 @@ namespace WindowsFormsPrincipal
                     MessageBox.Show(ex.Message);
                 }
             }
+            
+            List<Grupo> grupos = new GrupoBLL().buscarGruposArea(1);
 
+            buttonGrupo1.Text = grupos[0].Titulo;
+            buttonGrupo2.Text = grupos[1].Titulo;
+            buttonGrupo3.Text = grupos[2].Titulo;
         }
 
         private void buttonArea2_Click(object sender, EventArgs e)
