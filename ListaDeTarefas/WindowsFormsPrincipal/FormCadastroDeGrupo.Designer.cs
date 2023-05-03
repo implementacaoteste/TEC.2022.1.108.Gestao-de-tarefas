@@ -35,7 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.buttonSair = new System.Windows.Forms.Button();
             this.grupoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tituloTextBox = new System.Windows.Forms.TextBox();
+            this.textBoxtitulo = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grupoBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -80,7 +80,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(102, 173);
+            this.label1.Location = new System.Drawing.Point(102, 191);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(150, 25);
             this.label1.TabIndex = 6;
@@ -101,23 +101,26 @@
             this.buttonSair.UseVisualStyleBackColor = false;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
             // 
-            // tituloTextBox
+            // grupoBindingSource
             // 
-            this.tituloTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tituloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.grupoBindingSource, "Titulo", true));
-            this.tituloTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tituloTextBox.Location = new System.Drawing.Point(107, 216);
-            this.tituloTextBox.Name = "tituloTextBox";
-            this.tituloTextBox.Size = new System.Drawing.Size(281, 30);
-            this.tituloTextBox.TabIndex = 15;
-            this.tituloTextBox.TextChanged += new System.EventHandler(this.tituloTextBox_TextChanged);
+            this.grupoBindingSource.DataSource = typeof(Models.Grupo);
+            // 
+            // textBoxtitulo
+            // 
+            this.textBoxtitulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxtitulo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.grupoBindingSource, "Titulo", true));
+            this.textBoxtitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxtitulo.Location = new System.Drawing.Point(107, 228);
+            this.textBoxtitulo.Name = "textBoxtitulo";
+            this.textBoxtitulo.Size = new System.Drawing.Size(281, 30);
+            this.textBoxtitulo.TabIndex = 15;
             // 
             // FormCadastroDeGrupo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(491, 450);
-            this.Controls.Add(this.tituloTextBox);
+            this.Controls.Add(this.textBoxtitulo);
             this.Controls.Add(this.buttonSair);
             this.Controls.Add(this.buttonArea1);
             this.Controls.Add(this.label1);
@@ -147,6 +150,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonSair;
         private System.Windows.Forms.BindingSource grupoBindingSource;
-        private System.Windows.Forms.TextBox tituloTextBox;
+        private System.Windows.Forms.TextBox textBoxtitulo;
     }
 }
