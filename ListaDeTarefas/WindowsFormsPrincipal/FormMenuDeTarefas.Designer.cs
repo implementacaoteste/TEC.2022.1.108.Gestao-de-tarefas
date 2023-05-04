@@ -215,6 +215,7 @@
             this.buttonSair.TabIndex = 12;
             this.buttonSair.Text = "Sair";
             this.buttonSair.UseVisualStyleBackColor = false;
+            this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click_1);
             // 
             // button2
             // 

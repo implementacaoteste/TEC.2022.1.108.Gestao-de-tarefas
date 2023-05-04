@@ -14,7 +14,7 @@ namespace WindowsFormsPrincipal
 {
     public partial class FormTelaPrincipal : Form
     {
-        int Area1,Area2,Area3;
+        int Area1, Area2, Area3, lista1, lista2, lista3;
         public FormTelaPrincipal()
         {
             InitializeComponent();
@@ -22,10 +22,11 @@ namespace WindowsFormsPrincipal
 
         private void button1_Click(object sender, EventArgs e)
         {
-            using (FormCadastroDeGrupo frm = new FormCadastroDeGrupo())
-            {
-                frm.ShowDialog();
-            }
+            List<Lista> lista = new ListaBLL().buscarTarefasArea(Area2);
+
+            buttonArea1.Text = lista[0].NomeLista;
+            buttonArea2.Text = lista[1].NomeLista;
+            buttonArea3.Text = lista[2].NomeLista;
         }
 
         private void FormTelaPrincipal_Load(object sender, EventArgs e)
@@ -36,89 +37,77 @@ namespace WindowsFormsPrincipal
                 {
                     frm.ShowDialog();
                     if (!frm.Logou)
-                      Application.Exit();
+                        Application.Exit();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
             }
-            
-            List<Grupo> grupos = new GrupoBLL().buscarGruposArea(1);
+
+            List<Grupo> grupos = new GrupoBLL().buscarGruposArea(Constantes.IdUsuarioLogado);
 
             buttonGrupo1.Text = grupos[0].Titulo;
+            Area1 = grupos[0].IdGrupo;
             buttonGrupo2.Text = grupos[1].Titulo;
+            Area2 = grupos[1].IdGrupo;
             buttonGrupo3.Text = grupos[2].Titulo;
+            Area3 = grupos[2].IdGrupo;
+
+            List<Lista> listas = new ListaBLL().buscarTarefasArea(Area1);
+
+            buttonArea1.Text = listas[0].NomeLista;
+            lista1 = listas[0].IdLista;
+            buttonArea2.Text = listas[1].NomeLista;
+            lista2 = listas[1].IdLista;
+            buttonArea3.Text = listas[2].NomeLista;
+            lista3 = listas[2].IdLista;
+        }
+
+        private void FormTelaPrincipal_Load_1(object sender, EventArgs e)
+        {
+
         }
 
         private void buttonArea2_Click(object sender, EventArgs e)
         {
-            if (Area2 == 0)
+            using (FormMenuDeTarefas frm = new FormMenuDeTarefas(Area2))
             {
-                using (FormCadastroDeListaTarefas frm = new FormCadastroDeListaTarefas(0))
-                {
-                    frm.ShowDialog();
-                }
-            }
-            else if (Area2 != 0)
-            {
-                using (FormMenuDeTarefas frm = new FormMenuDeTarefas(Area2))
-                {
-                    frm.ShowDialog();
-                }
+                frm.ShowDialog();
             }
         }
 
         private void buttonArea3_Click(object sender, EventArgs e)
         {
-            if (Area3 == 0)
+            using (FormMenuDeTarefas frm = new FormMenuDeTarefas(Area3))
             {
-                using (FormCadastroDeListaTarefas frm = new FormCadastroDeListaTarefas(0))
-                {
-                    frm.ShowDialog();
-                }
-            }
-            else if (Area3 != 0)
-            {
-                using (FormMenuDeTarefas frm = new FormMenuDeTarefas(Area3))
-                {
-                    frm.ShowDialog();
-                }
+                frm.ShowDialog();
             }
         }
 
         private void buttonGrupo1_Click(object sender, EventArgs e)
         {
-            using (FormCadastroDeGrupo frm = new FormCadastroDeGrupo())
-            {
-                frm.ShowDialog();
-            }
+            List<Lista> lista = new ListaBLL().buscarTarefasArea(Area1);
 
+            buttonArea1.Text = lista[0].NomeLista;
+            buttonArea2.Text = lista[1].NomeLista;
+            buttonArea3.Text = lista[2].NomeLista;
         }
 
         private void buttonGrupo3_Click(object sender, EventArgs e)
         {
-            using (FormCadastroDeGrupo frm = new FormCadastroDeGrupo())
-            {
-                frm.ShowDialog();
-            }
+            List<Lista> lista = new ListaBLL().buscarTarefasArea(Area3);
+
+            buttonArea1.Text = lista[0].NomeLista;
+            buttonArea2.Text = lista[1].NomeLista;
+            buttonArea3.Text = lista[2].NomeLista;
         }
 
         private void buttonArea1_Click(object sender, EventArgs e)
         {
-            if(Area1 == 0)
+            using (FormMenuDeTarefas frm = new FormMenuDeTarefas(lista1))
             {
-                using (FormCadastroDeListaTarefas frm = new FormCadastroDeListaTarefas(0))
-                {
-                    frm.ShowDialog();
-                }
-            }
-            else if(Area1 != 0)
-            {
-                using (FormMenuDeTarefas frm = new FormMenuDeTarefas(Area1))
-                {
-                    frm.ShowDialog();
-                }
+                frm.ShowDialog();
             }
         }
 
@@ -128,3 +117,6 @@ namespace WindowsFormsPrincipal
         }
     }
 }
+    
+
+  

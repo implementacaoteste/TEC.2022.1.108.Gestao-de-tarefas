@@ -193,12 +193,11 @@ namespace DAL
         {
             List<Grupo> Grupos = new List<Grupo>();
             Grupo grupo = new Grupo();
-            string Titulo;
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"SELECT G.Titulo FROM Grupo G Inner JOIN Usuario U ON U.IdUsuario = G.IdUsuario and U.IdUsuario = @IdUsuario";
+                cmd.CommandText = @"SELECT G.Titulo, G.IdGrupo FROM Grupo G Inner JOIN Usuario U ON U.IdUsuario = G.IdUsuario and U.IdUsuario = @IdUsuario";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@IdUsuario", _idUsuario);
@@ -211,6 +210,7 @@ namespace DAL
                     while (rd.Read())
                     {
                         grupo = new Grupo();
+                        grupo.IdGrupo = Convert.ToInt32(rd["IdGrupo"]);
                         grupo.Titulo = rd["Titulo"].ToString();
                         Grupos.Add(grupo);
                     }

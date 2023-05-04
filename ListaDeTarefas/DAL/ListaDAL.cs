@@ -168,6 +168,43 @@ namespace DAL
                 cn.Close();
             }
         }
-         
+        public List<Lista> buscarTarefasArea(int _idUsuario)
+        {
+            List<Lista> Listas = new List<Lista>();
+            Lista lista = new Lista();
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = cn.CreateCommand();
+                cmd.CommandText = @"select L.NomeLista, L.IdLista from ListaDeTarefas L INNER JOIN Grupo G on L.IdGrupo = G.IdGrupo where @IdUsuario = G.IdGrupo";
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@IdUsuario", _idUsuario);
+
+                cmd.Connection = cn;
+                cn.Open();
+                cmd.ExecuteNonQuery();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        lista = new Lista();
+                        lista.IdLista = Convert.ToInt32(rd["IdLista"]);
+                        lista.NomeLista = rd["NomeLista"].ToString();
+                        Listas.Add(lista);
+                    }
+                }
+                return Listas;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar uma lista no Banco de Dados: ", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
     }
 }
