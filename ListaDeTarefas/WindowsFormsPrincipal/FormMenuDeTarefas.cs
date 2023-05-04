@@ -36,5 +36,10 @@ namespace WindowsFormsPrincipal
         {
 
         }
+
+        private void buttonSair_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
