@@ -47,6 +47,7 @@ namespace WindowsFormsPrincipal
 
             List<Grupo> grupos = new GrupoBLL().buscarGruposArea(Constantes.IdUsuarioLogado);
 
+
             buttonGrupo1.Text = grupos[0].Titulo;
             Area1 = grupos[0].IdGrupo;
             buttonGrupo2.Text = grupos[1].Titulo;
