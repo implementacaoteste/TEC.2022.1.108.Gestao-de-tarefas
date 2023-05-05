@@ -107,6 +107,10 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Cadastro de usuário";
             // 
+            // usuarioBindingSource
+            // 
+            this.usuarioBindingSource.DataSource = typeof(Models.Usuario);
+            // 
             // nomeTextBox
             // 
             this.nomeTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
