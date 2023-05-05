@@ -13,16 +13,17 @@ namespace DAL
 {
     public class GrupoDAL
     {
-        public void AdicionarGrupo(Grupo _grupo)
+        public void AdicionarGrupo(int _idUsuario)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"INSERT INTO Grupo(Titulo, IdUsuario) Values(@Titulo, @IdUsuario)";
+                cmd.CommandText = @"INSERT INTO Grupo(Titulo, IdUsuario) Values('Grupo1', @IdUsuario)
+                                    INSERT INTO Grupo(Titulo, IdUsuario) Values('Grupo2', @IdUsuario)
+                                    INSERT INTO Grupo(Titulo, IdUsuario) Values('Grupo3', @IdUsuario)";
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@Titulo", _grupo.Titulo);
-                cmd.Parameters.AddWithValue("@IdUsuario", _grupo.IdUsuario);
+                cmd.Parameters.AddWithValue("@IdUsuario", _idUsuario);
                 cmd.Connection = cn;
                 cn.Open();
                 cmd.ExecuteNonQuery();
