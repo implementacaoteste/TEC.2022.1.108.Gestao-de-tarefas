@@ -10,14 +10,16 @@ namespace BLL
 {
     public class GrupoBLL
     {
-        public  void AdicionarGrupo(int _id)
+        public  void AdicionarGrupo(Grupo _grupo)
         {
+           ValidarDados(_grupo);
             GrupoDAL grupoDAL = new GrupoDAL();
-            grupoDAL.AdicionarGrupo(_id);
+            grupoDAL.AdicionarGrupo(_grupo);
         }
-        public void AlterarGrupo(string _titulo, int _idGrupo)
+        public void AlterarGrupo(Grupo _grupo)
         {
-            new GrupoDAL().AlterarGrupo(_titulo, _idGrupo);
+            ValidarDados(_grupo);
+            new GrupoDAL().AlterarGrupo(_grupo);
         }
         public void ExcluirGrupo(int _idGrupo)
         {
@@ -36,11 +38,9 @@ namespace BLL
             return new GrupoDAL().BuscarPorIdUsuario(_id);
         }
         private void ValidarDados(Grupo _grupo)
-        { 
+        { if(_grupo.Titulo.Length <= 3)
+            throw new System.Exception("O nome do grupo deve ter mais de 3 caracteres");
         }
-        public List<Grupo> buscarGruposArea(int _idUsuario)
-        {
-            return new GrupoDAL().buscarGruposArea(_idUsuario);
-        }
+
     }
 }

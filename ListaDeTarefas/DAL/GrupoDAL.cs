@@ -7,23 +7,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Common;
 using System.Security.Cryptography;
-using System.Text.RegularExpressions;
 
 namespace DAL
 {
     public class GrupoDAL
     {
-        public void AdicionarGrupo(int _idUsuario)
+        public void AdicionarGrupo(Grupo _grupo)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"INSERT INTO Grupo(Titulo, IdUsuario) Values('Grupo1', @IdUsuario)
-                                    INSERT INTO Grupo(Titulo, IdUsuario) Values('Grupo2', @IdUsuario)
-                                    INSERT INTO Grupo(Titulo, IdUsuario) Values('Grupo3', @IdUsuario)";
+                cmd.CommandText = @"INSERT INTO Grupo(Titulo, IdUsuario) Values(@Titulo, @IdUsuario)";
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@IdUsuario", _idUsuario);
+                cmd.Parameters.AddWithValue("@Titulo", _grupo.Titulo);
+                cmd.Parameters.AddWithValue("@IdUsuario", _grupo.IdUsuario);
                 cmd.Connection = cn;
                 cn.Open();
                 cmd.ExecuteNonQuery();
@@ -37,7 +35,7 @@ namespace DAL
                 cn.Close();
             }
         }
-        public void AlterarGrupo(string _titulo, int _idGrupo)
+        public void AlterarGrupo(Grupo _grupo)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
@@ -45,8 +43,7 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
                 cmd.CommandText = @"UPDATE Grupo SET Titulo=@Titulo WHERE IdGrupo = @IdGrupo ";
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@Titulo", _titulo);
-                cmd.Parameters.AddWithValue("@IdGrupo", _idGrupo);
+                cmd.Parameters.AddWithValue("@Titulo", _grupo);
                 cmd.Connection = cn;
                 cn.Open();
                 cmd.ExecuteNonQuery();
@@ -184,43 +181,6 @@ namespace DAL
             catch (Exception ex)
             {
                 throw new Exception("Ocorreu um erro ao tentar buscar um grupo pelo id do usuário  no banco de dados", ex);
-            }
-            finally
-            {
-                cn.Close();
-            }
-        }
-        public  List<Grupo> buscarGruposArea(int _idUsuario)
-        {
-            List<Grupo> Grupos = new List<Grupo>();
-            Grupo grupo = new Grupo();
-            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
-            try
-            {
-                SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"SELECT G.Titulo, G.IdGrupo FROM Grupo G Inner JOIN Usuario U ON U.IdUsuario = G.IdUsuario and U.IdUsuario = @IdUsuario";
-                cmd.CommandType = System.Data.CommandType.Text;
-
-                cmd.Parameters.AddWithValue("@IdUsuario", _idUsuario);
-
-                cmd.Connection = cn;
-                cn.Open();
-                cmd.ExecuteNonQuery();
-                using (SqlDataReader rd = cmd.ExecuteReader())
-                {
-                    while (rd.Read())
-                    {
-                        grupo = new Grupo();
-                        grupo.IdGrupo = Convert.ToInt32(rd["IdGrupo"]);
-                        grupo.Titulo = rd["Titulo"].ToString();
-                        Grupos.Add(grupo);
-                    }
-                }
-                return Grupos;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Ocorreu um erro ao tentar buscar um grupo no Banco de Dados: ", ex);
             }
             finally
             {

@@ -76,11 +76,9 @@
             // 
             // textBoxNomeEtapa
             // 
-            this.textBoxNomeEtapa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxNomeEtapa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxNomeEtapa.Location = new System.Drawing.Point(213, 214);
             this.textBoxNomeEtapa.Name = "textBoxNomeEtapa";
-            this.textBoxNomeEtapa.Size = new System.Drawing.Size(283, 30);
+            this.textBoxNomeEtapa.Size = new System.Drawing.Size(283, 22);
             this.textBoxNomeEtapa.TabIndex = 2;
             // 
             // label1
@@ -129,14 +127,16 @@
             this.buttonCancelarEtapa.Text = "Cancelar";
             this.buttonCancelarEtapa.UseVisualStyleBackColor = false;
             // 
+            // etapaBindingSource
+            // 
+            this.etapaBindingSource.DataSource = typeof(Models.Etapa);
+            // 
             // nomeEtapaTextBox
             // 
-            this.nomeEtapaTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.nomeEtapaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.etapaBindingSource, "NomeEtapa", true));
-            this.nomeEtapaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nomeEtapaTextBox.Location = new System.Drawing.Point(216, 156);
             this.nomeEtapaTextBox.Name = "nomeEtapaTextBox";
-            this.nomeEtapaTextBox.Size = new System.Drawing.Size(280, 30);
+            this.nomeEtapaTextBox.Size = new System.Drawing.Size(280, 22);
             this.nomeEtapaTextBox.TabIndex = 10;
             // 
             // FormCadastroEtapa

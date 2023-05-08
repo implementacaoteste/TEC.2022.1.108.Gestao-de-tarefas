@@ -67,7 +67,7 @@ namespace DAL
                 cn.Close();
             }
         }
-        public Permissao BuscarPorIdPermissao(int _idPermissao)
+        public void BuscarPorIdPermissao(int _idPermissao)
         {
             Permissao permissao = new Permissao();
 
@@ -93,7 +93,7 @@ namespace DAL
 
                     }
 
-                return permissao;
+                return;
             }
             catch (Exception ex)
             {
@@ -164,31 +164,6 @@ namespace DAL
             catch (Exception ex)
             {
                 throw new Exception("Ocorreu um erro ao tentar buscar todos as permissões no banco de dados", ex);
-            }
-            finally
-            {
-                cn.Close();
-            }
-        }
-        public void ExcluirPermissao(int _id)
-        {
-            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
-
-            try
-            {
-                SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"DELETE FROM Permissoes WHERE IdUsuario = @Id";
-                cmd.CommandType = System.Data.CommandType.Text;
-
-                cmd.Parameters.AddWithValue("@Id", _id);
-
-                cmd.Connection = cn;
-                cn.Open();
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Ocorreu um erro ao tentar excluir a permissao no Banco de Dados: ", ex);
             }
             finally
             {

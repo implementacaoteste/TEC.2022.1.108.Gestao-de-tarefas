@@ -31,10 +31,5 @@ namespace WindowsFormsPrincipal
         {
 
         }
-
-        private void buttonCancelarEtapa_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
     }
 }

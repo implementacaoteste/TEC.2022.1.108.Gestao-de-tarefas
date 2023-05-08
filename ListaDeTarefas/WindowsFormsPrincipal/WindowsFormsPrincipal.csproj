@@ -82,12 +82,6 @@
     <Compile Include="FormTelaCodigo.Designer.cs">
       <DependentUpon>FormTelaCodigo.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTelaEntrar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormTelaEntrar.Designer.cs">
-      <DependentUpon>FormTelaEntrar.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormTelaLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,9 +114,6 @@
     <EmbeddedResource Include="FormTelaCodigo.resx">
       <DependentUpon>FormTelaCodigo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTelaEntrar.resx">
-      <DependentUpon>FormTelaEntrar.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormTelaLogin.resx">
       <DependentUpon>FormTelaLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,10 +129,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="Properties\DataSources\Models.Constantes.datasource" />
     <None Include="Properties\DataSources\Models.Etapa.datasource" />
     <None Include="Properties\DataSources\Models.Grupo.datasource" />
-    <None Include="Properties\DataSources\Models.Lista.datasource" />
+    <None Include="Properties\DataSources\Models.ListaDeTarefas.datasource" />
     <None Include="Properties\DataSources\Models.ListaDeTarefas_Usuario.datasource" />
     <None Include="Properties\DataSources\Models.Permissao.datasource" />
     <None Include="Properties\DataSources\Models.Tarefa.datasource" />

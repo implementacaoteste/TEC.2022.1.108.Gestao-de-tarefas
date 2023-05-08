@@ -31,20 +31,5 @@ namespace WindowsFormsPrincipal
         {
 
         }
-
-        private void tarefaBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonSair_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void buttonSair_Click_1(object sender, EventArgs e)
-        {
-            Close();
-        }
     }
 }

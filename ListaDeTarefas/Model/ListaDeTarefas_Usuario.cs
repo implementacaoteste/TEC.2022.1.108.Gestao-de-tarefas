@@ -8,8 +8,5 @@ namespace Models
 {
     public class ListaDeTarefas_Usuario
     {
-        public int IdUsuario { get; set; }
-        public int IdLista { get; set; }
-        public int IdPermissao { get; set; }
     }
 }
