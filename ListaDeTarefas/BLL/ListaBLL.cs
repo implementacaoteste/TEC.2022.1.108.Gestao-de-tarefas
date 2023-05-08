@@ -31,9 +31,9 @@ namespace BLL
         {
             new ListaDAL().AdicionarLista(_lista);
         }
-        public void AlterarLista(int _id)
+        public void AlterarLista()
         {
-            new ListaDAL().AlterarLista(_id);
+            
         }
         public void ExcluirLista(int _id)
         {
