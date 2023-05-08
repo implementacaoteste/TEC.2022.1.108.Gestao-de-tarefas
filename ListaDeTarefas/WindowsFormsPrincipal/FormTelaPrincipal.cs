@@ -54,8 +54,8 @@ namespace WindowsFormsPrincipal
             Area2 = grupos[1].IdGrupo;
             buttonGrupo3.Text = grupos[2].Titulo;
             Area3 = grupos[2].IdGrupo;
-            buttonGrupo4.Text = grupos[3].Titulo;
-            Area4 = grupos[3].IdGrupo;
+            //buttonGrupo4.Text = grupos[3].Titulo;
+            //Area4 = grupos[3].IdGrupo;
 
             List<Lista> listas = new ListaBLL().buscarTarefasArea(Area1);
 
@@ -74,7 +74,7 @@ namespace WindowsFormsPrincipal
 
         private void buttonGrupo4_Click(object sender, EventArgs e)
         {
-            List<Lista> lista = new ListaBLL().buscarTarefasArea(Area1);
+            List<Lista> lista = new ListaBLL().buscarTarefasArea(Area4);
 
             buttonArea1.Text = lista[0].NomeLista;
             buttonArea2.Text = lista[1].NomeLista;
@@ -83,7 +83,7 @@ namespace WindowsFormsPrincipal
 
         private void buttonArea2_Click(object sender, EventArgs e)
         {
-            using (FormMenuDeTarefas frm = new FormMenuDeTarefas(Area2))
+            using (FormMenuDeTarefas frm = new FormMenuDeTarefas(lista2))
             {
                 frm.ShowDialog();
             }
@@ -91,7 +91,7 @@ namespace WindowsFormsPrincipal
 
         private void buttonArea3_Click(object sender, EventArgs e)
         {
-            using (FormMenuDeTarefas frm = new FormMenuDeTarefas(Area3))
+            using (FormMenuDeTarefas frm = new FormMenuDeTarefas(lista3))
             {
                 frm.ShowDialog();
             }

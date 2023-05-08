@@ -202,6 +202,7 @@
             this.buttonBuscar.TabIndex = 10;
             this.buttonBuscar.Text = "Buscar";
             this.buttonBuscar.UseVisualStyleBackColor = false;
+            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
             // 
             // buttonSair
             // 
@@ -280,6 +281,7 @@
             // tarefaBindingSource1
             // 
             this.tarefaBindingSource1.DataSource = typeof(Models.Tarefa);
+            this.tarefaBindingSource1.CurrentChanged += new System.EventHandler(this.tarefaBindingSource1_CurrentChanged);
             // 
             // tarefaDataGridView
             // 
