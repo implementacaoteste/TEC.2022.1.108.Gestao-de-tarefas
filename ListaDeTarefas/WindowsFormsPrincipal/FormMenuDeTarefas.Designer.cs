@@ -42,24 +42,24 @@
             this.buttonAlterar = new System.Windows.Forms.Button();
             this.buttonDeletar = new System.Windows.Forms.Button();
             this.buttonBuscar = new System.Windows.Forms.Button();
-            this.tarefaDataGridView = new System.Windows.Forms.DataGridView();
-            this.etapaDataGridView = new System.Windows.Forms.DataGridView();
             this.buttonSair = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.buttonConvidarUsuario = new System.Windows.Forms.Button();
+            this.buttonConcluir = new System.Windows.Forms.Button();
+            this.tarefaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.tarefaDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.etapaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tarefaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonConcluir = new System.Windows.Forms.Button();
+            this.etapaDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tarefaBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tarefaDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.etapaDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.etapaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tarefaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.etapaDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -203,40 +203,6 @@
             this.buttonBuscar.Text = "Buscar";
             this.buttonBuscar.UseVisualStyleBackColor = false;
             // 
-            // tarefaDataGridView
-            // 
-            this.tarefaDataGridView.AllowUserToAddRows = false;
-            this.tarefaDataGridView.AllowUserToDeleteRows = false;
-            this.tarefaDataGridView.AutoGenerateColumns = false;
-            this.tarefaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tarefaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn2});
-            this.tarefaDataGridView.DataSource = this.tarefaBindingSource;
-            this.tarefaDataGridView.Location = new System.Drawing.Point(272, 283);
-            this.tarefaDataGridView.Name = "tarefaDataGridView";
-            this.tarefaDataGridView.ReadOnly = true;
-            this.tarefaDataGridView.RowHeadersWidth = 51;
-            this.tarefaDataGridView.RowTemplate.Height = 24;
-            this.tarefaDataGridView.Size = new System.Drawing.Size(333, 324);
-            this.tarefaDataGridView.TabIndex = 11;
-            // 
-            // etapaDataGridView
-            // 
-            this.etapaDataGridView.AllowUserToAddRows = false;
-            this.etapaDataGridView.AllowUserToDeleteRows = false;
-            this.etapaDataGridView.AutoGenerateColumns = false;
-            this.etapaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.etapaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn3});
-            this.etapaDataGridView.DataSource = this.etapaBindingSource;
-            this.etapaDataGridView.Location = new System.Drawing.Point(627, 283);
-            this.etapaDataGridView.Name = "etapaDataGridView";
-            this.etapaDataGridView.ReadOnly = true;
-            this.etapaDataGridView.RowHeadersWidth = 51;
-            this.etapaDataGridView.RowTemplate.Height = 24;
-            this.etapaDataGridView.Size = new System.Drawing.Size(333, 324);
-            this.etapaDataGridView.TabIndex = 11;
-            // 
             // buttonSair
             // 
             this.buttonSair.BackColor = System.Drawing.Color.Red;
@@ -249,6 +215,7 @@
             this.buttonSair.TabIndex = 12;
             this.buttonSair.Text = "Sair";
             this.buttonSair.UseVisualStyleBackColor = false;
+            this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click_1);
             // 
             // button2
             // 
@@ -298,33 +265,6 @@
             this.buttonConvidarUsuario.Text = "Convidar Usuários";
             this.buttonConvidarUsuario.UseVisualStyleBackColor = false;
             // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "NomeEtapa";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Etapas";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // etapaBindingSource
-            // 
-            this.etapaBindingSource.DataMember = "Etapa";
-            this.etapaBindingSource.DataSource = this.tarefaBindingSource;
-            // 
-            // tarefaBindingSource
-            // 
-            this.tarefaBindingSource.DataSource = typeof(Models.Tarefa);
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "NomeTarefa";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Tarefas";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
             // buttonConcluir
             // 
             this.buttonConcluir.BackColor = System.Drawing.Color.MediumSlateBlue;
@@ -337,20 +277,82 @@
             this.buttonConcluir.Text = "Concluir";
             this.buttonConcluir.UseVisualStyleBackColor = false;
             // 
+            // tarefaBindingSource1
+            // 
+            this.tarefaBindingSource1.DataSource = typeof(Models.Tarefa);
+            // 
+            // tarefaDataGridView
+            // 
+            this.tarefaDataGridView.AllowUserToAddRows = false;
+            this.tarefaDataGridView.AllowUserToDeleteRows = false;
+            this.tarefaDataGridView.AutoGenerateColumns = false;
+            this.tarefaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tarefaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn3});
+            this.tarefaDataGridView.DataSource = this.tarefaBindingSource1;
+            this.tarefaDataGridView.Location = new System.Drawing.Point(272, 283);
+            this.tarefaDataGridView.Name = "tarefaDataGridView";
+            this.tarefaDataGridView.ReadOnly = true;
+            this.tarefaDataGridView.RowHeadersWidth = 51;
+            this.tarefaDataGridView.RowTemplate.Height = 24;
+            this.tarefaDataGridView.Size = new System.Drawing.Size(333, 346);
+            this.tarefaDataGridView.TabIndex = 18;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "NomeTarefa";
+            this.dataGridViewTextBoxColumn3.HeaderText = "NomeTarefa";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // etapaBindingSource
+            // 
+            this.etapaBindingSource.DataMember = "Etapa";
+            this.etapaBindingSource.DataSource = this.tarefaBindingSource1;
+            // 
+            // etapaDataGridView
+            // 
+            this.etapaDataGridView.AllowUserToAddRows = false;
+            this.etapaDataGridView.AllowUserToDeleteRows = false;
+            this.etapaDataGridView.AllowUserToOrderColumns = true;
+            this.etapaDataGridView.AutoGenerateColumns = false;
+            this.etapaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.etapaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn4});
+            this.etapaDataGridView.DataSource = this.etapaBindingSource;
+            this.etapaDataGridView.Location = new System.Drawing.Point(627, 283);
+            this.etapaDataGridView.Name = "etapaDataGridView";
+            this.etapaDataGridView.ReadOnly = true;
+            this.etapaDataGridView.RowHeadersWidth = 51;
+            this.etapaDataGridView.RowTemplate.Height = 24;
+            this.etapaDataGridView.Size = new System.Drawing.Size(333, 346);
+            this.etapaDataGridView.TabIndex = 18;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "NomeEtapa";
+            this.dataGridViewTextBoxColumn4.HeaderText = "NomeEtapa";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
             // FormMenuDeTarefas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1057, 683);
+            this.ClientSize = new System.Drawing.Size(1055, 682);
+            this.Controls.Add(this.etapaDataGridView);
+            this.Controls.Add(this.tarefaDataGridView);
             this.Controls.Add(this.buttonConcluir);
             this.Controls.Add(this.buttonConvidarUsuario);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.buttonSair);
-            this.Controls.Add(this.etapaDataGridView);
-            this.Controls.Add(this.tarefaDataGridView);
             this.Controls.Add(this.buttonBuscar);
             this.Controls.Add(this.buttonDeletar);
             this.Controls.Add(this.buttonAlterar);
@@ -370,10 +372,10 @@
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tarefaBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tarefaDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.etapaDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.etapaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tarefaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.etapaDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -394,17 +396,18 @@
         private System.Windows.Forms.Button buttonAlterar;
         private System.Windows.Forms.Button buttonDeletar;
         private System.Windows.Forms.Button buttonBuscar;
-        private System.Windows.Forms.BindingSource tarefaBindingSource;
-        private System.Windows.Forms.DataGridView tarefaDataGridView;
-        private System.Windows.Forms.BindingSource etapaBindingSource;
-        private System.Windows.Forms.DataGridView etapaDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.Button buttonSair;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button buttonConvidarUsuario;
         private System.Windows.Forms.Button buttonConcluir;
+        private System.Windows.Forms.BindingSource tarefaBindingSource1;
+        private System.Windows.Forms.DataGridView tarefaDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.BindingSource etapaBindingSource;
+        private System.Windows.Forms.DataGridView etapaDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
 }

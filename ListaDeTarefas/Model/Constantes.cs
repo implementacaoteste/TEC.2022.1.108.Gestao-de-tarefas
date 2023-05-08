@@ -9,5 +9,6 @@ namespace Models
     public class Constantes
     {
         public static int IdUsuarioLogado;
+        public static int IdGrupoAberto;
     }
 }

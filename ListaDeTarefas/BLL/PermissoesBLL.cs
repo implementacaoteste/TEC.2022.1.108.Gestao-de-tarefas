@@ -1,4 +1,5 @@
 ﻿using DAL;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,25 +10,25 @@ namespace BLL
 {
     public class PermissoesBLL
     {
-        public void Inserir()
+        public void Inserir(Permissao _permissao)
         {
-            
-        }
-        public void Buscar()
-        {
-            
+            new PermissaoDAL().Inserir(_permissao);
         }
         public void BuscarPorTodos()
         {
             new PermissaoDAL().BuscarPorTodasPermissoes();
         }
-        public void BuscarPorId()
+        public Permissao BuscarPorId(int _id)
         {
-            
+            return new PermissaoDAL().BuscarPorIdPermissao(_id);
         }
-        public void Excluir()
+        public void ExcluirPermissao(int _id)
         {
-
+            new PermissaoDAL().ExcluirPermissao(_id);
+        }
+        public List<Permissao> BuscarPorDescricao(string _descricao)
+        {
+            return new PermissaoDAL().BuscarPorDescricao(_descricao);
         }
     }
 }

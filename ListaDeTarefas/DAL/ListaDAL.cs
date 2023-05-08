@@ -6,27 +6,38 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
+using System.Collections;
 
 namespace DAL
 {
     public class ListaDAL
     {
-        public void AdicionarLista(Lista _lista)
+        
+        public int AdicionarLista(int _idGrupo,string _titulo)
         {
-            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
-
+            int id = 0;
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);            
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
                 cmd.CommandText = @"INSERT INTO ListaDeTarefas(NomeLista, IdGrupo) 
-                                VALUES (@NomeLista, @IdGrupo)";
+                                VALUES (@NomeLista, @IdGrupo) SELECT SCOPE_IDENTITY()";
 
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@NomeLista", _lista.NomeLista);
-                cmd.Parameters.AddWithValue("@IdGrupo", _lista.IdGrupo);
+                cmd.Parameters.AddWithValue("@NomeLista", _titulo);
+                cmd.Parameters.AddWithValue("@IdGrupo", _idGrupo);
                 cmd.Connection = cn;
                 cn.Open();
                 cmd.ExecuteNonQuery();
+
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    if (rd.Read())
+                    {
+                       id = Convert.ToInt32(rd);
+                    }
+                }
+                return id;
             }
             catch (Exception ex)
             {
@@ -72,34 +83,36 @@ namespace DAL
                 cn.Close();
             }
         }
-        public List<Lista> BuscarTodasListas()
+        public List<Lista> BuscarPorIdGrupo(int _id)
         {
             List<Lista> listas = new List<Lista>();
-            Lista lista;
+            Lista lista = new Lista();
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT IdLista,NomeLista FROM Lista";
+                cmd.CommandText = "SELECT IdLista, NomeLista  FROM ListaDeTarefas WHERE IdGrupo = @IdGrupo";
                 cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@IdGrupo", _id);
+
                 cn.Open();
-                cn.Close();
-                cmd.ExecuteNonQuery();
+
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
-                    while (rd.Read())
+                    if (rd.Read())
                     {
                         lista = new Lista();
                         lista.IdLista = Convert.ToInt32(rd["IdLista"]);
                         lista.NomeLista = rd["NomeLista"].ToString();
+                        listas.Add(lista);
                     }
                 }
                 return listas;
             }
             catch (Exception ex)
             {
-                throw new Exception("Ocorreu um erro ao tentar buscar todos as Listas no banco de dados", ex);
+                throw new Exception("Ocorreu um erro ao buscar uma lista pelo id do grupo", ex);
             }
             finally
             {
@@ -155,6 +168,43 @@ namespace DAL
                 cn.Close();
             }
         }
-         
+        public List<Lista> buscarTarefasArea(int _idUsuario)
+        {
+            List<Lista> Listas = new List<Lista>();
+            Lista lista = new Lista();
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = cn.CreateCommand();
+                cmd.CommandText = @"select L.NomeLista, L.IdLista from ListaDeTarefas L INNER JOIN Grupo G on L.IdGrupo = G.IdGrupo where @IdUsuario = G.IdGrupo";
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@IdUsuario", _idUsuario);
+
+                cmd.Connection = cn;
+                cn.Open();
+                cmd.ExecuteNonQuery();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        lista = new Lista();
+                        lista.IdLista = Convert.ToInt32(rd["IdLista"]);
+                        lista.NomeLista = rd["NomeLista"].ToString();
+                        Listas.Add(lista);
+                    }
+                }
+                return Listas;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar uma lista no Banco de Dados: ", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
     }
 }
