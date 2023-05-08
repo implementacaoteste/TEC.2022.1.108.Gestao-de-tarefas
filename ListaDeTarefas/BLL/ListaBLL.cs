@@ -15,30 +15,29 @@ namespace BLL
         {
             return new ListaDAL().BuscarPorIdLista(_id);
         }
-        public void BuscarPorIdGrupo(int _lista)
+        public void BuscarPorIdGrupo(int _id)
         {
-            new ListaDAL().BuscarPorIdLista(_lista);
-        }
-        public void BuscarPorTodasEtapas(int _id)
-        {
-            new ListaDAL().BuscarPorIdLista(_id);
+            new ListaDAL().BuscarPorIdGrupo(_id);
         }
         public void AlterarLista(int _id, string _nome)
         {
             new ListaDAL().AlterarLista(_id, _nome);
         }
-        public void AdicionarLista(Lista _lista)
+        public void AdicionarLista(string _titulo)
         {
-            new ListaDAL().AdicionarLista(_lista);
-        }
-        public void AlterarLista()
-        {
-            
+            ListaDeTarefas_Usuario lista_usuario = new ListaDeTarefas_Usuario();
+
+            lista_usuario.IdLista = new ListaDAL().AdicionarLista(Constantes.IdGrupoAberto, _titulo);
+            lista_usuario.IdUsuario = Constantes.IdUsuarioLogado;
+            lista_usuario.IdPermissao = 1;
         }
         public void ExcluirLista(int _id)
         {
             new ListaDAL().ExcluirLista(_id);
         }
-
+        public List<Lista> buscarTarefasArea(int _idUsuario)
+        {
+            return new ListaDAL().buscarTarefasArea(_idUsuario);
+        }
     }
 }

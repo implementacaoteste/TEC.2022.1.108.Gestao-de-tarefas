@@ -12,5 +12,6 @@ namespace Models
         public int IdLista { get; set; }
         public string NomeLista { get; set; }
         public int IdGrupo { get; set; }
+        public int Codigo { get; set; } 
     }
 }

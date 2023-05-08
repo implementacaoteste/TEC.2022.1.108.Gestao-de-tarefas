@@ -39,7 +39,6 @@ namespace WindowsFormsPrincipal
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void FormTelaLogin_Load(object sender, EventArgs e)
         {
 
