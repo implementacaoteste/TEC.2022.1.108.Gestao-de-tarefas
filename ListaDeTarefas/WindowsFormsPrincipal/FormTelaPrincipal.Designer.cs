@@ -168,13 +168,13 @@
             // buttonGrupo4
             // 
             this.buttonGrupo4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonGrupo4.Location = new System.Drawing.Point(0, 369);
+            this.buttonGrupo4.Location = new System.Drawing.Point(0, 368);
             this.buttonGrupo4.Name = "buttonGrupo4";
             this.buttonGrupo4.Size = new System.Drawing.Size(136, 35);
-            this.buttonGrupo4.TabIndex = 0;
+            this.buttonGrupo4.TabIndex = 1;
             this.buttonGrupo4.Text = "Grupo 4";
             this.buttonGrupo4.UseVisualStyleBackColor = true;
-            this.buttonGrupo4.Click += new System.EventHandler(this.buttonGrupo3_Click);
+            this.buttonGrupo4.Click += new System.EventHandler(this.buttonGrupo4_Click);
             // 
             // FormTelaPrincipal
             // 

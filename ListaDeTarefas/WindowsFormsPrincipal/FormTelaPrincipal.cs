@@ -72,6 +72,15 @@ namespace WindowsFormsPrincipal
 
         }
 
+        private void buttonGrupo4_Click(object sender, EventArgs e)
+        {
+            List<Lista> lista = new ListaBLL().buscarTarefasArea(Area1);
+
+            buttonArea1.Text = lista[0].NomeLista;
+            buttonArea2.Text = lista[1].NomeLista;
+            buttonArea3.Text = lista[2].NomeLista;
+        }
+
         private void buttonArea2_Click(object sender, EventArgs e)
         {
             using (FormMenuDeTarefas frm = new FormMenuDeTarefas(Area2))
