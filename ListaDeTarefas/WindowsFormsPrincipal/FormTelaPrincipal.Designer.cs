@@ -38,6 +38,7 @@
             this.buttonArea2 = new System.Windows.Forms.Button();
             this.buttonArea3 = new System.Windows.Forms.Button();
             this.buttonSair = new System.Windows.Forms.Button();
+            this.buttonGrupo4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -66,6 +67,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkGray;
+            this.panel2.Controls.Add(this.buttonGrupo4);
             this.panel2.Controls.Add(this.buttonGrupo3);
             this.panel2.Controls.Add(this.buttonGrupo2);
             this.panel2.Controls.Add(this.buttonGrupo1);
@@ -77,7 +79,7 @@
             // buttonGrupo3
             // 
             this.buttonGrupo3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonGrupo3.Location = new System.Drawing.Point(0, 376);
+            this.buttonGrupo3.Location = new System.Drawing.Point(0, 337);
             this.buttonGrupo3.Name = "buttonGrupo3";
             this.buttonGrupo3.Size = new System.Drawing.Size(136, 35);
             this.buttonGrupo3.TabIndex = 0;
@@ -88,7 +90,7 @@
             // buttonGrupo2
             // 
             this.buttonGrupo2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonGrupo2.Location = new System.Drawing.Point(0, 344);
+            this.buttonGrupo2.Location = new System.Drawing.Point(0, 305);
             this.buttonGrupo2.Name = "buttonGrupo2";
             this.buttonGrupo2.Size = new System.Drawing.Size(136, 35);
             this.buttonGrupo2.TabIndex = 0;
@@ -99,7 +101,7 @@
             // buttonGrupo1
             // 
             this.buttonGrupo1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonGrupo1.Location = new System.Drawing.Point(0, 312);
+            this.buttonGrupo1.Location = new System.Drawing.Point(0, 273);
             this.buttonGrupo1.Name = "buttonGrupo1";
             this.buttonGrupo1.Size = new System.Drawing.Size(136, 35);
             this.buttonGrupo1.TabIndex = 0;
@@ -163,6 +165,17 @@
             this.buttonSair.UseVisualStyleBackColor = false;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
             // 
+            // buttonGrupo4
+            // 
+            this.buttonGrupo4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonGrupo4.Location = new System.Drawing.Point(0, 369);
+            this.buttonGrupo4.Name = "buttonGrupo4";
+            this.buttonGrupo4.Size = new System.Drawing.Size(136, 35);
+            this.buttonGrupo4.TabIndex = 0;
+            this.buttonGrupo4.Text = "Grupo 4";
+            this.buttonGrupo4.UseVisualStyleBackColor = true;
+            this.buttonGrupo4.Click += new System.EventHandler(this.buttonGrupo3_Click);
+            // 
             // FormTelaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -201,5 +214,6 @@
         private System.Windows.Forms.Button buttonGrupo2;
         private System.Windows.Forms.Button buttonGrupo1;
         private System.Windows.Forms.Button buttonSair;
+        private System.Windows.Forms.Button buttonGrupo4;
     }
 }

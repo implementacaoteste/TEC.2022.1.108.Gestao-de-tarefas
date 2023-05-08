@@ -14,7 +14,7 @@ namespace WindowsFormsPrincipal
 {
     public partial class FormTelaPrincipal : Form
     {
-        int Area1, Area2, Area3, lista1, lista2, lista3;
+        int Area1, Area2, Area3, Area4, lista1, lista2, lista3;
         public FormTelaPrincipal()
         {
             InitializeComponent();
@@ -54,6 +54,8 @@ namespace WindowsFormsPrincipal
             Area2 = grupos[1].IdGrupo;
             buttonGrupo3.Text = grupos[2].Titulo;
             Area3 = grupos[2].IdGrupo;
+            buttonGrupo4.Text = grupos[3].Titulo;
+            Area4 = grupos[3].IdGrupo;
 
             List<Lista> listas = new ListaBLL().buscarTarefasArea(Area1);
 
