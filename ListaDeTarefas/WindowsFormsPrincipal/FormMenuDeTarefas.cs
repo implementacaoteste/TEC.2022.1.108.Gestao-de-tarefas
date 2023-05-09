@@ -15,6 +15,8 @@ namespace WindowsFormsPrincipal
         public FormMenuDeTarefas(int _id)
         {
             InitializeComponent();
+            
+            tarefaBindingSource1.DataSource = new BLL.TarefaBLL().BuscarPorIdLista(_id);
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -45,6 +47,16 @@ namespace WindowsFormsPrincipal
         private void buttonSair_Click_1(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void buttonBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tarefaBindingSource1_CurrentChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

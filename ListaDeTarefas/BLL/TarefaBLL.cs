@@ -31,5 +31,9 @@ namespace BLL
         {
 
         }
+        public List<Tarefa> BuscarPorIdLista(int _idLista)
+        {
+            return new TarefaDAL().BuscarPorIdLista(_idLista);
+        }
     }
 }

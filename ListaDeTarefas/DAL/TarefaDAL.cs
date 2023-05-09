@@ -115,5 +115,41 @@ namespace DAL
                 cn.Close();
             }
         }
+        public List<Tarefa> BuscarPorIdLista(int _id)
+        {
+            List<Tarefa> tarefas = new List<Tarefa>();
+            Tarefa tarefa = new Tarefa();
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "SELECT IdTarefa, NomeTarefa FROM Tarefa where IdListaDeTarefas = @IdLista";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@IdLista", _id);
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader()) 
+                { 
+                    
+                    while (rd.Read())
+                    {
+                        tarefa = new Tarefa();
+                        tarefa.Id = Convert.ToInt32(rd["IdTarefa"]);
+                        tarefa.NomeTarefa = rd["NomeTarefa"].ToString();
+                        tarefas.Add(tarefa);
+                    }
+                }
+                return tarefas;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar uma tarefa pelo id no banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
     }
 }
