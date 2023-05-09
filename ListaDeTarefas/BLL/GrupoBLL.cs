@@ -11,9 +11,8 @@ namespace BLL
     public class GrupoBLL
     {
         public  void AdicionarGrupo(int _id)
-        {
-            GrupoDAL grupoDAL = new GrupoDAL();
-            grupoDAL.AdicionarGrupo(_id);
+        {         
+            new GrupoDAL().AdicionarGrupo(_id); 
         }
         public void AlterarGrupo(string _titulo, int _idGrupo)
         {
@@ -35,6 +34,7 @@ namespace BLL
         {
             return new GrupoDAL().BuscarPorIdUsuario(_id);
         }
+
         private void ValidarDados(Grupo _grupo)
         { 
         }
@@ -42,5 +42,6 @@ namespace BLL
         {
             return new GrupoDAL().buscarGruposArea(_idUsuario);
         }
+
     }
 }

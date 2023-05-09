@@ -126,8 +126,9 @@ namespace DAL
                 cn.Close();
             }
         }
-        public void AdicionarUsuario(Usuario _usuario)
+        public int AdicionarUsuario(Usuario _usuario)
         {
+            int id = 0;
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
 
             try
@@ -135,7 +136,7 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
                 cmd.CommandText = @"INSERT INTO Usuario(Nome, Email, Senha) 
                                 VALUES (@Nome, @Email, @Senha)
-                                ";
+                                SELECT IdUsuario FROM Usuario WHERE IdUsuario = SCOPE_IDENTITY()";
 
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Nome", _usuario.Nome);
@@ -143,7 +144,16 @@ namespace DAL
                 cmd.Parameters.AddWithValue("@Senha", _usuario.Senha);
                 cmd.Connection = cn;
                 cn.Open();
-                cmd.ExecuteNonQuery();
+
+
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    if (rd.Read())
+                    {
+                        id = Convert.ToInt32(rd["IdUsuario"]);
+                    }
+                }
+                return id;
             }
             catch (Exception ex)
             {
