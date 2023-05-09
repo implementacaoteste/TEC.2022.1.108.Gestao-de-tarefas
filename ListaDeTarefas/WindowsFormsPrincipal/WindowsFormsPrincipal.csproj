@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormCadastrarTarefas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastrarTarefas.Designer.cs">
+      <DependentUpon>FormCadastrarTarefas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCadastroDeGrupo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormCadastrarTarefas.resx">
+      <DependentUpon>FormCadastrarTarefas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCadastroDeGrupo.resx">
       <DependentUpon>FormCadastroDeGrupo.cs</DependentUpon>
     </EmbeddedResource>

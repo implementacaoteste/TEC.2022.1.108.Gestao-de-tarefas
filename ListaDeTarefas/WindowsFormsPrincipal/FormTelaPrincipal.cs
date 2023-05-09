@@ -44,27 +44,33 @@ namespace WindowsFormsPrincipal
                     MessageBox.Show(ex.Message);
                 }
             }
+            try
+            {
+                List<Grupo> grupos = new GrupoBLL().buscarGruposArea(Constantes.IdUsuarioLogado);
 
-            List<Grupo> grupos = new GrupoBLL().buscarGruposArea(Constantes.IdUsuarioLogado);
 
+                buttonGrupo1.Text = grupos[0].Titulo;
+                Area1 = grupos[0].IdGrupo;
+                buttonGrupo2.Text = grupos[1].Titulo;
+                Area2 = grupos[1].IdGrupo;
+                buttonGrupo3.Text = grupos[2].Titulo;
+                Area3 = grupos[2].IdGrupo;
+                //buttonGrupo4.Text = grupos[3].Titulo;
+                //Area4 = grupos[3].IdGrupo;
 
-            buttonGrupo1.Text = grupos[0].Titulo;
-            Area1 = grupos[0].IdGrupo;
-            buttonGrupo2.Text = grupos[1].Titulo;
-            Area2 = grupos[1].IdGrupo;
-            buttonGrupo3.Text = grupos[2].Titulo;
-            Area3 = grupos[2].IdGrupo;
-            //buttonGrupo4.Text = grupos[3].Titulo;
-            //Area4 = grupos[3].IdGrupo;
+                List<Lista> listas = new ListaBLL().buscarTarefasArea(Area1);
 
-            List<Lista> listas = new ListaBLL().buscarTarefasArea(Area1);
+                buttonArea1.Text = listas[0].NomeLista;
+                lista1 = listas[0].IdLista;
+                buttonArea2.Text = listas[1].NomeLista;
+                lista2 = listas[1].IdLista;
+                buttonArea3.Text = listas[2].NomeLista;
+                lista3 = listas[2].IdLista;
+            }
+            catch
+            {
 
-            buttonArea1.Text = listas[0].NomeLista;
-            lista1 = listas[0].IdLista;
-            buttonArea2.Text = listas[1].NomeLista;
-            lista2 = listas[1].IdLista;
-            buttonArea3.Text = listas[2].NomeLista;
-            lista3 = listas[2].IdLista;
+            }
         }
 
         private void FormTelaPrincipal_Load_1(object sender, EventArgs e)

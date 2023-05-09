@@ -31,6 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonGrupo4 = new System.Windows.Forms.Button();
             this.buttonGrupo3 = new System.Windows.Forms.Button();
             this.buttonGrupo2 = new System.Windows.Forms.Button();
             this.buttonGrupo1 = new System.Windows.Forms.Button();
@@ -38,7 +39,6 @@
             this.buttonArea2 = new System.Windows.Forms.Button();
             this.buttonArea3 = new System.Windows.Forms.Button();
             this.buttonSair = new System.Windows.Forms.Button();
-            this.buttonGrupo4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -75,6 +75,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(136, 452);
             this.panel2.TabIndex = 1;
+            // 
+            // buttonGrupo4
+            // 
+            this.buttonGrupo4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonGrupo4.Location = new System.Drawing.Point(0, 368);
+            this.buttonGrupo4.Name = "buttonGrupo4";
+            this.buttonGrupo4.Size = new System.Drawing.Size(136, 35);
+            this.buttonGrupo4.TabIndex = 1;
+            this.buttonGrupo4.Text = "Grupo 4";
+            this.buttonGrupo4.UseVisualStyleBackColor = true;
+            this.buttonGrupo4.Click += new System.EventHandler(this.buttonGrupo4_Click);
             // 
             // buttonGrupo3
             // 
@@ -164,17 +175,6 @@
             this.buttonSair.Text = "Sair";
             this.buttonSair.UseVisualStyleBackColor = false;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
-            // 
-            // buttonGrupo4
-            // 
-            this.buttonGrupo4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonGrupo4.Location = new System.Drawing.Point(0, 368);
-            this.buttonGrupo4.Name = "buttonGrupo4";
-            this.buttonGrupo4.Size = new System.Drawing.Size(136, 35);
-            this.buttonGrupo4.TabIndex = 1;
-            this.buttonGrupo4.Text = "Grupo 4";
-            this.buttonGrupo4.UseVisualStyleBackColor = true;
-            this.buttonGrupo4.Click += new System.EventHandler(this.buttonGrupo4_Click);
             // 
             // FormTelaPrincipal
             // 
