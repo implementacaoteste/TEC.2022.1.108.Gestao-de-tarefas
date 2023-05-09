@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,7 +15,8 @@ namespace BLL
         public void AdicionarUsuario(Usuario _usuario,string _confirmarSenha)
         {
             new UsuarioBLL().ValidarCadastro(_usuario, _confirmarSenha);
-            new UsuarioDAL().AdicionarUsuario(_usuario);
+            GrupoBLL grupoBLL = new GrupoBLL();
+            grupoBLL.AdicionarGrupo(new UsuarioDAL().AdicionarUsuario(_usuario));
         }
         public List<Usuario> BuscarPorNome(string _nome)
         {

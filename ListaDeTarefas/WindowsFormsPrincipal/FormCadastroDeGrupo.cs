@@ -33,8 +33,8 @@ namespace WindowsFormsPrincipal
         {
             try
             {
-                GrupoBLL grupoBLL = new GrupoBLL();
-                grupoBLL.AdicionarGrupo((Grupo)grupoBindingSource.Current);
+                //GrupoBLL grupoBLL = new GrupoBLL();
+                //grupoBLL.AdicionarGrupo((Grupo)grupoBindingSource.Current);
             }
             catch (Exception ex)
             {
