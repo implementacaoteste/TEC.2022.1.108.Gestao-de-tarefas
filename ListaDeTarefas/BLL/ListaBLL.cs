@@ -23,13 +23,17 @@ namespace BLL
         {
             new ListaDAL().AlterarLista(_id, _nome);
         }
-        public void AdicionarLista(string _titulo)
+        public void AdicionarLista(int _id)
         {
             ListaDeTarefas_Usuario lista_usuario = new ListaDeTarefas_Usuario();
-
-            lista_usuario.IdLista = new ListaDAL().AdicionarLista(Constantes.IdGrupoAberto, _titulo);
-            lista_usuario.IdUsuario = Constantes.IdUsuarioLogado;
-            lista_usuario.IdPermissao = 1;
+            List<Lista> ids = new ListaDAL().AdicionarLista(_id);
+            for(int i = 0; i<3; i++)
+            {
+                lista_usuario.IdLista = ids[i].IdLista;
+                lista_usuario.IdUsuario = Constantes.IdUsuarioLogado;
+                lista_usuario.IdPermissao = 1;
+            }
+            
         }
         public void ExcluirLista(int _id)
         {

@@ -21,7 +21,8 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
                 cmd.CommandText = @"INSERT INTO Grupo(Titulo, IdUsuario) Values('Grupo1', @IdUsuario)
                                     INSERT INTO Grupo(Titulo, IdUsuario) Values('Grupo2', @IdUsuario)
-                                    INSERT INTO Grupo(Titulo, IdUsuario) Values('Grupo3', @IdUsuario)";
+                                    INSERT INTO Grupo(Titulo, IdUsuario) Values('Grupo3', @IdUsuario)
+                                    INSERT INTO Grupo(Titulo, IdUsuario) Values('Compartilhados', @IdUsuario)";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@IdUsuario", _idUsuario);
                 cmd.Connection = cn;
@@ -37,7 +38,7 @@ namespace DAL
                 cn.Close();
             }
         }
-        public void AlterarGrupo(string _titulo, int _idGrupo)
+        public void AlterarGrupo(string _titulo)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
@@ -46,7 +47,7 @@ namespace DAL
                 cmd.CommandText = @"UPDATE Grupo SET Titulo=@Titulo WHERE IdGrupo = @IdGrupo ";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Titulo", _titulo);
-                cmd.Parameters.AddWithValue("@IdGrupo", _idGrupo);
+                //cmd.Parameters.AddWithValue("@IdGrupo", _idGrupo);
                 cmd.Connection = cn;
                 cn.Open();
                 cmd.ExecuteNonQuery();
@@ -158,13 +159,13 @@ namespace DAL
         public List<Grupo> BuscarPorIdUsuario(int _id)
         {
             List<Grupo> Grupos = new List<Grupo>();
-            Grupo grupo = new Grupo();
+            Grupo grupo;
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT IdGrupo,Titulo, IdUsuario FROM Grupo WHERE IdUsuario = @IdUsuario";
+                cmd.CommandText = "SELECT IdGrupo FROM Grupo WHERE IdUsuario = @IdUsuario";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@IdUsuario",_id);
                 cn.Open();
@@ -174,8 +175,6 @@ namespace DAL
                     {
                         grupo = new Grupo();
                         grupo.IdGrupo = Convert.ToInt32(rd["IdGrupo"]);
-                        grupo.Titulo = rd["Titulo"].ToString();
-                        grupo.IdUsuario = Convert.ToInt32(rd["IdUsuario"]);
                         Grupos.Add(grupo);
                     }
                 }

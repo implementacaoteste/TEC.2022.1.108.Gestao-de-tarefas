@@ -16,7 +16,7 @@ namespace BLL
         }
         public void AlterarGrupo(string _titulo, int _idGrupo)
         {
-            new GrupoDAL().AlterarGrupo(_titulo, _idGrupo);
+            //new GrupoDAL().AlterarGrupo(_titulo, _idGrupo);
         }
         public void ExcluirGrupo(int _idGrupo)
         {

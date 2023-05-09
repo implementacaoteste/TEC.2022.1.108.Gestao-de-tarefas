@@ -39,7 +39,7 @@ namespace WindowsFormsPrincipal
             try
             {
                 ListaBLL listaBLL = new ListaBLL();
-                listaBLL.AdicionarLista(nomeListaTextBox.Text);
+                listaBLL.AlterarLista(nomeListaTextBox.Text);
             }
             catch (Exception ex)
             {

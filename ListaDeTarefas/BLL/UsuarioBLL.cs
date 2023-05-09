@@ -13,10 +13,11 @@ namespace BLL
     public class UsuarioBLL
     {
         public void AdicionarUsuario(Usuario _usuario,string _confirmarSenha)
-        {
+        {           
             new UsuarioBLL().ValidarCadastro(_usuario, _confirmarSenha);
-            GrupoBLL grupoBLL = new GrupoBLL();
-            grupoBLL.AdicionarGrupo(new UsuarioDAL().AdicionarUsuario(_usuario));
+            int idUser = new UsuarioDAL().AdicionarUsuario(_usuario);
+            new GrupoBLL().AdicionarGrupo(idUser);
+            List<Grupo> lista = new GrupoBLL().BuscarPorIdUsuario(idUser);
         }
         public List<Usuario> BuscarPorNome(string _nome)
         {

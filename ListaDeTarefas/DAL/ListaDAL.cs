@@ -13,18 +13,22 @@ namespace DAL
     public class ListaDAL
     {
         
-        public int AdicionarLista(int _idGrupo,string _titulo)
-        {
-            int id = 0;
+        public List<Lista> AdicionarLista(int _idGrupo)
+        {            
+            List<Lista> idsLista = new List<Lista>();
+            Lista id;
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);            
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
                 cmd.CommandText = @"INSERT INTO ListaDeTarefas(NomeLista, IdGrupo) 
-                                VALUES (@NomeLista, @IdGrupo) SELECT SCOPE_IDENTITY()";
+                                VALUES ('Lista 1', @IdGrupo) SELECT SCOPE_IDENTITY()
+                                INSERT INTO ListaDeTarefas(NomeLista, IdGrupo) 
+                                VALUES ('Lista 2', @IdGrupo) SELECT SCOPE_IDENTITY()
+                                INSERT INTO ListaDeTarefas(NomeLista, IdGrupo) 
+                                VALUES ('Lista 3', @IdGrupo) SELECT SCOPE_IDENTITY()";
 
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@NomeLista", _titulo);
                 cmd.Parameters.AddWithValue("@IdGrupo", _idGrupo);
                 cmd.Connection = cn;
                 cn.Open();
@@ -32,12 +36,14 @@ namespace DAL
 
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
-                    if (rd.Read())
+                    while (rd.Read())
                     {
-                       id = Convert.ToInt32(rd);
+                        id = new Lista();
+                        id.IdLista = Convert.ToInt32(rd);
+                        idsLista.Add(id);
                     }
                 }
-                return id;
+                return idsLista;
             }
             catch (Exception ex)
             {
