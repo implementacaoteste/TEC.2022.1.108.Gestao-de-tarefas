@@ -29,11 +29,9 @@ namespace WindowsFormsPrincipal
 
         private void buttonSalvarEtapa_Click(object sender, EventArgs e)
         {
-            if (idTarefa == 0)
-            {
                 try
                 {
-                    new EtapaBLL().AdicionarEtapa((Etapa)etapaBindingSource.Current);
+                    new EtapaBLL().AdicionarEtapa(nomeEtapaTextBox.Text, Constantes.IdUsuarioLogado,idTarefa);
                     MessageBox.Show("Etapa inserida com sucesso!", "Concluido", MessageBoxButtons.OK);
                 }
                 catch (Exception ex)
@@ -44,23 +42,7 @@ namespace WindowsFormsPrincipal
                 {
                     Close();
                 }
-            }
-            else
-            {
-                try
-                {
-                    new EtapaBLL().AlterarEtapa((Etapa)etapaBindingSource.Current);
-                    MessageBox.Show("Etapa alterada com sucesso!", "Concluido", MessageBoxButtons.OK);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                finally
-                {
-                    Close();
-                }
-            }
+            
         }
 
         private void label3_Click(object sender, EventArgs e)

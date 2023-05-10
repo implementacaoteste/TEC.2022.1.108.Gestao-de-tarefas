@@ -26,9 +26,9 @@ namespace BLL
         {
            return new EtapaDAL().BuscarPorNomeEtapa(_nome);
         }
-        public void AdicionarEtapa(Etapa _etapa)
+        public void AdicionarEtapa(string _nome, int _IdUsuario, int _IdTarefa)
         {
-            new EtapaDAL().AdicionarEtapa(_etapa);
+            new EtapaDAL().AdicionarEtapa(_nome, _IdUsuario, _IdTarefa);
         }
         public void AlterarEtapa(Etapa _etapa)
         {

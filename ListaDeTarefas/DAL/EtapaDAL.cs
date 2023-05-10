@@ -204,7 +204,7 @@ namespace DAL
                 cn.Close();
             }
         }
-        public void AdicionarEtapa(Etapa _etapa)
+        public void AdicionarEtapa(string _nome, int _IdUsuario, int _IdTarefa)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
@@ -212,9 +212,9 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
                 cmd.CommandText = @"INSERT INTO Etapa(IdUsuario, IdTarefa, NomeEtapa) Values(@IdUsuario, @IdTarefa, @NomeEtapa)";
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@IdUsuario", _etapa.IdUsuario);
-                cmd.Parameters.AddWithValue("@IdTarefa", _etapa.IdTarefa);
-                cmd.Parameters.AddWithValue("@NomeEtapa", _etapa.NomeEtapa);
+                cmd.Parameters.AddWithValue("@IdUsuario", _IdUsuario);
+                cmd.Parameters.AddWithValue("@IdTarefa", _IdTarefa);
+                cmd.Parameters.AddWithValue("@NomeEtapa", _nome);
                 cmd.Connection = cn;
                 cn.Open();
                 cmd.ExecuteNonQuery();
