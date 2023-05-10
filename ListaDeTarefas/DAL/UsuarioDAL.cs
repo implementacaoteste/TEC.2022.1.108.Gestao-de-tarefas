@@ -215,6 +215,45 @@ namespace DAL
                 cn.Close();
             }
         }
+        public List<Usuario> BuscarUsuarioLista(string _nome, int _idLista)
+        {
+            List<Usuario> usuarios = new List<Usuario>();
+            Usuario usuario = new Usuario();
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = @"SELECT U.Nome, L.IdListaTarefas
+                                    FROM Usuario U
+                                    INNER JOIN ListadeTarefas_Usuario L ON L.IdListaTarefas = @IdUsuario and U.IdUsuario = L.IdUsuario";
+
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@IdUsuario",_idLista);
+
+                cn.Open();
+
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        usuario = new Usuario();
+                        usuario.Nome = rd["Nome"].ToString();
+                        usuarios.Add(usuario);
+                    }
+
+                }
+                return usuarios;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar o usuario no banco de dados.", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
 
     }
 }

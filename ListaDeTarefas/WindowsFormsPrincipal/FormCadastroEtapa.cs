@@ -15,7 +15,8 @@ namespace WindowsFormsPrincipal
     public partial class FormCadastroEtapa : Form
     {
         int idTarefa;
-        public FormCadastroEtapa(int _idTarefa)
+        
+        public FormCadastroEtapa(int _idTarefa = 0)
         {
             InitializeComponent();
             idTarefa = _idTarefa;
@@ -28,11 +29,9 @@ namespace WindowsFormsPrincipal
 
         private void buttonSalvarEtapa_Click(object sender, EventArgs e)
         {
-            if (idTarefa == 0)
-            {
                 try
                 {
-                    new EtapaBLL().AdicionarEtapa((Etapa)etapaBindingSource.Current);
+                    new EtapaBLL().AdicionarEtapa(nomeEtapaTextBox.Text, Constantes.IdUsuarioLogado,idTarefa);
                     MessageBox.Show("Etapa inserida com sucesso!", "Concluido", MessageBoxButtons.OK);
                 }
                 catch (Exception ex)
@@ -43,23 +42,7 @@ namespace WindowsFormsPrincipal
                 {
                     Close();
                 }
-            }
-            else
-            {
-                try
-                {
-                    new EtapaBLL().AlterarEtapa((Etapa)etapaBindingSource.Current);
-                    MessageBox.Show("Etapa alterada com sucesso!", "Concluido", MessageBoxButtons.OK);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                finally
-                {
-                    Close();
-                }
-            }
+            
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -68,6 +51,15 @@ namespace WindowsFormsPrincipal
         }
 
         private void buttonCancelarEtapa_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void FormCadastroEtapa_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void buttonCancelarEtapa_Click_1(object sender, EventArgs e)
         {
             Close();
         }
