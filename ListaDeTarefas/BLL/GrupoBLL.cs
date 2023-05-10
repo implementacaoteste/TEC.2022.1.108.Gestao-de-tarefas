@@ -11,8 +11,13 @@ namespace BLL
     public class GrupoBLL
     {
         public  void AdicionarGrupo(int _id)
-        {         
-            new GrupoDAL().AdicionarGrupo(_id); 
+        {
+            Lista lista = new Lista();
+            List<Grupo> ids =  new GrupoDAL().AdicionarGrupo(_id); 
+            for(int i = 0; i < 4; i++)
+            {
+                new ListaBLL().AdicionarLista(ids[i].IdGrupo,_id);
+            }
         }
         public void AlterarGrupo(string _titulo, int _idGrupo)
         {

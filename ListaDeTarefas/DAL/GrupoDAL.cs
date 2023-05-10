@@ -13,21 +13,34 @@ namespace DAL
 {
     public class GrupoDAL
     {
-        public void AdicionarGrupo(int _idUsuario)
+        public List<Grupo> AdicionarGrupo(int _idUsuario)
         {
+            List<Grupo> idsGrupo = new List<Grupo>();
+            Grupo id;
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"INSERT INTO Grupo(Titulo, IdUsuario) Values('Grupo1', @IdUsuario)
-                                    INSERT INTO Grupo(Titulo, IdUsuario) Values('Grupo2', @IdUsuario)
-                                    INSERT INTO Grupo(Titulo, IdUsuario) Values('Grupo3', @IdUsuario)
-                                    INSERT INTO Grupo(Titulo, IdUsuario) Values('Compartilhados', @IdUsuario)";
+                cmd.CommandText = @"INSERT INTO Grupo(Titulo, IdUsuario) Values('Grupo1', @IdUsuario) 
+                                    INSERT INTO Grupo(Titulo, IdUsuario) Values('Grupo2', @IdUsuario) 
+                                    INSERT INTO Grupo(Titulo, IdUsuario) Values('Grupo3', @IdUsuario) 
+                                    INSERT INTO Grupo(Titulo, IdUsuario) Values('Compartilhados', @IdUsuario)
+                                    SELECT IdGrupo FROM Grupo WHERE IdUsuario = @IdUsuario";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@IdUsuario", _idUsuario);
                 cmd.Connection = cn;
                 cn.Open();
-                cmd.ExecuteNonQuery();
+
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        id = new Grupo();
+                        id.IdGrupo = Convert.ToInt32(rd["IdGrupo"]);
+                        idsGrupo.Add(id);
+                    }
+                }
+                return idsGrupo;
             }
             catch (Exception ex)
             {

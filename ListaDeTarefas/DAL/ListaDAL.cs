@@ -22,24 +22,24 @@ namespace DAL
             {
                 SqlCommand cmd = cn.CreateCommand();
                 cmd.CommandText = @"INSERT INTO ListaDeTarefas(NomeLista, IdGrupo) 
-                                VALUES ('Lista 1', @IdGrupo) SELECT SCOPE_IDENTITY()
+                                VALUES ('Lista 1', @IdGrupo) 
                                 INSERT INTO ListaDeTarefas(NomeLista, IdGrupo) 
-                                VALUES ('Lista 2', @IdGrupo) SELECT SCOPE_IDENTITY()
+                                VALUES ('Lista 2', @IdGrupo) 
                                 INSERT INTO ListaDeTarefas(NomeLista, IdGrupo) 
-                                VALUES ('Lista 3', @IdGrupo) SELECT SCOPE_IDENTITY()";
+                                VALUES ('Lista 3', @IdGrupo) 
+                                SELECT IdLista FROM ListaDeTarefas WHERE IdGrupo = @IdGrupo";
 
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@IdGrupo", _idGrupo);
                 cmd.Connection = cn;
                 cn.Open();
-                cmd.ExecuteNonQuery();
 
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
                     while (rd.Read())
                     {
                         id = new Lista();
-                        id.IdLista = Convert.ToInt32(rd);
+                        id.IdLista = Convert.ToInt32(rd["IdLista"]);
                         idsLista.Add(id);
                     }
                 }
