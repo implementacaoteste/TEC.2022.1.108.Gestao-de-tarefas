@@ -38,8 +38,8 @@ namespace WindowsFormsPrincipal
         {
             try
             {
-                ListaBLL listaBLL = new ListaBLL();
-                listaBLL.AlterarLista(nomeListaTextBox.Text);
+                //ListaBLL listaBLL = new ListaBLL();
+                //listaBLL.AlterarLista(nomeListaTextBox.Text);
             }
             catch (Exception ex)
             {

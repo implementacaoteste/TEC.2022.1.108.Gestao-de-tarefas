@@ -109,7 +109,7 @@ namespace WindowsFormsPrincipal
 
         private void buttonInserirEtapa_Click(object sender, EventArgs e)
         {
-            int id2 = ((Etapa)etapaBindingSource.Current).Id;
+            int id2 = ((Tarefa)tarefaBindingSource1.Current).Id;
             using (FormCadastroEtapa frm = new FormCadastroEtapa(id2))
             {
                 frm.ShowDialog();
