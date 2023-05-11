@@ -10,5 +10,6 @@ namespace Models
     {
         public static int IdUsuarioLogado;
         public static int IdGrupoAberto;
+        public static int IdAreaAberta;
     }
 }

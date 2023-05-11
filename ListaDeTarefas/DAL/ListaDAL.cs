@@ -174,7 +174,7 @@ namespace DAL
                 cn.Close();
             }
         }
-        public List<Lista> buscarTarefasArea(int _idUsuario)
+        public List<Lista> buscarTarefasArea(int _idGrupo)
         {
             List<Lista> Listas = new List<Lista>();
             Lista lista = new Lista();
@@ -185,7 +185,7 @@ namespace DAL
                 cmd.CommandText = @"select L.NomeLista, L.IdLista from ListaDeTarefas L INNER JOIN Grupo G on L.IdGrupo = G.IdGrupo where @IdUsuario = G.IdGrupo";
                 cmd.CommandType = System.Data.CommandType.Text;
 
-                cmd.Parameters.AddWithValue("@IdUsuario", _idUsuario);
+                cmd.Parameters.AddWithValue("@IdUsuario", _idGrupo);
 
                 cmd.Connection = cn;
                 cn.Open();

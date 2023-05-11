@@ -107,7 +107,7 @@
             this.buttonGrupo2.TabIndex = 0;
             this.buttonGrupo2.Text = "Grupo 2";
             this.buttonGrupo2.UseVisualStyleBackColor = true;
-            this.buttonGrupo2.Click += new System.EventHandler(this.button1_Click);
+            this.buttonGrupo2.Click += new System.EventHandler(this.buttonGrupo2_Click);
             // 
             // buttonGrupo1
             // 

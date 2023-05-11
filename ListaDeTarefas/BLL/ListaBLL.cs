@@ -40,9 +40,9 @@ namespace BLL
         {
             new ListaDAL().ExcluirLista(_id);
         }
-        public List<Lista> buscarTarefasArea(int _idUsuario)
+        public List<Lista> buscarTarefasArea(int _idGrupo)
         {
-            return new ListaDAL().buscarTarefasArea(_idUsuario);
+            return new ListaDAL().buscarTarefasArea(_idGrupo);
         }
     }
 }
