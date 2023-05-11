@@ -120,6 +120,7 @@
             this.nomeTextBox.Name = "nomeTextBox";
             this.nomeTextBox.Size = new System.Drawing.Size(303, 30);
             this.nomeTextBox.TabIndex = 3;
+            this.nomeTextBox.TextChanged += new System.EventHandler(this.tev);
             this.nomeTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.nomeTextBox_KeyDown);
             // 
             // senhaTextBox
@@ -183,6 +184,7 @@
             this.textBoxConfirmarSenha.Size = new System.Drawing.Size(303, 30);
             this.textBoxConfirmarSenha.TabIndex = 15;
             this.textBoxConfirmarSenha.UseSystemPasswordChar = true;
+            this.textBoxConfirmarSenha.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxConfirmarSenha_KeyDown);
             // 
             // FormCadastroUsuarios
             // 

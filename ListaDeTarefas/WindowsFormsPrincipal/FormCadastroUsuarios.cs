@@ -67,5 +67,16 @@ namespace WindowsFormsPrincipal
             if(e.KeyCode == Keys.Enter)
                 textBoxConfirmarSenha.Focus();
         }
+
+        private void textBoxConfirmarSenha_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode ==Keys.Enter)
+                buttonCadastrar.Focus();
+        }
+
+        private void tev(object sender, EventArgs e)
+        {
+
+        }
     }
 }
