@@ -138,6 +138,7 @@
             this.nomeEtapaTextBox.Name = "nomeEtapaTextBox";
             this.nomeEtapaTextBox.Size = new System.Drawing.Size(280, 30);
             this.nomeEtapaTextBox.TabIndex = 10;
+            this.nomeEtapaTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.nomeEtapaTextBox_KeyDown);
             // 
             // usuarioBindingSource
             // 

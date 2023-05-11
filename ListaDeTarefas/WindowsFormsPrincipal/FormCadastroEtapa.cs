@@ -63,5 +63,11 @@ namespace WindowsFormsPrincipal
         {
             Close();
         }
+
+        private void nomeEtapaTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                comboBoxResponsavel.Focus();
+        }
     }
 }
