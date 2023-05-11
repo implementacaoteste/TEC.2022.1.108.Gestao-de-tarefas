@@ -120,6 +120,7 @@
             this.nomeTextBox.Name = "nomeTextBox";
             this.nomeTextBox.Size = new System.Drawing.Size(303, 30);
             this.nomeTextBox.TabIndex = 3;
+            this.nomeTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.nomeTextBox_KeyDown);
             // 
             // senhaTextBox
             // 
@@ -131,6 +132,7 @@
             this.senhaTextBox.Size = new System.Drawing.Size(303, 30);
             this.senhaTextBox.TabIndex = 5;
             this.senhaTextBox.UseSystemPasswordChar = true;
+            this.senhaTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.senhaTextBox_KeyDown);
             // 
             // emailTextBox
             // 
@@ -141,6 +143,7 @@
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(303, 30);
             this.emailTextBox.TabIndex = 7;
+            this.emailTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.emailTextBox_KeyDown);
             // 
             // buttonCadastrar
             // 

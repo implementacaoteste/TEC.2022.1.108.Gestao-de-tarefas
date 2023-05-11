@@ -49,5 +49,23 @@ namespace WindowsFormsPrincipal
             }
 
         }
+
+        private void nomeTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+                emailTextBox.Focus();
+        }
+
+        private void emailTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+                senhaTextBox.Focus();  
+        }
+
+        private void senhaTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+                textBoxConfirmarSenha.Focus();
+        }
     }
 }
