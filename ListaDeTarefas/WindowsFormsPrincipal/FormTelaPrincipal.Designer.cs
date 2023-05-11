@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -39,8 +40,24 @@
             this.buttonArea2 = new System.Windows.Forms.Button();
             this.buttonArea3 = new System.Windows.Forms.Button();
             this.buttonSair = new System.Windows.Forms.Button();
+            this.contextMenuStripGrupo1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.abrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.renomearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStripGrupo2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStripGrupo3 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStripGrupo4 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.contextMenuStripGrupo1.SuspendLayout();
+            this.contextMenuStripGrupo2.SuspendLayout();
+            this.contextMenuStripGrupo3.SuspendLayout();
+            this.contextMenuStripGrupo4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -78,6 +95,7 @@
             // 
             // buttonGrupo4
             // 
+            this.buttonGrupo4.ContextMenuStrip = this.contextMenuStripGrupo4;
             this.buttonGrupo4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonGrupo4.Location = new System.Drawing.Point(0, 368);
             this.buttonGrupo4.Name = "buttonGrupo4";
@@ -89,6 +107,7 @@
             // 
             // buttonGrupo3
             // 
+            this.buttonGrupo3.ContextMenuStrip = this.contextMenuStripGrupo3;
             this.buttonGrupo3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonGrupo3.Location = new System.Drawing.Point(0, 337);
             this.buttonGrupo3.Name = "buttonGrupo3";
@@ -100,6 +119,7 @@
             // 
             // buttonGrupo2
             // 
+            this.buttonGrupo2.ContextMenuStrip = this.contextMenuStripGrupo2;
             this.buttonGrupo2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonGrupo2.Location = new System.Drawing.Point(0, 305);
             this.buttonGrupo2.Name = "buttonGrupo2";
@@ -111,6 +131,7 @@
             // 
             // buttonGrupo1
             // 
+            this.buttonGrupo1.ContextMenuStrip = this.contextMenuStripGrupo1;
             this.buttonGrupo1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonGrupo1.Location = new System.Drawing.Point(0, 273);
             this.buttonGrupo1.Name = "buttonGrupo1";
@@ -175,7 +196,90 @@
             this.buttonSair.Text = "Sair";
             this.buttonSair.UseVisualStyleBackColor = false;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
-            this.buttonSair.KeyDown += new System.Windows.Forms.KeyEventHandler(this.buttonSair_KeyDown);
+            // 
+            // contextMenuStripGrupo1
+            // 
+            this.contextMenuStripGrupo1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStripGrupo1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.abrirToolStripMenuItem,
+            this.renomearToolStripMenuItem});
+            this.contextMenuStripGrupo1.Name = "contextMenuStripGrupo1";
+            this.contextMenuStripGrupo1.Size = new System.Drawing.Size(147, 52);
+            // 
+            // abrirToolStripMenuItem
+            // 
+            this.abrirToolStripMenuItem.Name = "abrirToolStripMenuItem";
+            this.abrirToolStripMenuItem.Size = new System.Drawing.Size(146, 24);
+            this.abrirToolStripMenuItem.Text = "Abrir";
+            // 
+            // renomearToolStripMenuItem
+            // 
+            this.renomearToolStripMenuItem.Name = "renomearToolStripMenuItem";
+            this.renomearToolStripMenuItem.Size = new System.Drawing.Size(146, 24);
+            this.renomearToolStripMenuItem.Text = "Renomear";
+            // 
+            // contextMenuStripGrupo2
+            // 
+            this.contextMenuStripGrupo2.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStripGrupo2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2});
+            this.contextMenuStripGrupo2.Name = "contextMenuStripGrupo1";
+            this.contextMenuStripGrupo2.Size = new System.Drawing.Size(147, 52);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(146, 24);
+            this.toolStripMenuItem1.Text = "Abrir";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(146, 24);
+            this.toolStripMenuItem2.Text = "Renomear";
+            // 
+            // contextMenuStripGrupo3
+            // 
+            this.contextMenuStripGrupo3.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStripGrupo3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem3,
+            this.toolStripMenuItem4});
+            this.contextMenuStripGrupo3.Name = "contextMenuStripGrupo1";
+            this.contextMenuStripGrupo3.Size = new System.Drawing.Size(147, 52);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(146, 24);
+            this.toolStripMenuItem3.Text = "Abrir";
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(146, 24);
+            this.toolStripMenuItem4.Text = "Renomear";
+            // 
+            // contextMenuStripGrupo4
+            // 
+            this.contextMenuStripGrupo4.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStripGrupo4.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem5,
+            this.toolStripMenuItem6});
+            this.contextMenuStripGrupo4.Name = "contextMenuStripGrupo1";
+            this.contextMenuStripGrupo4.Size = new System.Drawing.Size(147, 52);
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(146, 24);
+            this.toolStripMenuItem5.Text = "Abrir";
+            // 
+            // toolStripMenuItem6
+            // 
+            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(146, 24);
+            this.toolStripMenuItem6.Text = "Renomear";
             // 
             // FormTelaPrincipal
             // 
@@ -199,6 +303,10 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.contextMenuStripGrupo1.ResumeLayout(false);
+            this.contextMenuStripGrupo2.ResumeLayout(false);
+            this.contextMenuStripGrupo3.ResumeLayout(false);
+            this.contextMenuStripGrupo4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -216,5 +324,17 @@
         private System.Windows.Forms.Button buttonGrupo1;
         private System.Windows.Forms.Button buttonSair;
         private System.Windows.Forms.Button buttonGrupo4;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripGrupo1;
+        private System.Windows.Forms.ToolStripMenuItem abrirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem renomearToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripGrupo4;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripGrupo3;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripGrupo2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
     }
 }

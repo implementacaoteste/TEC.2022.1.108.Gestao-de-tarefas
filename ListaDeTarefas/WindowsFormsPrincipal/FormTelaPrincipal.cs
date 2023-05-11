@@ -16,6 +16,7 @@ namespace WindowsFormsPrincipal
     {
         List<Grupo> grupos;
         List<Lista> listas;
+        List<Lista> lista;
         int Area1, Area2, Area3, Area4, lista1, lista2, lista3;
         public FormTelaPrincipal()
         {
@@ -123,14 +124,6 @@ namespace WindowsFormsPrincipal
             using (FormMenuDeTarefas frm = new FormMenuDeTarefas(Constantes.IdAreaAberta))
             {
                 frm.ShowDialog();
-            }
-        }
-
-        private void buttonSair_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Control && e.KeyCode == Keys.S)
-            {
-                e.SuppressKeyPress = true;
             }
         }
 
