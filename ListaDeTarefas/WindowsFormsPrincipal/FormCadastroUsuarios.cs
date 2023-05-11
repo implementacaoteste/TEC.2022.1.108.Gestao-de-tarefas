@@ -71,12 +71,13 @@ namespace WindowsFormsPrincipal
         private void textBoxConfirmarSenha_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode ==Keys.Enter)
-                buttonCadastrar.Focus();
+                buttonCadastrar_Click(null,null);
         }
 
-        private void tev(object sender, EventArgs e)
+        private void buttonSair_KeyDown(object sender, KeyEventArgs e)
         {
-
+            if (e.KeyCode == Keys.Escape)
+             Close();
         }
     }
 }
