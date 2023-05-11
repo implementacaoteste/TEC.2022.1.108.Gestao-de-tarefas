@@ -65,7 +65,7 @@ namespace WindowsFormsPrincipal
         private void textBoxSenha_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
-                buttonLogin.Focus();
+                buttonLogin_Click(null,null);
         }
     }
 }
