@@ -62,12 +62,27 @@ namespace WindowsFormsPrincipal
         private void buttonCancelarEtapa_Click_1(object sender, EventArgs e)
         {
             Close();
+            
         }
 
         private void nomeEtapaTextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
                 comboBoxResponsavel.Focus();
+        }
+
+        private void comboBoxResponsavel_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+                buttonSalvarEtapa_Click(null,null);
+        }
+
+        private void buttonCancelarEtapa_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Escape)
+                this.Close();
+
+
         }
     }
 }
