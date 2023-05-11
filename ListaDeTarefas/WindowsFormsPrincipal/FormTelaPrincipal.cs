@@ -87,6 +87,14 @@ namespace WindowsFormsPrincipal
             buttonArea3.Text = lista[2].NomeLista;
         }
 
+        private void buttonSair_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.S)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
         private void buttonArea2_Click(object sender, EventArgs e)
         {
             using (FormMenuDeTarefas frm = new FormMenuDeTarefas(lista2))
