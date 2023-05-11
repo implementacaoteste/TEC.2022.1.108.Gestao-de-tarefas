@@ -69,6 +69,7 @@
             this.textBoxLogin.Size = new System.Drawing.Size(281, 30);
             this.textBoxLogin.TabIndex = 1;
             this.textBoxLogin.TextChanged += new System.EventHandler(this.textBoxLogin_TextChanged);
+            this.textBoxLogin.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxLogin_KeyDown);
             // 
             // label3
             // 
@@ -129,6 +130,7 @@
             this.textBoxSenha.Size = new System.Drawing.Size(281, 30);
             this.textBoxSenha.TabIndex = 1;
             this.textBoxSenha.UseSystemPasswordChar = true;
+            this.textBoxSenha.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxSenha_KeyDown);
             // 
             // pictureBox1
             // 

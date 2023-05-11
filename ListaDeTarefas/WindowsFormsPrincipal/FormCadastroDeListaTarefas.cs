@@ -46,5 +46,17 @@ namespace WindowsFormsPrincipal
                 throw new Exception("Erro ao salvar a lista", ex);
             }
         }
+
+        private void nomeListaTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                buttonArea1.Focus();
+        }
+
+        private void buttonSair_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+                buttonSair.Focus();
+        }
     }
 }

@@ -126,6 +126,14 @@ namespace WindowsFormsPrincipal
             }
         }
 
+        private void buttonSair_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.S)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
         private void buttonArea2_Click(object sender, EventArgs e)
         {
             Constantes.IdAreaAberta = listas[1].IdLista;

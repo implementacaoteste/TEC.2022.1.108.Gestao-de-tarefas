@@ -124,6 +124,7 @@
             this.buttonCancelarEtapa.Text = "Cancelar";
             this.buttonCancelarEtapa.UseVisualStyleBackColor = false;
             this.buttonCancelarEtapa.Click += new System.EventHandler(this.buttonCancelarEtapa_Click_1);
+            this.buttonCancelarEtapa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.buttonCancelarEtapa_KeyDown);
             // 
             // etapaBindingSource
             // 
@@ -155,6 +156,7 @@
             this.comboBoxResponsavel.Size = new System.Drawing.Size(121, 24);
             this.comboBoxResponsavel.TabIndex = 11;
             this.comboBoxResponsavel.ValueMember = "Id";
+            this.comboBoxResponsavel.KeyDown += new System.Windows.Forms.KeyEventHandler(this.comboBoxResponsavel_KeyDown);
             // 
             // etapaBindingSource1
             // 
