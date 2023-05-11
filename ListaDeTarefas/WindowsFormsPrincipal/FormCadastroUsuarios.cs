@@ -52,7 +52,7 @@ namespace WindowsFormsPrincipal
 
         private void nomeTextBox_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
                 emailTextBox.Focus();
         }
 
@@ -76,8 +76,12 @@ namespace WindowsFormsPrincipal
 
         private void buttonSair_KeyDown(object sender, KeyEventArgs e)
         {
+        }
+
+        private void FormCadastroUsuarios_KeyDown(object sender, KeyEventArgs e)
+        {
             if (e.KeyCode == Keys.Escape)
-             Close();
+                buttonSair_Click(null, null);
         }
     }
 }
