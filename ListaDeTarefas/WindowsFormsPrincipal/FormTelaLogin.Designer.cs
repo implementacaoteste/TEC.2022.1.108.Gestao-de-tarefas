@@ -57,7 +57,7 @@
             this.label2.Location = new System.Drawing.Point(66, 265);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 25);
-            this.label2.TabIndex = 0;
+            this.label2.TabIndex = 2;
             this.label2.Text = "Senha";
             // 
             // textBoxLogin
@@ -102,7 +102,7 @@
             this.buttonFechar.Location = new System.Drawing.Point(371, 12);
             this.buttonFechar.Name = "buttonFechar";
             this.buttonFechar.Size = new System.Drawing.Size(32, 32);
-            this.buttonFechar.TabIndex = 0;
+            this.buttonFechar.TabIndex = 7;
             this.buttonFechar.Text = "X";
             this.buttonFechar.UseVisualStyleBackColor = false;
             this.buttonFechar.Click += new System.EventHandler(this.buttonFechar_Click);
@@ -116,7 +116,7 @@
             this.buttonLogin.Location = new System.Drawing.Point(71, 360);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(281, 45);
-            this.buttonLogin.TabIndex = 7;
+            this.buttonLogin.TabIndex = 4;
             this.buttonLogin.Text = "Logar";
             this.buttonLogin.UseVisualStyleBackColor = false;
             this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
@@ -128,7 +128,7 @@
             this.textBoxSenha.Location = new System.Drawing.Point(71, 293);
             this.textBoxSenha.Name = "textBoxSenha";
             this.textBoxSenha.Size = new System.Drawing.Size(281, 30);
-            this.textBoxSenha.TabIndex = 1;
+            this.textBoxSenha.TabIndex = 3;
             this.textBoxSenha.UseSystemPasswordChar = true;
             this.textBoxSenha.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxSenha_KeyDown);
             // 
@@ -162,7 +162,6 @@
             this.Name = "FormTelaLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            this.Load += new System.EventHandler(this.FormTelaLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
