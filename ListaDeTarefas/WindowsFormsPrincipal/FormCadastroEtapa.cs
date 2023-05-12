@@ -57,6 +57,7 @@ namespace WindowsFormsPrincipal
 
         private void FormCadastroEtapa_Load(object sender, EventArgs e)
         {
+            nomeEtapaTextBox.Focus();
         }
 
         private void buttonCancelarEtapa_Click_1(object sender, EventArgs e)

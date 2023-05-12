@@ -21,7 +21,7 @@ namespace WindowsFormsPrincipal
 
         private void FormCadastroUsuarios_Load(object sender, EventArgs e)
         {
-
+            nomeTextBox.Focus();
         }
 
         private void buttonSair_Click(object sender, EventArgs e)
@@ -82,6 +82,11 @@ namespace WindowsFormsPrincipal
         {
             if (e.KeyCode == Keys.Escape)
                 buttonSair_Click(null, null);
+        }
+
+        private void nomeTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

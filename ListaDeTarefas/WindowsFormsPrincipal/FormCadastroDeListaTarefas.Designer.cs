@@ -50,7 +50,7 @@
             nomeListaLabel.Location = new System.Drawing.Point(53, 210);
             nomeListaLabel.Name = "nomeListaLabel";
             nomeListaLabel.Size = new System.Drawing.Size(141, 29);
-            nomeListaLabel.TabIndex = 2;
+            nomeListaLabel.TabIndex = 3;
             nomeListaLabel.Text = "Nome Lista:";
             // 
             // panel1
@@ -61,7 +61,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(459, 100);
-            this.panel1.TabIndex = 1;
+            this.panel1.TabIndex = 2;
             // 
             // label3
             // 
@@ -84,7 +84,7 @@
             this.buttonArea1.Location = new System.Drawing.Point(58, 364);
             this.buttonArea1.Name = "buttonArea1";
             this.buttonArea1.Size = new System.Drawing.Size(225, 42);
-            this.buttonArea1.TabIndex = 5;
+            this.buttonArea1.TabIndex = 4;
             this.buttonArea1.Text = "Salvar lista";
             this.buttonArea1.UseVisualStyleBackColor = false;
             this.buttonArea1.Click += new System.EventHandler(this.buttonArea1_Click);
@@ -98,7 +98,7 @@
             this.buttonSair.Location = new System.Drawing.Point(305, 364);
             this.buttonSair.Name = "buttonSair";
             this.buttonSair.Size = new System.Drawing.Size(102, 42);
-            this.buttonSair.TabIndex = 14;
+            this.buttonSair.TabIndex = 0;
             this.buttonSair.Text = "Sair";
             this.buttonSair.UseVisualStyleBackColor = false;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
@@ -116,7 +116,7 @@
             this.nomeListaTextBox.Location = new System.Drawing.Point(58, 272);
             this.nomeListaTextBox.Name = "nomeListaTextBox";
             this.nomeListaTextBox.Size = new System.Drawing.Size(349, 30);
-            this.nomeListaTextBox.TabIndex = 15;
+            this.nomeListaTextBox.TabIndex = 1;
             // 
             // FormCadastroDeListaTarefas
             // 

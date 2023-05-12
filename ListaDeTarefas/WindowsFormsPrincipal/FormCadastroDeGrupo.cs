@@ -61,7 +61,7 @@ namespace WindowsFormsPrincipal
 
         private void FormCadastroDeGrupo_Load(object sender, EventArgs e)
         {
-
+            textBoxtitulo.Focus();
         }
 
         private void buttonSair_Click(object sender, EventArgs e)
