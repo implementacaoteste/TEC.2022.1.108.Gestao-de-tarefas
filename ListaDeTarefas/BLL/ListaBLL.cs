@@ -21,6 +21,7 @@ namespace BLL
         }
         public void AlterarLista(int _id, string _nome)
         {
+            ValidarNome(_nome);
             new ListaDAL().AlterarLista(_id, _nome);
         }
         public void AdicionarLista(int _id, int _usuario)
@@ -43,6 +44,13 @@ namespace BLL
         public List<Lista> buscarTarefasArea(int _idGrupo)
         {
             return new ListaDAL().buscarTarefasArea(_idGrupo);
+        }
+        public void ValidarNome(string _nome)
+        {
+            if(_nome.Length < 3)
+            {
+                throw new Exception("O nome da lista de tarefas deve ter mais de 3 caracteres!");
+            }
         }
     }
 }

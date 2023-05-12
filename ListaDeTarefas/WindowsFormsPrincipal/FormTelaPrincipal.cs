@@ -94,6 +94,7 @@ namespace WindowsFormsPrincipal
             buttonArea3.Text = lista[2].NomeLista;
             listas[2].IdLista = lista[2].IdLista;
         }
+
         private void buttonGrupo3_Click(object sender, EventArgs e)
         {
             Constantes.IdGrupoAberto = grupos[2].IdGrupo;
@@ -106,6 +107,7 @@ namespace WindowsFormsPrincipal
             buttonArea3.Text = lista[2].NomeLista;
             listas[2].IdLista = lista[2].IdLista;
         }
+
         private void buttonGrupo4_Click(object sender, EventArgs e)
         {
             Constantes.IdGrupoAberto = grupos[3].IdGrupo;
@@ -118,6 +120,7 @@ namespace WindowsFormsPrincipal
             buttonArea3.Text = lista[2].NomeLista;
             listas[2].IdLista = lista[2].IdLista;
         }
+
         private void buttonArea1_Click(object sender, EventArgs e)
         {
             Constantes.IdAreaAberta = listas[0].IdLista;
@@ -149,6 +152,113 @@ namespace WindowsFormsPrincipal
         {
             Close();
         }
+        private void abrirToolStripGrupo1_Click(object sender, EventArgs e)
+        {
+            Constantes.IdGrupoAberto = grupos[0].IdGrupo;
+            List<Lista> lista = new ListaBLL().buscarTarefasArea(Constantes.IdGrupoAberto);
+
+            buttonArea1.Text = lista[0].NomeLista;
+            listas[0].IdLista = lista[0].IdLista;
+            buttonArea2.Text = lista[1].NomeLista;
+            listas[1].IdLista = lista[1].IdLista;
+            buttonArea3.Text = lista[2].NomeLista;
+            listas[2].IdLista = lista[2].IdLista;
+        }
+        private void renomearToolStripGrupo1_Click(object sender, EventArgs e)
+        {
+            using (FormCadastroDeGrupo frm = new FormCadastroDeGrupo(grupos[0].IdGrupo))
+            {
+                frm.ShowDialog();
+            }
+            RecarregarTelaPrincipal();
+        }
+        private void abrirToolStripGrupo2_Click(object sender, EventArgs e)
+        {
+            Constantes.IdGrupoAberto = grupos[1].IdGrupo;
+            List<Lista> lista = new ListaBLL().buscarTarefasArea(Constantes.IdGrupoAberto);
+
+            buttonArea1.Text = lista[0].NomeLista;
+            listas[0].IdLista = lista[0].IdLista;
+            buttonArea2.Text = lista[1].NomeLista;
+            listas[1].IdLista = lista[1].IdLista;
+            buttonArea3.Text = lista[2].NomeLista;
+            listas[2].IdLista = lista[2].IdLista;
+        }
+        private void renomearToolStripGrupo2_Click(object sender, EventArgs e)
+        {
+            using (FormCadastroDeGrupo frm = new FormCadastroDeGrupo(grupos[1].IdGrupo))
+            {
+                frm.ShowDialog();
+            }
+            RecarregarTelaPrincipal();
+        }
+        private void abrirToolStripGrupo3_Click(object sender, EventArgs e)
+        {
+            Constantes.IdGrupoAberto = grupos[2].IdGrupo;
+            List<Lista> lista = new ListaBLL().buscarTarefasArea(Constantes.IdGrupoAberto);
+
+            buttonArea1.Text = lista[0].NomeLista;
+            listas[0].IdLista = lista[0].IdLista;
+            buttonArea2.Text = lista[1].NomeLista;
+            listas[1].IdLista = lista[1].IdLista;
+            buttonArea3.Text = lista[2].NomeLista;
+            listas[2].IdLista = lista[2].IdLista;
+        }
+        private void renomearToolStripGrupo3_Click(object sender, EventArgs e)
+        {
+            using (FormCadastroDeGrupo frm = new FormCadastroDeGrupo(grupos[2].IdGrupo))
+            {
+                frm.ShowDialog();
+            }
+            RecarregarTelaPrincipal();
+        }
+        private void abrirToolStripArea1_Click(object sender, EventArgs e)
+        {
+            Constantes.IdAreaAberta = listas[0].IdLista;
+            using (FormMenuDeTarefas frm = new FormMenuDeTarefas(Constantes.IdAreaAberta))
+            {
+                frm.ShowDialog();
+            }
+        }
+        private void renomearToolStripArea1_Click(object sender, EventArgs e)
+        {
+            using (FormCadastroDeListaTarefas frm = new FormCadastroDeListaTarefas(grupos[0].IdGrupo))
+            {
+                frm.ShowDialog();
+            }
+            RecarregarTelaPrincipal();
+        }
+        public void RecarregarTelaPrincipal()
+        {
+            try
+            {
+                grupos = new GrupoBLL().buscarGruposArea(Constantes.IdUsuarioLogado);
+
+
+                buttonGrupo1.Text = grupos[0].Titulo;
+                Area1 = grupos[0].IdGrupo;
+                buttonGrupo2.Text = grupos[1].Titulo;
+                Area2 = grupos[1].IdGrupo;
+                buttonGrupo3.Text = grupos[2].Titulo;
+                Area3 = grupos[2].IdGrupo;
+                buttonGrupo4.Text = grupos[3].Titulo;
+                Area4 = grupos[3].IdGrupo;
+
+                listas = new ListaBLL().buscarTarefasArea(Area1);
+
+                buttonArea1.Text = listas[0].NomeLista;
+                lista1 = listas[0].IdLista;
+                buttonArea2.Text = listas[1].NomeLista;
+                lista2 = listas[1].IdLista;
+                buttonArea3.Text = listas[2].NomeLista;
+                lista3 = listas[2].IdLista;
+            }
+            catch
+            {
+
+            }
+        }
+
     }
 }
     

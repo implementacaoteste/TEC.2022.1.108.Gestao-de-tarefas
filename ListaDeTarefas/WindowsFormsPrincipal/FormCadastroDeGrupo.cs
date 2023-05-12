@@ -14,9 +14,11 @@ namespace WindowsFormsPrincipal
 {
     public partial class FormCadastroDeGrupo : Form
     {
-        public FormCadastroDeGrupo()
+        int idGrupo;
+        public FormCadastroDeGrupo(int _id)
         {
             InitializeComponent();
+            idGrupo = _id;
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -33,12 +35,12 @@ namespace WindowsFormsPrincipal
         {
             try
             {
-                //GrupoBLL grupoBLL = new GrupoBLL();
-                //grupoBLL.AdicionarGrupo((Grupo)grupoBindingSource.Current);
+                new GrupoBLL().AlterarGrupo(textBoxtitulo.Text,idGrupo);
+                Close();
             }
             catch (Exception ex)
             {
-                throw new Exception("Errou ao salvar o grupo", ex);
+                MessageBox.Show(ex.Message);
             }
         }
 

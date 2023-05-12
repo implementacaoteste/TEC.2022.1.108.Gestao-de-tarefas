@@ -34,30 +34,38 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonGrupo4 = new System.Windows.Forms.Button();
             this.buttonGrupo3 = new System.Windows.Forms.Button();
-            this.buttonGrupo2 = new System.Windows.Forms.Button();
-            this.buttonGrupo1 = new System.Windows.Forms.Button();
-            this.buttonArea1 = new System.Windows.Forms.Button();
-            this.buttonArea2 = new System.Windows.Forms.Button();
-            this.buttonArea3 = new System.Windows.Forms.Button();
-            this.buttonSair = new System.Windows.Forms.Button();
-            this.contextMenuStripGrupo1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.abrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.renomearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStripGrupo2 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStripGrupo3 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStripGrupo4 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonGrupo2 = new System.Windows.Forms.Button();
+            this.contextMenuStripGrupo2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonGrupo1 = new System.Windows.Forms.Button();
+            this.contextMenuStripGrupo1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.abrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.renomearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonArea1 = new System.Windows.Forms.Button();
+            this.contextMenuStripArea1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.abrirToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.renomearToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonArea2 = new System.Windows.Forms.Button();
+            this.contextMenuStripArea2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.abrirToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.renomearToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonArea3 = new System.Windows.Forms.Button();
+            this.contextMenuStripArea3 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.abrirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.renomearToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonSair = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.contextMenuStripGrupo1.SuspendLayout();
-            this.contextMenuStripGrupo2.SuspendLayout();
             this.contextMenuStripGrupo3.SuspendLayout();
-            this.contextMenuStripGrupo4.SuspendLayout();
+            this.contextMenuStripGrupo2.SuspendLayout();
+            this.contextMenuStripGrupo1.SuspendLayout();
+            this.contextMenuStripArea1.SuspendLayout();
+            this.contextMenuStripArea2.SuspendLayout();
+            this.contextMenuStripArea3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -95,7 +103,6 @@
             // 
             // buttonGrupo4
             // 
-            this.buttonGrupo4.ContextMenuStrip = this.contextMenuStripGrupo4;
             this.buttonGrupo4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonGrupo4.Location = new System.Drawing.Point(0, 368);
             this.buttonGrupo4.Name = "buttonGrupo4";
@@ -117,6 +124,29 @@
             this.buttonGrupo3.UseVisualStyleBackColor = true;
             this.buttonGrupo3.Click += new System.EventHandler(this.buttonGrupo3_Click);
             // 
+            // contextMenuStripGrupo3
+            // 
+            this.contextMenuStripGrupo3.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStripGrupo3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem3,
+            this.toolStripMenuItem4});
+            this.contextMenuStripGrupo3.Name = "contextMenuStripGrupo1";
+            this.contextMenuStripGrupo3.Size = new System.Drawing.Size(147, 52);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(146, 24);
+            this.toolStripMenuItem3.Text = "Abrir";
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.abrirToolStripGrupo3_Click);
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(146, 24);
+            this.toolStripMenuItem4.Text = "Renomear";
+            this.toolStripMenuItem4.Click += new System.EventHandler(this.renomearToolStripGrupo3_Click);
+            // 
             // buttonGrupo2
             // 
             this.buttonGrupo2.ContextMenuStrip = this.contextMenuStripGrupo2;
@@ -128,95 +158,6 @@
             this.buttonGrupo2.Text = "Grupo 2";
             this.buttonGrupo2.UseVisualStyleBackColor = true;
             this.buttonGrupo2.Click += new System.EventHandler(this.buttonGrupo2_Click);
-            // 
-            // buttonGrupo1
-            // 
-            this.buttonGrupo1.ContextMenuStrip = this.contextMenuStripGrupo1;
-            this.buttonGrupo1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonGrupo1.Location = new System.Drawing.Point(0, 273);
-            this.buttonGrupo1.Name = "buttonGrupo1";
-            this.buttonGrupo1.Size = new System.Drawing.Size(136, 35);
-            this.buttonGrupo1.TabIndex = 0;
-            this.buttonGrupo1.Text = "Grupo 1";
-            this.buttonGrupo1.UseVisualStyleBackColor = true;
-            this.buttonGrupo1.Click += new System.EventHandler(this.buttonGrupo1_Click);
-            // 
-            // buttonArea1
-            // 
-            this.buttonArea1.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.buttonArea1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonArea1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.buttonArea1.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonArea1.Location = new System.Drawing.Point(337, 173);
-            this.buttonArea1.Name = "buttonArea1";
-            this.buttonArea1.Size = new System.Drawing.Size(410, 60);
-            this.buttonArea1.TabIndex = 3;
-            this.buttonArea1.Text = "Area 1";
-            this.buttonArea1.UseVisualStyleBackColor = false;
-            this.buttonArea1.Click += new System.EventHandler(this.buttonArea1_Click);
-            // 
-            // buttonArea2
-            // 
-            this.buttonArea2.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.buttonArea2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonArea2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.buttonArea2.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonArea2.Location = new System.Drawing.Point(337, 290);
-            this.buttonArea2.Name = "buttonArea2";
-            this.buttonArea2.Size = new System.Drawing.Size(410, 60);
-            this.buttonArea2.TabIndex = 3;
-            this.buttonArea2.Text = "Area 2";
-            this.buttonArea2.UseVisualStyleBackColor = false;
-            this.buttonArea2.Click += new System.EventHandler(this.buttonArea2_Click);
-            // 
-            // buttonArea3
-            // 
-            this.buttonArea3.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.buttonArea3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonArea3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.buttonArea3.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonArea3.Location = new System.Drawing.Point(337, 407);
-            this.buttonArea3.Name = "buttonArea3";
-            this.buttonArea3.Size = new System.Drawing.Size(410, 60);
-            this.buttonArea3.TabIndex = 3;
-            this.buttonArea3.Text = "Area 3";
-            this.buttonArea3.UseVisualStyleBackColor = false;
-            this.buttonArea3.Click += new System.EventHandler(this.buttonArea3_Click);
-            // 
-            // buttonSair
-            // 
-            this.buttonSair.BackColor = System.Drawing.Color.Red;
-            this.buttonSair.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.buttonSair.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonSair.Location = new System.Drawing.Point(910, 501);
-            this.buttonSair.Name = "buttonSair";
-            this.buttonSair.Size = new System.Drawing.Size(74, 33);
-            this.buttonSair.TabIndex = 4;
-            this.buttonSair.Text = "Sair";
-            this.buttonSair.UseVisualStyleBackColor = false;
-            this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
-            // 
-            // contextMenuStripGrupo1
-            // 
-            this.contextMenuStripGrupo1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStripGrupo1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.abrirToolStripMenuItem,
-            this.renomearToolStripMenuItem});
-            this.contextMenuStripGrupo1.Name = "contextMenuStripGrupo1";
-            this.contextMenuStripGrupo1.Size = new System.Drawing.Size(147, 52);
-            // 
-            // abrirToolStripMenuItem
-            // 
-            this.abrirToolStripMenuItem.Name = "abrirToolStripMenuItem";
-            this.abrirToolStripMenuItem.Size = new System.Drawing.Size(146, 24);
-            this.abrirToolStripMenuItem.Text = "Abrir";
-            // 
-            // renomearToolStripMenuItem
-            // 
-            this.renomearToolStripMenuItem.Name = "renomearToolStripMenuItem";
-            this.renomearToolStripMenuItem.Size = new System.Drawing.Size(146, 24);
-            this.renomearToolStripMenuItem.Text = "Renomear";
             // 
             // contextMenuStripGrupo2
             // 
@@ -232,54 +173,171 @@
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(146, 24);
             this.toolStripMenuItem1.Text = "Abrir";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.abrirToolStripGrupo2_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(146, 24);
             this.toolStripMenuItem2.Text = "Renomear";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.renomearToolStripGrupo2_Click);
             // 
-            // contextMenuStripGrupo3
+            // buttonGrupo1
             // 
-            this.contextMenuStripGrupo3.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStripGrupo3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem3,
-            this.toolStripMenuItem4});
-            this.contextMenuStripGrupo3.Name = "contextMenuStripGrupo1";
-            this.contextMenuStripGrupo3.Size = new System.Drawing.Size(147, 52);
+            this.buttonGrupo1.ContextMenuStrip = this.contextMenuStripGrupo1;
+            this.buttonGrupo1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonGrupo1.Location = new System.Drawing.Point(0, 273);
+            this.buttonGrupo1.Name = "buttonGrupo1";
+            this.buttonGrupo1.Size = new System.Drawing.Size(136, 35);
+            this.buttonGrupo1.TabIndex = 0;
+            this.buttonGrupo1.Text = "Grupo 1";
+            this.buttonGrupo1.UseVisualStyleBackColor = true;
+            this.buttonGrupo1.Click += new System.EventHandler(this.buttonGrupo1_Click);
             // 
-            // toolStripMenuItem3
+            // contextMenuStripGrupo1
             // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(146, 24);
-            this.toolStripMenuItem3.Text = "Abrir";
+            this.contextMenuStripGrupo1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStripGrupo1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.abrirToolStripMenuItem,
+            this.renomearToolStripMenuItem});
+            this.contextMenuStripGrupo1.Name = "contextMenuStripGrupo1";
+            this.contextMenuStripGrupo1.Size = new System.Drawing.Size(147, 52);
             // 
-            // toolStripMenuItem4
+            // abrirToolStripMenuItem
             // 
-            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(146, 24);
-            this.toolStripMenuItem4.Text = "Renomear";
+            this.abrirToolStripMenuItem.Name = "abrirToolStripMenuItem";
+            this.abrirToolStripMenuItem.Size = new System.Drawing.Size(146, 24);
+            this.abrirToolStripMenuItem.Text = "Abrir";
+            this.abrirToolStripMenuItem.Click += new System.EventHandler(this.abrirToolStripGrupo1_Click);
             // 
-            // contextMenuStripGrupo4
+            // renomearToolStripMenuItem
             // 
-            this.contextMenuStripGrupo4.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStripGrupo4.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem5,
-            this.toolStripMenuItem6});
-            this.contextMenuStripGrupo4.Name = "contextMenuStripGrupo1";
-            this.contextMenuStripGrupo4.Size = new System.Drawing.Size(147, 52);
+            this.renomearToolStripMenuItem.Name = "renomearToolStripMenuItem";
+            this.renomearToolStripMenuItem.Size = new System.Drawing.Size(146, 24);
+            this.renomearToolStripMenuItem.Text = "Renomear";
+            this.renomearToolStripMenuItem.Click += new System.EventHandler(this.renomearToolStripGrupo1_Click);
             // 
-            // toolStripMenuItem5
+            // buttonArea1
             // 
-            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(146, 24);
-            this.toolStripMenuItem5.Text = "Abrir";
+            this.buttonArea1.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.buttonArea1.ContextMenuStrip = this.contextMenuStripArea1;
+            this.buttonArea1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonArea1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.buttonArea1.ForeColor = System.Drawing.SystemColors.Window;
+            this.buttonArea1.Location = new System.Drawing.Point(337, 173);
+            this.buttonArea1.Name = "buttonArea1";
+            this.buttonArea1.Size = new System.Drawing.Size(410, 60);
+            this.buttonArea1.TabIndex = 3;
+            this.buttonArea1.Text = "Area 1";
+            this.buttonArea1.UseVisualStyleBackColor = false;
+            this.buttonArea1.Click += new System.EventHandler(this.buttonArea1_Click);
             // 
-            // toolStripMenuItem6
+            // contextMenuStripArea1
             // 
-            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(146, 24);
-            this.toolStripMenuItem6.Text = "Renomear";
+            this.contextMenuStripArea1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStripArea1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.abrirToolStripMenuItem3,
+            this.renomearToolStripMenuItem3});
+            this.contextMenuStripArea1.Name = "contextMenuStripArea1";
+            this.contextMenuStripArea1.Size = new System.Drawing.Size(211, 80);
+            // 
+            // abrirToolStripMenuItem3
+            // 
+            this.abrirToolStripMenuItem3.Name = "abrirToolStripMenuItem3";
+            this.abrirToolStripMenuItem3.Size = new System.Drawing.Size(210, 24);
+            this.abrirToolStripMenuItem3.Text = "Abrir";
+            // 
+            // renomearToolStripMenuItem3
+            // 
+            this.renomearToolStripMenuItem3.Name = "renomearToolStripMenuItem3";
+            this.renomearToolStripMenuItem3.Size = new System.Drawing.Size(210, 24);
+            this.renomearToolStripMenuItem3.Text = "Renomear";
+            // 
+            // buttonArea2
+            // 
+            this.buttonArea2.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.buttonArea2.ContextMenuStrip = this.contextMenuStripArea2;
+            this.buttonArea2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonArea2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.buttonArea2.ForeColor = System.Drawing.SystemColors.Window;
+            this.buttonArea2.Location = new System.Drawing.Point(337, 290);
+            this.buttonArea2.Name = "buttonArea2";
+            this.buttonArea2.Size = new System.Drawing.Size(410, 60);
+            this.buttonArea2.TabIndex = 3;
+            this.buttonArea2.Text = "Area 2";
+            this.buttonArea2.UseVisualStyleBackColor = false;
+            this.buttonArea2.Click += new System.EventHandler(this.buttonArea2_Click);
+            // 
+            // contextMenuStripArea2
+            // 
+            this.contextMenuStripArea2.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStripArea2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.abrirToolStripMenuItem2,
+            this.renomearToolStripMenuItem2});
+            this.contextMenuStripArea2.Name = "contextMenuStripArea2";
+            this.contextMenuStripArea2.Size = new System.Drawing.Size(147, 52);
+            // 
+            // abrirToolStripMenuItem2
+            // 
+            this.abrirToolStripMenuItem2.Name = "abrirToolStripMenuItem2";
+            this.abrirToolStripMenuItem2.Size = new System.Drawing.Size(146, 24);
+            this.abrirToolStripMenuItem2.Text = "Abrir";
+            // 
+            // renomearToolStripMenuItem2
+            // 
+            this.renomearToolStripMenuItem2.Name = "renomearToolStripMenuItem2";
+            this.renomearToolStripMenuItem2.Size = new System.Drawing.Size(146, 24);
+            this.renomearToolStripMenuItem2.Text = "Renomear";
+            // 
+            // buttonArea3
+            // 
+            this.buttonArea3.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.buttonArea3.ContextMenuStrip = this.contextMenuStripArea3;
+            this.buttonArea3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonArea3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.buttonArea3.ForeColor = System.Drawing.SystemColors.Window;
+            this.buttonArea3.Location = new System.Drawing.Point(337, 407);
+            this.buttonArea3.Name = "buttonArea3";
+            this.buttonArea3.Size = new System.Drawing.Size(410, 60);
+            this.buttonArea3.TabIndex = 3;
+            this.buttonArea3.Text = "Area 3";
+            this.buttonArea3.UseVisualStyleBackColor = false;
+            this.buttonArea3.Click += new System.EventHandler(this.buttonArea3_Click);
+            // 
+            // contextMenuStripArea3
+            // 
+            this.contextMenuStripArea3.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStripArea3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.abrirToolStripMenuItem1,
+            this.renomearToolStripMenuItem1});
+            this.contextMenuStripArea3.Name = "contextMenuStripArea3";
+            this.contextMenuStripArea3.Size = new System.Drawing.Size(147, 52);
+            // 
+            // abrirToolStripMenuItem1
+            // 
+            this.abrirToolStripMenuItem1.Name = "abrirToolStripMenuItem1";
+            this.abrirToolStripMenuItem1.Size = new System.Drawing.Size(146, 24);
+            this.abrirToolStripMenuItem1.Text = "Abrir";
+            // 
+            // renomearToolStripMenuItem1
+            // 
+            this.renomearToolStripMenuItem1.Name = "renomearToolStripMenuItem1";
+            this.renomearToolStripMenuItem1.Size = new System.Drawing.Size(146, 24);
+            this.renomearToolStripMenuItem1.Text = "Renomear";
+            // 
+            // buttonSair
+            // 
+            this.buttonSair.BackColor = System.Drawing.Color.Red;
+            this.buttonSair.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.buttonSair.ForeColor = System.Drawing.SystemColors.Window;
+            this.buttonSair.Location = new System.Drawing.Point(910, 501);
+            this.buttonSair.Name = "buttonSair";
+            this.buttonSair.Size = new System.Drawing.Size(74, 33);
+            this.buttonSair.TabIndex = 4;
+            this.buttonSair.Text = "Sair";
+            this.buttonSair.UseVisualStyleBackColor = false;
+            this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
             // 
             // FormTelaPrincipal
             // 
@@ -303,10 +361,12 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.contextMenuStripGrupo1.ResumeLayout(false);
-            this.contextMenuStripGrupo2.ResumeLayout(false);
             this.contextMenuStripGrupo3.ResumeLayout(false);
-            this.contextMenuStripGrupo4.ResumeLayout(false);
+            this.contextMenuStripGrupo2.ResumeLayout(false);
+            this.contextMenuStripGrupo1.ResumeLayout(false);
+            this.contextMenuStripArea1.ResumeLayout(false);
+            this.contextMenuStripArea2.ResumeLayout(false);
+            this.contextMenuStripArea3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -327,14 +387,20 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStripGrupo1;
         private System.Windows.Forms.ToolStripMenuItem abrirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem renomearToolStripMenuItem;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStripGrupo4;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
         private System.Windows.Forms.ContextMenuStrip contextMenuStripGrupo3;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
         private System.Windows.Forms.ContextMenuStrip contextMenuStripGrupo2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripArea1;
+        private System.Windows.Forms.ToolStripMenuItem abrirToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem renomearToolStripMenuItem3;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripArea2;
+        private System.Windows.Forms.ToolStripMenuItem abrirToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem renomearToolStripMenuItem2;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripArea3;
+        private System.Windows.Forms.ToolStripMenuItem abrirToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem renomearToolStripMenuItem1;
     }
 }

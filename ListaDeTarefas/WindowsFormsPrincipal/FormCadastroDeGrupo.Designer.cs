@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.buttonArea1 = new System.Windows.Forms.Button();
+            this.buttonSalvarGrupo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonSair = new System.Windows.Forms.Button();
             this.grupoBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -62,19 +62,19 @@
             this.label3.Text = "Renomear Grupo";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // buttonArea1
+            // buttonSalvarGrupo
             // 
-            this.buttonArea1.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.buttonArea1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonArea1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.buttonArea1.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonArea1.Location = new System.Drawing.Point(107, 313);
-            this.buttonArea1.Name = "buttonArea1";
-            this.buttonArea1.Size = new System.Drawing.Size(169, 36);
-            this.buttonArea1.TabIndex = 9;
-            this.buttonArea1.Text = "Salvar grupo";
-            this.buttonArea1.UseVisualStyleBackColor = false;
-            this.buttonArea1.Click += new System.EventHandler(this.buttonArea1_Click);
+            this.buttonSalvarGrupo.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.buttonSalvarGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonSalvarGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.buttonSalvarGrupo.ForeColor = System.Drawing.SystemColors.Window;
+            this.buttonSalvarGrupo.Location = new System.Drawing.Point(107, 313);
+            this.buttonSalvarGrupo.Name = "buttonSalvarGrupo";
+            this.buttonSalvarGrupo.Size = new System.Drawing.Size(169, 36);
+            this.buttonSalvarGrupo.TabIndex = 9;
+            this.buttonSalvarGrupo.Text = "Salvar grupo";
+            this.buttonSalvarGrupo.UseVisualStyleBackColor = false;
+            this.buttonSalvarGrupo.Click += new System.EventHandler(this.buttonArea1_Click);
             // 
             // label1
             // 
@@ -122,7 +122,7 @@
             this.ClientSize = new System.Drawing.Size(491, 450);
             this.Controls.Add(this.textBoxtitulo);
             this.Controls.Add(this.buttonSair);
-            this.Controls.Add(this.buttonArea1);
+            this.Controls.Add(this.buttonSalvarGrupo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -146,7 +146,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button buttonArea1;
+        private System.Windows.Forms.Button buttonSalvarGrupo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonSair;
         private System.Windows.Forms.BindingSource grupoBindingSource;

@@ -14,9 +14,11 @@ namespace WindowsFormsPrincipal
 {
     public partial class FormCadastroDeListaTarefas : Form
     {
-        public FormCadastroDeListaTarefas(int _referencia)
+        int idLista;
+        public FormCadastroDeListaTarefas(int _id)
         {
             InitializeComponent();
+            idLista = _id;
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -38,8 +40,7 @@ namespace WindowsFormsPrincipal
         {
             try
             {
-                //ListaBLL listaBLL = new ListaBLL();
-                //listaBLL.AlterarLista(nomeListaTextBox.Text);
+                new ListaBLL().AlterarLista(idLista, nomeListaTextBox.Text);
             }
             catch (Exception ex)
             {

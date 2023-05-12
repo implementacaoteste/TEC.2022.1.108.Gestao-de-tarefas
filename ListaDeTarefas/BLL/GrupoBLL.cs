@@ -21,7 +21,8 @@ namespace BLL
         }
         public void AlterarGrupo(string _titulo, int _idGrupo)
         {
-            //new GrupoDAL().AlterarGrupo(_titulo, _idGrupo);
+            new GrupoBLL().ValidarTitulo(_titulo);
+            new GrupoDAL().AlterarGrupo(_titulo, _idGrupo);
         }
         public void ExcluirGrupo(int _idGrupo)
         {
@@ -40,8 +41,12 @@ namespace BLL
             return new GrupoDAL().BuscarPorIdUsuario(_id);
         }
 
-        private void ValidarDados(Grupo _grupo)
+        private void ValidarTitulo(string _titulo)
         { 
+            if(_titulo.Length < 3)
+            {
+                throw new Exception("O título do grupo deve ter mais de 3 caracteres!");
+            }
         }
         public List<Grupo> buscarGruposArea(int _idUsuario)
         {
