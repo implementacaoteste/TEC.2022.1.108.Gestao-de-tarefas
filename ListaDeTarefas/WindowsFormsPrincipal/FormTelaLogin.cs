@@ -54,5 +54,16 @@ namespace WindowsFormsPrincipal
             if (e.KeyCode == Keys.Enter)
                 buttonLogin_Click(null,null);
         }
+
+        private void FormTelaLogin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormTelaLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Escape)
+                buttonFechar_Click(null,null);
+        }
     }
 }

@@ -26,5 +26,10 @@ namespace WindowsFormsPrincipal
         {
 
         }
+
+        private void FormTelaEntrar_Load(object sender, EventArgs e)
+        {
+            codigoTextBox.Focus();
+        }
     }
 }

@@ -74,7 +74,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 80);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(107, 300);
-            this.panel2.TabIndex = 1;
+            this.panel2.TabIndex = 6;
             // 
             // label1
             // 
@@ -83,7 +83,7 @@
             this.label1.Location = new System.Drawing.Point(213, 124);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(111, 18);
-            this.label1.TabIndex = 4;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Nome da Etapa";
             // 
             // label2
@@ -93,7 +93,7 @@
             this.label2.Location = new System.Drawing.Point(213, 193);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 18);
-            this.label2.TabIndex = 4;
+            this.label2.TabIndex = 2;
             this.label2.Text = "Responsável";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
@@ -105,7 +105,7 @@
             this.buttonSalvarEtapa.Location = new System.Drawing.Point(213, 294);
             this.buttonSalvarEtapa.Name = "buttonSalvarEtapa";
             this.buttonSalvarEtapa.Size = new System.Drawing.Size(111, 33);
-            this.buttonSalvarEtapa.TabIndex = 5;
+            this.buttonSalvarEtapa.TabIndex = 4;
             this.buttonSalvarEtapa.Text = "Salvar";
             this.buttonSalvarEtapa.UseVisualStyleBackColor = false;
             this.buttonSalvarEtapa.Click += new System.EventHandler(this.buttonSalvarEtapa_Click);
@@ -132,7 +132,7 @@
             this.nomeEtapaTextBox.Location = new System.Drawing.Point(216, 156);
             this.nomeEtapaTextBox.Name = "nomeEtapaTextBox";
             this.nomeEtapaTextBox.Size = new System.Drawing.Size(280, 30);
-            this.nomeEtapaTextBox.TabIndex = 10;
+            this.nomeEtapaTextBox.TabIndex = 1;
             this.nomeEtapaTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.nomeEtapaTextBox_KeyDown);
             // 
             // comboBoxResponsavel
@@ -144,7 +144,7 @@
             this.comboBoxResponsavel.Location = new System.Drawing.Point(216, 214);
             this.comboBoxResponsavel.Name = "comboBoxResponsavel";
             this.comboBoxResponsavel.Size = new System.Drawing.Size(280, 33);
-            this.comboBoxResponsavel.TabIndex = 11;
+            this.comboBoxResponsavel.TabIndex = 3;
             this.comboBoxResponsavel.ValueMember = "Id";
             this.comboBoxResponsavel.KeyDown += new System.Windows.Forms.KeyEventHandler(this.comboBoxResponsavel_KeyDown);
             // 
