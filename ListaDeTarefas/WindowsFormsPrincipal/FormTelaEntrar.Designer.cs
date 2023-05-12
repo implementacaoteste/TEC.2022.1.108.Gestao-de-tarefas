@@ -40,6 +40,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.listaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
+            // codigoLabel
+            // 
+            codigoLabel.AutoSize = true;
+            codigoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            codigoLabel.Location = new System.Drawing.Point(147, 214);
+            codigoLabel.Name = "codigoLabel";
+            codigoLabel.Size = new System.Drawing.Size(188, 25);
+            codigoLabel.TabIndex = 7;
+            codigoLabel.Text = "Digite o código aqui:";
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MidnightBlue;
@@ -66,16 +76,6 @@
             // listaBindingSource
             // 
             this.listaBindingSource.DataSource = typeof(Models.Lista);
-            // 
-            // codigoLabel
-            // 
-            codigoLabel.AutoSize = true;
-            codigoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            codigoLabel.Location = new System.Drawing.Point(147, 214);
-            codigoLabel.Name = "codigoLabel";
-            codigoLabel.Size = new System.Drawing.Size(188, 25);
-            codigoLabel.TabIndex = 7;
-            codigoLabel.Text = "Digite o código aqui:";
             // 
             // codigoTextBox
             // 
@@ -116,6 +116,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.FormTelaEntrar_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaBindingSource)).EndInit();

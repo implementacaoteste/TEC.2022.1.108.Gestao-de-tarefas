@@ -76,7 +76,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 80);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(107, 300);
-            this.panel2.TabIndex = 1;
+            this.panel2.TabIndex = 2;
             // 
             // label1
             // 
@@ -138,7 +138,7 @@
             this.nomeEtapaTextBox.Location = new System.Drawing.Point(216, 156);
             this.nomeEtapaTextBox.Name = "nomeEtapaTextBox";
             this.nomeEtapaTextBox.Size = new System.Drawing.Size(280, 30);
-            this.nomeEtapaTextBox.TabIndex = 10;
+            this.nomeEtapaTextBox.TabIndex = 1;
             this.nomeEtapaTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.nomeEtapaTextBox_KeyDown);
             // 
             // usuarioBindingSource
