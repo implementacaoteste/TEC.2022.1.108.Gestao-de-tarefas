@@ -62,9 +62,9 @@ namespace BLL
                  throw new Exception("Usuário ou senha inválidos!"); 
         }
 
-        public List<Usuario> BuscarUsuarioLista(string _nome, int _idLista)
+        public List<Usuario> BuscarUsuarioLista(int _idLista)
         {
-            return new UsuarioDAL().BuscarUsuarioLista(_nome,_idLista);
+            return new UsuarioDAL().BuscarUsuarioLista(_idLista);
         }
     }
 }

@@ -14,12 +14,13 @@ namespace WindowsFormsPrincipal
 {
     public partial class FormCadastroEtapa : Form
     {
-        int idTarefa;
+        int idTarefa, idLista;
         
-        public FormCadastroEtapa(int _idTarefa = 0)
+        public FormCadastroEtapa(int _id_lista,int _idTarefa = 0)
         {
             InitializeComponent();
             idTarefa = _idTarefa;
+            idLista = _id_lista;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -57,7 +58,7 @@ namespace WindowsFormsPrincipal
 
         private void FormCadastroEtapa_Load(object sender, EventArgs e)
         {
-            nomeEtapaTextBox.Focus();
+            usuarioBindingSource.DataSource = new UsuarioBLL().BuscarUsuarioLista(idLista);
         }
 
         private void buttonCancelarEtapa_Click_1(object sender, EventArgs e)
