@@ -150,10 +150,11 @@
             this.comboBoxResponsavel.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.etapaBindingSource1, "IdUsuario", true));
             this.comboBoxResponsavel.DataSource = this.usuarioBindingSource;
             this.comboBoxResponsavel.DisplayMember = "Nome";
+            this.comboBoxResponsavel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxResponsavel.FormattingEnabled = true;
             this.comboBoxResponsavel.Location = new System.Drawing.Point(216, 214);
             this.comboBoxResponsavel.Name = "comboBoxResponsavel";
-            this.comboBoxResponsavel.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxResponsavel.Size = new System.Drawing.Size(280, 33);
             this.comboBoxResponsavel.TabIndex = 11;
             this.comboBoxResponsavel.ValueMember = "Id";
             this.comboBoxResponsavel.KeyDown += new System.Windows.Forms.KeyEventHandler(this.comboBoxResponsavel_KeyDown);
