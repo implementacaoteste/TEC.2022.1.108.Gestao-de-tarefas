@@ -56,7 +56,7 @@
             nomeLabel.Location = new System.Drawing.Point(293, 173);
             nomeLabel.Name = "nomeLabel";
             nomeLabel.Size = new System.Drawing.Size(47, 16);
-            nomeLabel.TabIndex = 2;
+            nomeLabel.TabIndex = 0;
             nomeLabel.Text = "Nome:";
             // 
             // senhaLabel
@@ -74,7 +74,7 @@
             emailLabel.Location = new System.Drawing.Point(298, 227);
             emailLabel.Name = "emailLabel";
             emailLabel.Size = new System.Drawing.Size(44, 16);
-            emailLabel.TabIndex = 6;
+            emailLabel.TabIndex = 2;
             emailLabel.Text = "Email:";
             // 
             // label1
@@ -83,7 +83,7 @@
             label1.Location = new System.Drawing.Point(293, 345);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(107, 16);
-            label1.TabIndex = 14;
+            label1.TabIndex = 6;
             label1.Text = "Confirmar senha:";
             // 
             // panel1
@@ -94,7 +94,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(944, 97);
-            this.panel1.TabIndex = 1;
+            this.panel1.TabIndex = 0;
             // 
             // label3
             // 
@@ -119,7 +119,7 @@
             this.nomeTextBox.Location = new System.Drawing.Point(296, 192);
             this.nomeTextBox.Name = "nomeTextBox";
             this.nomeTextBox.Size = new System.Drawing.Size(303, 30);
-            this.nomeTextBox.TabIndex = 3;
+            this.nomeTextBox.TabIndex = 1;
             this.nomeTextBox.TextChanged += new System.EventHandler(this.nomeTextBox_TextChanged);
             this.nomeTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.nomeTextBox_KeyDown);
             // 
@@ -143,7 +143,7 @@
             this.emailTextBox.Location = new System.Drawing.Point(296, 247);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(303, 30);
-            this.emailTextBox.TabIndex = 7;
+            this.emailTextBox.TabIndex = 3;
             this.emailTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.emailTextBox_KeyDown);
             // 
             // buttonCadastrar
@@ -169,7 +169,7 @@
             this.buttonSair.Location = new System.Drawing.Point(516, 406);
             this.buttonSair.Name = "buttonSair";
             this.buttonSair.Size = new System.Drawing.Size(83, 40);
-            this.buttonSair.TabIndex = 13;
+            this.buttonSair.TabIndex = 10;
             this.buttonSair.Text = "Sair";
             this.buttonSair.UseVisualStyleBackColor = false;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
@@ -183,7 +183,7 @@
             this.textBoxConfirmarSenha.Location = new System.Drawing.Point(296, 364);
             this.textBoxConfirmarSenha.Name = "textBoxConfirmarSenha";
             this.textBoxConfirmarSenha.Size = new System.Drawing.Size(303, 30);
-            this.textBoxConfirmarSenha.TabIndex = 15;
+            this.textBoxConfirmarSenha.TabIndex = 7;
             this.textBoxConfirmarSenha.UseSystemPasswordChar = true;
             this.textBoxConfirmarSenha.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxConfirmarSenha_KeyDown);
             // 

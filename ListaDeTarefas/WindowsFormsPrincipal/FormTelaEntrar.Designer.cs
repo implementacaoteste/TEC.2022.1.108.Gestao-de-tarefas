@@ -47,7 +47,7 @@
             codigoLabel.Location = new System.Drawing.Point(147, 214);
             codigoLabel.Name = "codigoLabel";
             codigoLabel.Size = new System.Drawing.Size(188, 25);
-            codigoLabel.TabIndex = 7;
+            codigoLabel.TabIndex = 0;
             codigoLabel.Text = "Digite o código aqui:";
             // 
             // panel1
@@ -57,7 +57,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(571, 87);
-            this.panel1.TabIndex = 6;
+            this.panel1.TabIndex = 3;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label1
@@ -68,7 +68,7 @@
             this.label1.Location = new System.Drawing.Point(35, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(494, 46);
-            this.label1.TabIndex = 6;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Entrar em área de trabalho";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -85,7 +85,7 @@
             this.codigoTextBox.Location = new System.Drawing.Point(152, 242);
             this.codigoTextBox.Name = "codigoTextBox";
             this.codigoTextBox.Size = new System.Drawing.Size(312, 30);
-            this.codigoTextBox.TabIndex = 8;
+            this.codigoTextBox.TabIndex = 1;
             // 
             // buttonEntrar
             // 
@@ -96,7 +96,7 @@
             this.buttonEntrar.Location = new System.Drawing.Point(206, 385);
             this.buttonEntrar.Name = "buttonEntrar";
             this.buttonEntrar.Size = new System.Drawing.Size(169, 36);
-            this.buttonEntrar.TabIndex = 10;
+            this.buttonEntrar.TabIndex = 2;
             this.buttonEntrar.Text = "Entrar";
             this.buttonEntrar.UseVisualStyleBackColor = false;
             // 

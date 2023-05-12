@@ -26,7 +26,7 @@ namespace WindowsFormsPrincipal
 
         private void FormCadastroDeListaTarefas_Load(object sender, EventArgs e)
         {
-
+            nomeListaTextBox.Focus();
         }
 
         private void buttonSair_Click(object sender, EventArgs e)

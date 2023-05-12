@@ -41,6 +41,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.tarefaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
+            // nomeTarefaLabel
+            // 
+            nomeTarefaLabel.AutoSize = true;
+            nomeTarefaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            nomeTarefaLabel.Location = new System.Drawing.Point(161, 199);
+            nomeTarefaLabel.Name = "nomeTarefaLabel";
+            nomeTarefaLabel.Size = new System.Drawing.Size(132, 25);
+            nomeTarefaLabel.TabIndex = 0;
+            nomeTarefaLabel.Text = "Nome Tarefa:";
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MidnightBlue;
@@ -49,7 +59,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(683, 100);
-            this.panel1.TabIndex = 2;
+            this.panel1.TabIndex = 4;
             // 
             // label3
             // 
@@ -66,16 +76,6 @@
             // 
             this.tarefaBindingSource.DataSource = typeof(Models.Tarefa);
             // 
-            // nomeTarefaLabel
-            // 
-            nomeTarefaLabel.AutoSize = true;
-            nomeTarefaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nomeTarefaLabel.Location = new System.Drawing.Point(161, 199);
-            nomeTarefaLabel.Name = "nomeTarefaLabel";
-            nomeTarefaLabel.Size = new System.Drawing.Size(132, 25);
-            nomeTarefaLabel.TabIndex = 2;
-            nomeTarefaLabel.Text = "Nome Tarefa:";
-            // 
             // nomeTarefaTextBox
             // 
             this.nomeTarefaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tarefaBindingSource, "NomeTarefa", true));
@@ -83,7 +83,7 @@
             this.nomeTarefaTextBox.Location = new System.Drawing.Point(299, 196);
             this.nomeTarefaTextBox.Name = "nomeTarefaTextBox";
             this.nomeTarefaTextBox.Size = new System.Drawing.Size(233, 30);
-            this.nomeTarefaTextBox.TabIndex = 3;
+            this.nomeTarefaTextBox.TabIndex = 1;
             // 
             // buttonCriar
             // 
@@ -94,7 +94,7 @@
             this.buttonCriar.Location = new System.Drawing.Point(166, 314);
             this.buttonCriar.Name = "buttonCriar";
             this.buttonCriar.Size = new System.Drawing.Size(174, 40);
-            this.buttonCriar.TabIndex = 9;
+            this.buttonCriar.TabIndex = 2;
             this.buttonCriar.Text = "Criar tarefa";
             this.buttonCriar.UseVisualStyleBackColor = false;
             this.buttonCriar.Click += new System.EventHandler(this.buttonCriar_Click);
@@ -108,7 +108,7 @@
             this.buttonSair.Location = new System.Drawing.Point(458, 314);
             this.buttonSair.Name = "buttonSair";
             this.buttonSair.Size = new System.Drawing.Size(74, 33);
-            this.buttonSair.TabIndex = 13;
+            this.buttonSair.TabIndex = 3;
             this.buttonSair.Text = "Sair";
             this.buttonSair.UseVisualStyleBackColor = false;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);

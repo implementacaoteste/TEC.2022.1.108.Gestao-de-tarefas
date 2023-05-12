@@ -48,7 +48,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(491, 80);
-            this.panel1.TabIndex = 1;
+            this.panel1.TabIndex = 4;
             // 
             // label3
             // 
@@ -58,7 +58,7 @@
             this.label3.Location = new System.Drawing.Point(85, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(342, 46);
-            this.label3.TabIndex = 6;
+            this.label3.TabIndex = 0;
             this.label3.Text = "Renomear Grupo";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
@@ -71,7 +71,7 @@
             this.buttonArea1.Location = new System.Drawing.Point(107, 313);
             this.buttonArea1.Name = "buttonArea1";
             this.buttonArea1.Size = new System.Drawing.Size(169, 36);
-            this.buttonArea1.TabIndex = 9;
+            this.buttonArea1.TabIndex = 2;
             this.buttonArea1.Text = "Salvar grupo";
             this.buttonArea1.UseVisualStyleBackColor = false;
             this.buttonArea1.Click += new System.EventHandler(this.buttonArea1_Click);
@@ -83,7 +83,7 @@
             this.label1.Location = new System.Drawing.Point(102, 191);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(150, 25);
-            this.label1.TabIndex = 6;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Nome do Grupo";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
@@ -96,7 +96,7 @@
             this.buttonSair.Location = new System.Drawing.Point(314, 313);
             this.buttonSair.Name = "buttonSair";
             this.buttonSair.Size = new System.Drawing.Size(74, 36);
-            this.buttonSair.TabIndex = 13;
+            this.buttonSair.TabIndex = 3;
             this.buttonSair.Text = "Sair";
             this.buttonSair.UseVisualStyleBackColor = false;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
@@ -113,7 +113,7 @@
             this.textBoxtitulo.Location = new System.Drawing.Point(107, 228);
             this.textBoxtitulo.Name = "textBoxtitulo";
             this.textBoxtitulo.Size = new System.Drawing.Size(281, 30);
-            this.textBoxtitulo.TabIndex = 15;
+            this.textBoxtitulo.TabIndex = 1;
             // 
             // FormCadastroDeGrupo
             // 
