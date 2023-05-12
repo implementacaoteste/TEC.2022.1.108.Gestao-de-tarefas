@@ -20,7 +20,7 @@ namespace WindowsFormsPrincipal
         {
             InitializeComponent();
             id_lista = _id;
-            buttonBuscar_Click(_id,null);
+            buttonBuscar_Click(_id, null);
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -33,10 +33,6 @@ namespace WindowsFormsPrincipal
 
         }
 
-        private void FormMenuDeTarefas_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void tarefaBindingSource_CurrentChanged(object sender, EventArgs e)
         {
@@ -55,14 +51,7 @@ namespace WindowsFormsPrincipal
 
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                tarefaBindingSource1.DataSource = new BLL.TarefaBLL().BuscarPorIdLista(id_lista);
-            }
-            catch
-            {
-
-            }
+            tarefaBindingSource1.DataSource = new BLL.TarefaBLL().BuscarPorIdLista(id_lista);
         }
 
         private void tarefaBindingSource1_CurrentChanged(object sender, EventArgs e)
@@ -72,7 +61,7 @@ namespace WindowsFormsPrincipal
 
         private void buttonInserir_Click(object sender, EventArgs e)
         {
-            using (FormCadastrarTarefas frm = new FormCadastrarTarefas(id_lista,0))
+            using (FormCadastrarTarefas frm = new FormCadastrarTarefas(id_lista, 0))
             {
                 frm.ShowDialog();
             }
@@ -110,11 +99,16 @@ namespace WindowsFormsPrincipal
         private void buttonInserirEtapa_Click(object sender, EventArgs e)
         {
             int id2 = ((Tarefa)tarefaBindingSource1.Current).Id;
-            using (FormCadastroEtapa frm = new FormCadastroEtapa(id2))
+            using (FormCadastroEtapa frm = new FormCadastroEtapa(id_lista, id2))
             {
                 frm.ShowDialog();
             }
             buttonBuscar_Click(id_lista, null);
+        }
+
+        private void tarefaDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

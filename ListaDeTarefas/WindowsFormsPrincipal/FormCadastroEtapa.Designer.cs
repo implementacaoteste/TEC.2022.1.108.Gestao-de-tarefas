@@ -36,15 +36,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.buttonSalvarEtapa = new System.Windows.Forms.Button();
             this.buttonCancelarEtapa = new System.Windows.Forms.Button();
-            this.etapaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nomeEtapaTextBox = new System.Windows.Forms.TextBox();
-            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comboBoxResponsavel = new System.Windows.Forms.ComboBox();
-            this.etapaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.etapaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.etapaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.etapaBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -126,10 +124,6 @@
             this.buttonCancelarEtapa.Click += new System.EventHandler(this.buttonCancelarEtapa_Click_1);
             this.buttonCancelarEtapa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.buttonCancelarEtapa_KeyDown);
             // 
-            // etapaBindingSource
-            // 
-            this.etapaBindingSource.DataSource = typeof(Models.Etapa);
-            // 
             // nomeEtapaTextBox
             // 
             this.nomeEtapaTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -141,13 +135,8 @@
             this.nomeEtapaTextBox.TabIndex = 10;
             this.nomeEtapaTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.nomeEtapaTextBox_KeyDown);
             // 
-            // usuarioBindingSource
-            // 
-            this.usuarioBindingSource.DataSource = typeof(Models.Usuario);
-            // 
             // comboBoxResponsavel
             // 
-            this.comboBoxResponsavel.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.etapaBindingSource1, "IdUsuario", true));
             this.comboBoxResponsavel.DataSource = this.usuarioBindingSource;
             this.comboBoxResponsavel.DisplayMember = "Nome";
             this.comboBoxResponsavel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -159,9 +148,13 @@
             this.comboBoxResponsavel.ValueMember = "Id";
             this.comboBoxResponsavel.KeyDown += new System.Windows.Forms.KeyEventHandler(this.comboBoxResponsavel_KeyDown);
             // 
-            // etapaBindingSource1
+            // etapaBindingSource
             // 
-            this.etapaBindingSource1.DataSource = typeof(Models.Etapa);
+            this.etapaBindingSource.DataSource = typeof(Models.Etapa);
+            // 
+            // usuarioBindingSource
+            // 
+            this.usuarioBindingSource.DataSource = typeof(Models.Usuario);
             // 
             // FormCadastroEtapa
             // 
@@ -187,7 +180,6 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.etapaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.etapaBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,10 +194,9 @@
         private System.Windows.Forms.Button buttonSalvarEtapa;
         private System.Windows.Forms.Button buttonCancelarEtapa;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.BindingSource etapaBindingSource;
         private System.Windows.Forms.TextBox nomeEtapaTextBox;
-        private System.Windows.Forms.BindingSource usuarioBindingSource;
         private System.Windows.Forms.ComboBox comboBoxResponsavel;
-        private System.Windows.Forms.BindingSource etapaBindingSource1;
+        private System.Windows.Forms.BindingSource etapaBindingSource;
+        private System.Windows.Forms.BindingSource usuarioBindingSource;
     }
 }

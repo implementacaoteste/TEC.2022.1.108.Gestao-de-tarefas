@@ -137,6 +137,7 @@ namespace DAL
                         tarefa = new Tarefa();
                         tarefa.Id = Convert.ToInt32(rd["IdTarefa"]);
                         tarefa.NomeTarefa = rd["NomeTarefa"].ToString();
+                        tarefa.Etapa = new EtapaDAL().BuscarPorIdTarefa(tarefa.Id);
                         tarefas.Add(tarefa);
                     }
                 }

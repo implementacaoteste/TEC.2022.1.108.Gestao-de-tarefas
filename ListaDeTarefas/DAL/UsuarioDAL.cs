@@ -215,7 +215,7 @@ namespace DAL
                 cn.Close();
             }
         }
-        public List<Usuario> BuscarUsuarioLista(string _nome, int _idLista)
+        public List<Usuario> BuscarUsuarioLista(int _idLista)
         {
             List<Usuario> usuarios = new List<Usuario>();
             Usuario usuario = new Usuario();
@@ -224,7 +224,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT U.Nome, L.IdListaTarefas
+                cmd.CommandText = @"SELECT U.IdUsuario, U.Nome, L.IdListaTarefas
                                     FROM Usuario U
                                     INNER JOIN ListadeTarefas_Usuario L ON L.IdListaTarefas = @IdUsuario and U.IdUsuario = L.IdUsuario";
 
@@ -238,6 +238,7 @@ namespace DAL
                     while (rd.Read())
                     {
                         usuario = new Usuario();
+                        usuario.Id = (int)rd["IdUsuario"];
                         usuario.Nome = rd["Nome"].ToString();
                         usuarios.Add(usuario);
                     }

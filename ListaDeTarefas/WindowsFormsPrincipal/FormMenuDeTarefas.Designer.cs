@@ -31,9 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.buttonGrupo3 = new System.Windows.Forms.Button();
-            this.buttonGrupo2 = new System.Windows.Forms.Button();
-            this.buttonGrupo1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.checkBoxAtribuicao = new System.Windows.Forms.CheckBox();
             this.checkBoxAtrasado = new System.Windows.Forms.CheckBox();
@@ -51,16 +48,15 @@
             this.tarefaDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tarefaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeTarefaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.etapaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.etapaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.etapaDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tarefaDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tarefaBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.etapaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.etapaBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.etapaDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,43 +75,10 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkGray;
-            this.panel2.Controls.Add(this.buttonGrupo3);
-            this.panel2.Controls.Add(this.buttonGrupo2);
-            this.panel2.Controls.Add(this.buttonGrupo1);
             this.panel2.Location = new System.Drawing.Point(0, 96);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(162, 590);
             this.panel2.TabIndex = 5;
-            // 
-            // buttonGrupo3
-            // 
-            this.buttonGrupo3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonGrupo3.Location = new System.Drawing.Point(0, 513);
-            this.buttonGrupo3.Name = "buttonGrupo3";
-            this.buttonGrupo3.Size = new System.Drawing.Size(162, 35);
-            this.buttonGrupo3.TabIndex = 1;
-            this.buttonGrupo3.Text = "Grupo 3";
-            this.buttonGrupo3.UseVisualStyleBackColor = true;
-            // 
-            // buttonGrupo2
-            // 
-            this.buttonGrupo2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonGrupo2.Location = new System.Drawing.Point(0, 481);
-            this.buttonGrupo2.Name = "buttonGrupo2";
-            this.buttonGrupo2.Size = new System.Drawing.Size(162, 35);
-            this.buttonGrupo2.TabIndex = 2;
-            this.buttonGrupo2.Text = "Grupo 2";
-            this.buttonGrupo2.UseVisualStyleBackColor = true;
-            // 
-            // buttonGrupo1
-            // 
-            this.buttonGrupo1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonGrupo1.Location = new System.Drawing.Point(0, 449);
-            this.buttonGrupo1.Name = "buttonGrupo1";
-            this.buttonGrupo1.Size = new System.Drawing.Size(162, 35);
-            this.buttonGrupo1.TabIndex = 3;
-            this.buttonGrupo1.Text = "Grupo 1";
-            this.buttonGrupo1.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -288,6 +251,7 @@
             // 
             this.tarefaDataGridView.AllowUserToAddRows = false;
             this.tarefaDataGridView.AllowUserToDeleteRows = false;
+            this.tarefaDataGridView.AllowUserToOrderColumns = true;
             this.tarefaDataGridView.AutoGenerateColumns = false;
             this.tarefaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tarefaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -300,6 +264,7 @@
             this.tarefaDataGridView.RowTemplate.Height = 24;
             this.tarefaDataGridView.Size = new System.Drawing.Size(333, 346);
             this.tarefaDataGridView.TabIndex = 18;
+            this.tarefaDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tarefaDataGridView_CellContentClick);
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -315,9 +280,26 @@
             this.tarefaBindingSource1.DataSource = typeof(Models.Tarefa);
             this.tarefaBindingSource1.CurrentChanged += new System.EventHandler(this.tarefaBindingSource1_CurrentChanged);
             // 
-            // etapaBindingSource1
+            // idDataGridViewTextBoxColumn
             // 
-            this.etapaBindingSource1.DataSource = typeof(Models.Etapa);
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nomeTarefaDataGridViewTextBoxColumn
+            // 
+            this.nomeTarefaDataGridViewTextBoxColumn.DataPropertyName = "NomeTarefa";
+            this.nomeTarefaDataGridViewTextBoxColumn.HeaderText = "NomeTarefa";
+            this.nomeTarefaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nomeTarefaDataGridViewTextBoxColumn.Name = "nomeTarefaDataGridViewTextBoxColumn";
+            this.nomeTarefaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // etapaBindingSource
+            // 
+            this.etapaBindingSource.DataMember = "Etapa";
+            this.etapaBindingSource.DataSource = this.tarefaBindingSource1;
             // 
             // etapaDataGridView
             // 
@@ -328,7 +310,7 @@
             this.etapaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.etapaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn4});
-            this.etapaDataGridView.DataSource = this.etapaBindingSource1;
+            this.etapaDataGridView.DataSource = this.etapaBindingSource;
             this.etapaDataGridView.Location = new System.Drawing.Point(628, 283);
             this.etapaDataGridView.Name = "etapaDataGridView";
             this.etapaDataGridView.ReadOnly = true;
@@ -341,7 +323,7 @@
             // 
             this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn4.DataPropertyName = "NomeEtapa";
-            this.dataGridViewTextBoxColumn4.HeaderText = "NomeEtapa";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Nome Etapa";
             this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
@@ -351,7 +333,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1056, 685);
+            this.ClientSize = new System.Drawing.Size(1055, 685);
             this.Controls.Add(this.etapaDataGridView);
             this.Controls.Add(this.tarefaDataGridView);
             this.Controls.Add(this.buttonConcluir);
@@ -375,14 +357,11 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "FormMenuDeTarefas";
-            this.Load += new System.EventHandler(this.FormMenuDeTarefas_Load);
-            this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tarefaDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tarefaBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.etapaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.etapaBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.etapaDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -394,9 +373,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button buttonGrupo3;
-        private System.Windows.Forms.Button buttonGrupo2;
-        private System.Windows.Forms.Button buttonGrupo1;
         private System.Windows.Forms.CheckBox checkBoxAtribuicao;
         private System.Windows.Forms.CheckBox checkBoxAtrasado;
         private System.Windows.Forms.TextBox textBoxBuscar;
@@ -414,8 +390,9 @@
         private System.Windows.Forms.BindingSource tarefaBindingSource1;
         private System.Windows.Forms.DataGridView tarefaDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeTarefaDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource etapaBindingSource;
-        private System.Windows.Forms.BindingSource etapaBindingSource1;
         private System.Windows.Forms.DataGridView etapaDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
