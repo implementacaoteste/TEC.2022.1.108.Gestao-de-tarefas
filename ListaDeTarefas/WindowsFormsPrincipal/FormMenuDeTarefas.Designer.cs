@@ -40,8 +40,8 @@
             this.buttonDeletar = new System.Windows.Forms.Button();
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.buttonSair = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonDeletarEtapa = new System.Windows.Forms.Button();
+            this.buttonAlterarEtapa = new System.Windows.Forms.Button();
             this.buttonInserirEtapa = new System.Windows.Forms.Button();
             this.buttonConvidarUsuario = new System.Windows.Forms.Button();
             this.buttonConcluir = new System.Windows.Forms.Button();
@@ -186,29 +186,31 @@
             this.buttonSair.UseVisualStyleBackColor = false;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click_1);
             // 
-            // button2
+            // buttonDeletarEtapa
             // 
-            this.button2.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.ForeColor = System.Drawing.SystemColors.Window;
-            this.button2.Location = new System.Drawing.Point(801, 251);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 26);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "Deletar";
-            this.button2.UseVisualStyleBackColor = false;
+            this.buttonDeletarEtapa.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.buttonDeletarEtapa.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonDeletarEtapa.ForeColor = System.Drawing.SystemColors.Window;
+            this.buttonDeletarEtapa.Location = new System.Drawing.Point(801, 251);
+            this.buttonDeletarEtapa.Name = "buttonDeletarEtapa";
+            this.buttonDeletarEtapa.Size = new System.Drawing.Size(75, 26);
+            this.buttonDeletarEtapa.TabIndex = 14;
+            this.buttonDeletarEtapa.Text = "Deletar";
+            this.buttonDeletarEtapa.UseVisualStyleBackColor = false;
+            this.buttonDeletarEtapa.Click += new System.EventHandler(this.buttonDeletarEtapa_Click_1);
             // 
-            // button3
+            // buttonAlterarEtapa
             // 
-            this.button3.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.ForeColor = System.Drawing.SystemColors.Window;
-            this.button3.Location = new System.Drawing.Point(714, 251);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 26);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "Alterar";
-            this.button3.UseVisualStyleBackColor = false;
+            this.buttonAlterarEtapa.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.buttonAlterarEtapa.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonAlterarEtapa.ForeColor = System.Drawing.SystemColors.Window;
+            this.buttonAlterarEtapa.Location = new System.Drawing.Point(714, 251);
+            this.buttonAlterarEtapa.Name = "buttonAlterarEtapa";
+            this.buttonAlterarEtapa.Size = new System.Drawing.Size(75, 26);
+            this.buttonAlterarEtapa.TabIndex = 15;
+            this.buttonAlterarEtapa.Text = "Alterar";
+            this.buttonAlterarEtapa.UseVisualStyleBackColor = false;
+            this.buttonAlterarEtapa.Click += new System.EventHandler(this.buttonAlterarEtapa_Click);
             // 
             // buttonInserirEtapa
             // 
@@ -318,6 +320,7 @@
             this.etapaDataGridView.RowTemplate.Height = 24;
             this.etapaDataGridView.Size = new System.Drawing.Size(333, 346);
             this.etapaDataGridView.TabIndex = 18;
+            this.etapaDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.etapaDataGridView_CellContentClick);
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -338,8 +341,8 @@
             this.Controls.Add(this.tarefaDataGridView);
             this.Controls.Add(this.buttonConcluir);
             this.Controls.Add(this.buttonConvidarUsuario);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.buttonDeletarEtapa);
+            this.Controls.Add(this.buttonAlterarEtapa);
             this.Controls.Add(this.buttonInserirEtapa);
             this.Controls.Add(this.buttonSair);
             this.Controls.Add(this.buttonBuscar);
@@ -382,8 +385,8 @@
         private System.Windows.Forms.Button buttonBuscar;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.Button buttonSair;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonDeletarEtapa;
+        private System.Windows.Forms.Button buttonAlterarEtapa;
         private System.Windows.Forms.Button buttonInserirEtapa;
         private System.Windows.Forms.Button buttonConvidarUsuario;
         private System.Windows.Forms.Button buttonConcluir;

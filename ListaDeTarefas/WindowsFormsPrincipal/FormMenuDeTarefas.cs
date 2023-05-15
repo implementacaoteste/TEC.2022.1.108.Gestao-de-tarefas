@@ -1,6 +1,7 @@
 ﻿using BLL;
 using Models;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,11 +16,11 @@ namespace WindowsFormsPrincipal
 {
     public partial class FormMenuDeTarefas : Form
     {
-        int id_lista;
+        int idLista;
         public FormMenuDeTarefas(int _id)
         {
             InitializeComponent();
-            id_lista = _id;
+            idLista = _id;
             buttonBuscar_Click(_id, null);
         }
 
@@ -51,7 +52,7 @@ namespace WindowsFormsPrincipal
 
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
-            tarefaBindingSource1.DataSource = new BLL.TarefaBLL().BuscarPorIdLista(id_lista);
+            tarefaBindingSource1.DataSource = new BLL.TarefaBLL().BuscarPorIdLista(idLista);
         }
 
         private void tarefaBindingSource1_CurrentChanged(object sender, EventArgs e)
@@ -61,11 +62,11 @@ namespace WindowsFormsPrincipal
 
         private void buttonInserir_Click(object sender, EventArgs e)
         {
-            using (FormCadastrarTarefas frm = new FormCadastrarTarefas(id_lista, 0))
+            using (FormCadastrarTarefas frm = new FormCadastrarTarefas(idLista, 0))
             {
                 frm.ShowDialog();
             }
-            buttonBuscar_Click(id_lista, null);
+            buttonBuscar_Click(idLista, null);
         }
 
         private void buttonDeletar_Click(object sender, EventArgs e)
@@ -89,24 +90,53 @@ namespace WindowsFormsPrincipal
         private void buttonAlterar_Click(object sender, EventArgs e)
         {
             int id = ((Tarefa)tarefaBindingSource1.Current).Id;
-            using (FormCadastrarTarefas frm = new FormCadastrarTarefas(id_lista, id))
+            using (FormCadastrarTarefas frm = new FormCadastrarTarefas(idLista, id))
             {
                 frm.ShowDialog();
             }
-            buttonBuscar_Click(id_lista, null);
+            buttonBuscar_Click(idLista, null);
         }
 
         private void buttonInserirEtapa_Click(object sender, EventArgs e)
         {
             int id2 = ((Tarefa)tarefaBindingSource1.Current).Id;
-            using (FormCadastroEtapa frm = new FormCadastroEtapa(id_lista, id2))
+            using (FormCadastroEtapa frm = new FormCadastroEtapa(id2,idLista))
             {
                 frm.ShowDialog();
             }
-            buttonBuscar_Click(id_lista, null);
+            buttonBuscar_Click(idLista, null);
         }
 
         private void tarefaDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        private void buttonAlterarEtapa_Click(object sender, EventArgs e)
+        {
+            int id = ((Etapa)etapaBindingSource.Current).Id;
+            using (FormCadastroEtapa frm = new FormCadastroEtapa(id, idLista))
+            {
+                frm.ShowDialog();
+            }
+            buttonBuscar_Click(idLista, null);
+        }           
+        private void buttonDeletarEtapa_Click_1(object sender, EventArgs e)
+        {
+            if (tarefaBindingSource1.Count <= 0)
+            {
+                MessageBox.Show("Escolha um registro para ser excluído.");
+                return;
+            }
+
+            if (MessageBox.Show("Deseja realmente excluir esse registro?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
+                return;
+
+            int id = ((Etapa)etapaBindingSource.Current).Id;
+            new EtapaBLL().ExcluirEtapa(id);
+            etapaBindingSource.RemoveCurrent();
+        }
+
+        private void etapaDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
