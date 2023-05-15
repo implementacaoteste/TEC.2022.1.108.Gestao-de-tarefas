@@ -35,19 +35,6 @@ namespace WindowsFormsPrincipal
         {
             Close();  
         }
-
-        private void buttonArea1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                new ListaBLL().AlterarLista(idLista, nomeListaTextBox.Text);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Erro ao salvar a lista", ex);
-            }
-        }
-
         private void nomeListaTextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -58,6 +45,19 @@ namespace WindowsFormsPrincipal
         {
             if (e.KeyCode == Keys.Escape)
                 buttonSair.Focus();
+        }
+
+        private void buttonSalvar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                new ListaBLL().AlterarLista(idLista, nomeListaTextBox.Text);
+                Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao salvar a lista", ex);
+            }
         }
     }
 }

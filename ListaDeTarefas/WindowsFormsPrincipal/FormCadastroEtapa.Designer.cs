@@ -37,8 +37,8 @@
             this.buttonSalvarEtapa = new System.Windows.Forms.Button();
             this.buttonCancelarEtapa = new System.Windows.Forms.Button();
             this.nomeEtapaTextBox = new System.Windows.Forms.TextBox();
-            this.comboBoxResponsavel = new System.Windows.Forms.ComboBox();
             this.etapaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBoxResponsavel = new System.Windows.Forms.ComboBox();
             this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.etapaBindingSource)).BeginInit();
@@ -135,8 +135,13 @@
             this.nomeEtapaTextBox.TabIndex = 1;
             this.nomeEtapaTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.nomeEtapaTextBox_KeyDown);
             // 
+            // etapaBindingSource
+            // 
+            this.etapaBindingSource.DataSource = typeof(Models.Etapa);
+            // 
             // comboBoxResponsavel
             // 
+            this.comboBoxResponsavel.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.etapaBindingSource, "IdUsuario", true));
             this.comboBoxResponsavel.DataSource = this.usuarioBindingSource;
             this.comboBoxResponsavel.DisplayMember = "Nome";
             this.comboBoxResponsavel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -147,10 +152,6 @@
             this.comboBoxResponsavel.TabIndex = 3;
             this.comboBoxResponsavel.ValueMember = "Id";
             this.comboBoxResponsavel.KeyDown += new System.Windows.Forms.KeyEventHandler(this.comboBoxResponsavel_KeyDown);
-            // 
-            // etapaBindingSource
-            // 
-            this.etapaBindingSource.DataSource = typeof(Models.Etapa);
             // 
             // usuarioBindingSource
             // 

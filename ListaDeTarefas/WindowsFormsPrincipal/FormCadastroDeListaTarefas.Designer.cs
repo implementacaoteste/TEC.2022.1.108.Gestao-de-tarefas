@@ -87,7 +87,7 @@
             this.buttonArea1.TabIndex = 4;
             this.buttonArea1.Text = "Salvar lista";
             this.buttonArea1.UseVisualStyleBackColor = false;
-            this.buttonArea1.Click += new System.EventHandler(this.buttonArea1_Click);
+            this.buttonArea1.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
             // buttonSair
             // 

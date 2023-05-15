@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsPrincipal
+namespace WindowsFormsPrincipal
 {
     partial class FormCadastroDeGrupo
     {
@@ -75,9 +75,6 @@
             this.buttonSalvarGrupo.Text = "Salvar grupo";
             this.buttonSalvarGrupo.UseVisualStyleBackColor = false;
             this.buttonSalvarGrupo.Click += new System.EventHandler(this.buttonArea1_Click);
-
-
-
             // 
             // label1
             // 
