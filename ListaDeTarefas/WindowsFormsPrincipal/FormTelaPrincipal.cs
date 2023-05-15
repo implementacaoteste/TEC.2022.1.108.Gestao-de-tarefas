@@ -65,7 +65,6 @@ namespace WindowsFormsPrincipal
 
             }
         }
-
         private void FormTelaPrincipal_Load_1(object sender, EventArgs e)
         {
 
@@ -94,7 +93,6 @@ namespace WindowsFormsPrincipal
             buttonArea3.Text = lista[2].NomeLista;
             listas[2].IdLista = lista[2].IdLista;
         }
-
         private void buttonGrupo3_Click(object sender, EventArgs e)
         {
             Constantes.IdGrupoAberto = grupos[2].IdGrupo;
@@ -107,7 +105,6 @@ namespace WindowsFormsPrincipal
             buttonArea3.Text = lista[2].NomeLista;
             listas[2].IdLista = lista[2].IdLista;
         }
-
         private void buttonGrupo4_Click(object sender, EventArgs e)
         {
             Constantes.IdGrupoAberto = grupos[3].IdGrupo;
@@ -120,7 +117,6 @@ namespace WindowsFormsPrincipal
             buttonArea3.Text = lista[2].NomeLista;
             listas[2].IdLista = lista[2].IdLista;
         }
-
         private void buttonArea1_Click(object sender, EventArgs e)
         {
             Constantes.IdAreaAberta = listas[0].IdLista;
@@ -129,7 +125,6 @@ namespace WindowsFormsPrincipal
                 frm.ShowDialog();
             }
         }
-
         private void buttonArea2_Click(object sender, EventArgs e)
         {
             Constantes.IdAreaAberta = listas[1].IdLista;
@@ -138,7 +133,6 @@ namespace WindowsFormsPrincipal
                 frm.ShowDialog();
             }
         }
-
         private void buttonArea3_Click(object sender, EventArgs e)
         {
             Constantes.IdAreaAberta = listas[2].IdLista;
@@ -147,7 +141,6 @@ namespace WindowsFormsPrincipal
                 frm.ShowDialog();
             }
         }
-
         private void buttonSair_Click(object sender, EventArgs e)
         {
             Close();
@@ -222,7 +215,39 @@ namespace WindowsFormsPrincipal
         }
         private void renomearToolStripArea1_Click(object sender, EventArgs e)
         {
-            using (FormCadastroDeListaTarefas frm = new FormCadastroDeListaTarefas(grupos[0].IdGrupo))
+            using (FormCadastroDeListaTarefas frm = new FormCadastroDeListaTarefas(listas[0].IdLista))
+            {
+                frm.ShowDialog();
+            }
+            RecarregarTelaPrincipal();
+        }
+        private void abrirToolStripArea2_Click(object sender, EventArgs e)
+        {
+            Constantes.IdAreaAberta = listas[1].IdLista;
+            using (FormMenuDeTarefas frm = new FormMenuDeTarefas(Constantes.IdAreaAberta))
+            {
+                frm.ShowDialog();
+            }
+        }
+        private void renomearToolStripArea2_Click(object sender, EventArgs e)
+        {
+            using (FormCadastroDeListaTarefas frm = new FormCadastroDeListaTarefas(listas[1].IdLista))
+            {
+                frm.ShowDialog();
+            }
+            RecarregarTelaPrincipal();
+        }
+        private void abrirToolStripArea3_Click(object sender, EventArgs e)
+        {
+            Constantes.IdAreaAberta = listas[2].IdLista;
+            using (FormMenuDeTarefas frm = new FormMenuDeTarefas(Constantes.IdAreaAberta))
+            {
+                frm.ShowDialog();
+            }
+        }
+        private void renomearToolStripArea3_Click(object sender, EventArgs e)
+        {
+            using (FormCadastroDeListaTarefas frm = new FormCadastroDeListaTarefas(listas[2].IdLista))
             {
                 frm.ShowDialog();
             }
@@ -244,7 +269,7 @@ namespace WindowsFormsPrincipal
                 buttonGrupo4.Text = grupos[3].Titulo;
                 Area4 = grupos[3].IdGrupo;
 
-                listas = new ListaBLL().buscarTarefasArea(Area1);
+                listas = new ListaBLL().buscarTarefasArea(Constantes.IdGrupoAberto);
 
                 buttonArea1.Text = listas[0].NomeLista;
                 lista1 = listas[0].IdLista;
