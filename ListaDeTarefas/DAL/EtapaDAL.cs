@@ -169,6 +169,7 @@ namespace DAL
                 cmd.Parameters.AddWithValue("@IdUsuario", _etapa.IdUsuario);
                 cmd.Parameters.AddWithValue("@NomeEtapa",_etapa.NomeEtapa);
                 cmd.Parameters.AddWithValue("@IdEtapa", _etapa.Id);
+                cmd.Parameters.AddWithValue("@Data",_etapa.Data);
                 cmd.Connection = cn;
                 cn.Open();
                 cmd.ExecuteNonQuery();

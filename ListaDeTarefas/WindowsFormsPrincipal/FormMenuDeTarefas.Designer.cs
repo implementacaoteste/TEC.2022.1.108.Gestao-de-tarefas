@@ -92,7 +92,7 @@
             // checkBoxAtribuicao
             // 
             this.checkBoxAtribuicao.AutoSize = true;
-            this.checkBoxAtribuicao.Location = new System.Drawing.Point(477, 191);
+            this.checkBoxAtribuicao.Location = new System.Drawing.Point(833, 217);
             this.checkBoxAtribuicao.Name = "checkBoxAtribuicao";
             this.checkBoxAtribuicao.Size = new System.Drawing.Size(128, 20);
             this.checkBoxAtribuicao.TabIndex = 8;
@@ -103,7 +103,7 @@
             // checkBoxAtrasado
             // 
             this.checkBoxAtrasado.AutoSize = true;
-            this.checkBoxAtrasado.Location = new System.Drawing.Point(369, 191);
+            this.checkBoxAtrasado.Location = new System.Drawing.Point(714, 217);
             this.checkBoxAtrasado.Name = "checkBoxAtrasado";
             this.checkBoxAtrasado.Size = new System.Drawing.Size(91, 20);
             this.checkBoxAtrasado.TabIndex = 8;
@@ -359,7 +359,7 @@
             this.Name = "FormMenuDeTarefas";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.Text = "FormMenuDeTarefas";
+            this.Text = " ";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tarefaDataGridView)).EndInit();
