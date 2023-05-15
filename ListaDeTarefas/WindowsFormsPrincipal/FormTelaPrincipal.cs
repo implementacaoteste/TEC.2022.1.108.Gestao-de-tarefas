@@ -213,6 +213,14 @@ namespace WindowsFormsPrincipal
                 frm.ShowDialog();
             }
         }
+
+        private void FormTelaPrincipal_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+                buttonSair_Click(null, null);
+                
+        }
+
         private void renomearToolStripArea1_Click(object sender, EventArgs e)
         {
             using (FormCadastroDeListaTarefas frm = new FormCadastroDeListaTarefas(listas[0].IdLista))
