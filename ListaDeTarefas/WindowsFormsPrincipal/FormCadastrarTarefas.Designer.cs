@@ -84,6 +84,7 @@
             this.nomeTarefaTextBox.Name = "nomeTarefaTextBox";
             this.nomeTarefaTextBox.Size = new System.Drawing.Size(233, 30);
             this.nomeTarefaTextBox.TabIndex = 1;
+            this.nomeTarefaTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.nomeTarefaTextBox_KeyDown);
             // 
             // buttonCriar
             // 
@@ -98,6 +99,7 @@
             this.buttonCriar.Text = "Criar tarefa";
             this.buttonCriar.UseVisualStyleBackColor = false;
             this.buttonCriar.Click += new System.EventHandler(this.buttonCriar_Click);
+            this.buttonCriar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.buttonCriar_KeyDown);
             // 
             // buttonSair
             // 
@@ -124,9 +126,11 @@
             this.Controls.Add(this.nomeTarefaTextBox);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Name = "FormCadastrarTarefas";
             this.Text = "FormCadastrarTarefas";
             this.Load += new System.EventHandler(this.FormCadastrarTarefas_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormCadastrarTarefas_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tarefaBindingSource)).EndInit();
