@@ -64,6 +64,23 @@ namespace WindowsFormsPrincipal
             }
         }
 
+        private void buttonCriar_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void nomeTarefaTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                buttonCriar_Click(null, null);
+        }
+
+        private void FormCadastrarTarefas_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Escape)
+                buttonSair_Click(null, null);
+        }
+
         private void FormCadastrarTarefas_Load(object sender, EventArgs e)
         {
             if (controle == 0)
