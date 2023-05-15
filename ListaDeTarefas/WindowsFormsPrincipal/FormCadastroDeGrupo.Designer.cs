@@ -76,17 +76,7 @@
             this.buttonSalvarGrupo.UseVisualStyleBackColor = false;
             this.buttonSalvarGrupo.Click += new System.EventHandler(this.buttonArea1_Click);
 
-            this.buttonArea1.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.buttonArea1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonArea1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.buttonArea1.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonArea1.Location = new System.Drawing.Point(107, 313);
-            this.buttonArea1.Name = "buttonArea1";
-            this.buttonArea1.Size = new System.Drawing.Size(169, 36);
-            this.buttonArea1.TabIndex = 2;
-            this.buttonArea1.Text = "Salvar grupo";
-            this.buttonArea1.UseVisualStyleBackColor = false;
-            this.buttonArea1.Click += new System.EventHandler(this.buttonArea1_Click);
+
 
             // 
             // label1
