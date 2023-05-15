@@ -244,14 +244,14 @@
             // abrirToolStripMenuItem3
             // 
             this.abrirToolStripMenuItem3.Name = "abrirToolStripMenuItem3";
-            this.abrirToolStripMenuItem3.Size = new System.Drawing.Size(210, 24);
+            this.abrirToolStripMenuItem3.Size = new System.Drawing.Size(146, 24);
             this.abrirToolStripMenuItem3.Text = "Abrir";
             this.abrirToolStripMenuItem3.Click += new System.EventHandler(this.abrirToolStripArea1_Click);
             // 
             // renomearToolStripMenuItem3
             // 
             this.renomearToolStripMenuItem3.Name = "renomearToolStripMenuItem3";
-            this.renomearToolStripMenuItem3.Size = new System.Drawing.Size(210, 24);
+            this.renomearToolStripMenuItem3.Size = new System.Drawing.Size(146, 24);
             this.renomearToolStripMenuItem3.Text = "Renomear";
             this.renomearToolStripMenuItem3.Click += new System.EventHandler(this.renomearToolStripArea1_Click);
             // 
@@ -315,19 +315,19 @@
             this.abrirToolStripMenuItem1,
             this.renomearToolStripMenuItem1});
             this.contextMenuStripArea3.Name = "contextMenuStripArea3";
-            this.contextMenuStripArea3.Size = new System.Drawing.Size(211, 80);
+            this.contextMenuStripArea3.Size = new System.Drawing.Size(147, 52);
             // 
             // abrirToolStripMenuItem1
             // 
             this.abrirToolStripMenuItem1.Name = "abrirToolStripMenuItem1";
-            this.abrirToolStripMenuItem1.Size = new System.Drawing.Size(210, 24);
+            this.abrirToolStripMenuItem1.Size = new System.Drawing.Size(146, 24);
             this.abrirToolStripMenuItem1.Text = "Abrir";
             this.abrirToolStripMenuItem1.Click += new System.EventHandler(this.abrirToolStripArea3_Click);
             // 
             // renomearToolStripMenuItem1
             // 
             this.renomearToolStripMenuItem1.Name = "renomearToolStripMenuItem1";
-            this.renomearToolStripMenuItem1.Size = new System.Drawing.Size(210, 24);
+            this.renomearToolStripMenuItem1.Size = new System.Drawing.Size(146, 24);
             this.renomearToolStripMenuItem1.Text = "Renomear";
             this.renomearToolStripMenuItem1.Click += new System.EventHandler(this.renomearToolStripArea3_Click);
             // 
@@ -364,6 +364,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = ".";
             this.Load += new System.EventHandler(this.FormTelaPrincipal_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormTelaPrincipal_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
