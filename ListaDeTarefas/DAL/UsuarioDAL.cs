@@ -299,8 +299,6 @@ namespace DAL
             List<Usuario> _usuarios = new List<Usuario> { };
             Usuario _usuario = new Usuario();
 
-        public bool ValidarPermissao(int _idUsuario, int _idPermissao)
-        {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
@@ -334,6 +332,15 @@ namespace DAL
             {
                 cn.Close();
             }
+        }
+
+        public bool ValidarPermissao(int _idUsuario, int _idPermissao)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
                 cmd.CommandText = @"select 1 from Permissoes
                 inner join ListadeTarefas_Usuario on Permissoes.IdPermissao = ListadeTarefas_Usuario.IdPermissao
                 where ListadeTarefas_Usuario.IdUsuario = @IdUsuario and Permissoes.IdPermissao = @IdPermissao";
@@ -354,6 +361,7 @@ namespace DAL
             {
                 throw new Exception("Ocorreu um erro ao tentar validar permissao,", ex);
             }
+
         }
 
     }

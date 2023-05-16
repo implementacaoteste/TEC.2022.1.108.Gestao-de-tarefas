@@ -74,6 +74,7 @@ namespace BLL
         public List<Usuario> GerarRelatorioCresc(int _idLista)
         {
             return new UsuarioDAL().GerarRelatorioCresc(_idLista);
+        }
         public void ValidarPermissao(int _IdPermissao)
         {
             if (!new UsuarioDAL().ValidarPermissao(Constantes.IdUsuarioLogado, _IdPermissao))
