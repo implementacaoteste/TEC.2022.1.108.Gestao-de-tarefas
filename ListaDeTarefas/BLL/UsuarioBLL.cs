@@ -66,5 +66,9 @@ namespace BLL
         {
             return new UsuarioDAL().BuscarUsuarioLista(_idLista);
         }
+        public List<Usuario> GerarRelatorio(int _idLista)
+        {
+            return new UsuarioDAL().GerarRelatorio(_idLista);
+        }
     }
 }

@@ -35,6 +35,5 @@ namespace DAL
                 cn.Close();
             }
         }
-
     }
 }

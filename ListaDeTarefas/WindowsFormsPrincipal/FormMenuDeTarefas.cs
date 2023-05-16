@@ -1,15 +1,6 @@
 ﻿using BLL;
 using Models;
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsFormsPrincipal
@@ -138,6 +129,19 @@ namespace WindowsFormsPrincipal
         }
 
         private void etapaDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void buttonVisualizarRanking_Click(object sender, EventArgs e)
+        {
+            using (FormRelatorio frm = new FormRelatorio(idLista))
+            {
+                frm.ShowDialog();
+            }
+        }
+
+        private void FormMenuDeTarefas_Load(object sender, EventArgs e)
         {
 
         }

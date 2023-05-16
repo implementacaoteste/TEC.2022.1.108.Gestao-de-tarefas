@@ -255,6 +255,45 @@ namespace DAL
                 cn.Close();
             }
         }
+        public List<Usuario> GerarRelatorio(int _idLista)
+        {
+            List<Usuario> _usuarios = new List<Usuario> { };
+            Usuario _usuario = new Usuario();
+
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = @"select L.Score, U.Nome
+                                    from ListadeTarefas_Usuario L
+                                    inner join Usuario U  
+                                    ON
+                                    L.IdUsuario = U.IdUsuario and L.IdListaTarefas = @IdLista
+                                    ORDER BY Score DESC";
+
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@IdLista", _idLista);
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                    while (rd.Read())
+                    {
+                        _usuario = new Usuario();
+                        _usuario.Nome = rd["Nome"].ToString();
+                        _usuario.Score = Convert.ToInt32(rd["Score"]);
+                        _usuarios.Add(_usuario);
+                    }
+                return _usuarios;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar Descricao no banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
 
     }
 }
