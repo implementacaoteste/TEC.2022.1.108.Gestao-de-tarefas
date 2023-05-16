@@ -18,7 +18,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT IdEtapa, NomeEtapa, IdUsuario, IdTarefa FROM Etapa WHERE IdEtapa = @IdEtapa";
+                cmd.CommandText = "SELECT IdEtapa, NomeEtapa, IdUsuario, IdTarefa, Valor, Data FROM Etapa WHERE IdEtapa = @IdEtapa";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@IdEtapa", IdEtapa);
                 cn.Open();
@@ -31,6 +31,8 @@ namespace DAL
                         etapa.NomeEtapa = rd["NomeEtapa"].ToString();
                         etapa.IdTarefa = Convert.ToInt32(rd["IdTarefa"]);
                         etapa.IdUsuario = Convert.ToInt32(rd["IdUsuario"]);
+                        etapa.Valor = Convert.ToInt32(rd["Valor"]);
+                        etapa.Data = Convert.ToDateTime(rd["Data"]);
                     }
                 }
                 return etapa;
@@ -164,12 +166,13 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"UPDATE Etapa SET NomeEtapa = @NomeEtapa, IdUsuario = @IdUsuario where IdEtapa = @IdEtapa";
+                cmd.CommandText = @"UPDATE Etapa SET NomeEtapa = @NomeEtapa, IdUsuario = @IdUsuario, Valor = @Valor, Data = @Data where IdEtapa = @IdEtapa";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@IdUsuario", _etapa.IdUsuario);
                 cmd.Parameters.AddWithValue("@NomeEtapa",_etapa.NomeEtapa);
                 cmd.Parameters.AddWithValue("@IdEtapa", _etapa.Id);
                 cmd.Parameters.AddWithValue("@Data",_etapa.Data);
+                cmd.Parameters.AddWithValue("@Valor", _etapa.Valor);
                 cmd.Connection = cn;
                 cn.Open();
                 cmd.ExecuteNonQuery();
@@ -205,17 +208,19 @@ namespace DAL
                 cn.Close();
             }
         }
-        public void AdicionarEtapa(Etapa _etapa, int _idTarefa)
+        public void AdicionarEtapa(Etapa _etapa, int _idTarefa, int _value)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"INSERT INTO Etapa(IdUsuario, IdTarefa, NomeEtapa) Values(@IdUsuario, @IdTarefa, @NomeEtapa)";
+                cmd.CommandText = @"INSERT INTO Etapa(IdUsuario, IdTarefa, NomeEtapa, Valor, Data) Values(@IdUsuario, @IdTarefa, @NomeEtapa, @Valor, @Data)";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@IdUsuario", _etapa.IdUsuario);
-                cmd.Parameters.AddWithValue("@IdTarefa", _etapa.IdTarefa);
+                cmd.Parameters.AddWithValue("@IdTarefa", _idTarefa);
                 cmd.Parameters.AddWithValue("@NomeEtapa", _etapa.NomeEtapa);
+                cmd.Parameters.AddWithValue("@Valor", _etapa.Valor);
+                cmd.Parameters.AddWithValue("@Data", _etapa.Data);
                 cmd.Connection = cn;
                 cn.Open();
                 cmd.ExecuteNonQuery();

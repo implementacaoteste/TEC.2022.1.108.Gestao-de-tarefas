@@ -43,13 +43,31 @@
             this.comboBoxResponsavel = new System.Windows.Forms.ComboBox();
             this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxPontos = new System.Windows.Forms.ComboBox();
             dataLabel = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.etapaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dataLabel
+            // 
+            dataLabel.AutoSize = true;
+            dataLabel.Location = new System.Drawing.Point(258, 265);
+            dataLabel.Name = "dataLabel";
+            dataLabel.Size = new System.Drawing.Size(39, 16);
+            dataLabel.TabIndex = 8;
+            dataLabel.Text = "Data:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(258, 326);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(49, 16);
+            label4.TabIndex = 11;
+            label4.Text = "Pontos";
             // 
             // panel1
             // 
@@ -163,19 +181,11 @@
             // 
             this.usuarioBindingSource.DataSource = typeof(Models.Usuario);
             // 
-            // dataLabel
-            // 
-            dataLabel.AutoSize = true;
-            dataLabel.Location = new System.Drawing.Point(258, 265);
-            dataLabel.Name = "dataLabel";
-            dataLabel.Size = new System.Drawing.Size(39, 16);
-            dataLabel.TabIndex = 8;
-            dataLabel.Text = "Data:";
-            // 
             // dataDateTimePicker
             // 
             this.dataDateTimePicker.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.etapaBindingSource, "Data", true));
+            this.dataDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.etapaBindingSource, "Data", true));
             this.dataDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dataDateTimePicker.Location = new System.Drawing.Point(261, 284);
@@ -184,27 +194,19 @@
             this.dataDateTimePicker.TabIndex = 9;
             this.dataDateTimePicker.Value = new System.DateTime(2023, 5, 15, 0, 0, 0, 0);
             // 
-            // comboBox1
+            // comboBoxPontos
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBoxPontos.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.etapaBindingSource, "Valor", true));
+            this.comboBoxPontos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxPontos.FormattingEnabled = true;
+            this.comboBoxPontos.Items.AddRange(new object[] {
             "10",
             "50",
             "100"});
-            this.comboBox1.Location = new System.Drawing.Point(261, 345);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(280, 33);
-            this.comboBox1.TabIndex = 10;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(258, 326);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(49, 16);
-            label4.TabIndex = 11;
-            label4.Text = "Pontos";
+            this.comboBoxPontos.Location = new System.Drawing.Point(261, 345);
+            this.comboBoxPontos.Name = "comboBoxPontos";
+            this.comboBoxPontos.Size = new System.Drawing.Size(280, 33);
+            this.comboBoxPontos.TabIndex = 10;
             // 
             // FormCadastroEtapa
             // 
@@ -212,7 +214,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(681, 486);
             this.Controls.Add(label4);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBoxPontos);
             this.Controls.Add(dataLabel);
             this.Controls.Add(this.dataDateTimePicker);
             this.Controls.Add(this.comboBoxResponsavel);
@@ -253,6 +255,6 @@
         private System.Windows.Forms.BindingSource etapaBindingSource;
         private System.Windows.Forms.BindingSource usuarioBindingSource;
         private System.Windows.Forms.DateTimePicker dataDateTimePicker;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxPontos;
     }
 }

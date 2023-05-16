@@ -13,11 +13,6 @@ namespace WindowsFormsPrincipal
             Logou = false;
         }
 
-        private void buttonFechar_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             try
@@ -62,8 +57,8 @@ namespace WindowsFormsPrincipal
 
         private void FormTelaLogin_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Escape)
-                buttonFechar_Click(null,null);
+            if (e.KeyCode == Keys.Escape)
+                Close();
         }
     }
 }
