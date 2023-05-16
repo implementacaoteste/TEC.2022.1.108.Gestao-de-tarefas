@@ -17,5 +17,20 @@ namespace WindowsFormsPrincipal
         {
             usuarioBindingSource.DataSource = new UsuarioBLL().GerarRelatorio(IdLista);
         }
+
+        private void checkBoxDecrescente_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxDecrescente.Checked == true)
+                checkBoxCrescente.Checked = false;
+
+            usuarioBindingSource.DataSource = new UsuarioBLL().GerarRelatorio(IdLista);
+        }
+        private void checkBoxCrescente_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxCrescente.Checked == true)
+                checkBoxDecrescente.Checked = false;
+
+            usuarioBindingSource.DataSource = new UsuarioBLL().GerarRelatorioCresc(IdLista);
+        }
     }
 }

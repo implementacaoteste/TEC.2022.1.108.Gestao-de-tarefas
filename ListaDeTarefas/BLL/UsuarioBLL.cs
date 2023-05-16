@@ -70,5 +70,9 @@ namespace BLL
         {
             return new UsuarioDAL().GerarRelatorio(_idLista);
         }
+        public List<Usuario> GerarRelatorioCresc(int _idLista)
+        {
+            return new UsuarioDAL().GerarRelatorioCresc(_idLista);
+        }
     }
 }

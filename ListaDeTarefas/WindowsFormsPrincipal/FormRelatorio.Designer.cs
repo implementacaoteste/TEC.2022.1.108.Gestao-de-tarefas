@@ -35,6 +35,8 @@
             this.usuarioDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.checkBoxCrescente = new System.Windows.Forms.CheckBox();
+            this.checkBoxDecrescente = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioDataGridView)).BeginInit();
@@ -76,12 +78,12 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn5});
             this.usuarioDataGridView.DataSource = this.usuarioBindingSource;
-            this.usuarioDataGridView.Location = new System.Drawing.Point(190, 113);
+            this.usuarioDataGridView.Location = new System.Drawing.Point(191, 197);
             this.usuarioDataGridView.Name = "usuarioDataGridView";
             this.usuarioDataGridView.ReadOnly = true;
             this.usuarioDataGridView.RowHeadersWidth = 51;
             this.usuarioDataGridView.RowTemplate.Height = 24;
-            this.usuarioDataGridView.Size = new System.Drawing.Size(444, 291);
+            this.usuarioDataGridView.Size = new System.Drawing.Size(444, 359);
             this.usuarioDataGridView.TabIndex = 7;
             // 
             // dataGridViewTextBoxColumn2
@@ -100,12 +102,39 @@
             this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 125;
+            // 
+            // checkBoxCrescente
+            // 
+            this.checkBoxCrescente.AutoSize = true;
+            this.checkBoxCrescente.Location = new System.Drawing.Point(501, 156);
+            this.checkBoxCrescente.Name = "checkBoxCrescente";
+            this.checkBoxCrescente.Size = new System.Drawing.Size(134, 20);
+            this.checkBoxCrescente.TabIndex = 8;
+            this.checkBoxCrescente.Text = "Ordem Crescente";
+            this.checkBoxCrescente.UseVisualStyleBackColor = true;
+            this.checkBoxCrescente.CheckedChanged += new System.EventHandler(this.checkBoxCrescente_CheckedChanged);
+            // 
+            // checkBoxDecrescente
+            // 
+            this.checkBoxDecrescente.AutoSize = true;
+            this.checkBoxDecrescente.Checked = true;
+            this.checkBoxDecrescente.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxDecrescente.Location = new System.Drawing.Point(191, 156);
+            this.checkBoxDecrescente.Name = "checkBoxDecrescente";
+            this.checkBoxDecrescente.Size = new System.Drawing.Size(148, 20);
+            this.checkBoxDecrescente.TabIndex = 9;
+            this.checkBoxDecrescente.Text = "Ordem decrescente";
+            this.checkBoxDecrescente.UseVisualStyleBackColor = true;
+            this.checkBoxDecrescente.CheckedChanged += new System.EventHandler(this.checkBoxDecrescente_CheckedChanged);
             // 
             // FormRelatorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(796, 450);
+            this.ClientSize = new System.Drawing.Size(796, 568);
+            this.Controls.Add(this.checkBoxDecrescente);
+            this.Controls.Add(this.checkBoxCrescente);
             this.Controls.Add(this.usuarioDataGridView);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -120,6 +149,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioDataGridView)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -131,5 +161,7 @@
         private System.Windows.Forms.DataGridView usuarioDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.CheckBox checkBoxCrescente;
+        private System.Windows.Forms.CheckBox checkBoxDecrescente;
     }
 }
