@@ -294,6 +294,35 @@ namespace DAL
                 cn.Close();
             }
         }
+        public bool ValidarPermissao(int _idUsuario, int _idPermissao)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = @"select 1 from Permissoes
+                inner join ListadeTarefas_Usuario on Permissoes.IdPermissao = ListadeTarefas_Usuario.IdPermissao
+                where ListadeTarefas_Usuario.IdUsuario = @IdUsuario and Permissoes.IdPermissao = @IdPermissao";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@IdUsuario", _idUsuario);
+                cmd.Parameters.AddWithValue("@IdPermissao", _idPermissao);
+                cn.Open();
+                cmd.ExecuteNonQuery();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    if (rd.Read())
+                        return true;
+
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar validar permissao,", ex);
+            }
+
+        }
 
     }
 }
