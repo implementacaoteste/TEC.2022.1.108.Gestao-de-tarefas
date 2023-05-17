@@ -78,5 +78,17 @@ namespace WindowsFormsPrincipal
         {
 
         }
+
+        private void FormCadastroDeGrupo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+                buttonSair.Focus();
+        }
+
+        private void textBoxtitulo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                textBoxtitulo.Focus();
+        }
     }
 }
