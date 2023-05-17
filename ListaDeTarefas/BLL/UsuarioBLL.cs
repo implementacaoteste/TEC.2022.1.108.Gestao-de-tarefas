@@ -57,10 +57,11 @@ namespace BLL
             Usuario usuario = new UsuarioDAL().BuscarPorEmail(_email);
 
             if (_senha == usuario.Senha)
+            {
                 Constantes.IdUsuarioLogado = usuario.Id;
-                Constantes.PermissaoUsuario = 
-            else 
-                 throw new Exception("Usuário ou senha inválidos!"); 
+            }
+            else
+                throw new Exception("Usuário ou senha inválidos!"); 
         }
 
         public List<Usuario> BuscarUsuarioLista(int _idLista)
