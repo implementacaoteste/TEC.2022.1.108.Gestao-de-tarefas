@@ -32,5 +32,11 @@ namespace WindowsFormsPrincipal
 
             usuarioBindingSource.DataSource = new UsuarioBLL().GerarRelatorioCresc(IdLista);
         }
+
+        private void FormRelatorio_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+                this.Close();
+        }
     }
 }
