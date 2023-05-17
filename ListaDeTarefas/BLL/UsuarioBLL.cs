@@ -58,6 +58,7 @@ namespace BLL
 
             if (_senha == usuario.Senha)
                 Constantes.IdUsuarioLogado = usuario.Id;
+                Constantes.PermissaoUsuario = 
             else 
                  throw new Exception("Usuário ou senha inválidos!"); 
         }
