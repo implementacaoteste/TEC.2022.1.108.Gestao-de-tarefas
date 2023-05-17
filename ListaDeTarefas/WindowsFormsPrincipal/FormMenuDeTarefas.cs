@@ -143,7 +143,22 @@ namespace WindowsFormsPrincipal
 
         private void FormMenuDeTarefas_Load(object sender, EventArgs e)
         {
+            radioButtonPrivado.Checked = new ListaBLL().ConferirPrivacidade(Constantes.IdAreaAberta);
+        }
 
+        private void etapaBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButtonPrivado_CheckedChanged(object sender, EventArgs e)
+        {
+            new ListaBLL().AtribuirPrivacidade(0,Constantes.IdAreaAberta);
+        }
+
+        private void radioButtonPublico_CheckedChanged(object sender, EventArgs e)
+        {
+            new ListaBLL().AtribuirPrivacidade(1, Constantes.IdAreaAberta);
         }
     }
 }

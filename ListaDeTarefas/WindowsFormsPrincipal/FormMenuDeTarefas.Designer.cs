@@ -46,19 +46,23 @@
             this.buttonConvidarUsuario = new System.Windows.Forms.Button();
             this.buttonConcluir = new System.Windows.Forms.Button();
             this.tarefaDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tarefaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeTarefaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.etapaDataGridView = new System.Windows.Forms.DataGridView();
-            this.buttonVisualizarRanking = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.etapaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tarefaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonVisualizarRanking = new System.Windows.Forms.Button();
+            this.buttonCodigo = new System.Windows.Forms.Button();
+            this.radioButtonPublico = new System.Windows.Forms.RadioButton();
+            this.radioButtonPrivado = new System.Windows.Forms.RadioButton();
+            this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tarefaDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tarefaBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.etapaDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.etapaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tarefaBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -76,6 +80,9 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkGray;
+            this.panel2.Controls.Add(this.radioButtonPrivado);
+            this.panel2.Controls.Add(this.radioButtonPublico);
+            this.panel2.Controls.Add(this.buttonCodigo);
             this.panel2.Location = new System.Drawing.Point(0, 96);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(162, 590);
@@ -269,6 +276,20 @@
             this.tarefaDataGridView.TabIndex = 18;
             this.tarefaDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tarefaDataGridView_CellContentClick);
             // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "NomeTarefa";
+            this.dataGridViewTextBoxColumn3.HeaderText = "NomeTarefa";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // tarefaBindingSource1
+            // 
+            this.tarefaBindingSource1.DataSource = typeof(Models.Tarefa);
+            this.tarefaBindingSource1.CurrentChanged += new System.EventHandler(this.tarefaBindingSource1_CurrentChanged);
+            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -304,19 +325,6 @@
             this.etapaDataGridView.TabIndex = 18;
             this.etapaDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.etapaDataGridView_CellContentClick);
             // 
-            // buttonVisualizarRanking
-            // 
-            this.buttonVisualizarRanking.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.buttonVisualizarRanking.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonVisualizarRanking.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonVisualizarRanking.Location = new System.Drawing.Point(272, 635);
-            this.buttonVisualizarRanking.Name = "buttonVisualizarRanking";
-            this.buttonVisualizarRanking.Size = new System.Drawing.Size(141, 33);
-            this.buttonVisualizarRanking.TabIndex = 19;
-            this.buttonVisualizarRanking.Text = "Visualizar Ranking";
-            this.buttonVisualizarRanking.UseVisualStyleBackColor = false;
-            this.buttonVisualizarRanking.Click += new System.EventHandler(this.buttonVisualizarRanking_Click);
-            // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -330,20 +338,57 @@
             // 
             this.etapaBindingSource.DataMember = "Etapa";
             this.etapaBindingSource.DataSource = this.tarefaBindingSource1;
+            this.etapaBindingSource.CurrentChanged += new System.EventHandler(this.etapaBindingSource_CurrentChanged);
             // 
-            // tarefaBindingSource1
+            // buttonVisualizarRanking
             // 
-            this.tarefaBindingSource1.DataSource = typeof(Models.Tarefa);
-            this.tarefaBindingSource1.CurrentChanged += new System.EventHandler(this.tarefaBindingSource1_CurrentChanged);
+            this.buttonVisualizarRanking.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.buttonVisualizarRanking.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonVisualizarRanking.ForeColor = System.Drawing.SystemColors.Window;
+            this.buttonVisualizarRanking.Location = new System.Drawing.Point(272, 635);
+            this.buttonVisualizarRanking.Name = "buttonVisualizarRanking";
+            this.buttonVisualizarRanking.Size = new System.Drawing.Size(141, 33);
+            this.buttonVisualizarRanking.TabIndex = 19;
+            this.buttonVisualizarRanking.Text = "Visualizar Ranking";
+            this.buttonVisualizarRanking.UseVisualStyleBackColor = false;
+            this.buttonVisualizarRanking.Click += new System.EventHandler(this.buttonVisualizarRanking_Click);
             // 
-            // dataGridViewTextBoxColumn3
+            // buttonCodigo
             // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "NomeTarefa";
-            this.dataGridViewTextBoxColumn3.HeaderText = "NomeTarefa";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.buttonCodigo.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.buttonCodigo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCodigo.ForeColor = System.Drawing.SystemColors.Window;
+            this.buttonCodigo.Location = new System.Drawing.Point(12, 524);
+            this.buttonCodigo.Name = "buttonCodigo";
+            this.buttonCodigo.Size = new System.Drawing.Size(128, 48);
+            this.buttonCodigo.TabIndex = 20;
+            this.buttonCodigo.Text = "Exibir código de convite";
+            this.buttonCodigo.UseVisualStyleBackColor = false;
+            // 
+            // radioButtonPublico
+            // 
+            this.radioButtonPublico.AutoSize = true;
+            this.radioButtonPublico.Location = new System.Drawing.Point(12, 498);
+            this.radioButtonPublico.Name = "radioButtonPublico";
+            this.radioButtonPublico.Size = new System.Drawing.Size(73, 20);
+            this.radioButtonPublico.TabIndex = 22;
+            this.radioButtonPublico.TabStop = true;
+            this.radioButtonPublico.Text = "Público";
+            this.radioButtonPublico.UseVisualStyleBackColor = true;
+            this.radioButtonPublico.CheckedChanged += new System.EventHandler(this.radioButtonPublico_CheckedChanged);
+            // 
+            // radioButtonPrivado
+            // 
+            this.radioButtonPrivado.AutoSize = true;
+            this.radioButtonPrivado.Location = new System.Drawing.Point(12, 472);
+            this.radioButtonPrivado.Name = "radioButtonPrivado";
+            this.radioButtonPrivado.Size = new System.Drawing.Size(75, 20);
+            this.radioButtonPrivado.TabIndex = 23;
+            this.radioButtonPrivado.TabStop = true;
+            this.radioButtonPrivado.Text = "Privado";
+            this.radioButtonPrivado.UseVisualStyleBackColor = true;
+            this.radioButtonPrivado.CheckedChanged += new System.EventHandler(this.radioButtonPrivado_CheckedChanged);
             // 
             // FormMenuDeTarefas
             // 
@@ -376,12 +421,14 @@
             this.ShowInTaskbar = false;
             this.Text = " ";
             this.Load += new System.EventHandler(this.FormMenuDeTarefas_Load);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tarefaDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tarefaBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.etapaDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.etapaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tarefaBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -415,5 +462,8 @@
         private System.Windows.Forms.DataGridView etapaDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.Button buttonVisualizarRanking;
+        private System.Windows.Forms.Button buttonCodigo;
+        private System.Windows.Forms.RadioButton radioButtonPrivado;
+        private System.Windows.Forms.RadioButton radioButtonPublico;
     }
 }

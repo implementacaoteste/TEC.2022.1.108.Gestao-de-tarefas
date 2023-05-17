@@ -211,6 +211,63 @@ namespace DAL
                 cn.Close();
             }
         }
+        public void AtribuirPrivacidade(int _bit, int _idLista)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = cn.CreateCommand();
+                cmd.CommandText = "UPDATE ListaDeTarefas SET Privacidade = @Bit WHERE IdLista = @Id";
+
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@Bit", _bit);
+                cmd.Parameters.AddWithValue("@Id", _idLista);
+                cmd.Connection = cn;
+                cn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao alterar a privacidade da Lista de Tarefas", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+        public bool ConferirPrivacidade(int _idLista)
+        {
+            bool bit = false;
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "SELECT Privacidade  FROM ListaDeTarefas WHERE IdLista = @IdLista";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@IdLista", _idLista);
+
+                cn.Open();
+
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    if (rd.Read())
+                    {                       
+                        bit = Convert.ToBoolean(rd["Privacidade"]);
+
+                    }
+                }
+                return bit;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao buscar a privacidade de uma lista de tarefas", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
 
     }
 }

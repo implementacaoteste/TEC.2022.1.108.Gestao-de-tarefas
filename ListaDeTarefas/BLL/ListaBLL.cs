@@ -45,6 +45,14 @@ namespace BLL
         {
             return new ListaDAL().buscarTarefasArea(_idGrupo);
         }
+        public void AtribuirPrivacidade(int _bit, int _idLista)
+        {
+            new ListaDAL().AtribuirPrivacidade(_bit, _idLista);
+        }
+        public bool ConferirPrivacidade(int _idLista)
+        {
+            return new ListaDAL().ConferirPrivacidade(_idLista);
+        }
         public void ValidarNome(string _nome)
         {
             if(_nome.Length < 3)
