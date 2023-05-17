@@ -12,5 +12,9 @@ namespace Models
         public string NomeEtapa { get; set; }
         public int IdTarefa { get; set; }
         public int IdUsuario { get; set; }
+        public int Valor { get; set; }
+        public DateTime Data {  get; set; }
+
+
     }
 }

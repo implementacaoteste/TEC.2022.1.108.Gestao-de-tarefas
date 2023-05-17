@@ -1,15 +1,6 @@
 ﻿using BLL;
 using Models;
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsFormsPrincipal
@@ -99,8 +90,8 @@ namespace WindowsFormsPrincipal
 
         private void buttonInserirEtapa_Click(object sender, EventArgs e)
         {
-            int id2 = ((Tarefa)tarefaBindingSource1.Current).Id;
-            using (FormCadastroEtapa frm = new FormCadastroEtapa(id2,idLista))
+            int id = ((Tarefa)tarefaBindingSource1.Current).Id;
+            using (FormCadastroEtapa frm = new FormCadastroEtapa(id, 0,idLista))
             {
                 frm.ShowDialog();
             }
@@ -114,7 +105,8 @@ namespace WindowsFormsPrincipal
         private void buttonAlterarEtapa_Click(object sender, EventArgs e)
         {
             int id = ((Etapa)etapaBindingSource.Current).Id;
-            using (FormCadastroEtapa frm = new FormCadastroEtapa(id, idLista))
+            int id2 = ((Tarefa)tarefaBindingSource1.Current).Id;
+            using (FormCadastroEtapa frm = new FormCadastroEtapa(id2, id, idLista))
             {
                 frm.ShowDialog();
             }
@@ -137,6 +129,19 @@ namespace WindowsFormsPrincipal
         }
 
         private void etapaDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void buttonVisualizarRanking_Click(object sender, EventArgs e)
+        {
+            using (FormRelatorio frm = new FormRelatorio(idLista))
+            {
+                frm.ShowDialog();
+            }
+        }
+
+        private void FormMenuDeTarefas_Load(object sender, EventArgs e)
         {
 
         }

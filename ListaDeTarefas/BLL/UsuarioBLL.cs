@@ -67,5 +67,20 @@ namespace BLL
         {
             return new UsuarioDAL().BuscarUsuarioLista(_idLista);
         }
+        public List<Usuario> GerarRelatorio(int _idLista)
+        {
+            return new UsuarioDAL().GerarRelatorio(_idLista);
+        }
+
+        public List<Usuario> GerarRelatorioCresc(int _idLista)
+        {
+            return new UsuarioDAL().GerarRelatorioCresc(_idLista);
+        }
+        public void ValidarPermissao(int _IdPermissao)
+        {
+            if (!new UsuarioDAL().ValidarPermissao(Constantes.IdUsuarioLogado, _IdPermissao))
+                throw new Exception("Você nao possui permissao para realizar esta ação. Procure o administrador do sistema");
+
+        }
     }
 }

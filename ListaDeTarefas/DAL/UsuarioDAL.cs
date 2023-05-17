@@ -255,6 +255,114 @@ namespace DAL
                 cn.Close();
             }
         }
+        public List<Usuario> GerarRelatorio(int _idLista)
+        {
+            List<Usuario> _usuarios = new List<Usuario> { };
+            Usuario _usuario = new Usuario();
+
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = @"select L.Score, U.Nome
+                                    from ListadeTarefas_Usuario L
+                                    inner join Usuario U  
+                                    ON
+                                    L.IdUsuario = U.IdUsuario and L.IdListaTarefas = @IdLista
+                                    ORDER BY Score DESC";
+
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@IdLista", _idLista);
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                    while (rd.Read())
+                    {
+                        _usuario = new Usuario();
+                        _usuario.Nome = rd["Nome"].ToString();
+                        _usuario.Score = Convert.ToInt32(rd["Score"]);
+                        _usuarios.Add(_usuario);
+                    }
+                return _usuarios;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar Descricao no banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+        public List<Usuario> GerarRelatorioCresc(int _idLista)
+        {
+            List<Usuario> _usuarios = new List<Usuario> { };
+            Usuario _usuario = new Usuario();
+
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = @"select L.Score, U.Nome
+                                    from ListadeTarefas_Usuario L
+                                    inner join Usuario U  
+                                    ON
+                                    L.IdUsuario = U.IdUsuario and L.IdListaTarefas = @IdLista
+                                    ORDER BY Score ASC";
+
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@IdLista", _idLista);
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                    while (rd.Read())
+                    {
+                        _usuario = new Usuario();
+                        _usuario.Nome = rd["Nome"].ToString();
+                        _usuario.Score = Convert.ToInt32(rd["Score"]);
+                        _usuarios.Add(_usuario);
+                    }
+                return _usuarios;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar Descricao no banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public bool ValidarPermissao(int _idUsuario, int _idPermissao)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = @"select 1 from Permissoes
+                inner join ListadeTarefas_Usuario on Permissoes.IdPermissao = ListadeTarefas_Usuario.IdPermissao
+                where ListadeTarefas_Usuario.IdUsuario = @IdUsuario and Permissoes.IdPermissao = @IdPermissao";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@IdUsuario", _idUsuario);
+                cmd.Parameters.AddWithValue("@IdPermissao", _idPermissao);
+                cn.Open();
+                cmd.ExecuteNonQuery();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    if (rd.Read())
+                        return true;
+
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar validar permissao,", ex);
+            }
+
+        }
 
     }
 }

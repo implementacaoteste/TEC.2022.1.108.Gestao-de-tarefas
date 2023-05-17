@@ -1,27 +1,20 @@
 ﻿using BLL;
 using Models;
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsFormsPrincipal
 {
     public partial class FormCadastroEtapa : Form
     {
-        int idTarefa, idLista;
+        int idTarefa, idEtapa, idLista;
         
-        public FormCadastroEtapa(int _idTarefa, int _idLista)
+        public FormCadastroEtapa(int _idTarefa, int _idEtapa, int _idLista)
         {
             InitializeComponent();
             idTarefa = _idTarefa;
             idLista = _idLista;
+            idEtapa = _idEtapa;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -31,10 +24,11 @@ namespace WindowsFormsPrincipal
 
         private void buttonSalvarEtapa_Click(object sender, EventArgs e)
         {
-
-                if (idTarefa == 0)
+                int id = ((Etapa)etapaBindingSource.Current).Id;
+                if (id == 0)
                 {
-                    new EtapaBLL().AdicionarEtapa((Etapa)etapaBindingSource.Current, idTarefa);
+                int valor = Convert.ToInt32(comboBoxPontos.Text);
+                new EtapaBLL().AdicionarEtapa((Etapa)etapaBindingSource.Current, idTarefa, valor);
                     MessageBox.Show("Etapa inserida com sucesso!", "Concluido", MessageBoxButtons.OK);
                 }
                 else
@@ -43,8 +37,6 @@ namespace WindowsFormsPrincipal
                     MessageBox.Show("Etapa alterada com sucesso!", "Concluido", MessageBoxButtons.OK);
                 }
                     
-       
-            
                 Close();
         }
 
@@ -61,16 +53,15 @@ namespace WindowsFormsPrincipal
         private void FormCadastroEtapa_Load(object sender, EventArgs e)
         {
             usuarioBindingSource.DataSource = new UsuarioBLL().BuscarUsuarioLista(idLista);
-            if (idTarefa == 0)
+            if (idEtapa == 0)
                 etapaBindingSource.AddNew();
             else
-                etapaBindingSource.DataSource = new EtapaBLL().BuscarPorIdEtapa(idTarefa); 
+                etapaBindingSource.DataSource = new EtapaBLL().BuscarPorIdEtapa(idEtapa);
         }
 
         private void buttonCancelarEtapa_Click_1(object sender, EventArgs e)
         {
             Close();
-            
         }
 
         private void nomeEtapaTextBox_KeyDown(object sender, KeyEventArgs e)
@@ -89,8 +80,6 @@ namespace WindowsFormsPrincipal
         {
             if(e.KeyCode == Keys.Escape)
                 this.Close();
-
-
         }
     }
 }

@@ -33,7 +33,6 @@
             this.textBoxLogin = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.buttonFechar = new System.Windows.Forms.Button();
             this.buttonLogin = new System.Windows.Forms.Button();
             this.textBoxSenha = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -93,20 +92,6 @@
             this.linkLabel1.VisitedLinkColor = System.Drawing.Color.MediumSlateBlue;
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // buttonFechar
-            // 
-            this.buttonFechar.BackColor = System.Drawing.Color.Red;
-            this.buttonFechar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonFechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonFechar.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonFechar.Location = new System.Drawing.Point(371, 12);
-            this.buttonFechar.Name = "buttonFechar";
-            this.buttonFechar.Size = new System.Drawing.Size(32, 32);
-            this.buttonFechar.TabIndex = 7;
-            this.buttonFechar.Text = "X";
-            this.buttonFechar.UseVisualStyleBackColor = false;
-            this.buttonFechar.Click += new System.EventHandler(this.buttonFechar_Click);
-            // 
             // buttonLogin
             // 
             this.buttonLogin.BackColor = System.Drawing.Color.MediumSlateBlue;
@@ -149,7 +134,6 @@
             this.ClientSize = new System.Drawing.Size(415, 525);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonLogin);
-            this.Controls.Add(this.buttonFechar);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBoxSenha);
@@ -179,7 +163,6 @@
         private System.Windows.Forms.TextBox textBoxLogin;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.Button buttonFechar;
         private System.Windows.Forms.Button buttonLogin;
         private System.Windows.Forms.TextBox textBoxSenha;
         private System.Windows.Forms.PictureBox pictureBox1;
