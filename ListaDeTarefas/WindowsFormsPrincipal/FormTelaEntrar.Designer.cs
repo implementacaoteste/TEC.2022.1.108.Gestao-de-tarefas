@@ -110,6 +110,7 @@
             this.Controls.Add(this.codigoTextBox);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormTelaEntrar";
@@ -117,6 +118,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FormTelaEntrar_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormTelaEntrar_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaBindingSource)).EndInit();

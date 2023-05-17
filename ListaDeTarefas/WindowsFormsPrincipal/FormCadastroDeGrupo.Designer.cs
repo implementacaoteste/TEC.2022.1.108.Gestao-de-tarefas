@@ -71,7 +71,7 @@ namespace WindowsFormsPrincipal
             this.buttonSalvarGrupo.Location = new System.Drawing.Point(107, 313);
             this.buttonSalvarGrupo.Name = "buttonSalvarGrupo";
             this.buttonSalvarGrupo.Size = new System.Drawing.Size(169, 36);
-            this.buttonSalvarGrupo.TabIndex = 9;
+            this.buttonSalvarGrupo.TabIndex = 2;
             this.buttonSalvarGrupo.Text = "Salvar grupo";
             this.buttonSalvarGrupo.UseVisualStyleBackColor = false;
             this.buttonSalvarGrupo.Click += new System.EventHandler(this.buttonArea1_Click);
@@ -114,6 +114,7 @@ namespace WindowsFormsPrincipal
             this.textBoxtitulo.Name = "textBoxtitulo";
             this.textBoxtitulo.Size = new System.Drawing.Size(281, 30);
             this.textBoxtitulo.TabIndex = 1;
+            this.textBoxtitulo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxtitulo_KeyDown);
             // 
             // FormCadastroDeGrupo
             // 
@@ -126,6 +127,7 @@ namespace WindowsFormsPrincipal
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormCadastroDeGrupo";
@@ -134,6 +136,7 @@ namespace WindowsFormsPrincipal
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro De Grupo";
             this.Load += new System.EventHandler(this.FormCadastroDeGrupo_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormCadastroDeGrupo_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grupoBindingSource)).EndInit();
