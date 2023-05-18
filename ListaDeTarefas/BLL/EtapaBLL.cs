@@ -47,5 +47,9 @@ namespace BLL
             if (_etapa.IdUsuario <= 0)
                 throw new System.Exception("O Id Usuário nao pode ser 0");
         }
+        public void ConcluirEtapa(int _idEtapa, int _score, int _idLista)
+        {
+            new EtapaDAL().ConcluirEtapa(_idEtapa, _score, _idLista);
+        }
     }
 }

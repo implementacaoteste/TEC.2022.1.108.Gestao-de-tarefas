@@ -94,7 +94,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT IdEtapa, NomeEtapa, IdUsuario, IdTarefa FROM Etapa WHERE IdTarefa = @IdTarefa";
+                cmd.CommandText = "SELECT IdEtapa, NomeEtapa, IdUsuario, IdTarefa, Status, Valor FROM Etapa WHERE IdTarefa = @IdTarefa";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@IdTarefa", _idTarefa);
                 cn.Open();
@@ -109,6 +109,8 @@ namespace DAL
                         etapa.IdTarefa = Convert.ToInt32(rd["IdTarefa"]);
                         etapa.IdUsuario = Convert.ToInt32(rd["IdUsuario"]);
                         etapa.NomeEtapa = rd["NomeEtapa"].ToString();
+                        etapa.Status = Convert.ToBoolean(rd["Status"]);
+                        etapa.Valor = Convert.ToInt32(rd["Valor"]);
                         etapas.Add(etapa);
                     }
                 }
@@ -214,7 +216,7 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"INSERT INTO Etapa(IdUsuario, IdTarefa, NomeEtapa, Valor, Data) Values(@IdUsuario, @IdTarefa, @NomeEtapa, @Valor, @Data)";
+                cmd.CommandText = @"INSERT INTO Etapa(IdUsuario, IdTarefa, NomeEtapa, Valor, Data, Status) Values(@IdUsuario, @IdTarefa, @NomeEtapa, @Valor, @Data, 'false')";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@IdUsuario", _etapa.IdUsuario);
                 cmd.Parameters.AddWithValue("@IdTarefa", _idTarefa);
@@ -229,6 +231,31 @@ namespace DAL
             catch (Exception ex)
             {
                 throw new Exception("Ocorreu um erro ao tentar adicionar uma etapa no banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+        public void ConcluirEtapa(int _idEtapa, int _score, int _lista)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = cn.CreateCommand();
+                cmd.CommandText = @"UPDATE Etapa SET Status = 'true' where IdEtapa = @IdEtapa
+                                    UPDATE ListadeTarefas_Usuario SET Score = ISNULL(Score,0) + @Score where idListaTarefas = @idListaTarefas";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@IdEtapa", _idEtapa);
+                cmd.Parameters.AddWithValue("@Score", _score);
+                cmd.Parameters.AddWithValue("@idListaTarefas", _lista);
+                cmd.Connection = cn;
+                cn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar alterar uma etapa no banco de dados", ex);
             }
             finally
             {

@@ -34,7 +34,7 @@ namespace WindowsFormsPrincipal
         private void buttonSair_Click(object sender, EventArgs e)
         {
             Close();  
-        }
+        } 
         private void nomeListaTextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
