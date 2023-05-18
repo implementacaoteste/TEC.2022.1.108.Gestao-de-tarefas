@@ -143,7 +143,14 @@ namespace WindowsFormsPrincipal
 
         private void FormMenuDeTarefas_Load(object sender, EventArgs e)
         {
-            radioButtonPrivado.Checked = new ListaBLL().ConferirPrivacidade(Constantes.IdAreaAberta);
+            if (new ListaBLL().ConferirPrivacidade(Constantes.IdAreaAberta))
+            {
+                radioButtonPublico.Checked = true;
+            }
+            else
+            {
+                radioButtonPrivado.Checked = true;
+            }
         }
 
         private void etapaBindingSource_CurrentChanged(object sender, EventArgs e)
@@ -159,6 +166,28 @@ namespace WindowsFormsPrincipal
         private void radioButtonPublico_CheckedChanged(object sender, EventArgs e)
         {
             new ListaBLL().AtribuirPrivacidade(1, Constantes.IdAreaAberta);
+        }
+
+        private void buttonConvidarUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonCodigo_Click(object sender, EventArgs e)
+        {
+            labelCodigo.Text = Convert.ToString(Constantes.IdAreaAberta,16);
+            timer1.Enabled = true;
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            labelCodigo.Text = "**********";
+            timer1.Enabled = false;
         }
     }
 }

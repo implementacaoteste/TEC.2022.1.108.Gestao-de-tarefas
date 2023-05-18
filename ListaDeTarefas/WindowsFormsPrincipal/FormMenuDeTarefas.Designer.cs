@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.radioButtonPrivado = new System.Windows.Forms.RadioButton();
+            this.radioButtonPublico = new System.Windows.Forms.RadioButton();
+            this.buttonCodigo = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.checkBoxAtribuicao = new System.Windows.Forms.CheckBox();
             this.checkBoxAtrasado = new System.Windows.Forms.CheckBox();
@@ -43,7 +46,6 @@
             this.buttonDeletarEtapa = new System.Windows.Forms.Button();
             this.buttonAlterarEtapa = new System.Windows.Forms.Button();
             this.buttonInserirEtapa = new System.Windows.Forms.Button();
-            this.buttonConvidarUsuario = new System.Windows.Forms.Button();
             this.buttonConcluir = new System.Windows.Forms.Button();
             this.tarefaDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,9 +56,8 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.etapaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonVisualizarRanking = new System.Windows.Forms.Button();
-            this.buttonCodigo = new System.Windows.Forms.Button();
-            this.radioButtonPublico = new System.Windows.Forms.RadioButton();
-            this.radioButtonPrivado = new System.Windows.Forms.RadioButton();
+            this.labelCodigo = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tarefaDataGridView)).BeginInit();
@@ -80,6 +81,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkGray;
+            this.panel2.Controls.Add(this.labelCodigo);
             this.panel2.Controls.Add(this.radioButtonPrivado);
             this.panel2.Controls.Add(this.radioButtonPublico);
             this.panel2.Controls.Add(this.buttonCodigo);
@@ -87,6 +89,44 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(162, 590);
             this.panel2.TabIndex = 5;
+            // 
+            // radioButtonPrivado
+            // 
+            this.radioButtonPrivado.AutoSize = true;
+            this.radioButtonPrivado.Location = new System.Drawing.Point(12, 433);
+            this.radioButtonPrivado.Name = "radioButtonPrivado";
+            this.radioButtonPrivado.Size = new System.Drawing.Size(75, 20);
+            this.radioButtonPrivado.TabIndex = 23;
+            this.radioButtonPrivado.TabStop = true;
+            this.radioButtonPrivado.Text = "Privado";
+            this.radioButtonPrivado.UseVisualStyleBackColor = true;
+            this.radioButtonPrivado.CheckedChanged += new System.EventHandler(this.radioButtonPrivado_CheckedChanged);
+            // 
+            // radioButtonPublico
+            // 
+            this.radioButtonPublico.AutoSize = true;
+            this.radioButtonPublico.Location = new System.Drawing.Point(12, 459);
+            this.radioButtonPublico.Name = "radioButtonPublico";
+            this.radioButtonPublico.Size = new System.Drawing.Size(73, 20);
+            this.radioButtonPublico.TabIndex = 22;
+            this.radioButtonPublico.TabStop = true;
+            this.radioButtonPublico.Text = "Público";
+            this.radioButtonPublico.UseVisualStyleBackColor = true;
+            this.radioButtonPublico.CheckedChanged += new System.EventHandler(this.radioButtonPublico_CheckedChanged);
+            // 
+            // buttonCodigo
+            // 
+            this.buttonCodigo.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.buttonCodigo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCodigo.ForeColor = System.Drawing.SystemColors.Window;
+            this.buttonCodigo.Location = new System.Drawing.Point(12, 485);
+            this.buttonCodigo.Name = "buttonCodigo";
+            this.buttonCodigo.Size = new System.Drawing.Size(128, 48);
+            this.buttonCodigo.TabIndex = 20;
+            this.buttonCodigo.Text = "Exibir código de convite";
+            this.buttonCodigo.UseVisualStyleBackColor = false;
+            this.buttonCodigo.Click += new System.EventHandler(this.buttonCodigo_Click);
             // 
             // panel1
             // 
@@ -233,18 +273,6 @@
             this.buttonInserirEtapa.UseVisualStyleBackColor = false;
             this.buttonInserirEtapa.Click += new System.EventHandler(this.buttonInserirEtapa_Click);
             // 
-            // buttonConvidarUsuario
-            // 
-            this.buttonConvidarUsuario.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.buttonConvidarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonConvidarUsuario.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonConvidarUsuario.Location = new System.Drawing.Point(721, 635);
-            this.buttonConvidarUsuario.Name = "buttonConvidarUsuario";
-            this.buttonConvidarUsuario.Size = new System.Drawing.Size(141, 33);
-            this.buttonConvidarUsuario.TabIndex = 17;
-            this.buttonConvidarUsuario.Text = "Convidar Usuários";
-            this.buttonConvidarUsuario.UseVisualStyleBackColor = false;
-            // 
             // buttonConcluir
             // 
             this.buttonConcluir.BackColor = System.Drawing.Color.MediumSlateBlue;
@@ -353,42 +381,22 @@
             this.buttonVisualizarRanking.UseVisualStyleBackColor = false;
             this.buttonVisualizarRanking.Click += new System.EventHandler(this.buttonVisualizarRanking_Click);
             // 
-            // buttonCodigo
+            // labelCodigo
             // 
-            this.buttonCodigo.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.buttonCodigo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCodigo.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonCodigo.Location = new System.Drawing.Point(12, 524);
-            this.buttonCodigo.Name = "buttonCodigo";
-            this.buttonCodigo.Size = new System.Drawing.Size(128, 48);
-            this.buttonCodigo.TabIndex = 20;
-            this.buttonCodigo.Text = "Exibir código de convite";
-            this.buttonCodigo.UseVisualStyleBackColor = false;
+            this.labelCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCodigo.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.labelCodigo.Location = new System.Drawing.Point(12, 547);
+            this.labelCodigo.Name = "labelCodigo";
+            this.labelCodigo.Size = new System.Drawing.Size(128, 25);
+            this.labelCodigo.TabIndex = 24;
+            this.labelCodigo.Text = "**************";
+            this.labelCodigo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelCodigo.Click += new System.EventHandler(this.label2_Click_1);
             // 
-            // radioButtonPublico
+            // timer1
             // 
-            this.radioButtonPublico.AutoSize = true;
-            this.radioButtonPublico.Location = new System.Drawing.Point(12, 498);
-            this.radioButtonPublico.Name = "radioButtonPublico";
-            this.radioButtonPublico.Size = new System.Drawing.Size(73, 20);
-            this.radioButtonPublico.TabIndex = 22;
-            this.radioButtonPublico.TabStop = true;
-            this.radioButtonPublico.Text = "Público";
-            this.radioButtonPublico.UseVisualStyleBackColor = true;
-            this.radioButtonPublico.CheckedChanged += new System.EventHandler(this.radioButtonPublico_CheckedChanged);
-            // 
-            // radioButtonPrivado
-            // 
-            this.radioButtonPrivado.AutoSize = true;
-            this.radioButtonPrivado.Location = new System.Drawing.Point(12, 472);
-            this.radioButtonPrivado.Name = "radioButtonPrivado";
-            this.radioButtonPrivado.Size = new System.Drawing.Size(75, 20);
-            this.radioButtonPrivado.TabIndex = 23;
-            this.radioButtonPrivado.TabStop = true;
-            this.radioButtonPrivado.Text = "Privado";
-            this.radioButtonPrivado.UseVisualStyleBackColor = true;
-            this.radioButtonPrivado.CheckedChanged += new System.EventHandler(this.radioButtonPrivado_CheckedChanged);
+            this.timer1.Interval = 5000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // FormMenuDeTarefas
             // 
@@ -400,7 +408,6 @@
             this.Controls.Add(this.etapaDataGridView);
             this.Controls.Add(this.tarefaDataGridView);
             this.Controls.Add(this.buttonConcluir);
-            this.Controls.Add(this.buttonConvidarUsuario);
             this.Controls.Add(this.buttonDeletarEtapa);
             this.Controls.Add(this.buttonAlterarEtapa);
             this.Controls.Add(this.buttonInserirEtapa);
@@ -451,7 +458,6 @@
         private System.Windows.Forms.Button buttonDeletarEtapa;
         private System.Windows.Forms.Button buttonAlterarEtapa;
         private System.Windows.Forms.Button buttonInserirEtapa;
-        private System.Windows.Forms.Button buttonConvidarUsuario;
         private System.Windows.Forms.Button buttonConcluir;
         private System.Windows.Forms.BindingSource tarefaBindingSource1;
         private System.Windows.Forms.DataGridView tarefaDataGridView;
@@ -465,5 +471,7 @@
         private System.Windows.Forms.Button buttonCodigo;
         private System.Windows.Forms.RadioButton radioButtonPrivado;
         private System.Windows.Forms.RadioButton radioButtonPublico;
+        private System.Windows.Forms.Label labelCodigo;
+        private System.Windows.Forms.Timer timer1;
     }
 }
