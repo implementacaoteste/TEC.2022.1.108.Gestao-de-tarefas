@@ -189,5 +189,13 @@ namespace WindowsFormsPrincipal
             labelCodigo.Text = "**********";
             timer1.Enabled = false;
         }
+
+        private void buttonConcluir_Click(object sender, EventArgs e)
+        {
+            int id = ((Etapa)etapaBindingSource.Current).Id;
+            int score = ((Etapa)etapaBindingSource.Current).Valor;
+            new EtapaBLL().ConcluirEtapa(id, score, idLista);
+            buttonBuscar_Click(idLista, null);
+        }
     }
 }
