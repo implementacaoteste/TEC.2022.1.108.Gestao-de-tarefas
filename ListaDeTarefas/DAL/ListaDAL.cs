@@ -268,6 +268,42 @@ namespace DAL
                 cn.Close();
             }
         }
+        public List<Lista> BuscarListasCompartilhadas(int _idUsuario)
+        {
+            List<Lista> listas = new List<Lista>();
+            Lista lista = new Lista();
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "SELECT L.NomeLista FROM ListaDeTarefas L INNER JOIN ListadeTarefas_Usuario U " +
+                                  "ON U.IdUsuario = @IdUsuario and L.IdLista = U.IdListaTarefas";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@IdUsuario", _idUsuario);
+
+                cn.Open();
+
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    if (rd.Read())
+                    {
+                        lista = new Lista();
+                        lista.NomeLista = rd["L.NomeLista"].ToString();
+                        listas.Add(lista);
+                    }
+                }
+                return listas;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao buscar os grupos compartilhados!", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
 
     }
 }

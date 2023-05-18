@@ -17,7 +17,7 @@ namespace WindowsFormsPrincipal
         List<Grupo> grupos;
         List<Lista> listas;
         List<Lista> lista;
-        int Area1, Area2, Area3, Area4, lista1, lista2, lista3;
+        int Area1, Area2, Area3, lista1, lista2, lista3;
         public FormTelaPrincipal()
         {
             InitializeComponent();
@@ -39,8 +39,9 @@ namespace WindowsFormsPrincipal
             }
             try
             {
+                buttonIngressar.Visible = false;
+                dataGridViewCompartilhados.Visible = false;
                 grupos = new GrupoBLL().buscarGruposArea(Constantes.IdUsuarioLogado);
-
 
                 buttonGrupo1.Text = grupos[0].Titulo;
                 Area1 = grupos[0].IdGrupo;
@@ -48,8 +49,6 @@ namespace WindowsFormsPrincipal
                 Area2 = grupos[1].IdGrupo;
                 buttonGrupo3.Text = grupos[2].Titulo;
                 Area3 = grupos[2].IdGrupo;
-                buttonGrupo4.Text = grupos[3].Titulo;
-                Area4 = grupos[3].IdGrupo;
 
                 listas = new ListaBLL().buscarTarefasArea(Area1);
 
@@ -71,6 +70,8 @@ namespace WindowsFormsPrincipal
         }
         private void buttonGrupo1_Click(object sender, EventArgs e)
         {
+            buttonIngressar.Visible = false;
+            dataGridViewCompartilhados.Visible = false;
             Constantes.IdGrupoAberto = grupos[0].IdGrupo;
             List<Lista> lista = new ListaBLL().buscarTarefasArea(Constantes.IdGrupoAberto);
 
@@ -83,6 +84,8 @@ namespace WindowsFormsPrincipal
         }
         private void buttonGrupo2_Click(object sender, EventArgs e)
         {
+            buttonIngressar.Visible = false;
+            dataGridViewCompartilhados.Visible = false;
             Constantes.IdGrupoAberto = grupos[1].IdGrupo;
             List<Lista> lista = new ListaBLL().buscarTarefasArea(Constantes.IdGrupoAberto);
 
@@ -95,6 +98,8 @@ namespace WindowsFormsPrincipal
         }
         private void buttonGrupo3_Click(object sender, EventArgs e)
         {
+            buttonIngressar.Visible = false;
+            dataGridViewCompartilhados.Visible = false;
             Constantes.IdGrupoAberto = grupos[2].IdGrupo;
             List<Lista> lista = new ListaBLL().buscarTarefasArea(Constantes.IdGrupoAberto);
 
@@ -107,15 +112,12 @@ namespace WindowsFormsPrincipal
         }
         private void buttonGrupo4_Click(object sender, EventArgs e)
         {
-            Constantes.IdGrupoAberto = grupos[3].IdGrupo;
-            List<Lista> lista = new ListaBLL().buscarTarefasArea(Constantes.IdGrupoAberto);
-
-            buttonArea1.Text = lista[0].NomeLista;
-            listas[0].IdLista = lista[0].IdLista;
-            buttonArea2.Text = lista[1].NomeLista;
-            listas[1].IdLista = lista[1].IdLista;
-            buttonArea3.Text = lista[2].NomeLista;
-            listas[2].IdLista = lista[2].IdLista;
+            dataGridViewCompartilhados.DataSource = new ListaBLL().BuscarListasCompartilhadas(Constantes.IdUsuarioLogado);
+            buttonIngressar.Visible = true;
+            dataGridViewCompartilhados.Visible = true;
+            buttonArea1.Visible = false;
+            buttonArea2.Visible = false;
+            buttonArea3.Visible = false;
         }
         private void buttonArea1_Click(object sender, EventArgs e)
         {
@@ -213,14 +215,6 @@ namespace WindowsFormsPrincipal
                 frm.ShowDialog();
             }
         }
-
-        private void FormTelaPrincipal_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Escape)
-                buttonSair_Click(null, null);
-                
-        }
-
         private void renomearToolStripArea1_Click(object sender, EventArgs e)
         {
             using (FormCadastroDeListaTarefas frm = new FormCadastroDeListaTarefas(listas[0].IdLista))
@@ -261,6 +255,12 @@ namespace WindowsFormsPrincipal
             }
             RecarregarTelaPrincipal();
         }
+        private void FormTelaPrincipal_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+                buttonSair_Click(null, null);
+
+        }
         public void RecarregarTelaPrincipal()
         {
             try
@@ -274,8 +274,7 @@ namespace WindowsFormsPrincipal
                 Area2 = grupos[1].IdGrupo;
                 buttonGrupo3.Text = grupos[2].Titulo;
                 Area3 = grupos[2].IdGrupo;
-                buttonGrupo4.Text = grupos[3].Titulo;
-                Area4 = grupos[3].IdGrupo;
+                
 
                 listas = new ListaBLL().buscarTarefasArea(Constantes.IdGrupoAberto);
 

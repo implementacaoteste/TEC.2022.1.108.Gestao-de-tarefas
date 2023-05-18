@@ -58,6 +58,10 @@
             this.abrirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.renomearToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonSair = new System.Windows.Forms.Button();
+            this.bindingSourceListaCompartilhados = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewCompartilhados = new System.Windows.Forms.DataGridView();
+            this.nomeListaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonIngressar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.contextMenuStripGrupo3.SuspendLayout();
@@ -66,6 +70,8 @@
             this.contextMenuStripArea1.SuspendLayout();
             this.contextMenuStripArea2.SuspendLayout();
             this.contextMenuStripArea3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceListaCompartilhados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCompartilhados)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -345,12 +351,59 @@
             this.buttonSair.UseVisualStyleBackColor = false;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
             // 
+            // bindingSourceListaCompartilhados
+            // 
+            this.bindingSourceListaCompartilhados.DataSource = typeof(Models.Lista);
+            // 
+            // dataGridViewCompartilhados
+            // 
+            this.dataGridViewCompartilhados.AllowUserToAddRows = false;
+            this.dataGridViewCompartilhados.AllowUserToDeleteRows = false;
+            this.dataGridViewCompartilhados.AllowUserToOrderColumns = true;
+            this.dataGridViewCompartilhados.AutoGenerateColumns = false;
+            this.dataGridViewCompartilhados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCompartilhados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nomeListaDataGridViewTextBoxColumn});
+            this.dataGridViewCompartilhados.DataSource = this.bindingSourceListaCompartilhados;
+            this.dataGridViewCompartilhados.Location = new System.Drawing.Point(230, 156);
+            this.dataGridViewCompartilhados.Name = "dataGridViewCompartilhados";
+            this.dataGridViewCompartilhados.ReadOnly = true;
+            this.dataGridViewCompartilhados.RowHeadersWidth = 51;
+            this.dataGridViewCompartilhados.RowTemplate.Height = 24;
+            this.dataGridViewCompartilhados.Size = new System.Drawing.Size(702, 339);
+            this.dataGridViewCompartilhados.TabIndex = 6;
+            // 
+            // nomeListaDataGridViewTextBoxColumn
+            // 
+            this.nomeListaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nomeListaDataGridViewTextBoxColumn.DataPropertyName = "NomeLista";
+            this.nomeListaDataGridViewTextBoxColumn.HeaderText = "NomeLista";
+            this.nomeListaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nomeListaDataGridViewTextBoxColumn.Name = "nomeListaDataGridViewTextBoxColumn";
+            this.nomeListaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // buttonIngressar
+            // 
+            this.buttonIngressar.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.buttonIngressar.ContextMenuStrip = this.contextMenuStripArea3;
+            this.buttonIngressar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonIngressar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.buttonIngressar.ForeColor = System.Drawing.SystemColors.Window;
+            this.buttonIngressar.Location = new System.Drawing.Point(796, 501);
+            this.buttonIngressar.Name = "buttonIngressar";
+            this.buttonIngressar.Size = new System.Drawing.Size(108, 33);
+            this.buttonIngressar.TabIndex = 7;
+            this.buttonIngressar.Text = "Ingressar";
+            this.buttonIngressar.UseVisualStyleBackColor = false;
+            // 
             // FormTelaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(996, 546);
+            this.Controls.Add(this.buttonIngressar);
+            this.Controls.Add(this.dataGridViewCompartilhados);
             this.Controls.Add(this.buttonSair);
             this.Controls.Add(this.buttonArea3);
             this.Controls.Add(this.buttonArea2);
@@ -374,6 +427,8 @@
             this.contextMenuStripArea1.ResumeLayout(false);
             this.contextMenuStripArea2.ResumeLayout(false);
             this.contextMenuStripArea3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceListaCompartilhados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCompartilhados)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -409,5 +464,9 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStripArea3;
         private System.Windows.Forms.ToolStripMenuItem abrirToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem renomearToolStripMenuItem1;
+        private System.Windows.Forms.BindingSource bindingSourceListaCompartilhados;
+        private System.Windows.Forms.DataGridView dataGridViewCompartilhados;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeListaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button buttonIngressar;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsPrincipal
 {
-    partial class FormTelaCodigo
+    partial class FormTelaIngresso
     {
         /// <summary>
         /// Required designer variable.
@@ -30,9 +30,10 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.buttonSair = new System.Windows.Forms.Button();
+            this.textBoxCodigo = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.buttonEntrarListar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +51,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(81, 22);
+            this.label1.Location = new System.Drawing.Point(22, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(342, 46);
             this.label1.TabIndex = 6;
@@ -58,40 +59,13 @@
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.Window;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.label2.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label2.Location = new System.Drawing.Point(81, 211);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(159, 46);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Código:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label2.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.Window;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.label3.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label3.Location = new System.Drawing.Point(246, 211);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(130, 46);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "12345";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // buttonSair
             // 
             this.buttonSair.BackColor = System.Drawing.Color.Red;
             this.buttonSair.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.buttonSair.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonSair.Location = new System.Drawing.Point(417, 332);
+            this.buttonSair.Location = new System.Drawing.Point(299, 332);
             this.buttonSair.Name = "buttonSair";
             this.buttonSair.Size = new System.Drawing.Size(74, 33);
             this.buttonSair.TabIndex = 13;
@@ -99,20 +73,42 @@
             this.buttonSair.UseVisualStyleBackColor = false;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
             // 
-            // FormTelaCodigo
+            // textBoxCodigo
+            // 
+            this.textBoxCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxCodigo.Location = new System.Drawing.Point(12, 219);
+            this.textBoxCodigo.Name = "textBoxCodigo";
+            this.textBoxCodigo.Size = new System.Drawing.Size(361, 30);
+            this.textBoxCodigo.TabIndex = 14;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 191);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(238, 25);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Insira o código de convite:";
+            // 
+            // buttonEntrarListar
+            // 
+            // 
+            // FormTelaIngresso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(503, 377);
-            this.Controls.Add(this.buttonSair);
-            this.Controls.Add(this.label3);
+            this.ClientSize = new System.Drawing.Size(385, 377);
+            this.Controls.Add(this.buttonEntrarListar);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBoxCodigo);
+            this.Controls.Add(this.buttonSair);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FormTelaCodigo";
+            this.Name = "FormTelaIngresso";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "FormTelaCodigo";
@@ -127,8 +123,9 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button buttonSair;
+        private System.Windows.Forms.TextBox textBoxCodigo;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonEntrarListar;
     }
 }

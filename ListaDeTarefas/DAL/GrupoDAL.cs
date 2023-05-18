@@ -24,7 +24,6 @@ namespace DAL
                 cmd.CommandText = @"INSERT INTO Grupo(Titulo, IdUsuario) Values('Grupo1', @IdUsuario) 
                                     INSERT INTO Grupo(Titulo, IdUsuario) Values('Grupo2', @IdUsuario) 
                                     INSERT INTO Grupo(Titulo, IdUsuario) Values('Grupo3', @IdUsuario) 
-                                    INSERT INTO Grupo(Titulo, IdUsuario) Values('Compartilhados', @IdUsuario)
                                     SELECT IdGrupo FROM Grupo WHERE IdUsuario = @IdUsuario";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@IdUsuario", _idUsuario);

@@ -60,5 +60,9 @@ namespace BLL
                 throw new Exception("O nome da lista de tarefas deve ter mais de 3 caracteres!");
             }
         }
+        public List<Lista> BuscarListasCompartilhadas(int _idUsuario)
+        {
+            return new ListaDAL().BuscarListasCompartilhadas(_idUsuario);
+        }
     }
 }

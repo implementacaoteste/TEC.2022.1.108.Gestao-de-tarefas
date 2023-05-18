@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsPrincipal
 {
-    public partial class FormTelaCodigo : Form
+    public partial class FormTelaIngresso : Form
     {
-        public FormTelaCodigo()
+        public FormTelaIngresso()
         {
             InitializeComponent();
         }
@@ -26,5 +26,7 @@ namespace WindowsFormsPrincipal
         {
             Close();
         }
+
+
     }
 }

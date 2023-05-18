@@ -14,7 +14,7 @@ namespace BLL
         {
             Lista lista = new Lista();
             List<Grupo> ids =  new GrupoDAL().AdicionarGrupo(_id); 
-            for(int i = 0; i < 4; i++)
+            for(int i = 0; i < 3; i++)
             {
                 new ListaBLL().AdicionarLista(ids[i].IdGrupo,_id);
             }
