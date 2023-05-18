@@ -1,8 +1,8 @@
 
 USE [master]
 GO
-/****** Object:  Database [Gestao_Tarefas]    Script Date: 15/05/2023 15:55:23 ******/
-CREATE DATABASE [Gestao_Tarefas] 
+/****** Object:  Database [Gestao_Tarefas]    Script Date: 18/05/2023 14:18:01 ******/
+CREATE DATABASE [Gestao_Tarefas]
 GO
 ALTER DATABASE [Gestao_Tarefas] SET COMPATIBILITY_LEVEL = 150
 GO
@@ -75,7 +75,7 @@ ALTER DATABASE [Gestao_Tarefas] SET QUERY_STORE = OFF
 GO
 USE [Gestao_Tarefas]
 GO
-/****** Object:  Table [dbo].[Etapa]    Script Date: 15/05/2023 15:55:23 ******/
+/****** Object:  Table [dbo].[Etapa]    Script Date: 18/05/2023 14:18:01 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -87,13 +87,14 @@ CREATE TABLE [dbo].[Etapa](
 	[IdUsuario] [int] NOT NULL,
 	[Valor] [int] NULL,
 	[Data] [date] NULL,
+	[Status] [bit] NULL,
  CONSTRAINT [PK_Etapa] PRIMARY KEY CLUSTERED 
 (
 	[IdEtapa] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Grupo]    Script Date: 15/05/2023 15:55:23 ******/
+/****** Object:  Table [dbo].[Grupo]    Script Date: 18/05/2023 14:18:01 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -108,7 +109,7 @@ CREATE TABLE [dbo].[Grupo](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[ListaDeTarefas]    Script Date: 15/05/2023 15:55:23 ******/
+/****** Object:  Table [dbo].[ListaDeTarefas]    Script Date: 18/05/2023 14:18:01 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -117,13 +118,14 @@ CREATE TABLE [dbo].[ListaDeTarefas](
 	[IdLista] [int] IDENTITY(1,1) NOT NULL,
 	[NomeLista] [varchar](150) NULL,
 	[IdGrupo] [int] NOT NULL,
+	[Privacidade] [bit] NULL,
  CONSTRAINT [PK_ListaDeTarefas] PRIMARY KEY CLUSTERED 
 (
 	[IdLista] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[ListadeTarefas_Usuario]    Script Date: 15/05/2023 15:55:23 ******/
+/****** Object:  Table [dbo].[ListadeTarefas_Usuario]    Script Date: 18/05/2023 14:18:01 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -135,7 +137,7 @@ CREATE TABLE [dbo].[ListadeTarefas_Usuario](
 	[Score] [int] NULL
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Permissoes]    Script Date: 15/05/2023 15:55:23 ******/
+/****** Object:  Table [dbo].[Permissoes]    Script Date: 18/05/2023 14:18:01 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -149,7 +151,7 @@ CREATE TABLE [dbo].[Permissoes](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Tarefa]    Script Date: 15/05/2023 15:55:23 ******/
+/****** Object:  Table [dbo].[Tarefa]    Script Date: 18/05/2023 14:18:01 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -164,7 +166,7 @@ CREATE TABLE [dbo].[Tarefa](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Usuario]    Script Date: 15/05/2023 15:55:23 ******/
+/****** Object:  Table [dbo].[Usuario]    Script Date: 18/05/2023 14:18:01 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -179,6 +181,8 @@ CREATE TABLE [dbo].[Usuario](
 	[IdUsuario] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[ListaDeTarefas] ADD  CONSTRAINT [DF_ListaDeTarefas_Privacidade]  DEFAULT ((0)) FOR [Privacidade]
 GO
 ALTER TABLE [dbo].[Etapa]  WITH CHECK ADD  CONSTRAINT [FK_Etapa_Tarefa] FOREIGN KEY([IdTarefa])
 REFERENCES [dbo].[Tarefa] ([IdTarefa])
