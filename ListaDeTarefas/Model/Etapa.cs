@@ -14,7 +14,8 @@ namespace Models
         public int IdUsuario { get; set; }
         public int Valor { get; set; }
         public DateTime Data {  get; set; }
-
+        public bool Status { get; set;
+        }
 
     }
 }
