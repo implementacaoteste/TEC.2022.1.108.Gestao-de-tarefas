@@ -99,7 +99,7 @@
             this.panel2.Location = new System.Drawing.Point(-2, 95);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(136, 452);
-            this.panel2.TabIndex = 1;
+            this.panel2.TabIndex = 4;
             // 
             // buttonGrupo4
             // 
@@ -107,7 +107,7 @@
             this.buttonGrupo4.Location = new System.Drawing.Point(0, 368);
             this.buttonGrupo4.Name = "buttonGrupo4";
             this.buttonGrupo4.Size = new System.Drawing.Size(136, 35);
-            this.buttonGrupo4.TabIndex = 1;
+            this.buttonGrupo4.TabIndex = 3;
             this.buttonGrupo4.Text = "Grupo 4";
             this.buttonGrupo4.UseVisualStyleBackColor = true;
             this.buttonGrupo4.Click += new System.EventHandler(this.buttonGrupo4_Click);
@@ -119,7 +119,7 @@
             this.buttonGrupo3.Location = new System.Drawing.Point(0, 337);
             this.buttonGrupo3.Name = "buttonGrupo3";
             this.buttonGrupo3.Size = new System.Drawing.Size(136, 35);
-            this.buttonGrupo3.TabIndex = 0;
+            this.buttonGrupo3.TabIndex = 2;
             this.buttonGrupo3.Text = "Grupo 3";
             this.buttonGrupo3.UseVisualStyleBackColor = true;
             this.buttonGrupo3.Click += new System.EventHandler(this.buttonGrupo3_Click);
@@ -154,7 +154,7 @@
             this.buttonGrupo2.Location = new System.Drawing.Point(0, 305);
             this.buttonGrupo2.Name = "buttonGrupo2";
             this.buttonGrupo2.Size = new System.Drawing.Size(136, 35);
-            this.buttonGrupo2.TabIndex = 0;
+            this.buttonGrupo2.TabIndex = 1;
             this.buttonGrupo2.Text = "Grupo 2";
             this.buttonGrupo2.UseVisualStyleBackColor = true;
             this.buttonGrupo2.Click += new System.EventHandler(this.buttonGrupo2_Click);
@@ -227,7 +227,7 @@
             this.buttonArea1.Location = new System.Drawing.Point(337, 173);
             this.buttonArea1.Name = "buttonArea1";
             this.buttonArea1.Size = new System.Drawing.Size(410, 60);
-            this.buttonArea1.TabIndex = 3;
+            this.buttonArea1.TabIndex = 1;
             this.buttonArea1.Text = "Area 1";
             this.buttonArea1.UseVisualStyleBackColor = false;
             this.buttonArea1.Click += new System.EventHandler(this.buttonArea1_Click);
@@ -265,7 +265,7 @@
             this.buttonArea2.Location = new System.Drawing.Point(337, 290);
             this.buttonArea2.Name = "buttonArea2";
             this.buttonArea2.Size = new System.Drawing.Size(410, 60);
-            this.buttonArea2.TabIndex = 3;
+            this.buttonArea2.TabIndex = 2;
             this.buttonArea2.Text = "Area 2";
             this.buttonArea2.UseVisualStyleBackColor = false;
             this.buttonArea2.Click += new System.EventHandler(this.buttonArea2_Click);
@@ -340,7 +340,7 @@
             this.buttonSair.Location = new System.Drawing.Point(910, 501);
             this.buttonSair.Name = "buttonSair";
             this.buttonSair.Size = new System.Drawing.Size(74, 33);
-            this.buttonSair.TabIndex = 4;
+            this.buttonSair.TabIndex = 5;
             this.buttonSair.Text = "Sair";
             this.buttonSair.UseVisualStyleBackColor = false;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
