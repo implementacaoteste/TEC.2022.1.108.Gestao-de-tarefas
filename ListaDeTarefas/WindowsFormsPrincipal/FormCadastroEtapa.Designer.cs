@@ -230,7 +230,7 @@
             this.Name = "FormCadastroEtapa";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cadastro de etapa";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.FormCadastroEtapa_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
