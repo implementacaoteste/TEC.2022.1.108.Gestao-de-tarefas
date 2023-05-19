@@ -130,7 +130,11 @@ namespace WindowsFormsPrincipal
 
         private void etapaDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            int id = ((Etapa)etapaBindingSource.Current).Id;
+            int score = ((Etapa)etapaBindingSource.Current).Valor;
+            bool status = ((Etapa)etapaBindingSource.Current).Status;
+            new EtapaBLL().StatusEtapa(id,score,idLista,status);
+            buttonBuscar_Click(idLista, null);
         }
 
         private void buttonVisualizarRanking_Click(object sender, EventArgs e)
@@ -192,10 +196,6 @@ namespace WindowsFormsPrincipal
 
         private void buttonConcluir_Click(object sender, EventArgs e)
         {
-            int id = ((Etapa)etapaBindingSource.Current).Id;
-            int score = ((Etapa)etapaBindingSource.Current).Valor;
-            new EtapaBLL().ConcluirEtapa(id, score, idLista);
-            buttonBuscar_Click(idLista, null);
         }
     }
 }

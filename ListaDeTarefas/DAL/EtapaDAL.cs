@@ -237,25 +237,26 @@ namespace DAL
                 cn.Close();
             }
         }
-        public void ConcluirEtapa(int _idEtapa, int _score, int _lista)
+        public void StatusEtapa(int _idEtapa, int _score, int _idLista, bool _status)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"UPDATE Etapa SET Status = 'true' where IdEtapa = @IdEtapa
+                cmd.CommandText = @"UPDATE Etapa SET Status = @Status where IdEtapa = @IdEtapa
                                     UPDATE ListadeTarefas_Usuario SET Score = ISNULL(Score,0) + @Score where idListaTarefas = @idListaTarefas";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@IdEtapa", _idEtapa);
                 cmd.Parameters.AddWithValue("@Score", _score);
-                cmd.Parameters.AddWithValue("@idListaTarefas", _lista);
+                cmd.Parameters.AddWithValue("@idListaTarefas", _idLista);
+                cmd.Parameters.AddWithValue("@Status", Convert.ToInt32(_status));
                 cmd.Connection = cn;
                 cn.Open();
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
-                throw new Exception("Ocorreu um erro ao tentar alterar uma etapa no banco de dados", ex);
+                throw new Exception("Ocorreu um erro ao tentar concluir uma etapa no banco de dados", ex);
             }
             finally
             {
