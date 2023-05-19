@@ -105,7 +105,7 @@
             this.panel2.Location = new System.Drawing.Point(-2, 95);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(136, 452);
-            this.panel2.TabIndex = 4;
+            this.panel2.TabIndex = 3;
             // 
             // buttonGrupo4
             // 
@@ -233,7 +233,7 @@
             this.buttonArea1.Location = new System.Drawing.Point(337, 173);
             this.buttonArea1.Name = "buttonArea1";
             this.buttonArea1.Size = new System.Drawing.Size(410, 60);
-            this.buttonArea1.TabIndex = 1;
+            this.buttonArea1.TabIndex = 4;
             this.buttonArea1.Text = "Area 1";
             this.buttonArea1.UseVisualStyleBackColor = false;
             this.buttonArea1.Click += new System.EventHandler(this.buttonArea1_Click);
@@ -271,7 +271,7 @@
             this.buttonArea2.Location = new System.Drawing.Point(337, 290);
             this.buttonArea2.Name = "buttonArea2";
             this.buttonArea2.Size = new System.Drawing.Size(410, 60);
-            this.buttonArea2.TabIndex = 2;
+            this.buttonArea2.TabIndex = 5;
             this.buttonArea2.Text = "Area 2";
             this.buttonArea2.UseVisualStyleBackColor = false;
             this.buttonArea2.Click += new System.EventHandler(this.buttonArea2_Click);
@@ -309,7 +309,7 @@
             this.buttonArea3.Location = new System.Drawing.Point(337, 407);
             this.buttonArea3.Name = "buttonArea3";
             this.buttonArea3.Size = new System.Drawing.Size(410, 60);
-            this.buttonArea3.TabIndex = 3;
+            this.buttonArea3.TabIndex = 7;
             this.buttonArea3.Text = "Area 3";
             this.buttonArea3.UseVisualStyleBackColor = false;
             this.buttonArea3.Click += new System.EventHandler(this.buttonArea3_Click);
@@ -343,10 +343,10 @@
             this.buttonSair.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.buttonSair.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonSair.Location = new System.Drawing.Point(910, 501);
+            this.buttonSair.Location = new System.Drawing.Point(873, 501);
             this.buttonSair.Name = "buttonSair";
             this.buttonSair.Size = new System.Drawing.Size(74, 33);
-            this.buttonSair.TabIndex = 5;
+            this.buttonSair.TabIndex = 2;
             this.buttonSair.Text = "Sair";
             this.buttonSair.UseVisualStyleBackColor = false;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
@@ -365,12 +365,12 @@
             this.dataGridViewCompartilhados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nomeListaDataGridViewTextBoxColumn});
             this.dataGridViewCompartilhados.DataSource = this.bindingSourceListaCompartilhados;
-            this.dataGridViewCompartilhados.Location = new System.Drawing.Point(230, 156);
+            this.dataGridViewCompartilhados.Location = new System.Drawing.Point(190, 156);
             this.dataGridViewCompartilhados.Name = "dataGridViewCompartilhados";
             this.dataGridViewCompartilhados.ReadOnly = true;
             this.dataGridViewCompartilhados.RowHeadersWidth = 51;
             this.dataGridViewCompartilhados.RowTemplate.Height = 24;
-            this.dataGridViewCompartilhados.Size = new System.Drawing.Size(702, 339);
+            this.dataGridViewCompartilhados.Size = new System.Drawing.Size(757, 339);
             this.dataGridViewCompartilhados.TabIndex = 6;
             // 
             // nomeListaDataGridViewTextBoxColumn
@@ -389,10 +389,10 @@
             this.buttonIngressar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonIngressar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.buttonIngressar.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonIngressar.Location = new System.Drawing.Point(796, 501);
+            this.buttonIngressar.Location = new System.Drawing.Point(759, 501);
             this.buttonIngressar.Name = "buttonIngressar";
             this.buttonIngressar.Size = new System.Drawing.Size(108, 33);
-            this.buttonIngressar.TabIndex = 7;
+            this.buttonIngressar.TabIndex = 1;
             this.buttonIngressar.Text = "Ingressar";
             this.buttonIngressar.UseVisualStyleBackColor = false;
             // 

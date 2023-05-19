@@ -35,8 +35,8 @@
             this.listaDeTarefasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonArea1 = new System.Windows.Forms.Button();
             this.buttonSair = new System.Windows.Forms.Button();
-            this.listaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nomeListaTextBox = new System.Windows.Forms.TextBox();
+            this.listaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             nomeListaLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaDeTarefasBindingSource)).BeginInit();
@@ -47,7 +47,7 @@
             // 
             nomeListaLabel.AutoSize = true;
             nomeListaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nomeListaLabel.Location = new System.Drawing.Point(53, 210);
+            nomeListaLabel.Location = new System.Drawing.Point(53, 221);
             nomeListaLabel.Name = "nomeListaLabel";
             nomeListaLabel.Size = new System.Drawing.Size(141, 29);
             nomeListaLabel.TabIndex = 3;
@@ -104,10 +104,6 @@
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
             this.buttonSair.KeyDown += new System.Windows.Forms.KeyEventHandler(this.buttonSair_KeyDown);
             // 
-            // listaBindingSource
-            // 
-            this.listaBindingSource.DataSource = typeof(Models.Lista);
-            // 
             // nomeListaTextBox
             // 
             this.nomeListaTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -117,6 +113,10 @@
             this.nomeListaTextBox.Name = "nomeListaTextBox";
             this.nomeListaTextBox.Size = new System.Drawing.Size(349, 30);
             this.nomeListaTextBox.TabIndex = 1;
+            // 
+            // listaBindingSource
+            // 
+            this.listaBindingSource.DataSource = typeof(Models.Lista);
             // 
             // FormCadastroDeListaTarefas
             // 
