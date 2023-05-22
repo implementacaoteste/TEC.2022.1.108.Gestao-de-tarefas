@@ -206,10 +206,17 @@ namespace WindowsFormsPrincipal
         private void checkBoxAtrasado_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxAtrasado.Checked == true)
+            {
                 checkBoxAtribuicao.Checked = false;
+                int id = ((Tarefa)tarefaBindingSource1.Current).Id;
+                etapaBindingSource.DataSource = new TarefaBLL().BuscarAtrasado(Constantes.IdUsuarioLogado, id);
+            }
+            else if (checkBoxAtrasado.Checked == false)
+            {
+                etapaBindingSource.DataSource = new TarefaBLL().BuscarPorIdLista(idLista);
+            }
 
-            int id = ((Tarefa)tarefaBindingSource1.Current).Id;
-            new TarefaBLL().BuscarAtrasado(Constantes.IdUsuarioLogado, id);
+
         }
     }
 }
