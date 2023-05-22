@@ -58,10 +58,12 @@ namespace WindowsFormsPrincipal
                 lista2 = listas[1].IdLista;
                 buttonArea3.Text = listas[2].NomeLista;
                 lista3 = listas[2].IdLista;
-            }
-            catch
-            {
 
+                Constantes.IdAreaAberta = Area1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
         private void FormTelaPrincipal_Load_1(object sender, EventArgs e)
@@ -303,7 +305,7 @@ namespace WindowsFormsPrincipal
                 Area3 = grupos[2].IdGrupo;
                 
 
-                listas = new ListaBLL().buscarTarefasArea(Constantes.IdGrupoAberto);
+                listas = new ListaBLL().buscarTarefasArea(Constantes.IdAreaAberta);
 
                 buttonArea1.Text = listas[0].NomeLista;
                 lista1 = listas[0].IdLista;
@@ -312,7 +314,11 @@ namespace WindowsFormsPrincipal
                 buttonArea3.Text = listas[2].NomeLista;
                 lista3 = listas[2].IdLista;
             }
-            catch
+            catch (Exception ex)
+            {
+
+            }
+            finally
             {
 
             }
