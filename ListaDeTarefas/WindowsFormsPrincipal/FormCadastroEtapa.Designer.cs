@@ -54,7 +54,7 @@
             // dataLabel
             // 
             dataLabel.AutoSize = true;
-            dataLabel.Location = new System.Drawing.Point(258, 265);
+            dataLabel.Location = new System.Drawing.Point(196, 265);
             dataLabel.Name = "dataLabel";
             dataLabel.Size = new System.Drawing.Size(39, 16);
             dataLabel.TabIndex = 8;
@@ -63,7 +63,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(258, 326);
+            label4.Location = new System.Drawing.Point(196, 326);
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(49, 16);
             label4.TabIndex = 11;
@@ -104,7 +104,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(258, 135);
+            this.label1.Location = new System.Drawing.Point(196, 134);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(111, 18);
             this.label1.TabIndex = 0;
@@ -114,7 +114,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(258, 204);
+            this.label2.Location = new System.Drawing.Point(196, 204);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 18);
             this.label2.TabIndex = 2;
@@ -126,7 +126,7 @@
             this.buttonSalvarEtapa.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.buttonSalvarEtapa.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonSalvarEtapa.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonSalvarEtapa.Location = new System.Drawing.Point(261, 414);
+            this.buttonSalvarEtapa.Location = new System.Drawing.Point(199, 414);
             this.buttonSalvarEtapa.Name = "buttonSalvarEtapa";
             this.buttonSalvarEtapa.Size = new System.Drawing.Size(111, 33);
             this.buttonSalvarEtapa.TabIndex = 4;
@@ -139,7 +139,7 @@
             this.buttonCancelarEtapa.BackColor = System.Drawing.Color.Red;
             this.buttonCancelarEtapa.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonCancelarEtapa.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonCancelarEtapa.Location = new System.Drawing.Point(430, 414);
+            this.buttonCancelarEtapa.Location = new System.Drawing.Point(368, 414);
             this.buttonCancelarEtapa.Name = "buttonCancelarEtapa";
             this.buttonCancelarEtapa.Size = new System.Drawing.Size(111, 33);
             this.buttonCancelarEtapa.TabIndex = 5;
@@ -153,7 +153,7 @@
             this.nomeEtapaTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.nomeEtapaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.etapaBindingSource, "NomeEtapa", true));
             this.nomeEtapaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nomeEtapaTextBox.Location = new System.Drawing.Point(261, 167);
+            this.nomeEtapaTextBox.Location = new System.Drawing.Point(199, 171);
             this.nomeEtapaTextBox.Name = "nomeEtapaTextBox";
             this.nomeEtapaTextBox.Size = new System.Drawing.Size(280, 30);
             this.nomeEtapaTextBox.TabIndex = 1;
@@ -170,7 +170,7 @@
             this.comboBoxResponsavel.DisplayMember = "Nome";
             this.comboBoxResponsavel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxResponsavel.FormattingEnabled = true;
-            this.comboBoxResponsavel.Location = new System.Drawing.Point(261, 225);
+            this.comboBoxResponsavel.Location = new System.Drawing.Point(199, 225);
             this.comboBoxResponsavel.Name = "comboBoxResponsavel";
             this.comboBoxResponsavel.Size = new System.Drawing.Size(280, 33);
             this.comboBoxResponsavel.TabIndex = 3;
@@ -188,7 +188,7 @@
             this.dataDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.etapaBindingSource, "Data", true));
             this.dataDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dataDateTimePicker.Location = new System.Drawing.Point(261, 284);
+            this.dataDateTimePicker.Location = new System.Drawing.Point(199, 284);
             this.dataDateTimePicker.Name = "dataDateTimePicker";
             this.dataDateTimePicker.Size = new System.Drawing.Size(280, 30);
             this.dataDateTimePicker.TabIndex = 9;
@@ -203,7 +203,7 @@
             "10",
             "50",
             "100"});
-            this.comboBoxPontos.Location = new System.Drawing.Point(261, 345);
+            this.comboBoxPontos.Location = new System.Drawing.Point(199, 345);
             this.comboBoxPontos.Name = "comboBoxPontos";
             this.comboBoxPontos.Size = new System.Drawing.Size(280, 33);
             this.comboBoxPontos.TabIndex = 10;
