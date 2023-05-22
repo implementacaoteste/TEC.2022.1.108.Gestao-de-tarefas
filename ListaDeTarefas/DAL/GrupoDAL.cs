@@ -216,7 +216,6 @@ namespace DAL
 
                 cmd.Connection = cn;
                 cn.Open();
-                cmd.ExecuteNonQuery();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
                     while (rd.Read())

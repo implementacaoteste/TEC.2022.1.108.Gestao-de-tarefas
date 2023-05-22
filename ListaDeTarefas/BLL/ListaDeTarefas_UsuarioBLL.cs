@@ -16,7 +16,14 @@ namespace BLL
         }
         public void AdicionarListaUsuario(ListaDeTarefas_Usuario _listaUsuario)
         {
-            new ListadeTarefas_UsuarioDAL().AdicionarListaUsuario(_listaUsuario);
+            if(VerificarDuplicidade(_listaUsuario))
+                new ListadeTarefas_UsuarioDAL().AdicionarListaUsuario(_listaUsuario);
+            else
+                new Exception("Você já esta nessa Lista");
+        }
+        public bool VerificarDuplicidade(ListaDeTarefas_Usuario _lista)
+        {
+            return new ListadeTarefas_UsuarioDAL().VerificarDuplicidade(_lista);
         }
     }
 }

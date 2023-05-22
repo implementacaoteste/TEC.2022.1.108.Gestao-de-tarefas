@@ -94,12 +94,6 @@
     <Compile Include="FormTelaIngresso.Designer.cs">
       <DependentUpon>FormTelaIngresso.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTelaEntrar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormTelaEntrar.Designer.cs">
-      <DependentUpon>FormTelaEntrar.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormTelaLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,9 +131,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormTelaIngresso.resx">
       <DependentUpon>FormTelaIngresso.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormTelaEntrar.resx">
-      <DependentUpon>FormTelaEntrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTelaLogin.resx">
       <DependentUpon>FormTelaLogin.cs</DependentUpon>

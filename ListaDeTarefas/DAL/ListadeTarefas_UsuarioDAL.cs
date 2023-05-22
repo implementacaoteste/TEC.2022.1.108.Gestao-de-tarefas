@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -73,6 +74,39 @@ namespace DAL
             {
                 cn.Close();
             }
+        }
+
+        public bool VerificarDuplicidade(ListaDeTarefas_Usuario _lista)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = @"SELECT 1 FROM ListadeTarefas_Usuario WHERE IdUsuario = @IdUsuario 
+                                    and IdListaTarefas = @IdListaTarefas";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@IdUsuario", _lista.IdUsuario);
+                cmd.Parameters.AddWithValue("@IdListaTarefas", _lista.IdLista);
+                cn.Open();
+
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    if (rd.Read())
+                        return true;
+                }
+
+                return false;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao verificar a duplicidade de campos", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+
         }
     }
 }
