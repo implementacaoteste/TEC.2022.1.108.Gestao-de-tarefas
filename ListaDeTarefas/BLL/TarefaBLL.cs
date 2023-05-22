@@ -35,5 +35,9 @@ namespace BLL
         {
             return new TarefaDAL().BuscarPorIdLista(_idLista);
         }
+        public List<Tarefa> BuscarAtrasado(int _idUsuarioLogado, int _idTarefa)
+        {
+            return new TarefaDAL().BuscarAtrasado(_idUsuarioLogado, _idTarefa);
+        }
     }
 }

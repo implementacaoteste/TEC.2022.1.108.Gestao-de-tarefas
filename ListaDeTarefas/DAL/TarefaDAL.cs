@@ -152,5 +152,47 @@ namespace DAL
                 cn.Close();
             }
         }
+
+        public List<Tarefa> BuscarAtrasado(int _idUsuarioLogado, int _idTarefa)
+        {
+            List<Tarefa> tarefas = new List<Tarefa>();
+            Tarefa tarefa = new Tarefa();
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = @"select T.NomeTarefa, E.Data from Tarefa T
+                                    inner Join ListaDeTarefas L on L.IdLista = T.IdListaDeTarefas
+                                    INNER JOIN ListadeTarefas_Usuario TU on TU.IdListaTarefas = T.IdListaDeTarefas
+                                    INNER JOIN Usuario U ON U.IdUsuario = TU.IdUsuario
+                                    INNER JOIN Etapa E ON E.IdUsuario = U.IdUsuario
+                                    where E.Data < CONVERT (date, GETDATE()) and E.Status = 0 and U.IdUsuario = @IdUsuario";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@IdUsuario", _idUsuarioLogado);
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+
+                    while (rd.Read())
+                    {
+                        tarefa = new Tarefa();
+                        tarefa.NomeTarefa = rd["NomeTarefa"].ToString();
+                        tarefa.Etapa = new EtapaDAL().BuscarPorIdTarefaAtraso(_idTarefa, _idUsuarioLogado);
+                        tarefas.Add(tarefa);
+                    }
+                }
+                return tarefas;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar uma tarefa pelo id no banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
     }
 }
