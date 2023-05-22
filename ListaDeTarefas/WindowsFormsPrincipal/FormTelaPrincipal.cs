@@ -73,6 +73,9 @@ namespace WindowsFormsPrincipal
             buttonIngressar.Visible = false;
             dataGridViewCompartilhados.Visible = false;
             Constantes.IdGrupoAberto = grupos[0].IdGrupo;
+            buttonArea1.Visible = true;
+            buttonArea2.Visible = true;
+            buttonArea3.Visible = true;
             List<Lista> lista = new ListaBLL().buscarTarefasArea(Constantes.IdGrupoAberto);
 
             buttonArea1.Text = lista[0].NomeLista;
@@ -87,6 +90,9 @@ namespace WindowsFormsPrincipal
             buttonIngressar.Visible = false;
             dataGridViewCompartilhados.Visible = false;
             Constantes.IdGrupoAberto = grupos[1].IdGrupo;
+            buttonArea1.Visible = true;
+            buttonArea2.Visible = true;
+            buttonArea3.Visible = true;
             List<Lista> lista = new ListaBLL().buscarTarefasArea(Constantes.IdGrupoAberto);
 
             buttonArea1.Text = lista[0].NomeLista;
@@ -101,6 +107,9 @@ namespace WindowsFormsPrincipal
             buttonIngressar.Visible = false;
             dataGridViewCompartilhados.Visible = false;
             Constantes.IdGrupoAberto = grupos[2].IdGrupo;
+            buttonArea1.Visible = true;
+            buttonArea2.Visible = true;
+            buttonArea3.Visible = true;
             List<Lista> lista = new ListaBLL().buscarTarefasArea(Constantes.IdGrupoAberto);
 
             buttonArea1.Text = lista[0].NomeLista;

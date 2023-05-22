@@ -14,5 +14,9 @@ namespace BLL
         {
             return new ListadeTarefas_UsuarioDAL().BuscarPorIdPermissao(_idUsuario, _idLista);
         }
+        public void AdicionarListaUsuario(ListaDeTarefas_Usuario _listaUsuario)
+        {
+            new ListadeTarefas_UsuarioDAL().AdicionarListaUsuario(_listaUsuario);
+        }
     }
 }

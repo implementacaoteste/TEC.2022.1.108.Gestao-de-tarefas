@@ -13,6 +13,7 @@ namespace Models
         public string NomeLista { get; set; }
         public int IdGrupo { get; set; }
         public int Codigo { get; set; } 
+        public bool Privacidade { get; set; }
         public List<Usuario> Usuarios { get; set; } 
     }
 }

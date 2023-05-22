@@ -62,7 +62,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT IdLista, NomeLista  FROM ListaDeTarefas WHERE IdLista = @IdLista";
+                cmd.CommandText = "SELECT IdLista, Privacidade  FROM ListaDeTarefas WHERE IdLista = @IdLista";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@IdLista", _id);
 
@@ -74,7 +74,7 @@ namespace DAL
                     {
                         lista = new Lista();
                         lista.IdLista = Convert.ToInt32(rd["IdLista"]);
-                        lista.NomeLista = rd["NomeLista"].ToString();
+                        lista.Privacidade = Convert.ToBoolean(rd["Privacidade"]);
                        
                     }
                 }
@@ -277,8 +277,8 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT L.NomeLista FROM ListaDeTarefas L INNER JOIN ListadeTarefas_Usuario U " +
-                                  "ON U.IdUsuario = @IdUsuario and L.IdLista = U.IdListaTarefas";
+                cmd.CommandText = @"SELECT L.NomeLista FROM ListaDeTarefas L INNER JOIN ListadeTarefas_Usuario U  
+                                  ON U.IdUsuario = @IdUsuario and L.IdLista = U.IdListaTarefas WHERE L.IdLista = U.IdListaTarefas";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@IdUsuario", _idUsuario);
 
@@ -286,10 +286,10 @@ namespace DAL
 
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
-                    if (rd.Read())
+                    while (rd.Read())
                     {
                         lista = new Lista();
-                        lista.NomeLista = rd["L.NomeLista"].ToString();
+                        lista.NomeLista = rd["NomeLista"].ToString();
                         listas.Add(lista);
                     }
                 }

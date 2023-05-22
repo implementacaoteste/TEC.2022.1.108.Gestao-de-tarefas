@@ -33,7 +33,7 @@
             this.buttonSair = new System.Windows.Forms.Button();
             this.textBoxCodigo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.buttonEntrarListar = new System.Windows.Forms.Button();
+            this.buttonIngressar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,8 +91,19 @@
             this.label2.TabIndex = 15;
             this.label2.Text = "Insira o código de convite:";
             // 
-            // buttonEntrarListar
+            // buttonIngressar
             // 
+            this.buttonIngressar.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.buttonIngressar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonIngressar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.buttonIngressar.ForeColor = System.Drawing.SystemColors.Window;
+            this.buttonIngressar.Location = new System.Drawing.Point(185, 332);
+            this.buttonIngressar.Name = "buttonIngressar";
+            this.buttonIngressar.Size = new System.Drawing.Size(108, 33);
+            this.buttonIngressar.TabIndex = 16;
+            this.buttonIngressar.Text = "Entrar";
+            this.buttonIngressar.UseVisualStyleBackColor = false;
+            this.buttonIngressar.Click += new System.EventHandler(this.buttonIngressar_Click);
             // 
             // FormTelaIngresso
             // 
@@ -100,7 +111,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(385, 377);
-            this.Controls.Add(this.buttonEntrarListar);
+            this.Controls.Add(this.buttonIngressar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxCodigo);
             this.Controls.Add(this.buttonSair);
@@ -126,6 +137,6 @@
         private System.Windows.Forms.Button buttonSair;
         private System.Windows.Forms.TextBox textBoxCodigo;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button buttonEntrarListar;
+        private System.Windows.Forms.Button buttonIngressar;
     }
 }
