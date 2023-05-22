@@ -121,7 +121,7 @@ namespace WindowsFormsPrincipal
         }
         private void buttonGrupo4_Click(object sender, EventArgs e)
         {
-            dataGridViewCompartilhados.DataSource = new ListaBLL().BuscarListasCompartilhadas(Constantes.IdUsuarioLogado);
+            bindingSourceListaCompartilhados.DataSource = new ListaBLL().BuscarListasCompartilhadas(Constantes.IdUsuarioLogado);
             buttonIngressar.Visible = true;
             dataGridViewCompartilhados.Visible = true;
             buttonArea1.Visible = false;
@@ -248,6 +248,15 @@ namespace WindowsFormsPrincipal
             }
             RecarregarTelaPrincipal();
         }
+
+        private void buttonIngressar_Click(object sender, EventArgs e)
+        {
+            using (FormTelaIngresso frm = new FormTelaIngresso())
+            {
+                frm.ShowDialog();
+            }
+        }
+
         private void abrirToolStripArea3_Click(object sender, EventArgs e)
         {
             Constantes.IdAreaAberta = listas[2].IdLista;
@@ -269,6 +278,15 @@ namespace WindowsFormsPrincipal
             if (e.KeyCode == Keys.Escape)
                 buttonSair_Click(null, null);
 
+        }
+        private void DoubleClick_Lista(object sender, DataGridViewCellEventArgs e)
+        {
+            Constantes.IdAreaAberta = ((Lista)bindingSourceListaCompartilhados.Current).IdLista;
+
+            using (FormMenuDeTarefas frm = new FormMenuDeTarefas(Constantes.IdAreaAberta))
+            {
+                frm.ShowDialog();
+            }
         }
         public void RecarregarTelaPrincipal()
         {
