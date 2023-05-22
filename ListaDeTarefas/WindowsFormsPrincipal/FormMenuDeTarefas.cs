@@ -133,7 +133,7 @@ namespace WindowsFormsPrincipal
             int id = ((Etapa)etapaBindingSource.Current).Id;
             int score = ((Etapa)etapaBindingSource.Current).Valor;
             bool status = ((Etapa)etapaBindingSource.Current).Status;
-            new EtapaBLL().StatusEtapa(id,score,idLista,status);
+            new EtapaBLL().StatusEtapa(id, score, idLista, status);
             if(checkBoxAtrasado.Checked == false)
             {
                 buttonBuscar_Click(idLista, null);

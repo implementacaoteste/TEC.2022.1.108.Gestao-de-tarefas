@@ -125,9 +125,10 @@
             this.Controls.Add(nomeTarefaLabel);
             this.Controls.Add(this.nomeTarefaTextBox);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.KeyPreview = true;
             this.Name = "FormCadastrarTarefas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCadastrarTarefas";
             this.Load += new System.EventHandler(this.FormCadastrarTarefas_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormCadastrarTarefas_KeyDown);

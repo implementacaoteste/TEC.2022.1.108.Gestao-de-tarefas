@@ -144,6 +144,7 @@
             this.Name = "FormRelatorio";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FormRelatorio_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormRelatorio_KeyDown);
             this.panel1.ResumeLayout(false);

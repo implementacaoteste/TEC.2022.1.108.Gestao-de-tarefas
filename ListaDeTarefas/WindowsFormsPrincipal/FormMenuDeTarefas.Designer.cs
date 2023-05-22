@@ -188,7 +188,7 @@
             this.buttonInserir.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.buttonInserir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonInserir.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonInserir.Location = new System.Drawing.Point(280, 251);
+            this.buttonInserir.Location = new System.Drawing.Point(286, 251);
             this.buttonInserir.Name = "buttonInserir";
             this.buttonInserir.Size = new System.Drawing.Size(75, 26);
             this.buttonInserir.TabIndex = 2;
@@ -201,7 +201,7 @@
             this.buttonAlterar.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.buttonAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonAlterar.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonAlterar.Location = new System.Drawing.Point(361, 251);
+            this.buttonAlterar.Location = new System.Drawing.Point(373, 251);
             this.buttonAlterar.Name = "buttonAlterar";
             this.buttonAlterar.Size = new System.Drawing.Size(75, 26);
             this.buttonAlterar.TabIndex = 3;
@@ -214,7 +214,7 @@
             this.buttonDeletar.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.buttonDeletar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonDeletar.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonDeletar.Location = new System.Drawing.Point(442, 251);
+            this.buttonDeletar.Location = new System.Drawing.Point(457, 251);
             this.buttonDeletar.Name = "buttonDeletar";
             this.buttonDeletar.Size = new System.Drawing.Size(75, 26);
             this.buttonDeletar.TabIndex = 4;
@@ -440,7 +440,7 @@
             this.Controls.Add(this.checkBoxAtribuicao);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MinimizeBox = false;
             this.Name = "FormMenuDeTarefas";
             this.ShowIcon = false;

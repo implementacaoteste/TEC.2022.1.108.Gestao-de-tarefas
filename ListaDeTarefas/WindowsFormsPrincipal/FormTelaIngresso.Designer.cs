@@ -117,12 +117,13 @@ namespace WindowsFormsPrincipal
             this.Controls.Add(this.textBoxCodigo);
             this.Controls.Add(this.buttonSair);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormTelaIngresso";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormTelaCodigo";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
