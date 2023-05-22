@@ -277,8 +277,9 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT L.NomeLista FROM ListaDeTarefas L INNER JOIN ListadeTarefas_Usuario U  
-                                  ON U.IdUsuario = @IdUsuario and L.IdLista = U.IdListaTarefas WHERE L.IdLista = U.IdListaTarefas";
+                cmd.CommandText = @"SELECT L.NomeLista, L.IdLista FROM ListaDeTarefas L INNER JOIN ListadeTarefas_Usuario U 
+                                    ON U.IdUsuario = @IdUsuario and L.IdLista = U.IdListaTarefas 
+                                    INNER JOIN Grupo G ON G.IdUsuario <> @IdUsuario AND G.IdGrupo = L.IdGrupo WHERE L.IdLista = U.IdListaTarefas";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@IdUsuario", _idUsuario);
 
@@ -290,6 +291,7 @@ namespace DAL
                     {
                         lista = new Lista();
                         lista.NomeLista = rd["NomeLista"].ToString();
+                        lista.IdLista = Convert.ToInt32(rd["IdLista"]);
                         listas.Add(lista);
                     }
                 }

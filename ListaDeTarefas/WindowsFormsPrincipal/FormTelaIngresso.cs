@@ -40,7 +40,16 @@ namespace WindowsFormsPrincipal
             lista_usuario.IdUsuario = Constantes.IdUsuarioLogado;
             if (lista.Privacidade)
             {
-                new ListaDeTarefas_UsuarioBLL().AdicionarListaUsuario(lista_usuario);
+                try
+                {
+                    new ListaDeTarefas_UsuarioBLL().AdicionarListaUsuario(lista_usuario);
+                    MessageBox.Show("Ingresso concluído!");
+                    Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
             else
             {

@@ -345,7 +345,7 @@
             this.buttonSair.ForeColor = System.Drawing.SystemColors.Window;
             this.buttonSair.Location = new System.Drawing.Point(873, 501);
             this.buttonSair.Name = "buttonSair";
-            this.buttonSair.Size = new System.Drawing.Size(74, 33);
+            this.buttonSair.Size = new System.Drawing.Size(74, 38);
             this.buttonSair.TabIndex = 2;
             this.buttonSair.Text = "Sair";
             this.buttonSair.UseVisualStyleBackColor = false;
@@ -372,6 +372,7 @@
             this.dataGridViewCompartilhados.RowTemplate.Height = 24;
             this.dataGridViewCompartilhados.Size = new System.Drawing.Size(757, 339);
             this.dataGridViewCompartilhados.TabIndex = 6;
+            this.dataGridViewCompartilhados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DoubleClick_Lista);
             // 
             // nomeListaDataGridViewTextBoxColumn
             // 
@@ -389,12 +390,13 @@
             this.buttonIngressar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonIngressar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.buttonIngressar.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonIngressar.Location = new System.Drawing.Point(759, 501);
+            this.buttonIngressar.Location = new System.Drawing.Point(753, 501);
             this.buttonIngressar.Name = "buttonIngressar";
-            this.buttonIngressar.Size = new System.Drawing.Size(108, 33);
+            this.buttonIngressar.Size = new System.Drawing.Size(114, 38);
             this.buttonIngressar.TabIndex = 1;
             this.buttonIngressar.Text = "Ingressar";
             this.buttonIngressar.UseVisualStyleBackColor = false;
+            this.buttonIngressar.Click += new System.EventHandler(this.buttonIngressar_Click);
             // 
             // FormTelaPrincipal
             // 
