@@ -94,7 +94,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT IdEtapa, NomeEtapa, IdUsuario, IdTarefa, Status, Valor FROM Etapa WHERE IdTarefa = @IdTarefa";
+                cmd.CommandText = "SELECT IdEtapa, NomeEtapa, IdUsuario, Data, IdTarefa, Status, Valor FROM Etapa WHERE IdTarefa = @IdTarefa";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@IdTarefa", _idTarefa);
                 cn.Open();
@@ -111,6 +111,7 @@ namespace DAL
                         etapa.NomeEtapa = rd["NomeEtapa"].ToString();
                         etapa.Status = Convert.ToBoolean(rd["Status"]);
                         etapa.Valor = Convert.ToInt32(rd["Valor"]);
+                        etapa.Data = Convert.ToDateTime(rd["Data"]);
                         etapas.Add(etapa);
                     }
                 }
@@ -257,6 +258,50 @@ namespace DAL
             catch (Exception ex)
             {
                 throw new Exception("Ocorreu um erro ao tentar concluir uma etapa no banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+        public List<Etapa> BuscarPorIdTarefaAtraso(int _IdTarefa, int _IdUsuario)
+        {
+            Etapa etapa = new Etapa();
+            List<Etapa> etapas = new List<Etapa>();
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = @"select E.NomeEtapa, E.Data, E.Status, E.Valor from Tarefa T
+                                    inner Join ListaDeTarefas L on L.IdLista = T.IdListaDeTarefas
+                                    INNER JOIN ListadeTarefas_Usuario TU on TU.IdListaTarefas = T.IdListaDeTarefas
+                                    INNER JOIN Usuario U ON U.IdUsuario = TU.IdUsuario
+                                    INNER JOIN Etapa E ON E.IdUsuario = U.IdUsuario
+                                    where E.Data < CONVERT (date, GETDATE()) and E.Status = 0 and U.IdUsuario = @IdUsuario and T.IdTarefa = @IdTarefa";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@IdUsuario", _IdUsuario);
+                cmd.Parameters.AddWithValue("@IdTarefa", _IdTarefa);
+                cn.Open();
+                cmd.ExecuteNonQuery();
+
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        etapa = new Etapa();
+                        etapa.NomeEtapa = rd["NomeEtapa"].ToString();
+                        etapa.Valor = Convert.ToInt32(rd["Valor"]);
+                        etapa.Status = Convert.ToBoolean(rd["Status"]);
+                        etapa.Data = Convert.ToDateTime(rd["Data"]);
+                        etapas.Add(etapa);
+                    }
+                }
+                return etapas;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar Buscar Por Id de tarefa no banco de dados", ex);
             }
             finally
             {

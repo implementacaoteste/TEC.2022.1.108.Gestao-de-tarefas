@@ -304,6 +304,44 @@ namespace DAL
                 cn.Close();
             }
         }
+        public List<Lista> BuscarAtribuido(int _idUsuario)
+        {
+            List<Lista> listas = new List<Lista>();
+            Lista lista = new Lista();
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = @"select T.NomeTarefa from Tarefa T
+                                    inner Join ListaDeTarefas L on L.IdLista = T.IdListaDeTarefas
+                                    INNER JOIN ListadeTarefas_Usuario TU on TU.IdListaTarefas = T.IdListaDeTarefas
+                                    INNER JOIN Usuario U ON U.IdUsuario = TU.IdUsuario
+                                    where U.IdUsuario = @IdUsuario";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@IdUsuario", _idUsuario);
 
+                cn.Open();
+
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    if (rd.Read())
+                    {
+                        lista = new Lista();
+                        lista.NomeLista = rd["NomeTarefa"].ToString();
+                        listas.Add(lista);
+                    }
+                }
+                return listas;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao buscar os grupos compartilhados!", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
     }
 }

@@ -14,12 +14,6 @@ namespace WindowsFormsPrincipal
             idLista = _id;
             buttonBuscar_Click(_id, null);
         }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -43,7 +37,13 @@ namespace WindowsFormsPrincipal
 
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
-            tarefaBindingSource1.DataSource = new BLL.TarefaBLL().BuscarPorIdLista(idLista);
+            if(checkBoxAtrasado.Checked == false)
+                tarefaBindingSource1.DataSource = new BLL.TarefaBLL().BuscarPorIdLista(idLista);
+            else if(checkBoxAtrasado.Checked == true)
+            {
+                int id = ((Tarefa)tarefaBindingSource1.Current).Id;
+                etapaBindingSource.DataSource = new BLL.TarefaBLL().BuscarAtrasado(Constantes.IdUsuarioLogado, id);
+            }
         }
 
         private void tarefaBindingSource1_CurrentChanged(object sender, EventArgs e)
@@ -134,7 +134,10 @@ namespace WindowsFormsPrincipal
             int score = ((Etapa)etapaBindingSource.Current).Valor;
             bool status = ((Etapa)etapaBindingSource.Current).Status;
             new EtapaBLL().StatusEtapa(id,score,idLista,status);
-            buttonBuscar_Click(idLista, null);
+            if(checkBoxAtrasado.Checked == false)
+            {
+                buttonBuscar_Click(idLista, null);
+            }
         }
 
         private void buttonVisualizarRanking_Click(object sender, EventArgs e)
@@ -193,9 +196,20 @@ namespace WindowsFormsPrincipal
             labelCodigo.Text = "**********";
             timer1.Enabled = false;
         }
-
-        private void buttonConcluir_Click(object sender, EventArgs e)
+        private void checkBoxAtribuicao_CheckedChanged_1(object sender, EventArgs e)
         {
+            if (checkBoxAtribuicao.Checked == true)
+                checkBoxAtrasado.Checked = false;
+            new ListaBLL().BuscarAtribuido(Constantes.IdUsuarioLogado);
+        }
+
+        private void checkBoxAtrasado_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxAtrasado.Checked == true)
+                checkBoxAtribuicao.Checked = false;
+
+            int id = ((Tarefa)tarefaBindingSource1.Current).Id;
+            new TarefaBLL().BuscarAtrasado(Constantes.IdUsuarioLogado, id);
         }
     }
 }
