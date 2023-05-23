@@ -416,6 +416,7 @@
             this.KeyPreview = true;
             this.MinimizeBox = false;
             this.Name = "FormTelaPrincipal";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = ".";
             this.Load += new System.EventHandler(this.FormTelaPrincipal_Load);

@@ -128,6 +128,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.KeyPreview = true;
             this.Name = "FormCadastrarTarefas";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCadastrarTarefas";
             this.Load += new System.EventHandler(this.FormCadastrarTarefas_Load);
