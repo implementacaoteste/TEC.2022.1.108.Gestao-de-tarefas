@@ -414,10 +414,12 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.KeyPreview = true;
+            this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormTelaPrincipal";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = ".";
             this.Load += new System.EventHandler(this.FormTelaPrincipal_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormTelaPrincipal_KeyDown);
             this.panel1.ResumeLayout(false);

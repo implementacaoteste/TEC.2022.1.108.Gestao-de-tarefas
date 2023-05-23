@@ -1,5 +1,6 @@
 ﻿using Models;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -92,11 +93,8 @@ namespace DAL
 
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
-                    if (rd.Read())
-                        return true;
+                    return rd.Read();
                 }
-
-                return false;
             }
             catch (Exception ex)
             {
@@ -107,6 +105,34 @@ namespace DAL
                 cn.Close();
             }
 
+        }
+
+        public bool VerificarExistencia(int _idLista)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = @"SELECT 1 FROM ListadeTarefas_Usuario WHERE 
+                                    IdListaTarefas = @IdListaTarefas";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@IdListaTarefas", _idLista);
+                cn.Open();
+
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    return rd.Read();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao verificar a duplicidade de campos", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
         }
     }
 }
