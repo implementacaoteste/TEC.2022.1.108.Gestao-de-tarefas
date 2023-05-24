@@ -38,7 +38,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.checkBoxAtribuicao = new System.Windows.Forms.CheckBox();
             this.checkBoxAtrasado = new System.Windows.Forms.CheckBox();
-            this.textBoxBuscar = new System.Windows.Forms.TextBox();
             this.buttonInserir = new System.Windows.Forms.Button();
             this.buttonAlterar = new System.Windows.Forms.Button();
             this.buttonDeletar = new System.Windows.Forms.Button();
@@ -155,7 +154,7 @@
             // checkBoxAtribuicao
             // 
             this.checkBoxAtribuicao.AutoSize = true;
-            this.checkBoxAtribuicao.Location = new System.Drawing.Point(304, 191);
+            this.checkBoxAtribuicao.Location = new System.Drawing.Point(875, 201);
             this.checkBoxAtribuicao.Name = "checkBoxAtribuicao";
             this.checkBoxAtribuicao.Size = new System.Drawing.Size(128, 20);
             this.checkBoxAtribuicao.TabIndex = 11;
@@ -166,7 +165,7 @@
             // checkBoxAtrasado
             // 
             this.checkBoxAtrasado.AutoSize = true;
-            this.checkBoxAtrasado.Location = new System.Drawing.Point(199, 191);
+            this.checkBoxAtrasado.Location = new System.Drawing.Point(779, 201);
             this.checkBoxAtrasado.Name = "checkBoxAtrasado";
             this.checkBoxAtrasado.Size = new System.Drawing.Size(91, 20);
             this.checkBoxAtrasado.TabIndex = 10;
@@ -174,21 +173,12 @@
             this.checkBoxAtrasado.UseVisualStyleBackColor = true;
             this.checkBoxAtrasado.CheckedChanged += new System.EventHandler(this.checkBoxAtrasado_CheckedChanged);
             // 
-            // textBoxBuscar
-            // 
-            this.textBoxBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxBuscar.Location = new System.Drawing.Point(199, 217);
-            this.textBoxBuscar.Multiline = true;
-            this.textBoxBuscar.Name = "textBoxBuscar";
-            this.textBoxBuscar.Size = new System.Drawing.Size(333, 28);
-            this.textBoxBuscar.TabIndex = 0;
-            // 
             // buttonInserir
             // 
             this.buttonInserir.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.buttonInserir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonInserir.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonInserir.Location = new System.Drawing.Point(286, 251);
+            this.buttonInserir.Location = new System.Drawing.Point(286, 197);
             this.buttonInserir.Name = "buttonInserir";
             this.buttonInserir.Size = new System.Drawing.Size(75, 26);
             this.buttonInserir.TabIndex = 2;
@@ -201,7 +191,7 @@
             this.buttonAlterar.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.buttonAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonAlterar.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonAlterar.Location = new System.Drawing.Point(373, 251);
+            this.buttonAlterar.Location = new System.Drawing.Point(373, 197);
             this.buttonAlterar.Name = "buttonAlterar";
             this.buttonAlterar.Size = new System.Drawing.Size(75, 26);
             this.buttonAlterar.TabIndex = 3;
@@ -214,7 +204,7 @@
             this.buttonDeletar.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.buttonDeletar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonDeletar.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonDeletar.Location = new System.Drawing.Point(457, 251);
+            this.buttonDeletar.Location = new System.Drawing.Point(457, 197);
             this.buttonDeletar.Name = "buttonDeletar";
             this.buttonDeletar.Size = new System.Drawing.Size(75, 26);
             this.buttonDeletar.TabIndex = 4;
@@ -227,7 +217,7 @@
             this.buttonBuscar.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.buttonBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonBuscar.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonBuscar.Location = new System.Drawing.Point(199, 251);
+            this.buttonBuscar.Location = new System.Drawing.Point(199, 197);
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(75, 26);
             this.buttonBuscar.TabIndex = 1;
@@ -241,7 +231,7 @@
             this.buttonSair.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.buttonSair.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonSair.Location = new System.Drawing.Point(929, 635);
+            this.buttonSair.Location = new System.Drawing.Point(929, 608);
             this.buttonSair.Name = "buttonSair";
             this.buttonSair.Size = new System.Drawing.Size(74, 33);
             this.buttonSair.TabIndex = 9;
@@ -254,9 +244,9 @@
             this.buttonDeletarEtapa.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.buttonDeletarEtapa.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonDeletarEtapa.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonDeletarEtapa.Location = new System.Drawing.Point(719, 251);
+            this.buttonDeletarEtapa.Location = new System.Drawing.Point(705, 197);
             this.buttonDeletarEtapa.Name = "buttonDeletarEtapa";
-            this.buttonDeletarEtapa.Size = new System.Drawing.Size(75, 26);
+            this.buttonDeletarEtapa.Size = new System.Drawing.Size(68, 26);
             this.buttonDeletarEtapa.TabIndex = 7;
             this.buttonDeletarEtapa.Text = "Deletar";
             this.buttonDeletarEtapa.UseVisualStyleBackColor = false;
@@ -267,9 +257,9 @@
             this.buttonAlterarEtapa.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.buttonAlterarEtapa.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonAlterarEtapa.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonAlterarEtapa.Location = new System.Drawing.Point(638, 251);
+            this.buttonAlterarEtapa.Location = new System.Drawing.Point(631, 197);
             this.buttonAlterarEtapa.Name = "buttonAlterarEtapa";
-            this.buttonAlterarEtapa.Size = new System.Drawing.Size(75, 26);
+            this.buttonAlterarEtapa.Size = new System.Drawing.Size(68, 26);
             this.buttonAlterarEtapa.TabIndex = 6;
             this.buttonAlterarEtapa.Text = "Alterar";
             this.buttonAlterarEtapa.UseVisualStyleBackColor = false;
@@ -280,9 +270,9 @@
             this.buttonInserirEtapa.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.buttonInserirEtapa.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonInserirEtapa.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonInserirEtapa.Location = new System.Drawing.Point(557, 251);
+            this.buttonInserirEtapa.Location = new System.Drawing.Point(557, 197);
             this.buttonInserirEtapa.Name = "buttonInserirEtapa";
-            this.buttonInserirEtapa.Size = new System.Drawing.Size(75, 26);
+            this.buttonInserirEtapa.Size = new System.Drawing.Size(68, 26);
             this.buttonInserirEtapa.TabIndex = 5;
             this.buttonInserirEtapa.Text = "Inserir";
             this.buttonInserirEtapa.UseVisualStyleBackColor = false;
@@ -298,7 +288,7 @@
             this.tarefaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn3});
             this.tarefaDataGridView.DataSource = this.tarefaBindingSource1;
-            this.tarefaDataGridView.Location = new System.Drawing.Point(199, 283);
+            this.tarefaDataGridView.Location = new System.Drawing.Point(199, 229);
             this.tarefaDataGridView.Name = "tarefaDataGridView";
             this.tarefaDataGridView.ReadOnly = true;
             this.tarefaDataGridView.RowHeadersVisible = false;
@@ -351,7 +341,7 @@
             this.Valor,
             this.Status});
             this.etapaDataGridView.DataSource = this.etapaBindingSource;
-            this.etapaDataGridView.Location = new System.Drawing.Point(557, 283);
+            this.etapaDataGridView.Location = new System.Drawing.Point(557, 229);
             this.etapaDataGridView.Name = "etapaDataGridView";
             this.etapaDataGridView.RowHeadersVisible = false;
             this.etapaDataGridView.RowHeadersWidth = 51;
@@ -367,7 +357,6 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "Nome Etapa";
             this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // Data
             // 
@@ -383,7 +372,6 @@
             this.Valor.HeaderText = "Valor";
             this.Valor.MinimumWidth = 6;
             this.Valor.Name = "Valor";
-            this.Valor.ReadOnly = true;
             this.Valor.Width = 50;
             // 
             // Status
@@ -405,7 +393,7 @@
             this.buttonVisualizarRanking.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.buttonVisualizarRanking.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonVisualizarRanking.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonVisualizarRanking.Location = new System.Drawing.Point(199, 635);
+            this.buttonVisualizarRanking.Location = new System.Drawing.Point(199, 608);
             this.buttonVisualizarRanking.Name = "buttonVisualizarRanking";
             this.buttonVisualizarRanking.Size = new System.Drawing.Size(141, 33);
             this.buttonVisualizarRanking.TabIndex = 8;
@@ -435,7 +423,6 @@
             this.Controls.Add(this.buttonDeletar);
             this.Controls.Add(this.buttonAlterar);
             this.Controls.Add(this.buttonInserir);
-            this.Controls.Add(this.textBoxBuscar);
             this.Controls.Add(this.checkBoxAtrasado);
             this.Controls.Add(this.checkBoxAtribuicao);
             this.Controls.Add(this.panel2);
@@ -468,7 +455,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.CheckBox checkBoxAtribuicao;
         private System.Windows.Forms.CheckBox checkBoxAtrasado;
-        private System.Windows.Forms.TextBox textBoxBuscar;
         private System.Windows.Forms.Button buttonInserir;
         private System.Windows.Forms.Button buttonAlterar;
         private System.Windows.Forms.Button buttonDeletar;

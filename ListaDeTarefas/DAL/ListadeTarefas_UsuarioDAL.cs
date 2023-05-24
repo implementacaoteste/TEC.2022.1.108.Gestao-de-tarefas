@@ -46,10 +46,10 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT P.IdPermissao, P.Descricao" +
-                                  "FROM Permissoes P INNER JOIN ListadeTarefas_Usuario L " +
-                                  "ON L.IdListaTarefas = @IdLista and L.IdUsuario = @IdUsuario and " +
-                                  "L.IdPermissao = P.IdPermissao";
+                cmd.CommandText = @"SELECT P.IdPermissao, P.Descricao
+                                  FROM Permissoes P INNER JOIN ListadeTarefas_Usuario L 
+                                  ON L.IdListaTarefas = @IdLista and L.IdUsuario = @IdUsuario and 
+                                  L.IdPermissao = P.IdPermissao";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@IdUsuario", _idUsuario);
                 cmd.Parameters.AddWithValue("@IdLista", _idLista);

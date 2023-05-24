@@ -2,12 +2,17 @@
 using Models;
 using System;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace WindowsFormsPrincipal
 {
     public partial class FormMenuDeTarefas : Form
     {
         int idLista;
+        int idUsuarioLogado = Constantes.IdUsuarioLogado;
+        int idListaAberta = Constantes.IdAreaAberta;
+        Permissao permissao;
+
         public FormMenuDeTarefas(int _id)
         {
             InitializeComponent();
@@ -133,11 +138,15 @@ namespace WindowsFormsPrincipal
             int id = ((Etapa)etapaBindingSource.Current).Id;
             int score = ((Etapa)etapaBindingSource.Current).Valor;
             bool status = ((Etapa)etapaBindingSource.Current).Status;
-            new EtapaBLL().StatusEtapa(id, score, idLista, status);
+
+            if (idUsuarioLogado == ((Etapa)etapaBindingSource.Current).IdUsuario || permissao.Id == 1)
+                new EtapaBLL().StatusEtapa(id, score, idLista, status);
+            else
+                MessageBox.Show("Você não tem permissão para alterar o status dessa tarefa!","Atenção!",MessageBoxButtons.OK);
+            
             if(checkBoxAtrasado.Checked == false)
-            {
                 buttonBuscar_Click(idLista, null);
-            }
+            
         }
 
         private void buttonVisualizarRanking_Click(object sender, EventArgs e)
@@ -157,6 +166,36 @@ namespace WindowsFormsPrincipal
             else
             {
                 radioButtonPrivado.Checked = true;
+            }
+
+            permissao = new ListaDeTarefas_UsuarioBLL().BuscarIdPermissao(idUsuarioLogado, idListaAberta);
+            switch (permissao.Id)
+            {
+                case 2:
+                    buttonAlterar.Enabled = false;
+                    buttonAlterarEtapa.Enabled = false;
+                    buttonCodigo.Enabled = false;
+                    buttonDeletar.Enabled = false;
+                    buttonDeletarEtapa.Enabled = false;
+                    buttonInserir.Enabled = false;
+                    buttonInserirEtapa.Enabled = false;
+                    radioButtonPrivado.Enabled = false;
+                    radioButtonPublico.Enabled = false;
+                    break;
+
+                case 3:
+                    checkBoxAtrasado.Enabled = false;
+                    checkBoxAtribuicao.Enabled = false;
+                    buttonAlterar.Enabled = false;
+                    buttonAlterarEtapa.Enabled = false;
+                    buttonCodigo.Enabled = false;
+                    buttonDeletar.Enabled = false;
+                    buttonDeletarEtapa.Enabled = false;
+                    buttonInserir.Enabled = false;
+                    buttonInserirEtapa.Enabled = false;
+                    radioButtonPrivado.Enabled = false;
+                    radioButtonPublico.Enabled = false;
+                    break;
             }
         }
 
