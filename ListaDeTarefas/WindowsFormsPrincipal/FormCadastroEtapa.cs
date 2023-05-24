@@ -54,7 +54,11 @@ namespace WindowsFormsPrincipal
         {
             usuarioBindingSource.DataSource = new UsuarioBLL().BuscarUsuarioLista(idLista);
             if (idEtapa == 0)
+            {
                 etapaBindingSource.AddNew();
+                dataDateTimePicker.Value =
+                ((Etapa)etapaBindingSource.Current).Data = DateTime.Now.Date;
+            }
             else
                 etapaBindingSource.DataSource = new EtapaBLL().BuscarPorIdEtapa(idEtapa);
         }
