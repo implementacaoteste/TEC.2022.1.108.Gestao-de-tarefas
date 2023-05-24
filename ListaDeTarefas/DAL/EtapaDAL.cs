@@ -273,11 +273,9 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"select E.NomeEtapa, E.Data, E.Status, E.Valor from Tarefa T
-                                    inner Join ListaDeTarefas L on L.IdLista = T.IdListaDeTarefas
-                                    INNER JOIN ListadeTarefas_Usuario TU on TU.IdListaTarefas = T.IdListaDeTarefas
-                                    INNER JOIN Usuario U ON U.IdUsuario = TU.IdUsuario
-                                    INNER JOIN Etapa E ON E.IdUsuario = U.IdUsuario
+                cmd.CommandText = @"select E.NomeEtapa, E.Data, E.Status, E.Valor from Etapa E
+                                    INNER JOIN Usuario U ON E.IdUsuario = U.IdUsuario
+                                    INNER JOIN Tarefa T ON T.IdTarefa = E.IdTarefa
                                     where E.Data < CONVERT (date, GETDATE()) and E.Status = 0 and U.IdUsuario = @IdUsuario and T.IdTarefa = @IdTarefa";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@IdUsuario", _IdUsuario);

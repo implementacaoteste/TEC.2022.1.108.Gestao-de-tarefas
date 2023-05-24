@@ -42,7 +42,7 @@ namespace WindowsFormsPrincipal
             else if(checkBoxAtrasado.Checked == true)
             {
                 int id = ((Tarefa)tarefaBindingSource1.Current).Id;
-                etapaBindingSource.DataSource = new BLL.TarefaBLL().BuscarAtrasado(Constantes.IdUsuarioLogado, id);
+                tarefaBindingSource1.DataSource = new BLL.TarefaBLL().BuscarAtrasado(Constantes.IdUsuarioLogado, id);
             }
         }
 
@@ -205,18 +205,17 @@ namespace WindowsFormsPrincipal
 
         private void checkBoxAtrasado_CheckedChanged(object sender, EventArgs e)
         {
+
             if (checkBoxAtrasado.Checked == true)
             {
                 checkBoxAtribuicao.Checked = false;
                 int id = ((Tarefa)tarefaBindingSource1.Current).Id;
-                etapaBindingSource.DataSource = new TarefaBLL().BuscarAtrasado(Constantes.IdUsuarioLogado, id);
+                tarefaBindingSource1.DataSource = new TarefaBLL().BuscarAtrasado(Constantes.IdUsuarioLogado, id);
             }
             else if (checkBoxAtrasado.Checked == false)
             {
-                etapaBindingSource.DataSource = new TarefaBLL().BuscarPorIdLista(idLista);
+                tarefaBindingSource1.DataSource = new TarefaBLL().BuscarPorIdLista(idLista);
             }
-
-
         }
     }
 }
