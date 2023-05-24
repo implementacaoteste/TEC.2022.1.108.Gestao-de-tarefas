@@ -16,7 +16,7 @@ namespace BLL
         {
             return new ListadeTarefas_UsuarioDAL().BuscarPorIdPermissao(_idUsuario, _idLista);
         }
-        public void AdicionarListaUsuario(ListaDeTarefas_Usuario _listaUsuario, string _hex)
+        public string AdicionarListaUsuario(ListaDeTarefas_Usuario _listaUsuario, string _hex)
         {
             Lista lista = new ListaBLL().BuscarPorIdLista(int.Parse(_hex, System.Globalization.NumberStyles.HexNumber));
             _listaUsuario.IdLista = lista.IdLista;
@@ -25,14 +25,20 @@ namespace BLL
             if (new ListaDeTarefas_UsuarioBLL().VerificarExistencia(_listaUsuario.IdLista))
             {
                 if (VerificarDuplicidade(_listaUsuario))
-                { 
-                    new ListadeTarefas_UsuarioDAL().AdicionarListaUsuario(_listaUsuario);
-                }
+                    return "Você já esta nessa Lista";
                 else
-                    throw new Exception("Você já esta nessa Lista");
+                {
+                    if (lista.Privacidade)
+                    {
+                        new ListadeTarefas_UsuarioDAL().AdicionarListaUsuario(_listaUsuario);
+                        return "Sucesso";
+                    }
+                    else
+                        return "Você não tem autorização para entrar nessa lista";
+                }
             }
             else
-                throw new Exception("Essa lista não existe");
+                return "Essa lista não existe";
 
         }
         public bool VerificarDuplicidade(ListaDeTarefas_Usuario _lista)

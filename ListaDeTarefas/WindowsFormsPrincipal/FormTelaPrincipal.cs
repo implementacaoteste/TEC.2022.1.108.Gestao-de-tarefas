@@ -259,6 +259,11 @@ namespace WindowsFormsPrincipal
             }
         }
 
+        private void dataGridViewCompartilhados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private void abrirToolStripArea3_Click(object sender, EventArgs e)
         {
             Constantes.IdAreaAberta = listas[2].IdLista;

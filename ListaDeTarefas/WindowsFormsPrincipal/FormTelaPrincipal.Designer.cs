@@ -372,6 +372,7 @@
             this.dataGridViewCompartilhados.RowTemplate.Height = 24;
             this.dataGridViewCompartilhados.Size = new System.Drawing.Size(757, 339);
             this.dataGridViewCompartilhados.TabIndex = 6;
+            this.dataGridViewCompartilhados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCompartilhados_CellContentClick);
             this.dataGridViewCompartilhados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DoubleClick_Lista);
             // 
             // nomeListaDataGridViewTextBoxColumn

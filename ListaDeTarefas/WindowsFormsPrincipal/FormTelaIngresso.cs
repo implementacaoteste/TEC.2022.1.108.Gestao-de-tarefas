@@ -31,20 +31,15 @@ namespace WindowsFormsPrincipal
         }
         private void buttonIngressar_Click(object sender, EventArgs e)
         {
+            string text;
             ListaDeTarefas_Usuario lista_usuario = new ListaDeTarefas_Usuario();
             string hex = textBoxCodigo.Text;
-            try
-            {
-                new ListaDeTarefas_UsuarioBLL().AdicionarListaUsuario(lista_usuario, hex);
-                MessageBox.Show("Ingresso concluído!");
-            }
-            catch
-            {
-            }
-            finally
-            {
+      
+            text = new ListaDeTarefas_UsuarioBLL().AdicionarListaUsuario(lista_usuario, hex);
+            MessageBox.Show(text);
+            if(text == "Sucesso")
                 Close();
-            }
+
         }
     }
 }
