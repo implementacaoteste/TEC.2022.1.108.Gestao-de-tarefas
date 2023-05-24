@@ -162,15 +162,13 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"select T.NomeTarefa, E.Data from Tarefa T
-                                    inner Join ListaDeTarefas L on L.IdLista = T.IdListaDeTarefas
-                                    INNER JOIN ListadeTarefas_Usuario TU on TU.IdListaTarefas = T.IdListaDeTarefas
-                                    INNER JOIN Usuario U ON U.IdUsuario = TU.IdUsuario
-                                    INNER JOIN Etapa E ON E.IdUsuario = U.IdUsuario
-                                    where E.Data < CONVERT (date, GETDATE()) and E.Status = 0 and U.IdUsuario = @IdUsuario";
+                cmd.CommandText = @"select Distinct T.IdTarefa, T.NomeTarefa from Tarefa T  
+                                    INNER JOIN Etapa E ON E.Status = 0 and E.Data < CONVERT (date, GETDATE())
+                                    Where T.IdTarefa = @IdTarefa and E.IdUsuario = @IdUsuario";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@IdUsuario", _idUsuarioLogado);
+                cmd.Parameters.AddWithValue("@IdTarefa", _idTarefa);
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {

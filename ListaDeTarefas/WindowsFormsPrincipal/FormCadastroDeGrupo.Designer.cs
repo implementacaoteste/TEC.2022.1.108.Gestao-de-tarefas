@@ -52,6 +52,7 @@ namespace WindowsFormsPrincipal
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
@@ -60,10 +61,12 @@ namespace WindowsFormsPrincipal
             this.label3.Size = new System.Drawing.Size(342, 46);
             this.label3.TabIndex = 0;
             this.label3.Text = "Renomear Grupo";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // buttonSalvarGrupo
             // 
+            this.buttonSalvarGrupo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonSalvarGrupo.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.buttonSalvarGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonSalvarGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -75,9 +78,11 @@ namespace WindowsFormsPrincipal
             this.buttonSalvarGrupo.Text = "Salvar grupo";
             this.buttonSalvarGrupo.UseVisualStyleBackColor = false;
             this.buttonSalvarGrupo.Click += new System.EventHandler(this.buttonArea1_Click);
+            this.buttonSalvarGrupo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.buttonSalvarGrupo_KeyDown);
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(102, 191);
@@ -89,6 +94,7 @@ namespace WindowsFormsPrincipal
             // 
             // buttonSair
             // 
+            this.buttonSair.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonSair.BackColor = System.Drawing.Color.Red;
             this.buttonSair.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -107,6 +113,7 @@ namespace WindowsFormsPrincipal
             // 
             // textBoxtitulo
             // 
+            this.textBoxtitulo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxtitulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxtitulo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.grupoBindingSource, "Titulo", true));
             this.textBoxtitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -135,6 +142,7 @@ namespace WindowsFormsPrincipal
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro De Grupo";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormCadastroDeGrupo_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormCadastroDeGrupo_KeyDown);
             this.panel1.ResumeLayout(false);

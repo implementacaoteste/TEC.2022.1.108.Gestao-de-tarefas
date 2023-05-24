@@ -41,6 +41,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(66, 204);
@@ -51,6 +52,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(66, 265);
@@ -61,6 +63,7 @@
             // 
             // textBoxLogin
             // 
+            this.textBoxLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxLogin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxLogin.Location = new System.Drawing.Point(71, 232);
@@ -72,6 +75,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(126, 435);
             this.label3.Name = "label3";
@@ -81,6 +85,7 @@
             // 
             // linkLabel1
             // 
+            this.linkLabel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.LinkColor = System.Drawing.Color.MediumSlateBlue;
             this.linkLabel1.Location = new System.Drawing.Point(173, 460);
@@ -94,6 +99,7 @@
             // 
             // buttonLogin
             // 
+            this.buttonLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonLogin.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -108,6 +114,7 @@
             // 
             // textBoxSenha
             // 
+            this.textBoxSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxSenha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSenha.Location = new System.Drawing.Point(71, 293);
@@ -119,6 +126,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::WindowsFormsPrincipal.Properties.Resources._1__3_;
             this.pictureBox1.Location = new System.Drawing.Point(40, -27);
             this.pictureBox1.Name = "pictureBox1";
@@ -146,8 +154,8 @@
             this.MinimizeBox = false;
             this.Name = "FormTelaLogin";
             this.ShowIcon = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormTelaLogin_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormTelaLogin_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
