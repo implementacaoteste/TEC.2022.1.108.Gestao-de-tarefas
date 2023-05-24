@@ -52,6 +52,7 @@
             // 
             // nomeLabel
             // 
+            nomeLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             nomeLabel.AutoSize = true;
             nomeLabel.Location = new System.Drawing.Point(293, 173);
             nomeLabel.Name = "nomeLabel";
@@ -61,6 +62,7 @@
             // 
             // senhaLabel
             // 
+            senhaLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             senhaLabel.AutoSize = true;
             senhaLabel.Location = new System.Drawing.Point(293, 286);
             senhaLabel.Name = "senhaLabel";
@@ -70,6 +72,7 @@
             // 
             // emailLabel
             // 
+            emailLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             emailLabel.AutoSize = true;
             emailLabel.Location = new System.Drawing.Point(298, 227);
             emailLabel.Name = "emailLabel";
@@ -79,6 +82,7 @@
             // 
             // label1
             // 
+            label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             label1.AutoSize = true;
             label1.Location = new System.Drawing.Point(293, 345);
             label1.Name = "label1";
@@ -101,7 +105,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(239, 20);
+            this.label3.Location = new System.Drawing.Point(209, 20);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(463, 54);
             this.label3.TabIndex = 6;
@@ -113,6 +117,7 @@
             // 
             // nomeTextBox
             // 
+            this.nomeTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.nomeTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.nomeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Nome", true));
             this.nomeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -125,6 +130,7 @@
             // 
             // senhaTextBox
             // 
+            this.senhaTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.senhaTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.senhaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Senha", true));
             this.senhaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -137,6 +143,7 @@
             // 
             // emailTextBox
             // 
+            this.emailTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.emailTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.emailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Email", true));
             this.emailTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -148,6 +155,7 @@
             // 
             // buttonCadastrar
             // 
+            this.buttonCadastrar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonCadastrar.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.buttonCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -162,6 +170,7 @@
             // 
             // buttonSair
             // 
+            this.buttonSair.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonSair.BackColor = System.Drawing.Color.Red;
             this.buttonSair.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -177,6 +186,7 @@
             // 
             // textBoxConfirmarSenha
             // 
+            this.textBoxConfirmarSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxConfirmarSenha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxConfirmarSenha.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Senha", true));
             this.textBoxConfirmarSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

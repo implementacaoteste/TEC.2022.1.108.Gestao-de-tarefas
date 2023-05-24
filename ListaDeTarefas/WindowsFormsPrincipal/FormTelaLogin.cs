@@ -60,5 +60,6 @@ namespace WindowsFormsPrincipal
             if (e.KeyCode == Keys.Escape)
                 Close();
         }
+        
     }
 }
