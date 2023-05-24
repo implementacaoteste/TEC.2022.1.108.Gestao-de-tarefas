@@ -88,7 +88,12 @@ namespace WindowsFormsPrincipal
         private void textBoxtitulo_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
-                textBoxtitulo.Focus();
+                buttonArea1_Click(null,null);
+        }
+
+        private void buttonSalvarGrupo_KeyDown(object sender, KeyEventArgs e)
+        {
+
         }
     }
 }
