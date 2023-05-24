@@ -64,9 +64,5 @@ namespace BLL
         {
             return new ListaDAL().BuscarListasCompartilhadas(_idUsuario);
         }
-        public List<Lista> BuscarAtribuido(int _idUsuario)
-        {
-            return new ListaDAL().BuscarAtribuido(_idUsuario);
-        }
     }
 }

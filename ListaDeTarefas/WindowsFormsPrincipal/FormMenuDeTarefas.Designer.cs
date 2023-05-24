@@ -155,7 +155,7 @@
             // checkBoxAtribuicao
             // 
             this.checkBoxAtribuicao.AutoSize = true;
-            this.checkBoxAtribuicao.Location = new System.Drawing.Point(875, 201);
+            this.checkBoxAtribuicao.Location = new System.Drawing.Point(877, 201);
             this.checkBoxAtribuicao.Name = "checkBoxAtribuicao";
             this.checkBoxAtribuicao.Size = new System.Drawing.Size(128, 20);
             this.checkBoxAtribuicao.TabIndex = 11;

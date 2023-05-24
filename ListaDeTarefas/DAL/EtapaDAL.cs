@@ -306,5 +306,48 @@ namespace DAL
                 cn.Close();
             }
         }
+
+        internal List<Etapa> BuscarPorEtapaAtribuida(object _idTarefa, int _idUsuario)
+        {
+            Etapa etapa = new Etapa();
+            List<Etapa> etapas = new List<Etapa>();
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = @"select E.NomeEtapa, E.Data, E.Status, E.Valor from Etapa E
+                                    INNER JOIN Usuario U ON E.IdUsuario = U.IdUsuario
+                                    INNER JOIN Tarefa T ON T.IdTarefa = E.IdTarefa
+                                    where U.IdUsuario = @IdUsuario and T.IdTarefa = @IdTarefa";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@IdUsuario", _idUsuario);
+                cmd.Parameters.AddWithValue("@IdTarefa", _idTarefa);
+                cn.Open();
+                cmd.ExecuteNonQuery();
+
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        etapa = new Etapa();
+                        etapa.NomeEtapa = rd["NomeEtapa"].ToString();
+                        etapa.Valor = Convert.ToInt32(rd["Valor"]);
+                        etapa.Status = Convert.ToBoolean(rd["Status"]);
+                        etapa.Data = Convert.ToDateTime(rd["Data"]);
+                        etapas.Add(etapa);
+                    }
+                }
+                return etapas;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar Buscar Por Id de tarefa no banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
     }
 }

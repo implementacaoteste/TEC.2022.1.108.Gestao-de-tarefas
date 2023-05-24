@@ -192,5 +192,45 @@ namespace DAL
                 cn.Close();
             }
         }
+        public List<Tarefa> BuscarAtribuido(int _idTarefa, int _idUsuario)
+        {
+            List<Tarefa> tarefas = new List<Tarefa>();
+            Tarefa tarefa = new Tarefa();
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = @"select T.NomeTarefa from Tarefa T
+                                    inner Join ListaDeTarefas L on L.IdLista = T.IdListaDeTarefas
+                                    INNER JOIN ListadeTarefas_Usuario TU on TU.IdListaTarefas = T.IdListaDeTarefas
+                                    INNER JOIN Usuario U ON U.IdUsuario = TU.IdUsuario
+                                    where U.IdUsuario = @IdUsuario";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@IdUsuario", _idUsuario);
+
+                cn.Open();
+
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    if (rd.Read())
+                    {
+                        tarefa = new Tarefa();
+                        tarefa.NomeTarefa = rd["NomeTarefa"].ToString();
+                        tarefa.Etapa = new EtapaDAL().BuscarPorEtapaAtribuida(_idTarefa, _idUsuario);
+                        tarefas.Add(tarefa);
+                    }
+                }
+                return tarefas;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao buscar as tarefas atribuidas!", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
     }
 }

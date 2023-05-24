@@ -238,8 +238,15 @@ namespace WindowsFormsPrincipal
         private void checkBoxAtribuicao_CheckedChanged_1(object sender, EventArgs e)
         {
             if (checkBoxAtribuicao.Checked == true)
+            {
+                int id = ((Tarefa)tarefaBindingSource1.Current).Id;
                 checkBoxAtrasado.Checked = false;
-            new ListaBLL().BuscarAtribuido(Constantes.IdUsuarioLogado);
+                tarefaBindingSource1.DataSource = new TarefaBLL().BuscarAtribuido(id, Constantes.IdUsuarioLogado);
+            }
+            else if (checkBoxAtrasado.Checked == false)
+            {
+                tarefaBindingSource1.DataSource = new TarefaBLL().BuscarPorIdLista(idLista);
+            }
         }
 
         private void checkBoxAtrasado_CheckedChanged(object sender, EventArgs e)
