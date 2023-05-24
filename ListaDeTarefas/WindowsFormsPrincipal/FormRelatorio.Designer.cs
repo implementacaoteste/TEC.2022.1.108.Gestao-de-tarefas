@@ -37,9 +37,13 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.checkBoxCrescente = new System.Windows.Forms.CheckBox();
             this.checkBoxDecrescente = new System.Windows.Forms.CheckBox();
+            this.contextMenuStripPermissao = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.visualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.padrãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioDataGridView)).BeginInit();
+            this.contextMenuStripPermissao.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -77,6 +81,7 @@
             this.usuarioDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn5});
+            this.usuarioDataGridView.ContextMenuStrip = this.contextMenuStripPermissao;
             this.usuarioDataGridView.DataSource = this.usuarioBindingSource;
             this.usuarioDataGridView.Location = new System.Drawing.Point(191, 197);
             this.usuarioDataGridView.Name = "usuarioDataGridView";
@@ -128,6 +133,27 @@
             this.checkBoxDecrescente.UseVisualStyleBackColor = true;
             this.checkBoxDecrescente.CheckedChanged += new System.EventHandler(this.checkBoxDecrescente_CheckedChanged);
             // 
+            // contextMenuStripPermissao
+            // 
+            this.contextMenuStripPermissao.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStripPermissao.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.visualizarToolStripMenuItem,
+            this.padrãoToolStripMenuItem});
+            this.contextMenuStripPermissao.Name = "contextMenuStripPermissao";
+            this.contextMenuStripPermissao.Size = new System.Drawing.Size(142, 52);
+            // 
+            // visualizarToolStripMenuItem
+            // 
+            this.visualizarToolStripMenuItem.Name = "visualizarToolStripMenuItem";
+            this.visualizarToolStripMenuItem.Size = new System.Drawing.Size(141, 24);
+            this.visualizarToolStripMenuItem.Text = "Visualizar";
+            // 
+            // padrãoToolStripMenuItem
+            // 
+            this.padrãoToolStripMenuItem.Name = "padrãoToolStripMenuItem";
+            this.padrãoToolStripMenuItem.Size = new System.Drawing.Size(141, 24);
+            this.padrãoToolStripMenuItem.Text = "Padrão";
+            // 
             // FormRelatorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -151,6 +177,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioDataGridView)).EndInit();
+            this.contextMenuStripPermissao.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -166,5 +193,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.CheckBox checkBoxCrescente;
         private System.Windows.Forms.CheckBox checkBoxDecrescente;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripPermissao;
+        private System.Windows.Forms.ToolStripMenuItem visualizarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem padrãoToolStripMenuItem;
     }
 }
