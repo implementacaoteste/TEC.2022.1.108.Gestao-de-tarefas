@@ -1,5 +1,7 @@
 ﻿using BLL;
+using Models;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace WindowsFormsPrincipal
@@ -37,6 +39,42 @@ namespace WindowsFormsPrincipal
         {
             if (e.KeyCode == Keys.Escape)
                 this.Close();
+        }
+
+        private void usuarioBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void visualizarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListaDeTarefas_Usuario listaUsuario = new ListaDeTarefas_Usuario();
+            listaUsuario.IdLista = Constantes.IdAreaAberta;
+            listaUsuario.IdUsuario = ((Usuario)usuarioBindingSource.Current).Id;
+            if (Constantes.PermissaoUsuario == 1 && listaUsuario.IdUsuario != Constantes.IdUsuarioLogado)
+            {
+                new ListaDeTarefas_UsuarioBLL().AlterarPermissao(listaUsuario.IdUsuario, listaUsuario.IdLista, 3);
+            } 
+            else if(listaUsuario.IdUsuario == Constantes.IdUsuarioLogado)
+                MessageBox.Show("Você não pode alterar sua própria permissão!", "Atenção!", MessageBoxButtons.OK);
+            else
+               MessageBox.Show("Você não tem autorização para alterar as permissões dos usuários!","Atenção!",MessageBoxButtons.OK);
+
+        }
+
+        private void padrãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListaDeTarefas_Usuario listaU = new ListaDeTarefas_Usuario();
+            listaU.IdLista = Constantes.IdAreaAberta;
+            listaU.IdUsuario = ((Usuario)usuarioBindingSource.Current).Id;
+            if (Constantes.PermissaoUsuario == 1 && listaU.IdUsuario != Constantes.IdUsuarioLogado)
+            {
+                new ListaDeTarefas_UsuarioBLL().AlterarPermissao(listaU.IdUsuario, listaU.IdLista, 2);
+            }
+            if (listaU.IdUsuario == Constantes.IdUsuarioLogado)
+                MessageBox.Show("Você não pode alterar sua própria permissão!", "Atenção!", MessageBoxButtons.OK);
+            else
+                MessageBox.Show("Você não tem autorização para alterar as permissões dos usuários!", "Atenção!", MessageBoxButtons.OK);
         }
     }
 }

@@ -76,7 +76,32 @@ namespace DAL
                 cn.Close();
             }
         }
+        public void AlterarPermissao(int _idU, int _idL, int _idP)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = cn.CreateCommand();
+                cmd.CommandText = @"UPDATE ListadeTarefas_Usuario SET IdPermissao = @IdP
+                                    WHERE IdUsuario = @IdU and IdListaTarefas = @IdL";
 
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@IdP", _idP);
+                cmd.Parameters.AddWithValue("@IdL", _idL);
+                cmd.Parameters.AddWithValue("@IdU", _idU);
+                cmd.Connection = cn;
+                cn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao alterar a permissao de um usuario", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
         public bool VerificarDuplicidade(ListaDeTarefas_Usuario _lista)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);

@@ -41,6 +41,10 @@ namespace BLL
                 return "Essa lista não existe";
 
         }
+        public void AlterarPermissao(int _idU, int _idL, int _idP)
+        {
+            new ListadeTarefas_UsuarioDAL().AlterarPermissao(_idU, _idL, _idP);
+        }
         public bool VerificarDuplicidade(ListaDeTarefas_Usuario _lista)
         {
             return new ListadeTarefas_UsuarioDAL().VerificarDuplicidade(_lista);

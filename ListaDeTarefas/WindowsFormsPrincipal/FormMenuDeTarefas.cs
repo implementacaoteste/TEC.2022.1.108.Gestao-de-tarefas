@@ -168,8 +168,8 @@ namespace WindowsFormsPrincipal
                 radioButtonPrivado.Checked = true;
             }
 
-            permissao = new ListaDeTarefas_UsuarioBLL().BuscarIdPermissao(idUsuarioLogado, idListaAberta);
-            switch (permissao.Id)
+            Constantes.PermissaoUsuario = new ListaDeTarefas_UsuarioBLL().BuscarIdPermissao(idUsuarioLogado, idListaAberta).Id;
+            switch (Constantes.PermissaoUsuario)
             {
                 case 2:
                     buttonAlterar.Enabled = false;

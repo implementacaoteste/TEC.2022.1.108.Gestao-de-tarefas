@@ -35,11 +35,11 @@
             this.usuarioDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.checkBoxCrescente = new System.Windows.Forms.CheckBox();
-            this.checkBoxDecrescente = new System.Windows.Forms.CheckBox();
             this.contextMenuStripPermissao = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.visualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.padrãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.checkBoxCrescente = new System.Windows.Forms.CheckBox();
+            this.checkBoxDecrescente = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioDataGridView)).BeginInit();
@@ -70,6 +70,7 @@
             // usuarioBindingSource
             // 
             this.usuarioBindingSource.DataSource = typeof(Models.Usuario);
+            this.usuarioBindingSource.CurrentChanged += new System.EventHandler(this.usuarioBindingSource_CurrentChanged);
             // 
             // usuarioDataGridView
             // 
@@ -109,6 +110,30 @@
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             this.dataGridViewTextBoxColumn5.Width = 125;
             // 
+            // contextMenuStripPermissao
+            // 
+            this.contextMenuStripPermissao.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStripPermissao.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.visualizarToolStripMenuItem,
+            this.padrãoToolStripMenuItem});
+            this.contextMenuStripPermissao.Name = "contextMenuStripPermissao";
+            this.contextMenuStripPermissao.Size = new System.Drawing.Size(211, 80);
+            this.contextMenuStripPermissao.Text = "Permissões";
+            // 
+            // visualizarToolStripMenuItem
+            // 
+            this.visualizarToolStripMenuItem.Name = "visualizarToolStripMenuItem";
+            this.visualizarToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.visualizarToolStripMenuItem.Text = "Visualizar";
+            this.visualizarToolStripMenuItem.Click += new System.EventHandler(this.visualizarToolStripMenuItem_Click);
+            // 
+            // padrãoToolStripMenuItem
+            // 
+            this.padrãoToolStripMenuItem.Name = "padrãoToolStripMenuItem";
+            this.padrãoToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.padrãoToolStripMenuItem.Text = "Padrão";
+            this.padrãoToolStripMenuItem.Click += new System.EventHandler(this.padrãoToolStripMenuItem_Click);
+            // 
             // checkBoxCrescente
             // 
             this.checkBoxCrescente.AutoSize = true;
@@ -132,27 +157,6 @@
             this.checkBoxDecrescente.Text = "Ordem decrescente";
             this.checkBoxDecrescente.UseVisualStyleBackColor = true;
             this.checkBoxDecrescente.CheckedChanged += new System.EventHandler(this.checkBoxDecrescente_CheckedChanged);
-            // 
-            // contextMenuStripPermissao
-            // 
-            this.contextMenuStripPermissao.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStripPermissao.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.visualizarToolStripMenuItem,
-            this.padrãoToolStripMenuItem});
-            this.contextMenuStripPermissao.Name = "contextMenuStripPermissao";
-            this.contextMenuStripPermissao.Size = new System.Drawing.Size(142, 52);
-            // 
-            // visualizarToolStripMenuItem
-            // 
-            this.visualizarToolStripMenuItem.Name = "visualizarToolStripMenuItem";
-            this.visualizarToolStripMenuItem.Size = new System.Drawing.Size(141, 24);
-            this.visualizarToolStripMenuItem.Text = "Visualizar";
-            // 
-            // padrãoToolStripMenuItem
-            // 
-            this.padrãoToolStripMenuItem.Name = "padrãoToolStripMenuItem";
-            this.padrãoToolStripMenuItem.Size = new System.Drawing.Size(141, 24);
-            this.padrãoToolStripMenuItem.Text = "Padrão";
             // 
             // FormRelatorio
             // 

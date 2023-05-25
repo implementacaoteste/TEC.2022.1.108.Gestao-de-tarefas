@@ -265,7 +265,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"select L.Score, U.Nome
+                cmd.CommandText = @"select L.Score, U.Nome, U.IdUsuario
                                     from ListadeTarefas_Usuario L
                                     inner join Usuario U  
                                     ON
@@ -281,6 +281,7 @@ namespace DAL
                         _usuario = new Usuario();
                         _usuario.Nome = rd["Nome"].ToString();
                         _usuario.Score = Convert.ToInt32(rd["Score"]);
+                        _usuario.Id = Convert.ToInt32(rd["IdUsuario"]);
                         _usuarios.Add(_usuario);
                     }
                 return _usuarios;
