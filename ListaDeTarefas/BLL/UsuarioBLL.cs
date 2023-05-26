@@ -1,4 +1,5 @@
 ﻿using DAL;
+using Infra;
 using Models;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,8 @@ namespace BLL
     public class UsuarioBLL
     {
         public void AdicionarUsuario(Usuario _usuario,string _confirmarSenha)
-        {           
+        {
+            _usuario.Senha = new Criptografia().CriptografarSenha(_usuario.Senha);
             new UsuarioBLL().ValidarCadastro(_usuario, _confirmarSenha);
             int idUser = new UsuarioDAL().AdicionarUsuario(_usuario);
             new GrupoBLL().AdicionarGrupo(idUser);
