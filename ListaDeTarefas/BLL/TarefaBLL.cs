@@ -35,13 +35,13 @@ namespace BLL
         {
             return new TarefaDAL().BuscarPorIdLista(_idLista);
         }
-        public List<Tarefa> BuscarAtrasado(int _idUsuarioLogado, int _idTarefa)
+        public List<Tarefa> BuscarAtrasado(int _idUsuarioLogado, int _idTarefa,int _idLista)
         {
-            return new TarefaDAL().BuscarAtrasado(_idUsuarioLogado, _idTarefa);
+            return new TarefaDAL().BuscarAtrasado(_idUsuarioLogado, _idTarefa, _idLista);
         }
-        public List<Tarefa> BuscarAtribuido(int _idTarefa, int _idUsuario)
+        public List<Tarefa> BuscarAtribuido(int _idTarefa, int _idUsuario, int _idLista)
         {
-            return new TarefaDAL().BuscarAtribuido(_idTarefa,_idUsuario);
+            return new TarefaDAL().BuscarAtribuido(_idTarefa,_idUsuario, _idLista);
         }
     }
 }

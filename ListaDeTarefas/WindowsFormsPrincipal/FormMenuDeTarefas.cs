@@ -47,7 +47,7 @@ namespace WindowsFormsPrincipal
             else if(checkBoxAtrasado.Checked == true)
             {
                 int id = ((Tarefa)tarefaBindingSource1.Current).Id;
-                tarefaBindingSource1.DataSource = new BLL.TarefaBLL().BuscarAtrasado(Constantes.IdUsuarioLogado, id);
+                tarefaBindingSource1.DataSource = new BLL.TarefaBLL().BuscarAtrasado(Constantes.IdUsuarioLogado, id, idLista);
             }
         }
 
@@ -105,7 +105,7 @@ namespace WindowsFormsPrincipal
 
         private void tarefaDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+ 
         }
         private void buttonAlterarEtapa_Click(object sender, EventArgs e)
         {
@@ -241,7 +241,7 @@ namespace WindowsFormsPrincipal
             {
                 int id = ((Tarefa)tarefaBindingSource1.Current).Id;
                 checkBoxAtrasado.Checked = false;
-                tarefaBindingSource1.DataSource = new TarefaBLL().BuscarAtribuido(id, Constantes.IdUsuarioLogado);
+                tarefaBindingSource1.DataSource = new TarefaBLL().BuscarAtribuido(id, Constantes.IdUsuarioLogado, idLista);
             }
             else if (checkBoxAtrasado.Checked == false)
             {
@@ -256,7 +256,7 @@ namespace WindowsFormsPrincipal
             {
                 checkBoxAtribuicao.Checked = false;
                 int id = ((Tarefa)tarefaBindingSource1.Current).Id;
-                tarefaBindingSource1.DataSource = new TarefaBLL().BuscarAtrasado(Constantes.IdUsuarioLogado, id);
+                tarefaBindingSource1.DataSource = new TarefaBLL().BuscarAtrasado(Constantes.IdUsuarioLogado, id,idLista);
             }
             else if (checkBoxAtrasado.Checked == false)
             {

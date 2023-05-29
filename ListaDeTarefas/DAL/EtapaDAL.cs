@@ -319,7 +319,7 @@ namespace DAL
                 cmd.CommandText = @"select E.NomeEtapa, E.Data, E.Status, E.Valor from Etapa E
                                     INNER JOIN Usuario U ON E.IdUsuario = U.IdUsuario
                                     INNER JOIN Tarefa T ON T.IdTarefa = E.IdTarefa
-                                    where U.IdUsuario = @IdUsuario and T.IdTarefa = @IdTarefa";
+                                    where U.IdUsuario = @IdUsuario and T.IdTarefa = @IdTarefa and E.Status = 0";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@IdUsuario", _idUsuario);
                 cmd.Parameters.AddWithValue("@IdTarefa", _idTarefa);

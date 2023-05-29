@@ -56,5 +56,9 @@ namespace BLL
                 _status = true;
             new EtapaDAL().StatusEtapa(_idEtapa, _score, _idLista, _status);
         }
+        public List<Etapa> BuscarPorIdTarefaAtraso(int _IdTarefa, int _IdUsuario)
+        {
+            return new EtapaDAL().BuscarPorIdTarefaAtraso(_IdTarefa, _IdUsuario);
+        }
     }
 }
