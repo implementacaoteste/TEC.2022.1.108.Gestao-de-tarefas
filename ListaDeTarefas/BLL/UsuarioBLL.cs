@@ -58,8 +58,8 @@ namespace BLL
         public void ValidarLogin(string _email, string _senha)
         {
             Usuario usuario = new UsuarioDAL().BuscarPorEmail(_email);
-
-            if (_senha == usuario.Senha)
+            string senha = new Criptografia().CriptografarSenha(_senha);
+            if (senha == usuario.Senha)
             {
                 Constantes.IdUsuarioLogado = usuario.Id;
             }
