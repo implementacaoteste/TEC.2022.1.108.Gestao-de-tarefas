@@ -18,8 +18,8 @@ namespace WindowsFormsPrincipal
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            string texto = "12345678";
-            texto = new Infra.Criptografia().CriptografarSenha(texto);
+            string senha = "12345678";
+            senha = new Infra.Criptografia().CriptografarSenha(senha);
 
             //Application.Run(new FormTelaPrincipal());
 
