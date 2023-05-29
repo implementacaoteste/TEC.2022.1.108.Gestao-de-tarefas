@@ -153,7 +153,7 @@ namespace DAL
             }
         }
 
-        public List<Tarefa> BuscarAtrasado(int _idUsuarioLogado, int _idTarefa)
+        public List<Tarefa> BuscarAtrasado(int _idUsuarioLogado, int _idTarefa, int _idLista)
         {
             List<Tarefa> tarefas = new List<Tarefa>();
             Tarefa tarefa = new Tarefa();
@@ -164,11 +164,11 @@ namespace DAL
                 cmd.Connection = cn;
                 cmd.CommandText = @"select Distinct T.IdTarefa, T.NomeTarefa from Tarefa T  
                                     INNER JOIN Etapa E ON E.Status = 0 and E.Data < CONVERT (date, GETDATE())
-                                    Where T.IdTarefa = @IdTarefa and E.IdUsuario = @IdUsuario";
+                                    Where T.IdListaDeTarefas = @IdListaDeTarefas and E.IdUsuario = @IdUsuario";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@IdUsuario", _idUsuarioLogado);
-                cmd.Parameters.AddWithValue("@IdTarefa", _idTarefa);
+                cmd.Parameters.AddWithValue("@IdListaDeTarefas", _idLista);
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
@@ -192,7 +192,7 @@ namespace DAL
                 cn.Close();
             }
         }
-        public List<Tarefa> BuscarAtribuido(int _idTarefa, int _idUsuario)
+        public List<Tarefa> BuscarAtribuido(int _idTarefa, int _idUsuario, int _idLista)
         {
             List<Tarefa> tarefas = new List<Tarefa>();
             Tarefa tarefa = new Tarefa();
@@ -201,21 +201,21 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"select T.NomeTarefa from Tarefa T
-                                    inner Join ListaDeTarefas L on L.IdLista = T.IdListaDeTarefas
-                                    INNER JOIN ListadeTarefas_Usuario TU on TU.IdListaTarefas = T.IdListaDeTarefas
-                                    INNER JOIN Usuario U ON U.IdUsuario = TU.IdUsuario
-                                    where U.IdUsuario = @IdUsuario";
+                cmd.CommandText = @"select Distinct T.IdTarefa, T.NomeTarefa from Tarefa T
+                                    INNER JOIN Usuario U ON U.IdUsuario = @IdUsuario
+                                    where T.IdListaDeTarefas = @IdListaDeTarefas";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@IdUsuario", _idUsuario);
+                cmd.Parameters.AddWithValue("@IdListaDeTarefas", _idLista);
 
                 cn.Open();
 
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
-                    if (rd.Read())
+                    while (rd.Read())
                     {
                         tarefa = new Tarefa();
+                        tarefa.Id = Convert.ToInt32(rd["IdTarefa"]);
                         tarefa.NomeTarefa = rd["NomeTarefa"].ToString();
                         tarefa.Etapa = new EtapaDAL().BuscarPorEtapaAtribuida(_idTarefa, _idUsuario);
                         tarefas.Add(tarefa);

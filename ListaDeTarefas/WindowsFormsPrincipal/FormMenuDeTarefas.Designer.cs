@@ -60,6 +60,9 @@
             this.etapaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonVisualizarRanking = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.checkBoxHoje = new System.Windows.Forms.CheckBox();
+            this.checkBoxAmanha = new System.Windows.Forms.CheckBox();
+            this.checkBoxSemana = new System.Windows.Forms.CheckBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tarefaDataGridView)).BeginInit();
@@ -155,7 +158,7 @@
             // checkBoxAtribuicao
             // 
             this.checkBoxAtribuicao.AutoSize = true;
-            this.checkBoxAtribuicao.Location = new System.Drawing.Point(877, 201);
+            this.checkBoxAtribuicao.Location = new System.Drawing.Point(298, 201);
             this.checkBoxAtribuicao.Name = "checkBoxAtribuicao";
             this.checkBoxAtribuicao.Size = new System.Drawing.Size(128, 20);
             this.checkBoxAtribuicao.TabIndex = 11;
@@ -166,7 +169,7 @@
             // checkBoxAtrasado
             // 
             this.checkBoxAtrasado.AutoSize = true;
-            this.checkBoxAtrasado.Location = new System.Drawing.Point(779, 201);
+            this.checkBoxAtrasado.Location = new System.Drawing.Point(200, 201);
             this.checkBoxAtrasado.Name = "checkBoxAtrasado";
             this.checkBoxAtrasado.Size = new System.Drawing.Size(91, 20);
             this.checkBoxAtrasado.TabIndex = 10;
@@ -179,7 +182,7 @@
             this.buttonInserir.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.buttonInserir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonInserir.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonInserir.Location = new System.Drawing.Point(286, 197);
+            this.buttonInserir.Location = new System.Drawing.Point(287, 166);
             this.buttonInserir.Name = "buttonInserir";
             this.buttonInserir.Size = new System.Drawing.Size(75, 26);
             this.buttonInserir.TabIndex = 2;
@@ -192,7 +195,7 @@
             this.buttonAlterar.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.buttonAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonAlterar.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonAlterar.Location = new System.Drawing.Point(373, 197);
+            this.buttonAlterar.Location = new System.Drawing.Point(374, 166);
             this.buttonAlterar.Name = "buttonAlterar";
             this.buttonAlterar.Size = new System.Drawing.Size(75, 26);
             this.buttonAlterar.TabIndex = 3;
@@ -205,7 +208,7 @@
             this.buttonDeletar.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.buttonDeletar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonDeletar.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonDeletar.Location = new System.Drawing.Point(457, 197);
+            this.buttonDeletar.Location = new System.Drawing.Point(458, 166);
             this.buttonDeletar.Name = "buttonDeletar";
             this.buttonDeletar.Size = new System.Drawing.Size(75, 26);
             this.buttonDeletar.TabIndex = 4;
@@ -218,7 +221,7 @@
             this.buttonBuscar.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.buttonBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonBuscar.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonBuscar.Location = new System.Drawing.Point(199, 197);
+            this.buttonBuscar.Location = new System.Drawing.Point(200, 166);
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(75, 26);
             this.buttonBuscar.TabIndex = 1;
@@ -245,7 +248,7 @@
             this.buttonDeletarEtapa.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.buttonDeletarEtapa.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonDeletarEtapa.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonDeletarEtapa.Location = new System.Drawing.Point(705, 197);
+            this.buttonDeletarEtapa.Location = new System.Drawing.Point(706, 166);
             this.buttonDeletarEtapa.Name = "buttonDeletarEtapa";
             this.buttonDeletarEtapa.Size = new System.Drawing.Size(68, 26);
             this.buttonDeletarEtapa.TabIndex = 7;
@@ -258,7 +261,7 @@
             this.buttonAlterarEtapa.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.buttonAlterarEtapa.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonAlterarEtapa.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonAlterarEtapa.Location = new System.Drawing.Point(631, 197);
+            this.buttonAlterarEtapa.Location = new System.Drawing.Point(632, 166);
             this.buttonAlterarEtapa.Name = "buttonAlterarEtapa";
             this.buttonAlterarEtapa.Size = new System.Drawing.Size(68, 26);
             this.buttonAlterarEtapa.TabIndex = 6;
@@ -271,7 +274,7 @@
             this.buttonInserirEtapa.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.buttonInserirEtapa.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonInserirEtapa.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonInserirEtapa.Location = new System.Drawing.Point(557, 197);
+            this.buttonInserirEtapa.Location = new System.Drawing.Point(558, 166);
             this.buttonInserirEtapa.Name = "buttonInserirEtapa";
             this.buttonInserirEtapa.Size = new System.Drawing.Size(68, 26);
             this.buttonInserirEtapa.TabIndex = 5;
@@ -407,12 +410,45 @@
             this.timer1.Interval = 5000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // checkBoxHoje
+            // 
+            this.checkBoxHoje.AutoSize = true;
+            this.checkBoxHoje.Location = new System.Drawing.Point(558, 201);
+            this.checkBoxHoje.Name = "checkBoxHoje";
+            this.checkBoxHoje.Size = new System.Drawing.Size(58, 20);
+            this.checkBoxHoje.TabIndex = 16;
+            this.checkBoxHoje.Text = "Hoje";
+            this.checkBoxHoje.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxAmanha
+            // 
+            this.checkBoxAmanha.AutoSize = true;
+            this.checkBoxAmanha.Location = new System.Drawing.Point(625, 201);
+            this.checkBoxAmanha.Name = "checkBoxAmanha";
+            this.checkBoxAmanha.Size = new System.Drawing.Size(79, 20);
+            this.checkBoxAmanha.TabIndex = 17;
+            this.checkBoxAmanha.Text = "Amanhã";
+            this.checkBoxAmanha.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxSemana
+            // 
+            this.checkBoxSemana.AutoSize = true;
+            this.checkBoxSemana.Location = new System.Drawing.Point(710, 201);
+            this.checkBoxSemana.Name = "checkBoxSemana";
+            this.checkBoxSemana.Size = new System.Drawing.Size(80, 20);
+            this.checkBoxSemana.TabIndex = 18;
+            this.checkBoxSemana.Text = "Semena";
+            this.checkBoxSemana.UseVisualStyleBackColor = true;
+            // 
             // FormMenuDeTarefas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1043, 685);
+            this.Controls.Add(this.checkBoxSemana);
+            this.Controls.Add(this.checkBoxAmanha);
+            this.Controls.Add(this.checkBoxHoje);
             this.Controls.Add(this.buttonVisualizarRanking);
             this.Controls.Add(this.etapaDataGridView);
             this.Controls.Add(this.tarefaDataGridView);
@@ -482,5 +518,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Data;
         private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Status;
+        private System.Windows.Forms.CheckBox checkBoxHoje;
+        private System.Windows.Forms.CheckBox checkBoxAmanha;
+        private System.Windows.Forms.CheckBox checkBoxSemana;
     }
 }
