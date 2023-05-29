@@ -141,7 +141,7 @@ namespace DAL
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Nome", _usuario.Nome);
                 cmd.Parameters.AddWithValue("@Email", _usuario.Email);
-                cmd.Parameters.AddWithValue("@Senha", _usuario.Senha);
+                cmd.Parameters.AddWithValue("@Senha", Convert.ToString(_usuario.Senha));
                 cmd.Connection = cn;
                 cn.Open();
 

@@ -15,8 +15,9 @@ namespace BLL
     {
         public void AdicionarUsuario(Usuario _usuario,string _confirmarSenha)
         {
-            _usuario.Senha = new Criptografia().CriptografarSenha(_usuario.Senha);
+            
             new UsuarioBLL().ValidarCadastro(_usuario, _confirmarSenha);
+            _usuario.Senha = new Criptografia().CriptografarSenha(_usuario.Senha);
             int idUser = new UsuarioDAL().AdicionarUsuario(_usuario);
             new GrupoBLL().AdicionarGrupo(idUser);
             List<Grupo> lista = new GrupoBLL().BuscarPorIdUsuario(idUser);
