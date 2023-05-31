@@ -12,5 +12,7 @@ namespace Models
         public static int IdGrupoAberto;
         public static int IdAreaAberta;
         public static int PermissaoUsuario;
+
+        public static string CaminhoArquivoLog { get; set; }
     }
 }
