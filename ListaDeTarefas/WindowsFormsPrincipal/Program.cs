@@ -1,4 +1,5 @@
 ﻿using BLL;
+using Infra;
 using Models;
 using System;
 using System.Collections.Generic;
@@ -64,7 +65,8 @@ namespace WindowsFormsPrincipal
             //new EtapaBLL().BuscarPorNomeEtapa("a");
             //new EtapaBLL().BuscarPorIdTarefa(2);
             //new EtapaBLL().BuscarPorIdUsuario(3);
-            new Models.Arquivo().GravarLinhaNoFinalDoArquivo(Environment.CurrentDirectory + "\\ArquivoTexte.txt", "Texto a ser gravado");
+            new Arquivo().GravarLinhaNoFinalDoArquivo(Environment.CurrentDirectory + "\\ArquivoTexte.txt", "Texto a ser gravado");
+            new Criptografia().GravarChaves();
         }
     }
 }

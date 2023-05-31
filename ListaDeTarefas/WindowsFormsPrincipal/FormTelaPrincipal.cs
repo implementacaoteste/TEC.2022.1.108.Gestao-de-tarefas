@@ -2,12 +2,7 @@
 using Models;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Infra;
 using System.Windows.Forms;
 
 namespace WindowsFormsPrincipal
@@ -24,46 +19,57 @@ namespace WindowsFormsPrincipal
         }
         private void FormTelaPrincipal_Load(object sender, EventArgs e)
         {
-            using (FormTelaLogin frm = new FormTelaLogin())
+            try
             {
+                Log.Gravar("Abrir a tela de login");
+                using (FormTelaLogin frm = new FormTelaLogin())
+                {
+                    try
+                    {
+                        frm.ShowDialog();
+                        if (!frm.Logou)
+                        {
+                            Log.Gravar("Usuário não logou e a aplicação será fechada. ");
+                            Application.Exit();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
                 try
                 {
-                    frm.ShowDialog();
-                    if (!frm.Logou)
-                        Application.Exit();
+                    buttonIngressar.Visible = false;
+                    dataGridViewCompartilhados.Visible = false;
+                    grupos = new GrupoBLL().buscarGruposArea(Constantes.IdUsuarioLogado);
+
+                    buttonGrupo1.Text = grupos[0].Titulo;
+                    Area1 = grupos[0].IdGrupo;
+                    buttonGrupo2.Text = grupos[1].Titulo;
+                    Area2 = grupos[1].IdGrupo;
+                    buttonGrupo3.Text = grupos[2].Titulo;
+                    Area3 = grupos[2].IdGrupo;
+
+                    listas = new ListaBLL().buscarTarefasArea(Area1);
+
+                    buttonArea1.Text = listas[0].NomeLista;
+                    lista1 = listas[0].IdLista;
+                    buttonArea2.Text = listas[1].NomeLista;
+                    lista2 = listas[1].IdLista;
+                    buttonArea3.Text = listas[2].NomeLista;
+                    lista3 = listas[2].IdLista;
+
+                    Constantes.IdAreaAberta = Area1;
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
             }
-            try
+            catch
             {
-                buttonIngressar.Visible = false;
-                dataGridViewCompartilhados.Visible = false;
-                grupos = new GrupoBLL().buscarGruposArea(Constantes.IdUsuarioLogado);
 
-                buttonGrupo1.Text = grupos[0].Titulo;
-                Area1 = grupos[0].IdGrupo;
-                buttonGrupo2.Text = grupos[1].Titulo;
-                Area2 = grupos[1].IdGrupo;
-                buttonGrupo3.Text = grupos[2].Titulo;
-                Area3 = grupos[2].IdGrupo;
-
-                listas = new ListaBLL().buscarTarefasArea(Area1);
-
-                buttonArea1.Text = listas[0].NomeLista;
-                lista1 = listas[0].IdLista;
-                buttonArea2.Text = listas[1].NomeLista;
-                lista2 = listas[1].IdLista;
-                buttonArea3.Text = listas[2].NomeLista;
-                lista3 = listas[2].IdLista;
-
-                Constantes.IdAreaAberta = Area1;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
             }
         }
         private void FormTelaPrincipal_Load_1(object sender, EventArgs e)

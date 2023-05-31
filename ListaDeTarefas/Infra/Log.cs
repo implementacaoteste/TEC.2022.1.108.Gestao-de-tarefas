@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Models;
+using System;
 
 namespace Infra
 {
-    internal class Log
+    public class Log
     {
+        public static void Gravar(string _texto)
+        {
+            new Arquivo().GravarLinhaNoFinalDoArquivo(Constantes.CaminhoArquivoLog, DateTime.Now + ": " + _texto);
+        }
     }
 }

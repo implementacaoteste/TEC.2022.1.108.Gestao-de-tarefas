@@ -470,7 +470,7 @@
             this.Name = "FormMenuDeTarefas";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = " ";
+            this.Text = "x";
             this.Load += new System.EventHandler(this.FormMenuDeTarefas_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

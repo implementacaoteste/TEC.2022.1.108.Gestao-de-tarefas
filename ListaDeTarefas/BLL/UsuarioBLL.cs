@@ -62,6 +62,7 @@ namespace BLL
             if (senha == usuario.Senha)
             {
                 Constantes.IdUsuarioLogado = usuario.Id;
+                Log.Gravar("O usuário logou como " + usuario.Nome);
             }
             else
                 throw new Exception("Usuário ou senha inválidos!"); 

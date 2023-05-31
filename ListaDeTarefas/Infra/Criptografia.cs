@@ -9,8 +9,10 @@ namespace Infra
 {
     public class Criptografia
     {
+        private RSA rsa;
         public string CriptografarSenha(string _senha)
         {
+            rsa = RSA.Create();
             string retorno = _senha;
 
             for(int i = 0; i < _senha.Length; i++)
@@ -37,5 +39,7 @@ namespace Infra
             Array.Reverse(charArray);
             return new string(charArray);
         }
+
+        public string 
     }
 }
