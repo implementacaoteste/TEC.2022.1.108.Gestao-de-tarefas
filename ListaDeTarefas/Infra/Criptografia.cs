@@ -46,7 +46,7 @@ namespace Infra
 
         public string Criptografar(string _texto)
         {
-            if (!File.Exists(Constante.CaminhaChavePublica))
+            if (!File.Exists(Constantes.CaminhoChavePublica))
                 throw new Exception("A chave publica não existe") { Data = { { "Id", 4 } } };
 
             byte[] chavePublicaBytes = File.ReadAllBytes(Constantes.CaminhoChavePublica);
@@ -65,7 +65,7 @@ namespace Infra
 
         public string Descriptografar(string _texto)
         {
-            if (!File.Exists(Constante.CaminhaChavePrivada))
+            if (!File.Exists(Constantes.CaminhoChavePrivada))
                 throw new Exception("A chave privada não existe") { Data = { { "Id", 4 } } };
 
             byte[] chavePrivadaBytes = File.ReadAllBytes(Constantes.CaminhoChavePublica);

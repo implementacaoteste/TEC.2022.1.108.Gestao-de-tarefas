@@ -65,8 +65,7 @@ namespace WindowsFormsPrincipal
             //new EtapaBLL().BuscarPorNomeEtapa("a");
             //new EtapaBLL().BuscarPorIdTarefa(2);
             //new EtapaBLL().BuscarPorIdUsuario(3);
-            new Arquivo().GravarLinhaNoFinalDoArquivo(Environment.CurrentDirectory + "\\ArquivoTexte.txt", "Texto a ser gravado");
-            new Criptografia().GravarChaves();
+            Log.Gravar("Usuário abriu o sistema. ");
         }
     }
 }
