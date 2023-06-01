@@ -84,7 +84,7 @@
             this.buttonArea1.Location = new System.Drawing.Point(58, 364);
             this.buttonArea1.Name = "buttonArea1";
             this.buttonArea1.Size = new System.Drawing.Size(225, 42);
-            this.buttonArea1.TabIndex = 4;
+            this.buttonArea1.TabIndex = 2;
             this.buttonArea1.Text = "Salvar lista";
             this.buttonArea1.UseVisualStyleBackColor = false;
             this.buttonArea1.Click += new System.EventHandler(this.buttonSalvar_Click);
@@ -98,7 +98,7 @@
             this.buttonSair.Location = new System.Drawing.Point(305, 364);
             this.buttonSair.Name = "buttonSair";
             this.buttonSair.Size = new System.Drawing.Size(102, 42);
-            this.buttonSair.TabIndex = 0;
+            this.buttonSair.TabIndex = 1;
             this.buttonSair.Text = "Sair";
             this.buttonSair.UseVisualStyleBackColor = false;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
@@ -112,7 +112,7 @@
             this.nomeListaTextBox.Location = new System.Drawing.Point(58, 272);
             this.nomeListaTextBox.Name = "nomeListaTextBox";
             this.nomeListaTextBox.Size = new System.Drawing.Size(349, 30);
-            this.nomeListaTextBox.TabIndex = 1;
+            this.nomeListaTextBox.TabIndex = 0;
             // 
             // listaBindingSource
             // 
