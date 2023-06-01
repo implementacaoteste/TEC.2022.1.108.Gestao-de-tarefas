@@ -16,5 +16,15 @@ namespace WindowsFormsPrincipal
         {
             InitializeComponent();
         }
+
+        private void buttonSair_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void buttonConectar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
