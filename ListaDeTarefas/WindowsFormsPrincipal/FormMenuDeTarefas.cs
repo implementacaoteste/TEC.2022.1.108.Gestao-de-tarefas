@@ -263,5 +263,14 @@ namespace WindowsFormsPrincipal
                 tarefaBindingSource1.DataSource = new TarefaBLL().BuscarPorIdLista(idLista);
             }
         }
+
+        private void FormMenuDeTarefas_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F10)
+                buttonInserir_Click(null, null);
+            else 
+                if(e.KeyCode == Keys.F9)
+                 buttonAlterar_Click(null, null);
+        }
     }
 }
