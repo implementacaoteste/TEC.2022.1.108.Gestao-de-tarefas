@@ -41,12 +41,6 @@ namespace WindowsFormsPrincipal
                 buttonArea1.Focus();
         }
 
-        private void buttonSair_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Escape)
-                buttonSair.Focus();
-        }
-
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
             try
@@ -58,6 +52,15 @@ namespace WindowsFormsPrincipal
             {
                 throw new Exception("Erro ao salvar a lista", ex);
             }
+        }
+
+        private void FormCadastroDeListaTarefas_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+                buttonSair_Click(null, null);
+            else if (e.KeyCode == Keys.Enter)
+                buttonSalvar_Click(null,null);
+          
         }
     }
 }

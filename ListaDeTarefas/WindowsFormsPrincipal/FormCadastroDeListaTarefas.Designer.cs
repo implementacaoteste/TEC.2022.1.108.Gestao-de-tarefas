@@ -102,7 +102,6 @@
             this.buttonSair.Text = "Sair";
             this.buttonSair.UseVisualStyleBackColor = false;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
-            this.buttonSair.KeyDown += new System.Windows.Forms.KeyEventHandler(this.buttonSair_KeyDown);
             // 
             // nomeListaTextBox
             // 
@@ -130,6 +129,7 @@
             this.Controls.Add(nomeListaLabel);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormCadastroDeListaTarefas";
@@ -138,6 +138,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro Lista Tarefas";
             this.Load += new System.EventHandler(this.FormCadastroDeListaTarefas_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormCadastroDeListaTarefas_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaDeTarefasBindingSource)).EndInit();
