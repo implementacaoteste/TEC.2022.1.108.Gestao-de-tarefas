@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Models;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -10,36 +12,106 @@ namespace Infra
     public class Criptografia
     {
         private RSA rsa;
-        public string CriptografarSenha(string _senha)
+
+        public Criptografia()
         {
             rsa = RSA.Create();
+        }
+        public void GravarChaves()
+        {
+            using (RSACryptoServiceProvider rsa = new RSACryptoServiceProvider())
+            {
+                rsa.ImportParameters(GetPublicKey());
+                byte[] chavePublicaBytes = rsa.ExportCspBlob(false);
+                new Arquivo().GravarBytesNoFinalDoArquivo(Constantes.CaminhoChavePublica, chavePublicaBytes);
+            }
+
+            using (RSACryptoServiceProvider rsa = new RSACryptoServiceProvider())
+            {
+                rsa.ImportParameters(GetPrivateKey());
+                byte[] chavePrivadaBytes = rsa.ExportCspBlob(true);
+                new Arquivo().GravarBytesNoFinalDoArquivo(Constantes.CaminhoChavePublica, chavePrivadaBytes);
+            }
+        }
+
+        public RSAParameters GetPublicKey()
+        {
+            return rsa.ExportParameters(false);
+        }
+
+        public RSAParameters GetPrivateKey()
+        {
+            return rsa.ExportParameters(true);
+        }
+
+        public string Criptografar(string _texto)
+        {
+            if (!File.Exists(Constante.CaminhaChavePublica))
+                throw new Exception("A chave publica não existe") { Data = { { "Id", 4 } } };
+
+            byte[] chavePublicaBytes = File.ReadAllBytes(Constantes.CaminhoChavePublica);
+
+            RSAParameters chavePublica;
+            using (RSACryptoServiceProvider rsa = new RSACryptoServiceProvider())
+            {
+                rsa.ImportCspBlob(chavePublicaBytes);
+                chavePublica = rsa.ExportParameters(false);
+
+            }
+            rsa.ImportParameters(chavePublica);
+            byte[] bytesCriptografados = rsa.Encrypt(Encoding.UTF8.GetBytes(_texto), RSAEncryptionPadding.Pkcs1);
+            return Convert.ToBase64String(bytesCriptografados);
+        }
+
+        public string Descriptografar(string _texto)
+        {
+            if (!File.Exists(Constante.CaminhaChavePrivada))
+                throw new Exception("A chave privada não existe") { Data = { { "Id", 4 } } };
+
+            byte[] chavePrivadaBytes = File.ReadAllBytes(Constantes.CaminhoChavePublica);
+
+            RSAParameters chavePrivada;
+            using (RSACryptoServiceProvider rsa = new RSACryptoServiceProvider())
+            {
+                rsa.ImportCspBlob(chavePrivadaBytes);
+                chavePrivada = rsa.ExportParameters(false);
+
+            }
+
+            rsa.ImportParameters(chavePrivada);
+
+            byte[] bytesCriptografados = Convert.FromBase64String(_texto);
+
+            byte[] bytesDescriptografados = rsa.Decrypt(bytesCriptografados, RSAEncryptionPadding.Pkcs1);
+
+            return Encoding.UTF8.GetString(bytesDescriptografados);
+        }
+        public string CriptografarSenha(string _senha)
+        {
             string retorno = _senha;
 
-            for(int i = 0; i < _senha.Length; i++)
+            for (int i = 0; i < _senha.Length; i++)
             {
                 retorno = GerarHash(retorno);
                 retorno = ReverterTexto(retorno);
                 retorno = GerarHash(retorno);
-                retorno = ReverterTexto(retorno) + "alalalal";
-                retorno = GerarHash(retorno);
+                retorno = ReverterTexto(retorno);
             }
             return GerarHash(retorno);
         }
-        public string GerarHash(string texto)
+        private string GerarHash(string _texto)
         {
-            using (var Sha256 = SHA256.Create())
+            using (var sha256 = SHA256.Create())
             {
-                byte[] hashHeadBytes = Sha256.ComputeHash(Encoding.UTF8.GetBytes(texto));
-                return Convert.ToBase64String(hashHeadBytes);
+                byte[] hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(_texto));
+                return Convert.ToBase64String(hashedBytes);
             }
         }
-        public string ReverterTexto(string texto)
+        private string ReverterTexto(string _texto)
         {
-            char[] charArray = texto.ToCharArray();
+            char[] charArray = _texto.ToCharArray();
             Array.Reverse(charArray);
             return new string(charArray);
         }
-
-        public string 
     }
 }
