@@ -66,6 +66,7 @@ namespace WindowsFormsPrincipal
             //new EtapaBLL().BuscarPorIdTarefa(2);
             //new EtapaBLL().BuscarPorIdUsuario(3);
             Log.Gravar("Usuário abriu o sistema. ");
+
         }
     }
 }
