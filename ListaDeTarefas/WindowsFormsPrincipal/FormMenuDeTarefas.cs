@@ -266,11 +266,29 @@ namespace WindowsFormsPrincipal
 
         private void FormMenuDeTarefas_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.F10)
+            if (e.Control && e.KeyCode == Keys.I)
                 buttonInserir_Click(null, null);
-            else 
-                if(e.KeyCode == Keys.F9)
-                 buttonAlterar_Click(null, null);
+            else
+                if (e.Control && e.KeyCode == Keys.A)
+                buttonAlterar_Click(null, null);
+            else
+                if (e.KeyCode == Keys.Escape)
+                buttonSair_Click(null, null);
+            else
+                if (e.Control && e.KeyCode == Keys.D)
+                buttonDeletar_Click(null, null);
+            else
+                if (e.Control && e.KeyCode == Keys.F1)
+                buttonInserirEtapa_Click(null, null);
+            else
+                if (e.Control && e.KeyCode == Keys.F2)
+                buttonAlterarEtapa_Click(null, null);
+            else
+                if (e.Control && e.KeyCode == Keys.F3)
+                buttonDeletarEtapa_Click_1(null, null);
+
+
+            
         }
     }
 }

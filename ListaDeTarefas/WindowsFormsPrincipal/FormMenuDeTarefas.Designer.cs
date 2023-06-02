@@ -199,7 +199,7 @@
             this.buttonAlterar.Name = "buttonAlterar";
             this.buttonAlterar.Size = new System.Drawing.Size(75, 26);
             this.buttonAlterar.TabIndex = 3;
-            this.buttonAlterar.Text = "Alterar";
+            this.buttonAlterar.Text = "&Alterar";
             this.buttonAlterar.UseVisualStyleBackColor = false;
             this.buttonAlterar.Click += new System.EventHandler(this.buttonAlterar_Click);
             // 
@@ -212,7 +212,7 @@
             this.buttonDeletar.Name = "buttonDeletar";
             this.buttonDeletar.Size = new System.Drawing.Size(75, 26);
             this.buttonDeletar.TabIndex = 4;
-            this.buttonDeletar.Text = "Deletar";
+            this.buttonDeletar.Text = "&Deletar";
             this.buttonDeletar.UseVisualStyleBackColor = false;
             this.buttonDeletar.Click += new System.EventHandler(this.buttonDeletar_Click);
             // 
