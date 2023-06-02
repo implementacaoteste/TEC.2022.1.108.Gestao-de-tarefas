@@ -74,16 +74,29 @@ namespace WindowsFormsPrincipal
                 comboBoxResponsavel.Focus();
         }
 
-        private void comboBoxResponsavel_KeyDown(object sender, KeyEventArgs e)
+        private void dataDateTimePicker_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Enter)
-                buttonSalvarEtapa_Click(null,null);
+                comboBoxPontos.Focus();
         }
 
-        private void buttonCancelarEtapa_KeyDown(object sender, KeyEventArgs e)
+        private void comboBoxPontos_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Escape)
-                this.Close();
+            if (e.KeyCode == Keys.Enter)
+                buttonSalvarEtapa_Click(null, null);
         }
+
+        private void FormCadastroEtapa_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+                buttonCancelarEtapa_Click(null, null);
+        }
+
+        private void comboBoxResponsavel_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                dataDateTimePicker.Focus();
+        }
+
     }
 }

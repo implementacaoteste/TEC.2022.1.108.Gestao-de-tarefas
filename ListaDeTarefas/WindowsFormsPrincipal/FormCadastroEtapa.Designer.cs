@@ -146,7 +146,6 @@
             this.buttonCancelarEtapa.Text = "Cancelar";
             this.buttonCancelarEtapa.UseVisualStyleBackColor = false;
             this.buttonCancelarEtapa.Click += new System.EventHandler(this.buttonCancelarEtapa_Click_1);
-            this.buttonCancelarEtapa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.buttonCancelarEtapa_KeyDown);
             // 
             // nomeEtapaTextBox
             // 
@@ -193,6 +192,7 @@
             this.dataDateTimePicker.Size = new System.Drawing.Size(280, 30);
             this.dataDateTimePicker.TabIndex = 9;
             this.dataDateTimePicker.Value = new System.DateTime(2023, 5, 15, 0, 0, 0, 0);
+            this.dataDateTimePicker.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataDateTimePicker_KeyDown);
             // 
             // comboBoxPontos
             // 
@@ -207,6 +207,7 @@
             this.comboBoxPontos.Name = "comboBoxPontos";
             this.comboBoxPontos.Size = new System.Drawing.Size(280, 33);
             this.comboBoxPontos.TabIndex = 10;
+            this.comboBoxPontos.KeyDown += new System.Windows.Forms.KeyEventHandler(this.comboBoxPontos_KeyDown);
             // 
             // FormCadastroEtapa
             // 
@@ -232,6 +233,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
             this.Load += new System.EventHandler(this.FormCadastroEtapa_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormCadastroEtapa_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.etapaBindingSource)).EndInit();
