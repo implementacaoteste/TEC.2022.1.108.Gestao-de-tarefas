@@ -51,10 +51,15 @@ namespace BLL
         public void StatusEtapa(int _idEtapa, int _score, int _idLista, bool _status)
         {
             if(_status== true)
+            {
                 _status = false;
-            else 
+                new EtapaDAL().StatusEtapaFalse(_idEtapa, _score, _idLista, _status);
+            }
+            else
+            {
                 _status = true;
-            new EtapaDAL().StatusEtapa(_idEtapa, _score, _idLista, _status);
+                new EtapaDAL().StatusEtapaTrue(_idEtapa, _score, _idLista, _status);
+            }
         }
         public List<Etapa> BuscarPorIdTarefaAtraso(int _IdTarefa, int _IdUsuario)
         {

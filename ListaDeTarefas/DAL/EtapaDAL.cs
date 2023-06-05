@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -238,7 +239,7 @@ namespace DAL
                 cn.Close();
             }
         }
-        public void StatusEtapa(int _idEtapa, int _score, int _idLista, bool _status)
+        public void StatusEtapaTrue(int _idEtapa, int _score, int _idLista, bool _status)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
@@ -307,7 +308,7 @@ namespace DAL
             }
         }
 
-        internal List<Etapa> BuscarPorEtapaAtribuida(object _idTarefa, int _idUsuario)
+        internal List<Etapa> BuscarPorEtapaAtribuida(int _idTarefa, int _idUsuario)
         {
             Etapa etapa = new Etapa();
             List<Etapa> etapas = new List<Etapa>();
@@ -343,6 +344,33 @@ namespace DAL
             catch (Exception ex)
             {
                 throw new Exception("Ocorreu um erro ao tentar Buscar Por Id de tarefa no banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public void StatusEtapaFalse(int _idEtapa, int _score, int _idLista, bool _status)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = cn.CreateCommand();
+                cmd.CommandText = @"UPDATE Etapa SET Status = @Status where IdEtapa = @IdEtapa
+                                    UPDATE ListadeTarefas_Usuario SET Score = ISNULL(Score,0) - @Score where idListaTarefas = @idListaTarefas";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@IdEtapa", _idEtapa);
+                cmd.Parameters.AddWithValue("@Score", _score);
+                cmd.Parameters.AddWithValue("@idListaTarefas", _idLista);
+                cmd.Parameters.AddWithValue("@Status", Convert.ToInt32(_status));
+                cmd.Connection = cn;
+                cn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar concluir uma etapa no banco de dados", ex);
             }
             finally
             {

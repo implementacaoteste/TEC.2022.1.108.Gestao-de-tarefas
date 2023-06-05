@@ -192,7 +192,7 @@ namespace DAL
                 cn.Close();
             }
         }
-        public List<Tarefa> BuscarAtribuido(int _idTarefa, int _idUsuario, int _idLista)
+        public List<Tarefa> BuscarAtribuido(int _id, int _idUsuario, int _idLista)
         {
             List<Tarefa> tarefas = new List<Tarefa>();
             Tarefa tarefa = new Tarefa();
@@ -217,7 +217,7 @@ namespace DAL
                         tarefa = new Tarefa();
                         tarefa.Id = Convert.ToInt32(rd["IdTarefa"]);
                         tarefa.NomeTarefa = rd["NomeTarefa"].ToString();
-                        tarefa.Etapa = new EtapaDAL().BuscarPorEtapaAtribuida(_idTarefa, _idUsuario);
+                        tarefa.Etapa = new EtapaDAL().BuscarPorEtapaAtribuida(_id, _idUsuario);
                         tarefas.Add(tarefa);
                     }
                 }
