@@ -1,7 +1,7 @@
 
 USE [master]
 GO
-/****** Object:  Database [Gestao_Tarefas]    Script Date: 24/05/2023 17:06:42 ******/
+/****** Object:  Database [Gestao_Tarefas]    Script Date: 07/06/2023 14:32:35 ******/
 CREATE DATABASE [Gestao_Tarefas]
 GO
 ALTER DATABASE [Gestao_Tarefas] SET COMPATIBILITY_LEVEL = 150
@@ -75,7 +75,7 @@ ALTER DATABASE [Gestao_Tarefas] SET QUERY_STORE = OFF
 GO
 USE [Gestao_Tarefas]
 GO
-/****** Object:  Table [dbo].[Etapa]    Script Date: 24/05/2023 17:06:42 ******/
+/****** Object:  Table [dbo].[Etapa]    Script Date: 07/06/2023 14:32:35 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -94,7 +94,7 @@ CREATE TABLE [dbo].[Etapa](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Grupo]    Script Date: 24/05/2023 17:06:42 ******/
+/****** Object:  Table [dbo].[Grupo]    Script Date: 07/06/2023 14:32:35 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -109,7 +109,7 @@ CREATE TABLE [dbo].[Grupo](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[ListaDeTarefas]    Script Date: 24/05/2023 17:06:42 ******/
+/****** Object:  Table [dbo].[ListaDeTarefas]    Script Date: 07/06/2023 14:32:35 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -125,7 +125,7 @@ CREATE TABLE [dbo].[ListaDeTarefas](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[ListadeTarefas_Usuario]    Script Date: 24/05/2023 17:06:42 ******/
+/****** Object:  Table [dbo].[ListadeTarefas_Usuario]    Script Date: 07/06/2023 14:32:35 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -137,7 +137,7 @@ CREATE TABLE [dbo].[ListadeTarefas_Usuario](
 	[Score] [int] NULL
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Permissoes]    Script Date: 24/05/2023 17:06:42 ******/
+/****** Object:  Table [dbo].[Permissoes]    Script Date: 07/06/2023 14:32:35 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -151,7 +151,7 @@ CREATE TABLE [dbo].[Permissoes](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Tarefa]    Script Date: 24/05/2023 17:06:42 ******/
+/****** Object:  Table [dbo].[Tarefa]    Script Date: 07/06/2023 14:32:35 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -166,7 +166,7 @@ CREATE TABLE [dbo].[Tarefa](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Usuario]    Script Date: 24/05/2023 17:06:42 ******/
+/****** Object:  Table [dbo].[Usuario]    Script Date: 07/06/2023 14:32:35 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -175,7 +175,7 @@ CREATE TABLE [dbo].[Usuario](
 	[IdUsuario] [int] IDENTITY(1,1) NOT NULL,
 	[Nome] [varchar](200) NULL,
 	[Email] [varchar](200) NULL,
-	[Senha] [varchar](32) NULL,
+	[Senha] [varchar](100) NULL,
  CONSTRAINT [PK_Usuario] PRIMARY KEY CLUSTERED 
 (
 	[IdUsuario] ASC
@@ -230,3 +230,4 @@ USE [master]
 GO
 ALTER DATABASE [Gestao_Tarefas] SET  READ_WRITE 
 GO
+
