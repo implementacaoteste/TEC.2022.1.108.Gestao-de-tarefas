@@ -1,0 +1,1 @@
+User ID=SA; Initial Catalog=Gestao_Tarefas;Data Source=.\SqlEXPRESS2019;Password=Senailab02
