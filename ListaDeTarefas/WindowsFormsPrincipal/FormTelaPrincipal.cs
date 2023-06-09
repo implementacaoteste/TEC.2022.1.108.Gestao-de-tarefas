@@ -263,9 +263,15 @@ namespace WindowsFormsPrincipal
             {
                 frm.ShowDialog();
             }
+
         }
 
         private void dataGridViewCompartilhados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void contextMenuStripGrupo2_Opening(object sender, System.ComponentModel.CancelEventArgs e)
         {
 
         }
@@ -316,7 +322,7 @@ namespace WindowsFormsPrincipal
                 Area3 = grupos[2].IdGrupo;
                 
 
-                listas = new ListaBLL().buscarTarefasArea(Constantes.IdAreaAberta);
+                listas = new ListaBLL().buscarTarefasArea(Constantes.IdGrupoAberto);
 
                 buttonArea1.Text = listas[0].NomeLista;
                 lista1 = listas[0].IdLista;

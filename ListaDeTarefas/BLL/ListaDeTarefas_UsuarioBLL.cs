@@ -31,7 +31,7 @@ namespace BLL
                     if (lista.Privacidade)
                     {
                         new ListadeTarefas_UsuarioDAL().AdicionarListaUsuario(_listaUsuario);
-                        return "Sucesso";
+                        return "Ingresso realizado com sucesso!";
                     }
                     else
                         return "Você não tem autorização para entrar nessa lista";

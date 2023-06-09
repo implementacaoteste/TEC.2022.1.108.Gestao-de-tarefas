@@ -133,19 +133,9 @@ namespace WindowsFormsPrincipal
             etapaBindingSource.RemoveCurrent();
         }
 
-        private void etapaDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void etapaDataGridView_CellContentAlteration(object sender, DataGridViewCellEventArgs e)
         {
-            int id = ((Etapa)etapaBindingSource.Current).Id;
-            int score = ((Etapa)etapaBindingSource.Current).Valor;
-            bool status = ((Etapa)etapaBindingSource.Current).Status;
-
-            if (idUsuarioLogado == ((Etapa)etapaBindingSource.Current).IdUsuario || permissao.Id == 1)
-                new EtapaBLL().StatusEtapa(id, score, idLista, status);
-            else
-                MessageBox.Show("Você não tem permissão para alterar o status dessa tarefa!","Atenção!",MessageBoxButtons.OK);
             
-            if(checkBoxAtrasado.Checked == false)
-                buttonBuscar_Click(idLista, null);
             
         }
 
@@ -289,6 +279,21 @@ namespace WindowsFormsPrincipal
 
 
             
+        }
+
+        private void etapaDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int id = ((Etapa)etapaBindingSource.Current).Id;
+            int score = ((Etapa)etapaBindingSource.Current).Valor;
+            bool status = ((Etapa)etapaBindingSource.Current).Status;
+
+            if (idUsuarioLogado == ((Etapa)etapaBindingSource.Current).IdUsuario || permissao.Id == 1)
+                new EtapaBLL().StatusEtapa(id, score, idLista, status);
+            else
+                MessageBox.Show("Você não tem permissão para alterar o status dessa tarefa!", "Atenção!", MessageBoxButtons.OK);
+
+            if (checkBoxAtrasado.Checked == false)
+                buttonBuscar_Click(idLista, null);
         }
     }
 }

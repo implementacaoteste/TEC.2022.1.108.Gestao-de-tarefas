@@ -115,7 +115,7 @@
             this.buttonGrupo4.Name = "buttonGrupo4";
             this.buttonGrupo4.Size = new System.Drawing.Size(136, 35);
             this.buttonGrupo4.TabIndex = 3;
-            this.buttonGrupo4.Text = "Grupo 4";
+            this.buttonGrupo4.Text = "Compartilhados";
             this.buttonGrupo4.UseVisualStyleBackColor = true;
             this.buttonGrupo4.Click += new System.EventHandler(this.buttonGrupo4_Click);
             // 
@@ -174,6 +174,7 @@
             this.toolStripMenuItem2});
             this.contextMenuStripGrupo2.Name = "contextMenuStripGrupo1";
             this.contextMenuStripGrupo2.Size = new System.Drawing.Size(147, 52);
+            this.contextMenuStripGrupo2.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStripGrupo2_Opening);
             // 
             // toolStripMenuItem1
             // 

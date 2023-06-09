@@ -37,7 +37,7 @@ namespace WindowsFormsPrincipal
       
             text = new ListaDeTarefas_UsuarioBLL().AdicionarListaUsuario(lista_usuario, hex);
             MessageBox.Show(text);
-            if(text == "Sucesso")
+            if(text == "Ingresso realizado com sucesso!")
                 Close();
 
         }

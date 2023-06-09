@@ -53,16 +53,16 @@
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeTarefaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.etapaDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.etapaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonVisualizarRanking = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.checkBoxHoje = new System.Windows.Forms.CheckBox();
             this.checkBoxAmanha = new System.Windows.Forms.CheckBox();
             this.checkBoxSemana = new System.Windows.Forms.CheckBox();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tarefaDataGridView)).BeginInit();
@@ -352,39 +352,8 @@
             this.etapaDataGridView.RowTemplate.Height = 24;
             this.etapaDataGridView.Size = new System.Drawing.Size(446, 346);
             this.etapaDataGridView.TabIndex = 15;
+            this.etapaDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.etapaDataGridView_CellClick);
             this.etapaDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.etapaDataGridView_CellContentClick);
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "NomeEtapa";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Nome Etapa";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // Data
-            // 
-            this.Data.DataPropertyName = "Data";
-            this.Data.HeaderText = "Data";
-            this.Data.MinimumWidth = 6;
-            this.Data.Name = "Data";
-            this.Data.Width = 125;
-            // 
-            // Valor
-            // 
-            this.Valor.DataPropertyName = "Valor";
-            this.Valor.HeaderText = "Valor";
-            this.Valor.MinimumWidth = 6;
-            this.Valor.Name = "Valor";
-            this.Valor.Width = 50;
-            // 
-            // Status
-            // 
-            this.Status.DataPropertyName = "Status";
-            this.Status.HeaderText = "Status";
-            this.Status.MinimumWidth = 6;
-            this.Status.Name = "Status";
-            this.Status.Width = 50;
             // 
             // etapaBindingSource
             // 
@@ -439,6 +408,39 @@
             this.checkBoxSemana.TabIndex = 18;
             this.checkBoxSemana.Text = "Semena";
             this.checkBoxSemana.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "NomeEtapa";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Nome Etapa";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // Data
+            // 
+            this.Data.DataPropertyName = "Data";
+            this.Data.HeaderText = "Data";
+            this.Data.MinimumWidth = 6;
+            this.Data.Name = "Data";
+            this.Data.Width = 125;
+            // 
+            // Valor
+            // 
+            this.Valor.DataPropertyName = "Valor";
+            this.Valor.HeaderText = "Valor";
+            this.Valor.MinimumWidth = 6;
+            this.Valor.Name = "Valor";
+            this.Valor.Width = 50;
+            // 
+            // Status
+            // 
+            this.Status.DataPropertyName = "Status";
+            this.Status.HeaderText = "Status";
+            this.Status.MinimumWidth = 6;
+            this.Status.Name = "Status";
+            this.Status.Width = 50;
             // 
             // FormMenuDeTarefas
             // 
@@ -516,12 +518,12 @@
         private System.Windows.Forms.RadioButton radioButtonPublico;
         private System.Windows.Forms.Label labelCodigo;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.CheckBox checkBoxHoje;
+        private System.Windows.Forms.CheckBox checkBoxAmanha;
+        private System.Windows.Forms.CheckBox checkBoxSemana;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Data;
         private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Status;
-        private System.Windows.Forms.CheckBox checkBoxHoje;
-        private System.Windows.Forms.CheckBox checkBoxAmanha;
-        private System.Windows.Forms.CheckBox checkBoxSemana;
     }
 }
