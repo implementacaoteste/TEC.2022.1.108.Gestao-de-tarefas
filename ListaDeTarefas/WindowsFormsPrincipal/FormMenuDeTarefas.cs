@@ -281,8 +281,11 @@ namespace WindowsFormsPrincipal
             
         }
 
-        private void etapaDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void etapaDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.ColumnIndex != 3)
+                return;
+
             int id = ((Etapa)etapaBindingSource.Current).Id;
             int score = ((Etapa)etapaBindingSource.Current).Valor;
             bool status = ((Etapa)etapaBindingSource.Current).Status;

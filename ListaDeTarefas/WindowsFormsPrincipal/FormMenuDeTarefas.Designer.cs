@@ -347,12 +347,12 @@
             this.etapaDataGridView.DataSource = this.etapaBindingSource;
             this.etapaDataGridView.Location = new System.Drawing.Point(557, 229);
             this.etapaDataGridView.Name = "etapaDataGridView";
+            this.etapaDataGridView.ReadOnly = true;
             this.etapaDataGridView.RowHeadersVisible = false;
             this.etapaDataGridView.RowHeadersWidth = 51;
             this.etapaDataGridView.RowTemplate.Height = 24;
             this.etapaDataGridView.Size = new System.Drawing.Size(446, 346);
             this.etapaDataGridView.TabIndex = 15;
-            this.etapaDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.etapaDataGridView_CellClick);
             this.etapaDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.etapaDataGridView_CellContentClick);
             // 
             // etapaBindingSource
@@ -424,6 +424,7 @@
             this.Data.HeaderText = "Data";
             this.Data.MinimumWidth = 6;
             this.Data.Name = "Data";
+            this.Data.ReadOnly = true;
             this.Data.Width = 125;
             // 
             // Valor
@@ -432,6 +433,7 @@
             this.Valor.HeaderText = "Valor";
             this.Valor.MinimumWidth = 6;
             this.Valor.Name = "Valor";
+            this.Valor.ReadOnly = true;
             this.Valor.Width = 50;
             // 
             // Status
@@ -440,6 +442,7 @@
             this.Status.HeaderText = "Status";
             this.Status.MinimumWidth = 6;
             this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
             this.Status.Width = 50;
             // 
             // FormMenuDeTarefas
