@@ -14,12 +14,10 @@ namespace WindowsFormsPrincipal
             IdLista = _idLista;
             InitializeComponent();
         }
-
         private void FormRelatorio_Load(object sender, EventArgs e)
         {
             usuarioBindingSource.DataSource = new UsuarioBLL().GerarRelatorio(IdLista);
         }
-
         private void checkBoxDecrescente_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxDecrescente.Checked == true)
@@ -34,18 +32,11 @@ namespace WindowsFormsPrincipal
 
             usuarioBindingSource.DataSource = new UsuarioBLL().GerarRelatorioCresc(IdLista);
         }
-
         private void FormRelatorio_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)
                 this.Close();
         }
-
-        private void usuarioBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void visualizarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ListaDeTarefas_Usuario listaUsuario = new ListaDeTarefas_Usuario();
@@ -61,7 +52,6 @@ namespace WindowsFormsPrincipal
                MessageBox.Show("Você não tem autorização para alterar as permissões dos usuários!","Atenção!",MessageBoxButtons.OK);
 
         }
-
         private void padrãoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ListaDeTarefas_Usuario listaU = new ListaDeTarefas_Usuario();

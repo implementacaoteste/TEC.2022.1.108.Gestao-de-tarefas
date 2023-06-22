@@ -18,17 +18,14 @@ namespace WindowsFormsPrincipal
         {
             InitializeComponent();
         }
-
         private void FormCadastroUsuarios_Load(object sender, EventArgs e)
         {
             nomeTextBox.Focus();
         }
-
         private void buttonSair_Click(object sender, EventArgs e)
         {
             Close();
         }
-
         private void buttonCadastrar_Click(object sender, EventArgs e)
         {
             
@@ -49,44 +46,30 @@ namespace WindowsFormsPrincipal
             }
 
         }
-
         private void nomeTextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
                 emailTextBox.Focus();
         }
-
         private void emailTextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Enter)
                 senhaTextBox.Focus();  
         }
-
         private void senhaTextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Enter)
                 textBoxConfirmarSenha.Focus();
         }
-
         private void textBoxConfirmarSenha_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode ==Keys.Enter)
                 buttonCadastrar_Click(null,null);
         }
-
-        private void buttonSair_KeyDown(object sender, KeyEventArgs e)
-        {
-        }
-
         private void FormCadastroUsuarios_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)
                 buttonSair_Click(null, null);
-        }
-
-        private void nomeTextBox_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

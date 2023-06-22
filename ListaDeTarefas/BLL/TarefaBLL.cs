@@ -27,10 +27,6 @@ namespace BLL
         {
             new TarefaDAL().ExcluirTarefa(_id);
         }
-        public void ValidarTarefa()
-        {
-
-        }
         public List<Tarefa> BuscarPorIdLista(int _idLista)
         {
             return new TarefaDAL().BuscarPorIdLista(_idLista);

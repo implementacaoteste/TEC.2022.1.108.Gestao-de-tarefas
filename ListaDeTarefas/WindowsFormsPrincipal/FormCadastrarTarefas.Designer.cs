@@ -99,7 +99,7 @@
             this.buttonCriar.Text = "Criar tarefa";
             this.buttonCriar.UseVisualStyleBackColor = false;
             this.buttonCriar.Click += new System.EventHandler(this.buttonCriar_Click);
-            this.buttonCriar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.buttonCriar_KeyDown);
+            //this.buttonCriar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.buttonCriar_KeyDown);
             // 
             // buttonSair
             // 

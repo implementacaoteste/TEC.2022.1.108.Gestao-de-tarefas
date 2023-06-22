@@ -15,10 +15,6 @@ namespace BLL
         {
             return new ListaDAL().BuscarPorIdLista(_id);
         }
-        public void BuscarPorIdGrupo(int _id)
-        {
-            new ListaDAL().BuscarPorIdGrupo(_id);
-        }
         public void AlterarLista(int _id, string _nome)
         {
             ValidarNome(_nome);
@@ -36,10 +32,6 @@ namespace BLL
                 new ListadeTarefas_UsuarioDAL().AdicionarListaUsuario(lista_usuario);
             }
             
-        }
-        public void ExcluirLista(int _id)
-        {
-            new ListaDAL().ExcluirLista(_id);
         }
         public List<Lista> buscarTarefasArea(int _idGrupo)
         {

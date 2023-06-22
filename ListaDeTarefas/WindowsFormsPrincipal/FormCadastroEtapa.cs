@@ -16,12 +16,6 @@ namespace WindowsFormsPrincipal
             idLista = _idLista;
             idEtapa = _idEtapa;
         }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonSalvarEtapa_Click(object sender, EventArgs e)
         {
                 int id = ((Etapa)etapaBindingSource.Current).Id;
@@ -39,17 +33,10 @@ namespace WindowsFormsPrincipal
                     
                 Close();
         }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonCancelarEtapa_Click(object sender, EventArgs e)
         {
             Close();
         }
-
         private void FormCadastroEtapa_Load(object sender, EventArgs e)
         {
             usuarioBindingSource.DataSource = new UsuarioBLL().BuscarUsuarioLista(idLista);
@@ -62,36 +49,30 @@ namespace WindowsFormsPrincipal
             else
                 etapaBindingSource.DataSource = new EtapaBLL().BuscarPorIdEtapa(idEtapa);
         }
-
         private void buttonCancelarEtapa_Click_1(object sender, EventArgs e)
         {
             Close();
         }
-
         private void nomeEtapaTextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
                 comboBoxResponsavel.Focus();
         }
-
         private void dataDateTimePicker_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Enter)
                 comboBoxPontos.Focus();
         }
-
         private void comboBoxPontos_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
                 buttonSalvarEtapa_Click(null, null);
         }
-
         private void FormCadastroEtapa_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)
                 buttonCancelarEtapa_Click(null, null);
         }
-
         private void comboBoxResponsavel_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)

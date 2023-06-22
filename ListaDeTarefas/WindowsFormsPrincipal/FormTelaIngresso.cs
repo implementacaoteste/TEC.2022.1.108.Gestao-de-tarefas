@@ -19,12 +19,6 @@ namespace WindowsFormsPrincipal
         {
             InitializeComponent();
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonSair_Click(object sender, EventArgs e)
         {
             Close();

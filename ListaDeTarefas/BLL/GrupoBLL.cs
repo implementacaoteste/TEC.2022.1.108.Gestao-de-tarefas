@@ -24,23 +24,10 @@ namespace BLL
             new GrupoBLL().ValidarTitulo(_titulo);
             new GrupoDAL().AlterarGrupo(_titulo, _idGrupo);
         }
-        public void ExcluirGrupo(int _idGrupo)
-        {
-            new GrupoDAL().ExcluirGrupo(_idGrupo);
-        }
-        public List<Grupo> BuscarPorTitulo(string _titulo)
-        {
-            return new GrupoDAL().BuscarPorTitulo(_titulo);
-        }
-        public List<Grupo> BuscarPorTodos(int _idUsuario)
-        {
-            return new GrupoDAL().BuscarPorTodosGrupos(_idUsuario);
-        }
         public List<Grupo> BuscarPorIdUsuario(int _id)
         {
             return new GrupoDAL().BuscarPorIdUsuario(_id);
         }
-
         private void ValidarTitulo(string _titulo)
         { 
             if(_titulo.Length < 3)

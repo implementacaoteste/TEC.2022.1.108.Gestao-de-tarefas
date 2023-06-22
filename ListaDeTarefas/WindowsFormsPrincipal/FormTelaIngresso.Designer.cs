@@ -57,7 +57,7 @@ namespace WindowsFormsPrincipal
             this.label1.TabIndex = 6;
             this.label1.Text = "Código de acesso";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            //this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // buttonSair
             // 
@@ -125,6 +125,7 @@ namespace WindowsFormsPrincipal
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormTelaCodigo";
+            //this.Load += new System.EventHandler(this.FormTelaIngresso_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

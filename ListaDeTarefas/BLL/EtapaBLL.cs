@@ -15,18 +15,6 @@ namespace BLL
         {
             return new EtapaDAL().BuscarPorIdEtapa(IdEtapa);
         }
-        public List<Etapa> BuscarPorIdUsuario(int IdUsuario)
-        {
-            return new EtapaDAL().BuscarPorIdUsuario(IdUsuario);
-        }
-        public List<Etapa> BuscarPorIdTarefa(int _id)
-        {
-            return new EtapaDAL().BuscarPorIdTarefa(_id);
-        }
-        public List<Etapa> BuscarPorNomeEtapa(string _nome)
-        {
-           return new EtapaDAL().BuscarPorNomeEtapa(_nome);
-        }
         public void AdicionarEtapa(Etapa _etapaBLL, int _idTarefa, int _value)
         {
             new EtapaDAL().AdicionarEtapa(_etapaBLL, _idTarefa, _value);
@@ -38,15 +26,6 @@ namespace BLL
         public void ExcluirEtapa(int _id)
         {
             new EtapaDAL().ExcluirEtapa(_id);
-        }
-        public void ValidarDadosEtapa(Etapa _etapa)
-        {
-            if (_etapa.NomeEtapa.Length <= 3)
-                throw new System.Exception("O nome Etapa deve ter mais de 3 caracteres");
-            if (_etapa.IdTarefa <= 0)
-                throw new System.Exception("O Id tarefa nao pode ser 0");
-            if (_etapa.IdUsuario <= 0)
-                throw new System.Exception("O Id Usuário nao pode ser 0");
         }
         public void StatusEtapa(int _idEtapa, int _score, int _idLista, bool _status)
         {
@@ -61,9 +40,6 @@ namespace BLL
                 new EtapaDAL().StatusEtapaTrue(_idEtapa, _score, _idLista, _status);
             }
         }
-        public List<Etapa> BuscarPorIdTarefaAtraso(int _IdTarefa, int _IdUsuario)
-        {
-            return new EtapaDAL().BuscarPorIdTarefaAtraso(_IdTarefa, _IdUsuario);
-        }
+
     }
 }

@@ -26,5 +26,10 @@ namespace WindowsFormsPrincipal
         {
 
         }
+
+        private void FormConexao_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

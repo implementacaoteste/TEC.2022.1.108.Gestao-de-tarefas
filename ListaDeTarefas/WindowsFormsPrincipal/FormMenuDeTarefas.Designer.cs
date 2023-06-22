@@ -106,7 +106,7 @@
             this.labelCodigo.TabIndex = 24;
             this.labelCodigo.Text = "**************";
             this.labelCodigo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelCodigo.Click += new System.EventHandler(this.label2_Click_1);
+            //this.labelCodigo.Click += new System.EventHandler(this.label2_Click_1);
             // 
             // radioButtonPrivado
             // 
@@ -300,7 +300,7 @@
             this.tarefaDataGridView.RowTemplate.Height = 24;
             this.tarefaDataGridView.Size = new System.Drawing.Size(333, 346);
             this.tarefaDataGridView.TabIndex = 14;
-            this.tarefaDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tarefaDataGridView_CellContentClick);
+            //this.tarefaDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tarefaDataGridView_CellContentClick);
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -314,7 +314,7 @@
             // tarefaBindingSource1
             // 
             this.tarefaBindingSource1.DataSource = typeof(Models.Tarefa);
-            this.tarefaBindingSource1.CurrentChanged += new System.EventHandler(this.tarefaBindingSource1_CurrentChanged);
+            //this.tarefaBindingSource1.CurrentChanged += new System.EventHandler(this.tarefaBindingSource1_CurrentChanged);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -359,7 +359,7 @@
             // 
             this.etapaBindingSource.DataMember = "Etapa";
             this.etapaBindingSource.DataSource = this.tarefaBindingSource1;
-            this.etapaBindingSource.CurrentChanged += new System.EventHandler(this.etapaBindingSource_CurrentChanged);
+            //this.etapaBindingSource.CurrentChanged += new System.EventHandler(this.etapaBindingSource_CurrentChanged);
             // 
             // buttonVisualizarRanking
             // 
@@ -503,7 +503,7 @@
         private System.Windows.Forms.Button buttonAlterar;
         private System.Windows.Forms.Button buttonDeletar;
         private System.Windows.Forms.Button buttonBuscar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+
         private System.Windows.Forms.Button buttonSair;
         private System.Windows.Forms.Button buttonDeletarEtapa;
         private System.Windows.Forms.Button buttonAlterarEtapa;

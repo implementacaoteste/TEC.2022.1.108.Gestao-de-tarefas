@@ -62,7 +62,7 @@ namespace WindowsFormsPrincipal
             this.label3.TabIndex = 0;
             this.label3.Text = "Renomear Grupo";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            //this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // buttonSalvarGrupo
             // 
@@ -78,7 +78,7 @@ namespace WindowsFormsPrincipal
             this.buttonSalvarGrupo.Text = "Salvar grupo";
             this.buttonSalvarGrupo.UseVisualStyleBackColor = false;
             this.buttonSalvarGrupo.Click += new System.EventHandler(this.buttonArea1_Click);
-            this.buttonSalvarGrupo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.buttonSalvarGrupo_KeyDown);
+            //this.buttonSalvarGrupo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.buttonSalvarGrupo_KeyDown);
             // 
             // label1
             // 
@@ -90,7 +90,7 @@ namespace WindowsFormsPrincipal
             this.label1.Size = new System.Drawing.Size(150, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nome do Grupo";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            //this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // buttonSair
             // 

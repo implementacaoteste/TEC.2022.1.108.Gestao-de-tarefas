@@ -196,7 +196,7 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"DELETE FROM Etapa  WHERE IdEtapa = @IdEtapa ";
+                cmd.CommandText = @"DELETE FROM Etapa WHERE IdEtapa = @IdEtapa ";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@IdEtapa", _id);
                 cmd.Connection = cn;
@@ -307,7 +307,6 @@ namespace DAL
                 cn.Close();
             }
         }
-
         internal List<Etapa> BuscarPorEtapaAtribuida(int _idTarefa, int _idUsuario)
         {
             Etapa etapa = new Etapa();
@@ -350,7 +349,6 @@ namespace DAL
                 cn.Close();
             }
         }
-
         public void StatusEtapaFalse(int _idEtapa, int _score, int _idLista, bool _status)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);

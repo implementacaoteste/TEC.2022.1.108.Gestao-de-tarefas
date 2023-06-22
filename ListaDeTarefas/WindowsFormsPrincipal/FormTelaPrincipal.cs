@@ -11,7 +11,7 @@ namespace WindowsFormsPrincipal
     {
         List<Grupo> grupos;
         List<Lista> listas;
-        List<Lista> lista;
+
         int Area1, Area2, Area3, lista1, lista2, lista3;
         public FormTelaPrincipal()
         {
@@ -51,6 +51,8 @@ namespace WindowsFormsPrincipal
                     buttonGrupo3.Text = grupos[2].Titulo;
                     Area3 = grupos[2].IdGrupo;
 
+                    Constantes.IdGrupoAberto = Area1;
+
                     listas = new ListaBLL().buscarTarefasArea(Area1);
 
                     buttonArea1.Text = listas[0].NomeLista;
@@ -71,10 +73,6 @@ namespace WindowsFormsPrincipal
             {
 
             }
-        }
-        private void FormTelaPrincipal_Load_1(object sender, EventArgs e)
-        {
-
         }
         private void buttonGrupo1_Click(object sender, EventArgs e)
         {
@@ -250,32 +248,23 @@ namespace WindowsFormsPrincipal
         }
         private void renomearToolStripArea2_Click(object sender, EventArgs e)
         {
-            using (FormCadastroDeListaTarefas frm = new FormCadastroDeListaTarefas(listas[1].IdLista))
-            {
-                frm.ShowDialog();
-            }
-            RecarregarTelaPrincipal();
-        }
 
+                using (FormCadastroDeListaTarefas frm = new FormCadastroDeListaTarefas(listas[1].IdLista))
+                {
+                    frm.ShowDialog();
+                }
+                RecarregarTelaPrincipal();
+
+        }
         private void buttonIngressar_Click(object sender, EventArgs e)
         {
             using (FormTelaIngresso frm = new FormTelaIngresso())
             {
                 frm.ShowDialog();
             }
+            RecarregarGrid();
 
         }
-
-        private void dataGridViewCompartilhados_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void contextMenuStripGrupo2_Opening(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-
-        }
-
         private void abrirToolStripArea3_Click(object sender, EventArgs e)
         {
             Constantes.IdAreaAberta = listas[2].IdLista;
@@ -333,14 +322,17 @@ namespace WindowsFormsPrincipal
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show("Erro ao recarregar tela principal!");
             }
             finally
             {
 
             }
         }
-
+        public void RecarregarGrid()
+        {
+            bindingSourceListaCompartilhados.DataSource = new ListaBLL().BuscarListasCompartilhadas(Constantes.IdUsuarioLogado);
+        }
     }
 }
     

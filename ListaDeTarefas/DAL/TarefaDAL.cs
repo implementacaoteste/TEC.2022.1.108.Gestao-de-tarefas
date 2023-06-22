@@ -99,7 +99,7 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = "DELETE FROM Tarefa WHERE IdTarefa = @IdTarefa";
+                cmd.CommandText = "DELETE FROM  Etapa  WHERE IdTarefa = @IdTarefa DELETE FROM Tarefa WHERE IdTarefa = @IdTarefa";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Idtarefa", _id);
                 cmd.Connection = cn;
@@ -152,7 +152,6 @@ namespace DAL
                 cn.Close();
             }
         }
-
         public List<Tarefa> BuscarAtrasado(int _idUsuarioLogado, int _idTarefa, int _idLista)
         {
             List<Tarefa> tarefas = new List<Tarefa>();

@@ -11,7 +11,6 @@ namespace WindowsFormsPrincipal
         int idLista;
         int idUsuarioLogado = Constantes.IdUsuarioLogado;
         int idListaAberta = Constantes.IdAreaAberta;
-        Permissao permissao;
 
         public FormMenuDeTarefas(int _id)
         {
@@ -19,27 +18,14 @@ namespace WindowsFormsPrincipal
             idLista = _id;
             buttonBuscar_Click(_id, null);
         }
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void tarefaBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonSair_Click(object sender, EventArgs e)
         {
             Close();
         }
-
         private void buttonSair_Click_1(object sender, EventArgs e)
         {
             Close();
         }
-
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
             if(checkBoxAtrasado.Checked == false)
@@ -50,12 +36,6 @@ namespace WindowsFormsPrincipal
                 tarefaBindingSource1.DataSource = new BLL.TarefaBLL().BuscarAtrasado(Constantes.IdUsuarioLogado, id, idLista);
             }
         }
-
-        private void tarefaBindingSource1_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonInserir_Click(object sender, EventArgs e)
         {
             using (FormCadastrarTarefas frm = new FormCadastrarTarefas(idLista, 0))
@@ -64,7 +44,6 @@ namespace WindowsFormsPrincipal
             }
             buttonBuscar_Click(idLista, null);
         }
-
         private void buttonDeletar_Click(object sender, EventArgs e)
         {
             if (tarefaBindingSource1.Count <= 0)
@@ -82,7 +61,6 @@ namespace WindowsFormsPrincipal
 
             MessageBox.Show("Registro excluido com sucesso!");
         }
-
         private void buttonAlterar_Click(object sender, EventArgs e)
         {
             int id = ((Tarefa)tarefaBindingSource1.Current).Id;
@@ -92,7 +70,6 @@ namespace WindowsFormsPrincipal
             }
             buttonBuscar_Click(idLista, null);
         }
-
         private void buttonInserirEtapa_Click(object sender, EventArgs e)
         {
             int id = ((Tarefa)tarefaBindingSource1.Current).Id;
@@ -101,11 +78,6 @@ namespace WindowsFormsPrincipal
                 frm.ShowDialog();
             }
             buttonBuscar_Click(idLista, null);
-        }
-
-        private void tarefaDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
- 
         }
         private void buttonAlterarEtapa_Click(object sender, EventArgs e)
         {
@@ -132,13 +104,6 @@ namespace WindowsFormsPrincipal
             new EtapaBLL().ExcluirEtapa(id);
             etapaBindingSource.RemoveCurrent();
         }
-
-        private void etapaDataGridView_CellContentAlteration(object sender, DataGridViewCellEventArgs e)
-        {
-            
-            
-        }
-
         private void buttonVisualizarRanking_Click(object sender, EventArgs e)
         {
             using (FormRelatorio frm = new FormRelatorio(idLista))
@@ -146,7 +111,6 @@ namespace WindowsFormsPrincipal
                 frm.ShowDialog();
             }
         }
-
         private void FormMenuDeTarefas_Load(object sender, EventArgs e)
         {
             if (new ListaBLL().ConferirPrivacidade(Constantes.IdAreaAberta))
@@ -188,38 +152,19 @@ namespace WindowsFormsPrincipal
                     break;
             }
         }
-
-        private void etapaBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void radioButtonPrivado_CheckedChanged(object sender, EventArgs e)
         {
             new ListaBLL().AtribuirPrivacidade(0,Constantes.IdAreaAberta);
         }
-
         private void radioButtonPublico_CheckedChanged(object sender, EventArgs e)
         {
             new ListaBLL().AtribuirPrivacidade(1, Constantes.IdAreaAberta);
         }
-
-        private void buttonConvidarUsuario_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonCodigo_Click(object sender, EventArgs e)
         {
             labelCodigo.Text = Convert.ToString(Constantes.IdAreaAberta,16);
             timer1.Enabled = true;
         }
-
-        private void label2_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             labelCodigo.Text = "**********";
@@ -238,7 +183,6 @@ namespace WindowsFormsPrincipal
                 tarefaBindingSource1.DataSource = new TarefaBLL().BuscarPorIdLista(idLista);
             }
         }
-
         private void checkBoxAtrasado_CheckedChanged(object sender, EventArgs e)
         {
 
@@ -253,7 +197,6 @@ namespace WindowsFormsPrincipal
                 tarefaBindingSource1.DataSource = new TarefaBLL().BuscarPorIdLista(idLista);
             }
         }
-
         private void FormMenuDeTarefas_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Control && e.KeyCode == Keys.I)
@@ -280,7 +223,6 @@ namespace WindowsFormsPrincipal
 
             
         }
-
         private void etapaDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex != 3)
@@ -290,7 +232,7 @@ namespace WindowsFormsPrincipal
             int score = ((Etapa)etapaBindingSource.Current).Valor;
             bool status = ((Etapa)etapaBindingSource.Current).Status;
 
-            if (idUsuarioLogado == ((Etapa)etapaBindingSource.Current).IdUsuario || permissao.Id == 1)
+            if (idUsuarioLogado == ((Etapa)etapaBindingSource.Current).IdUsuario || Constantes.PermissaoUsuario == 1)
                 new EtapaBLL().StatusEtapa(id, score, idLista, status);
             else
                 MessageBox.Show("Você não tem permissão para alterar o status dessa tarefa!", "Atenção!", MessageBoxButtons.OK);

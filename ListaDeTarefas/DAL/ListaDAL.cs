@@ -11,8 +11,7 @@ using System.Collections;
 namespace DAL
 {
     public class ListaDAL
-    {
-        
+    {       
         public List<Lista> AdicionarLista(int _idGrupo)
         {            
             List<Lista> idsLista = new List<Lista>();
@@ -189,7 +188,6 @@ namespace DAL
 
                 cmd.Connection = cn;
                 cn.Open();
-                cmd.ExecuteNonQuery();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
                     while (rd.Read())

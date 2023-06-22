@@ -156,7 +156,7 @@
             this.ShowIcon = false;
             this.Text = "Login";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FormTelaLogin_Load);
+            //this.Load += new System.EventHandler(this.FormTelaLogin_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormTelaLogin_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

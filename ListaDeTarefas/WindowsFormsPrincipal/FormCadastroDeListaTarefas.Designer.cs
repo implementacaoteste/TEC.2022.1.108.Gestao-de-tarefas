@@ -73,7 +73,7 @@
             this.label3.Size = new System.Drawing.Size(358, 54);
             this.label3.TabIndex = 6;
             this.label3.Text = "Lista de tarefas";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            //this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // buttonArea1
             // 

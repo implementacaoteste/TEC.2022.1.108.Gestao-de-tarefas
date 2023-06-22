@@ -89,7 +89,7 @@
             this.label3.Size = new System.Drawing.Size(150, 54);
             this.label3.TabIndex = 6;
             this.label3.Text = "Etapa";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            //this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // panel2
             // 
@@ -119,7 +119,7 @@
             this.label2.Size = new System.Drawing.Size(94, 18);
             this.label2.TabIndex = 2;
             this.label2.Text = "Responsável";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            //this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // buttonSalvarEtapa
             // 

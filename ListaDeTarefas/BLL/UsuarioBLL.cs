@@ -22,27 +22,6 @@ namespace BLL
             new GrupoBLL().AdicionarGrupo(idUser);
             List<Grupo> lista = new GrupoBLL().BuscarPorIdUsuario(idUser);
         }
-        public List<Usuario> BuscarPorNome(string _nome)
-        {
-            return new UsuarioDAL().BuscarPorNome(_nome);  
-        }
-        public Usuario BuscarPorId(int _id)
-        {
-            return new UsuarioDAL().BuscarPorId(_id);
-        }
-        public Usuario BuscarPorEmail(string _email)
-        {
-            return new UsuarioDAL().BuscarPorEmail(_email); 
-        }
-        public void ExcluirUsuario(int _id)
-        {
-            new UsuarioDAL().ExcluirUsuario(_id);
-        }
-        public void AlterarUsuario(int _id, Usuario _usuario, string _confirmarSenha)
-        {
-            new UsuarioBLL().ValidarCadastro(_usuario, _confirmarSenha);
-            new UsuarioDAL().AlterarUsuario(_id, _usuario);
-        }
         public void ValidarCadastro(Usuario _usuario, string _confirmarSenha)
         {
             Usuario usuario = new UsuarioDAL().BuscarPorEmail(_usuario.Email);
@@ -67,7 +46,6 @@ namespace BLL
             else
                 throw new Exception("Usuário ou senha inválidos!"); 
         }
-
         public List<Usuario> BuscarUsuarioLista(int _idLista)
         {
             return new UsuarioDAL().BuscarUsuarioLista(_idLista);
@@ -76,16 +54,9 @@ namespace BLL
         {
             return new UsuarioDAL().GerarRelatorio(_idLista);
         }
-
         public List<Usuario> GerarRelatorioCresc(int _idLista)
         {
             return new UsuarioDAL().GerarRelatorioCresc(_idLista);
-        }
-        public void ValidarPermissao(int _IdPermissao)
-        {
-            if (!new UsuarioDAL().ValidarPermissao(Constantes.IdUsuarioLogado, _IdPermissao))
-                throw new Exception("Você nao possui permissao para realizar esta ação. Procure o administrador do sistema");
-
         }
     }
 }

@@ -12,7 +12,6 @@ namespace WindowsFormsPrincipal
             InitializeComponent();
             Logou = false;
         }
-
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             try
@@ -30,7 +29,6 @@ namespace WindowsFormsPrincipal
         {
 
         }
-
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             using (FormCadastroUsuarios frm = new FormCadastroUsuarios())
@@ -38,7 +36,6 @@ namespace WindowsFormsPrincipal
                 frm.ShowDialog();
             }
         }
-
         private void textBoxLogin_KeyDown(object sender, KeyEventArgs e)
         {
                 if (e.KeyCode == Keys.Enter)
@@ -49,12 +46,6 @@ namespace WindowsFormsPrincipal
             if (e.KeyCode == Keys.Enter)
                 buttonLogin_Click(null,null);
         }
-
-        private void FormTelaLogin_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void FormTelaLogin_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)

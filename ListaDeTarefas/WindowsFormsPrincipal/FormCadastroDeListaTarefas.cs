@@ -20,17 +20,10 @@ namespace WindowsFormsPrincipal
             InitializeComponent();
             idLista = _id;
         }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void FormCadastroDeListaTarefas_Load(object sender, EventArgs e)
         {
             nomeListaTextBox.Focus();
         }
-
         private void buttonSair_Click(object sender, EventArgs e)
         {
             Close();  
@@ -40,7 +33,6 @@ namespace WindowsFormsPrincipal
             if (e.KeyCode == Keys.Enter)
                 buttonArea1.Focus();
         }
-
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
             try
@@ -48,12 +40,11 @@ namespace WindowsFormsPrincipal
                 new ListaBLL().AlterarLista(idLista, nomeListaTextBox.Text);
                 Close();
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
-                throw new Exception("Erro ao salvar a lista", ex);
+                MessageBox.Show(ex.Message);
             }
         }
-
         private void FormCadastroDeListaTarefas_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)

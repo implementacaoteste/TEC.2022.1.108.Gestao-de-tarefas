@@ -125,7 +125,7 @@
             this.nomeTextBox.Name = "nomeTextBox";
             this.nomeTextBox.Size = new System.Drawing.Size(303, 30);
             this.nomeTextBox.TabIndex = 1;
-            this.nomeTextBox.TextChanged += new System.EventHandler(this.nomeTextBox_TextChanged);
+            //this.nomeTextBox.TextChanged += new System.EventHandler(this.nomeTextBox_TextChanged);
             this.nomeTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.nomeTextBox_KeyDown);
             // 
             // senhaTextBox
@@ -182,7 +182,7 @@
             this.buttonSair.Text = "Sair";
             this.buttonSair.UseVisualStyleBackColor = false;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
-            this.buttonSair.KeyDown += new System.Windows.Forms.KeyEventHandler(this.buttonSair_KeyDown);
+            //this.buttonSair.KeyDown += new System.Windows.Forms.KeyEventHandler(this.buttonSair_KeyDown);
             // 
             // textBoxConfirmarSenha
             // 
