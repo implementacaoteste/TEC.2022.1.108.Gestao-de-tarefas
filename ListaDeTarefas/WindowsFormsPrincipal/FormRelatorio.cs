@@ -60,11 +60,38 @@ namespace WindowsFormsPrincipal
             if (Constantes.PermissaoUsuario == 1 && listaU.IdUsuario != Constantes.IdUsuarioLogado)
             {
                 new ListaDeTarefas_UsuarioBLL().AlterarPermissao(listaU.IdUsuario, listaU.IdLista, 2);
-            }
+            } else
             if (listaU.IdUsuario == Constantes.IdUsuarioLogado)
                 MessageBox.Show("Você não pode alterar sua própria permissão!", "Atenção!", MessageBoxButtons.OK);
             else
                 MessageBox.Show("Você não tem autorização para alterar as permissões dos usuários!", "Atenção!", MessageBoxButtons.OK);
+        }
+
+        private void usuarioDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void contextMenuStripPermissao_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+        }
+
+        private void excluirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListaDeTarefas_Usuario listaU = new ListaDeTarefas_Usuario();
+            listaU.IdLista = Constantes.IdAreaAberta;
+            listaU.IdUsuario = ((Usuario)usuarioBindingSource.Current).Id;
+            if (Constantes.PermissaoUsuario == 1 && listaU.IdUsuario != Constantes.IdUsuarioLogado)
+            {
+                new ListaDeTarefas_UsuarioBLL().ExcluirUsuario(listaU.IdUsuario, listaU.IdLista);
+                MessageBox.Show("Usuário excluido com sucesso!");
+            }
+            else
+            if (listaU.IdUsuario == Constantes.IdUsuarioLogado)
+                MessageBox.Show("Você não pode excluir a si mesmo!", "Atenção!", MessageBoxButtons.OK);
+            else
+                MessageBox.Show("Você não tem autorização para excluir usuários!", "Atenção!", MessageBoxButtons.OK);
         }
     }
 }

@@ -40,6 +40,7 @@
             this.padrãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkBoxCrescente = new System.Windows.Forms.CheckBox();
             this.checkBoxDecrescente = new System.Windows.Forms.CheckBox();
+            this.excluirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioDataGridView)).BeginInit();
@@ -70,7 +71,6 @@
             // usuarioBindingSource
             // 
             this.usuarioBindingSource.DataSource = typeof(Models.Usuario);
-            //this.usuarioBindingSource.CurrentChanged += new System.EventHandler(this.usuarioBindingSource_CurrentChanged);
             // 
             // usuarioDataGridView
             // 
@@ -91,6 +91,7 @@
             this.usuarioDataGridView.RowTemplate.Height = 24;
             this.usuarioDataGridView.Size = new System.Drawing.Size(444, 359);
             this.usuarioDataGridView.TabIndex = 7;
+            this.usuarioDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.usuarioDataGridView_CellContentClick);
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -115,22 +116,24 @@
             this.contextMenuStripPermissao.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStripPermissao.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.visualizarToolStripMenuItem,
-            this.padrãoToolStripMenuItem});
+            this.padrãoToolStripMenuItem,
+            this.excluirToolStripMenuItem});
             this.contextMenuStripPermissao.Name = "contextMenuStripPermissao";
-            this.contextMenuStripPermissao.Size = new System.Drawing.Size(211, 80);
+            this.contextMenuStripPermissao.Size = new System.Drawing.Size(211, 104);
             this.contextMenuStripPermissao.Text = "Permissões";
+            this.contextMenuStripPermissao.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStripPermissao_Opening);
             // 
             // visualizarToolStripMenuItem
             // 
             this.visualizarToolStripMenuItem.Name = "visualizarToolStripMenuItem";
-            this.visualizarToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.visualizarToolStripMenuItem.Size = new System.Drawing.Size(141, 24);
             this.visualizarToolStripMenuItem.Text = "Visualizar";
             this.visualizarToolStripMenuItem.Click += new System.EventHandler(this.visualizarToolStripMenuItem_Click);
             // 
             // padrãoToolStripMenuItem
             // 
             this.padrãoToolStripMenuItem.Name = "padrãoToolStripMenuItem";
-            this.padrãoToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.padrãoToolStripMenuItem.Size = new System.Drawing.Size(141, 24);
             this.padrãoToolStripMenuItem.Text = "Padrão";
             this.padrãoToolStripMenuItem.Click += new System.EventHandler(this.padrãoToolStripMenuItem_Click);
             // 
@@ -157,6 +160,13 @@
             this.checkBoxDecrescente.Text = "Ordem decrescente";
             this.checkBoxDecrescente.UseVisualStyleBackColor = true;
             this.checkBoxDecrescente.CheckedChanged += new System.EventHandler(this.checkBoxDecrescente_CheckedChanged);
+            // 
+            // excluirToolStripMenuItem
+            // 
+            this.excluirToolStripMenuItem.Name = "excluirToolStripMenuItem";
+            this.excluirToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.excluirToolStripMenuItem.Text = "Excluir";
+            this.excluirToolStripMenuItem.Click += new System.EventHandler(this.excluirToolStripMenuItem_Click);
             // 
             // FormRelatorio
             // 
@@ -200,5 +210,6 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStripPermissao;
         private System.Windows.Forms.ToolStripMenuItem visualizarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem padrãoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem excluirToolStripMenuItem;
     }
 }

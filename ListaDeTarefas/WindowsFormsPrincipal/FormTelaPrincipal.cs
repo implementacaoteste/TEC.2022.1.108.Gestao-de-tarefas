@@ -273,6 +273,12 @@ namespace WindowsFormsPrincipal
                 frm.ShowDialog();
             }
         }
+
+        private void dataGridViewCompartilhados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private void renomearToolStripArea3_Click(object sender, EventArgs e)
         {
             using (FormCadastroDeListaTarefas frm = new FormCadastroDeListaTarefas(listas[2].IdLista))

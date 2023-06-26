@@ -174,7 +174,6 @@
             this.toolStripMenuItem2});
             this.contextMenuStripGrupo2.Name = "contextMenuStripGrupo1";
             this.contextMenuStripGrupo2.Size = new System.Drawing.Size(147, 52);
-            //this.contextMenuStripGrupo2.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStripGrupo2_Opening);
             // 
             // toolStripMenuItem1
             // 
@@ -374,7 +373,7 @@
             this.dataGridViewCompartilhados.RowTemplate.Height = 24;
             this.dataGridViewCompartilhados.Size = new System.Drawing.Size(757, 339);
             this.dataGridViewCompartilhados.TabIndex = 6;
-            //this.dataGridViewCompartilhados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCompartilhados_CellContentClick);
+            this.dataGridViewCompartilhados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCompartilhados_CellContentClick);
             this.dataGridViewCompartilhados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DoubleClick_Lista);
             // 
             // nomeListaDataGridViewTextBoxColumn

@@ -131,7 +131,31 @@ namespace DAL
             }
 
         }
+        public void ExcluirUsuario(int _idUsuario, int _idLista)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = cn.CreateCommand();
+                cmd.CommandText = @"DELETE FROM ListadeTarefas_Usuario
+                                    WHERE IdUsuario = @IdU and IdListaTarefas = @IdL";
 
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@IdL", _idLista);
+                cmd.Parameters.AddWithValue("@IdU", _idUsuario);
+                cmd.Connection = cn;
+                cn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar excluir um usuário da lista", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
         public bool VerificarExistencia(int _idLista)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
