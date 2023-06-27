@@ -79,19 +79,30 @@ namespace WindowsFormsPrincipal
 
         private void excluirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ListaDeTarefas_Usuario listaU = new ListaDeTarefas_Usuario();
-            listaU.IdLista = Constantes.IdAreaAberta;
-            listaU.IdUsuario = ((Usuario)usuarioBindingSource.Current).Id;
-            if (Constantes.PermissaoUsuario == 1 && listaU.IdUsuario != Constantes.IdUsuarioLogado)
+            if (MessageBox.Show("Deseja realmente excluir o usuario " + 
+                ((Usuario)usuarioBindingSource.Current).Nome + "?","Atenção!", MessageBoxButtons.YesNo) == 
+                DialogResult.Yes)
             {
-                new ListaDeTarefas_UsuarioBLL().ExcluirUsuario(listaU.IdUsuario, listaU.IdLista);
-                MessageBox.Show("Usuário excluido com sucesso!");
+                ListaDeTarefas_Usuario listaU = new ListaDeTarefas_Usuario();
+                listaU.IdLista = Constantes.IdAreaAberta;
+                listaU.IdUsuario = ((Usuario)usuarioBindingSource.Current).Id;
+                if (Constantes.PermissaoUsuario == 1 && listaU.IdUsuario != Constantes.IdUsuarioLogado)
+                {
+                    new ListaDeTarefas_UsuarioBLL().ExcluirUsuario(listaU.IdUsuario, listaU.IdLista);
+                    MessageBox.Show("Usuário excluido com sucesso!");
+                }
+                else
+                if (listaU.IdUsuario == Constantes.IdUsuarioLogado)
+                    MessageBox.Show("Você não pode excluir a si mesmo!", "Atenção!", MessageBoxButtons.OK);
+                else
+                    MessageBox.Show("Você não tem autorização para excluir usuários!", "Atenção!", MessageBoxButtons.OK);
             }
-            else
-            if (listaU.IdUsuario == Constantes.IdUsuarioLogado)
-                MessageBox.Show("Você não pode excluir a si mesmo!", "Atenção!", MessageBoxButtons.OK);
-            else
-                MessageBox.Show("Você não tem autorização para excluir usuários!", "Atenção!", MessageBoxButtons.OK);
+
+            RecarregarRank();
+        }
+        public void RecarregarRank()
+        {
+            usuarioBindingSource.DataSource = new UsuarioBLL().GerarRelatorio(IdLista);
         }
     }
 }

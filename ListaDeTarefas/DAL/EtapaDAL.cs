@@ -214,6 +214,8 @@ namespace DAL
         }
         public void AdicionarEtapa(Etapa _etapa, int _idTarefa, int _value)
         {
+            if (_etapa.IdUsuario == 0)
+                _etapa.IdUsuario = Constantes.IdUsuarioLogado;
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
