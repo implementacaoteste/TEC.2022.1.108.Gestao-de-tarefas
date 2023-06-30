@@ -63,6 +63,7 @@
             this.dataGridViewCompartilhados = new System.Windows.Forms.DataGridView();
             this.nomeListaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonIngressar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.contextMenuStripGrupo3.SuspendLayout();
@@ -400,12 +401,28 @@
             this.buttonIngressar.UseVisualStyleBackColor = false;
             this.buttonIngressar.Click += new System.EventHandler(this.buttonIngressar_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.button1.ContextMenuStrip = this.contextMenuStripArea3;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.button1.ForeColor = System.Drawing.SystemColors.Window;
+            this.button1.Location = new System.Drawing.Point(190, 498);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(114, 38);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Suporte";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormTelaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(996, 546);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonIngressar);
             this.Controls.Add(this.dataGridViewCompartilhados);
             this.Controls.Add(this.buttonSair);
@@ -473,5 +490,6 @@
         private System.Windows.Forms.DataGridView dataGridViewCompartilhados;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeListaDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button buttonIngressar;
+        private System.Windows.Forms.Button button1;
     }
 }
